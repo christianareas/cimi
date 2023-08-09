@@ -1,10 +1,10 @@
 // Dependencies.
 import { builder } from "@builder.io/sdk"
-import { RenderBuilderContent } from "../../components/builder"
+import { RenderBuilderContent } from "./components/builder"
 
 // Builder public API key.
-if (process.env.BUILDER_PUBLIC_API_KEY) {
-  builder.init(process.env.BUILDER_PUBLIC_API_KEY)
+if (process.env.BUILDER_API_KEY) {
+  builder.init(process.env.BUILDER_API_KEY)
 } else {
   console.error(
     "Set your Builder public API key in the BUILDER_PUBLIC_API_KEY environment variable."
