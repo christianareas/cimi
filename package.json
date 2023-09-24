@@ -9,12 +9,14 @@
     "lint": "next lint",
     "update-ts": "npm i typescript@latest @builder.io/react @types/node@latest @types/react@latest @types/react-dom@latest",
     "update-next": "npm i next@latest react@latest react-dom@latest",
+    "update-prisma": "npm i prisma@latest",
     "update-builder": "npm i @builder.io/react@latest",
     "update-tailwind": "npm i tailwindcss@latest postcss@latest autoprefixer@latest",
     "update-eslint": "npm i eslint@latest eslint-config-next@latest",
-    "update-all": "npm run update-ts && npm run update-next && npm run update-builder && npm run update-tailwind && npm run update-eslint"
+    "update-all": "npm run update-ts && npm run update-next && npm run update-prisma && npm run update-builder && npm run update-tailwind && npm run update-eslint"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "next": "^13.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -28,6 +30,7 @@
     "eslint": "^8.50.0",
     "eslint-config-next": "^13.5.2",
     "postcss": "^8.4.30",
+    "prisma": "^5.3.1",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2"
   }
