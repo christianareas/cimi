@@ -22,6 +22,7 @@ export const authOptions: NextAuthOptions = {
 				},
       },
       async authorize(credentials) {
+        // Replace with logic to authenticate user.
         const user = { id: "1", name: "Christian", email: "me@areas.me" }
         return user
       },
@@ -30,9 +31,9 @@ export const authOptions: NextAuthOptions = {
 }
 
 // Handle requests.
-const handler = NextAuth(authOptions)
+const authHandler = NextAuth(authOptions)
 
 export {
-	handler as GET,
-	handler as POST,
+	authHandler as GET,
+	authHandler as POST,
 }
