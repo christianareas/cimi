@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "../auth/[...nextauth]/route"
 import { NextResponse } from "next/server"
 
-// Get the session.
+// Get the session from an API route.
 export async function GET(request: Request) {
 	const session = await getServerSession(authOptions)
 
