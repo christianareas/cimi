@@ -57,6 +57,35 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  callbacks: {
+    // Add the user’s ID to the session.
+    session: ({ session, token }) => {
+      console.log("session callback", { session, token }) // **
+
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: token.id,
+        },
+      }
+    },
+    // Add the user’s ID to the JWT.
+    jwt: ({ token, user }) => {
+      console.log("jwt callback", { token, user }) // **
+
+      if (user) {
+        const u = user as unknown as any
+
+        return {
+          ...token,
+          id: u.id,
+        }
+      }
+
+      return token
+    },
+  },
 }
 
 // Handle authentication requests.
