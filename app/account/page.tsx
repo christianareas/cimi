@@ -1,42 +1,30 @@
-"use client"
-
-// Deependencies.
+// Dependencies.
+import { getServerSession } from "next-auth"
+import { authOptions } from "../api/auth/[...nextauth]/route"
 import { redirect } from "next/navigation"
-import { useSession } from "next-auth/react"
-import { cache, use } from "react"
 
 // Types.
 type User = {
-	id: string
-	email: string
-	name: string
+  id: number
+  name: string
+  email: string
 }
 
-// Get users (placeholder).
-const getUsers = cache(() =>
-	fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json())
-)
-
 // Page.
-export default function Account() {
-	// Get the session or redirect the user to the sign in page.
-	const { status } = useSession({
-		required: true,
-		onUnauthenticated() {
-			redirect("/api/auth/signin") // ** how do I change this to /sign-in?
-		}
-	})
+export default async function Account() {
+  // Get the user’s session.
+  const session = await getServerSession(authOptions)
 
-	// If status loading, display loading.
-	if (status === "loading") {
-		return <p>Loading...</p>
-	}
+  // If there’s no session, redirect to the sign-in page.
+  if (!session) {
+    redirect("/api/auth/signin") // todo: redirect to custom sign-in page.
+  }
 
-	// Get the users.
-	let users = use<User[]>(getUsers())
+  // Get users.
+  const users: User[] = await fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json())
 
-	// JSX.
-	return (
+  // Render.
+  return (
     <main style={{ maxWidth: 1200, marginInline: "auto", padding: 20 }}>
       <div
         style={{
@@ -60,5 +48,5 @@ export default function Account() {
         ))}
       </div>
     </main>
-  );
+  )
 }
