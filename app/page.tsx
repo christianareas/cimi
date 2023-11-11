@@ -9,7 +9,7 @@ import { ClientComponent } from "./components/clientComponent"
 import { ServerComponent } from "./components/serverComponent"
 
 // Home.
-export default async function Home() {
+export default function Home() {
   // Render.
   return(
     <main>
