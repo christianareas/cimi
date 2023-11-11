@@ -1,8 +1,3 @@
-// Dependencies.
-import { getServerSession } from "next-auth"
-import { authOptions } from "../api/auth/[...nextauth]/route"
-import { redirect } from "next/navigation"
-
 // Types.
 type User = {
   id: number
@@ -12,14 +7,6 @@ type User = {
 
 // Page.
 export default async function Account() {
-  // Get the user’s session.
-  const session = await getServerSession(authOptions)
-
-  // If there’s no session, redirect to the sign-in page.
-  if (!session) {
-    redirect("/api/auth/signin") // todo: redirect to custom sign-in page.
-  }
-
   // Get users.
   const users: User[] = await fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json())
 
