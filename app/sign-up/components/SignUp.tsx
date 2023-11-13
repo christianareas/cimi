@@ -14,7 +14,7 @@ export const SignUp = () => {
 	})
 
 	// Handle a form submit.
-	const onSubmit = async (event: FormEvent) => {
+	const handleFormSubmit = async (event: FormEvent) => {
 		// Prevent default.
 		event.preventDefault()
 		
@@ -22,7 +22,7 @@ export const SignUp = () => {
 		setLoading(true)
 
 		try {
-			// Call.
+			// Call the API.
 			const response = await fetch("/api/sign-up", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -51,65 +51,65 @@ export const SignUp = () => {
 			console.error(error)
 			alert(error.message)
 		}
+	}
 
-		// Handle a form change.
-		const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
-			// Get the name and value from the event.
-			const { name, value } = event.target
+	// Handle a form change.
+	const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
+		// Get the name and value from the event.
+		const { name, value } = event.target
 
-			// Set the form values.
-			setFormValues({
-				...formValues,
-				[name]: value,
-			})
-		}
+		// Set the form values.
+		setFormValues({
+			...formValues,
+			[name]: value,
+		})
+	}
+	
+	// Render the component.
+	return (
+		<form
+			onSubmit={handleFormSubmit}
+			style={{  }}
+		>
 
-		// Render the component.
-		return (
-			<form
-				onSubmit={onSubmit}
+			{/* Email */}
+			<label htmlFor="email">
+				Email
+			</label>
+			<input
+				required
+				type="email"
+				id="email"
+				name="email"
+				placeholder="Email"
+				value={formValues.email}
+				onChange={handleFormChange}
+				style={{  }}
+			/>
+
+			{/* Password */}
+			<label htmlFor="password">
+				Password
+			</label>
+			<input
+				required
+				type="password"
+				id="password"
+				name="password"
+				placeholder="Password"
+				value={formValues.password}
+				onChange={handleFormChange}
+				style={{  }}
+			/>
+
+			{/* Submit */}
+			<button
+				type="submit"
+				disabled={loading}
 				style={{  }}
 			>
-
-				{/* Email */}
-				<label htmlFor="email">
-					Email
-				</label>
-				<input
-					required
-					type="email"
-					id="email"
-					name="email"
-					placeholder="Email"
-					value={formValues.email}
-					onChange={handleFormChange}
-					style={{  }}
-				/>
-
-				{/* Password */}
-				<label htmlFor="password">
-					Password
-				</label>
-				<input
-					required
-					type="password"
-					id="password"
-					name="password"
-					placeholder="Password"
-					value={formValues.password}
-					onChange={handleFormChange}
-					style={{  }}
-				/>
-
-				{/* Submit */}
-				<button
-					type="submit"
-					disabled={loading}
-					style={{  }}
-				>
-					{loading ? "Loading..." : "Sign Up"}
-				</button>
-			</form>
-		)
-	}
+				{loading ? "Loading..." : "Sign Up"}
+			</button>
+		</form>
+	)	
 }
