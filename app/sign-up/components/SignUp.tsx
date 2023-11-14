@@ -71,11 +71,11 @@ export const SignUp = () => {
 			onSubmit={handleFormSubmit}
 			style={{  }}
 		>
+			{/* Header */}
+			<h2>Sign Up</h2>
 
 			{/* Email */}
-			<label htmlFor="email">
-				Email
-			</label>
+			<label htmlFor="email" />
 			<input
 				required
 				type="email"
@@ -88,9 +88,7 @@ export const SignUp = () => {
 			/>
 
 			{/* Password */}
-			<label htmlFor="password">
-				Password
-			</label>
+			<label htmlFor="password" />
 			<input
 				required
 				type="password"

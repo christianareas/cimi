@@ -33,6 +33,7 @@ export const SignIn = () => {
 			// Reset the loading state.
 			setLoading(false)
 
+			// Error handling (to-do).
 			
 		} catch (error: any) {
 			// Reset the loading state.
@@ -62,11 +63,11 @@ export const SignIn = () => {
 			onSubmit={handleFormSubmit}
 			style={{  }}
 		>
+			{/* Header */}
+			<h2>Sign In</h2>
 
 			{/* Email */}
-			<label htmlFor="email">
-				Email
-			</label>
+			<label htmlFor="email" />
 			<input
 				required
 				type="email"
@@ -79,9 +80,7 @@ export const SignIn = () => {
 			/>
 
 			{/* Password */}
-			<label htmlFor="password">
-				Password
-			</label>
+			<label htmlFor="password" />
 			<input
 				required
 				type="password"
