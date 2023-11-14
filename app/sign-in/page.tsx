@@ -1,10 +1,9 @@
 // Dependencies.
-import { SignIn } from "./components/SignIn"
+import { SignInForm } from "@/components/auth/SignInForm"
 
 // Sign In page.
 export default function SignInPage() {
-	// Return the sign in component.
 	return (
-		<SignIn />
+		<SignInForm />
 	)
 }

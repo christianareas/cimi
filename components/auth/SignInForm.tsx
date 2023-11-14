@@ -3,9 +3,13 @@
 // Dependencies.
 import { useState, FormEvent, ChangeEvent } from "react"
 import { signIn } from "next-auth/react"
+import { Header } from "./Header"
+import { EmailField } from "./EmailField"
+import { PasswordField } from "./PasswordField"
+import { SubmitButton } from "./SubmitButton"
 
-// Sign In component.
-export const SignIn = () => {
+// Sign-In Form component.
+export const SignInForm = () => {
 	// Set the initial states.
 	let [loading, setLoading] = useState(false)
 	let [formValues, setFormValues] = useState({
@@ -61,49 +65,26 @@ export const SignIn = () => {
 	return (
 		<form
 			onSubmit={handleFormSubmit}
-			style={{  }}
+			className="flex flex-col"
 		>
-			{/* Header */}
-			<h2
-				className="font-bold text-2xl"
-			>
-				Sign In
-			</h2>
+			<Header
+				headerText="Sign In"
+			/>
 
-			{/* Email */}
-			<label htmlFor="email" />
-			<input
-				required
-				type="email"
-				id="email"
-				name="email"
-				placeholder="Email"
+			<EmailField
 				value={formValues.email}
 				onChange={handleFormChange}
-				className="border border-gray-300 p-2 rounded"
 			/>
 
-			{/* Password */}
-			<label htmlFor="password" />
-			<input
-				required
-				type="password"
-				id="password"
-				name="password"
-				placeholder="Password"
+			<PasswordField
 				value={formValues.password}
 				onChange={handleFormChange}
-				className="border border-gray-300 p-2 rounded"
 			/>
 
-			{/* Submit */}
-			<button
-				type="submit"
-				disabled={loading}
-				className="border border-gray-300 p-2 rounded"
-			>
-				{loading ? "Loading..." : "Sign In"}
-			</button>
+			<SubmitButton
+				loading={loading}
+				buttonText="Sign In"
+			/>
 		</form>
 	)
 }

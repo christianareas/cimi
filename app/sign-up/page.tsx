@@ -1,10 +1,9 @@
 // Dependencies.
-import { SignUp } from "./components/SignUp"
+import { SignUpForm } from "@/components/auth/SignUpForm"
 
 // Sign Up page.
 export default function SignUpPage() {
-	// Return the sign up component.
 	return (
-		<SignUp />
+		<SignUpForm />
 	)
 }

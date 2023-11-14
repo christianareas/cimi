@@ -4,9 +4,9 @@ import {
   SignInButton,
   SignOutButton,
   AccountButton,
-} from "./components/Buttons"
-import { ClientComponent } from "./components/ClientComponent"
-import { ServerComponent } from "./components/ServerComponent"
+} from "../components/temp/Buttons"
+import { ClientComponent } from "../components/temp/ClientComponent"
+import { ServerComponent } from "../components/temp/ServerComponent"
 
 // Home.
 export default function Home() {
