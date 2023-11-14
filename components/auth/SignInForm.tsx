@@ -17,7 +17,7 @@ export const SignInForm = () => {
 		password: "",
 	})
 
-	// Handle a form submit.
+	// Handle form submit.
 	const handleFormSubmit = async (event: FormEvent) => {
 		// Don’t redirect the user on submit.
 		event.preventDefault()
@@ -37,7 +37,11 @@ export const SignInForm = () => {
 			// Reset the loading state.
 			setLoading(false)
 
-			// Error handling (to-do).
+			// If there’s an error, return it.
+			if (response?.error) {
+				alert(response?.error)
+				return
+			}
 			
 		} catch (error: any) {
 			// Reset the loading state.
@@ -49,7 +53,7 @@ export const SignInForm = () => {
 		}
 	}
 
-	// Handle a form change.
+	// Handle form change.
 	const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
 		// Get the name and value from the event.
 		const { name, value } = event.target

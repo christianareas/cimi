@@ -8,7 +8,7 @@ import Link from "next/link"
 export function SignUpButton() {
 	return (
 		<button
-			className="border m-5 p-5"
+			className="bg-blue-500 text-white my-2 mr-2 p-2 rounded"
 		>
 			<Link
 				href="/sign-up"
@@ -24,7 +24,7 @@ export function SignInButton() {
 	return (
 		<button
 			onClick={() => signIn()}
-			className="border m-5 p-5"
+			className="bg-blue-500 text-white my-2 mr-2 p-2 rounded"
 		>
 			Sign In
 		</button>
@@ -36,7 +36,7 @@ export function SignOutButton() {
 	return (
 		<button
 			onClick={() => signOut()}
-			className="border m-5 p-5"
+			className="bg-blue-500 text-white my-2 mr-2 p-2 rounded"
 		>
 			Sign Out
 		</button>
@@ -47,7 +47,7 @@ export function SignOutButton() {
 export function AccountButton() {
 	return (
 		<button
-			className="border m-5 p-5"
+			className="bg-blue-500 text-white my-2 mr-2 p-2 rounded"
 		>
 			<Link
 				href="/account"

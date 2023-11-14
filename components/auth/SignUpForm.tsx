@@ -17,7 +17,7 @@ export const SignUpForm = () => {
 		password: "",
 	})
 
-	// Handle a form submit.
+	// Handle form submit.
 	const handleFormSubmit = async (event: FormEvent) => {
 		// Don’t redirect the user on submit.
 		event.preventDefault()
@@ -57,7 +57,7 @@ export const SignUpForm = () => {
 		}
 	}
 
-	// Handle a form change.
+	// Handle form change.
 	const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
 		// Get the name and value from the event.
 		const { name, value } = event.target
