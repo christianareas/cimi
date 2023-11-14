@@ -4,11 +4,11 @@
 import { useState, FormEvent, ChangeEvent } from "react"
 import { signIn } from "next-auth/react"
 
-// Sign Up component.
-export const SignUp = () => {
+// Sign In component.
+export const SignIn = () => {
 	// Set the initial states.
 	let [loading, setLoading] = useState(false)
-	let [ formValues, setFormValues ] = useState({
+	let [formValues, setFormValues] = useState({
 		email: "",
 		password: "",
 	})
@@ -22,27 +22,18 @@ export const SignUp = () => {
 		setLoading(true)
 
 		try {
-			// Call the API.
-			const response = await fetch("/api/sign-up", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formValues),
+			// Sign in the user.
+			const response = await signIn("credentials", {
+				email: formValues.email,
+				password: formValues.password,
+				redirect: true,
+				callbackUrl: "/",
 			})
 
 			// Reset the loading state.
 			setLoading(false)
 
-			// If the response is not okay, return an error.
-			if (!response.ok) {
-				alert((await response.json()).message)
-				return
-			}
-
-			// Sign in the user and redirect them to the homepage.
-			signIn(undefined, {
-				redirect: true,
-				callbackUrl: "/",
-			})
+			
 		} catch (error: any) {
 			// Reset the loading state.
 			setLoading(false)
@@ -64,7 +55,7 @@ export const SignUp = () => {
 			[name]: value,
 		})
 	}
-	
+
 	// Render the component.
 	return (
 		<form
@@ -108,8 +99,8 @@ export const SignUp = () => {
 				disabled={loading}
 				style={{  }}
 			>
-				{loading ? "Loading..." : "Sign Up"}
+				{loading ? "Loading..." : "Sign In"}
 			</button>
 		</form>
-	)	
+	)
 }
