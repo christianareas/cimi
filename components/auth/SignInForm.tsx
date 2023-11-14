@@ -3,10 +3,10 @@
 // Dependencies.
 import { useState, FormEvent, ChangeEvent } from "react"
 import { signIn } from "next-auth/react"
-import { Header } from "./Header"
-import { EmailField } from "./EmailField"
-import { PasswordField } from "./PasswordField"
-import { SubmitButton } from "./SubmitButton"
+import { Header } from "@/components/auth/Header"
+import { EmailField } from "@/components/auth/EmailField"
+import { PasswordField } from "@/components/auth/PasswordField"
+import { SubmitButton } from "@/components/auth/SubmitButton"
 
 // Sign-In Form component.
 export const SignInForm = () => {
