@@ -1,4 +1,5 @@
 // Dependencies.
+import "./globals.css"
 import { NextAuthProviders } from "./providers"
 
 // Metadata.

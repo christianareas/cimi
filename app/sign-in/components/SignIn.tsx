@@ -64,7 +64,11 @@ export const SignIn = () => {
 			style={{  }}
 		>
 			{/* Header */}
-			<h2>Sign In</h2>
+			<h2
+				className="font-bold text-2xl"
+			>
+				Sign In
+			</h2>
 
 			{/* Email */}
 			<label htmlFor="email" />
@@ -76,7 +80,7 @@ export const SignIn = () => {
 				placeholder="Email"
 				value={formValues.email}
 				onChange={handleFormChange}
-				style={{  }}
+				className="border border-gray-300 p-2 rounded"
 			/>
 
 			{/* Password */}
@@ -89,14 +93,14 @@ export const SignIn = () => {
 				placeholder="Password"
 				value={formValues.password}
 				onChange={handleFormChange}
-				style={{  }}
+				className="border border-gray-300 p-2 rounded"
 			/>
 
 			{/* Submit */}
 			<button
 				type="submit"
 				disabled={loading}
-				style={{  }}
+				className="border border-gray-300 p-2 rounded"
 			>
 				{loading ? "Loading..." : "Sign In"}
 			</button>
