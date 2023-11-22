@@ -9,7 +9,7 @@
     "lint": "next lint",
     "update-ts": "npm i -D typescript@latest @builder.io/react@latest @types/bcryptjs@latest @types/jsonwebtoken@latest @types/next-auth@latest @types/node@latest @types/react@latest @types/react-dom@latest",
     "update-next": "npm i next@13.x react@latest react-dom@latest",
-    "update-prisma": "npm i prisma@latest",
+    "update-prisma": "npm i prisma@latest @prisma/client@latest",
     "update-auth": "npm i bcryptjs@latest jsonwebtoken@latest next-auth@latest",
     "update-stripe": "npm i stripe@latest @stripe/stripe-js@latest",
     "update-builder": "npm i -D @builder.io/react@latest",
@@ -21,31 +21,31 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.3.1",
-    "@stripe/stripe-js": "^2.1.11",
+    "@prisma/client": "^5.6.0",
+    "@stripe/stripe-js": "^2.2.0",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
     "next": "^13.5.6",
-    "next-auth": "^4.24.4",
+    "next-auth": "^4.24.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "stripe": "^14.4.0"
+    "stripe": "^14.5.0"
   },
   "devDependencies": {
     "@builder.io/react": "^3.1.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/next-auth": "^3.15.0",
-    "@types/node": "^20.9.0",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
+    "@types/node": "^20.9.4",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.53.0",
-    "eslint-config-next": "^14.0.2",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.3",
     "postcss": "^8.4.31",
-    "prisma": "^5.5.2",
+    "prisma": "^5.6.0",
     "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   }
 }
