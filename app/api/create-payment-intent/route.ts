@@ -1,6 +1,6 @@
 // Dependencies.
 import { NextResponse } from "next/server"
-import { stripe, getCustomer, createCustomer } from "@/lib/stripe"
+import { stripe, getStripeCustomer, createStripeCustomer } from "@/lib/stripe"
 import { prisma } from "@/lib/prisma"
 
 // Types.
@@ -30,10 +30,19 @@ export async function POST(request: Request) {
 			},
 		} = (await request.json()) as PaymentIntentRequest
 
-		// Create a payment intent.
+		// Get the customer.
+		let stripeCustomer = await getStripeCustomer(receipt_email)
+
+		// If the customer doesn't exist, create them.
+		if (!stripeCustomer) {
+			stripeCustomer = await createStripeCustomer(receipt_email)
+		}
+
+		// Create a Stripe payment intent.
 		const paymentIntent = await stripe.paymentIntents.create({
 			amount,
 			currency,
+			customer: stripeCustomer?.id,
 			receipt_email,
 			payment_method,
 			metadata: {
@@ -44,20 +53,18 @@ export async function POST(request: Request) {
 
 		// Todo: Add logic to store some of the paymentIntent data in a database.
 
-		// Return the payment intent.
+
+		// Return the Stripe payment intent.
 		return NextResponse.json({
 			// Todo: Update to only return what's necessary.
 			paymentIntent,
 		})
 	} catch (error: any) {
 		// Return the error.
-		return new NextResponse(
-			JSON.stringify({
-				status: "error",
-				message: error.message,
-			}),
-			{ status: 500 },
-		)
+		return NextResponse.json({
+			statusCode: 500,
+			message: error.message,
+		})
 	}
 }
 

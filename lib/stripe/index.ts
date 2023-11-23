@@ -1,2 +1,2 @@
 export { stripe } from "./stripe"
-export { getCustomer, createCustomer } from "./customer"
+export { getStripeCustomer, createStripeCustomer } from "./customer"
