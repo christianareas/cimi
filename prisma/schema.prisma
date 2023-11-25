@@ -16,9 +16,9 @@ model User {
   userPassword  String
   userFirstName String?
   userLastName  String?
+  donor         Donor?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  donor         Donor?
 }
 
 model Donor {
@@ -27,11 +27,11 @@ model Donor {
   donorEmail      String
   donorFirstName  String
   donorLastName   String
-  createdAt       DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
   userId          String?     @unique
   user            User?       @relation(fields: [userId], references: [userId])
   donorDonations  Donation[] 
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
 }
 
 model Donation {
@@ -39,13 +39,9 @@ model Donation {
   donationId            String
   donationAmount        Int
   donationCurrency      String
-  donationPaymentMethod String    // ** Decide whether to keep or delete this column.
   donationStatus        String    // To learn more, see: https://stripe.com/docs/payments/paymentintents/lifecycle#intent-statuses
-  donationReceiptEmail  String
-  donationFirstName     String
-  donationLastName      String
-  createdAt             DateTime  @default(now())
-  updatedAt             DateTime  @updatedAt
   donorId               String
   donor                 Donor     @relation(fields: [donorId], references: [donorId])
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
 }

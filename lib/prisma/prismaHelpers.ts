@@ -9,6 +9,13 @@ type Donor = {
 	donorLastName: string
 }
 
+type Donation  = {
+	donationId: string
+	donationAmount: number
+	donationCurrency: string
+	donationStatus: string
+}
+
 // Update the donor in the database.
 export async function updateDonor(
 	customerId: string,
@@ -60,5 +67,37 @@ export async function insertDonor(
 		donorEmail: donor.donorEmail,
 		donorFirstName: donor.donorFirstName,
 		donorLastName: donor.donorLastName,
+	}
+}
+
+// Insert the donation in the database.
+export async function insertDonation(
+	paymentIntentId: string,
+	paymentIntentAmount: number,
+	paymentIntentCurrency: string,
+	paymentIntentStatus: string,
+	customerId: string,
+): Promise<Donation> {
+	// Insert the new donation.
+	const donation = await prisma.donation.create({
+		data: {
+			donationId: paymentIntentId,
+			donationAmount: paymentIntentAmount,
+			donationCurrency: paymentIntentCurrency,
+			donationStatus: paymentIntentStatus,
+			donor: {
+				connect: {
+					donorId: customerId,
+				},
+			},
+		},
+	})
+
+	// Return the new donation.
+	return {
+		donationId: donation.donationId,
+		donationAmount: donation.donationAmount,
+		donationCurrency: donation.donationCurrency,
+		donationStatus: donation.donationStatus,
 	}
 }
