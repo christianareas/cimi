@@ -1,2 +1,8 @@
+// Stripe client.
 export { stripe } from "./stripe"
-export { getStripeCustomer, createStripeCustomer } from "./customer"
+
+// Stripe helpers.
+export {
+	getAndUpdateStripeCustomer,
+	postStripeCustomer,
+} from "./stripeHelpers"

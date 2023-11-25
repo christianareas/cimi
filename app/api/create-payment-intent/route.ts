@@ -1,7 +1,7 @@
 // Dependencies.
-import { NextResponse } from "next/server"
-import { stripe, getStripeCustomer, createStripeCustomer } from "@/lib/stripe"
-import { prisma } from "@/lib/prisma"
+import { NextRequest, NextResponse } from "next/server"
+import { stripe, getAndUpdateStripeCustomer, postStripeCustomer } from "@/lib/stripe"
+import { updateDonor, insertDonor } from "@/lib/prisma"
 
 // Types.
 type PaymentIntentRequest = {
@@ -15,44 +15,78 @@ type PaymentIntentRequest = {
 	}
 }
 
-// Create a payment intent.
-export async function POST(request: Request) {
+// Create a Stripe payment intent.
+export async function POST(
+	request: NextRequest,
+	response: NextResponse,
+) {
 	try {
 		// Destructure the request body.
 		const { 
 			amount,
 			currency,
-			receipt_email,
 			payment_method,
+			receipt_email,
 			metadata: {
 				firstName,
 				lastName,
 			},
 		} = (await request.json()) as PaymentIntentRequest
 
-		// Get the customer.
-		let stripeCustomer = await getStripeCustomer(receipt_email)
+		// Get and update the Stripe customer in Stripe.
+		let stripeCustomer = await getAndUpdateStripeCustomer(
+			receipt_email,
+			firstName,
+			lastName,
+		)
 
-		// If the customer doesn't exist, create them.
+		// If the Stripe customer exists, update them in the database.
+		if (stripeCustomer) {
+			await updateDonor(
+				stripeCustomer.customerId,
+				stripeCustomer.customerEmail,
+				stripeCustomer.customerFirstName,
+				stripeCustomer.customerLastName,
+			)
+		}
+
+		// If the Stripe customer doesn't exist, create them in Stripe and the database.
 		if (!stripeCustomer) {
-			stripeCustomer = await createStripeCustomer(receipt_email)
+			// Post the Stripe customer in Stripe.
+			stripeCustomer = await postStripeCustomer(
+				receipt_email,
+				firstName,
+				lastName,
+			)
+
+			// Insert the donor in the database.
+			await insertDonor(
+				stripeCustomer.customerId,
+				stripeCustomer.customerEmail,
+				stripeCustomer.customerFirstName,
+				stripeCustomer.customerLastName,
+			)
 		}
 
 		// Create a Stripe payment intent.
 		const paymentIntent = await stripe.paymentIntents.create({
 			amount,
 			currency,
-			customer: stripeCustomer?.id,
-			receipt_email,
 			payment_method,
+			receipt_email,
+			confirm: true,
+			customer: stripeCustomer.customerId,
 			metadata: {
 				firstName,
 				lastName,
 			},
 		})
 
-		// Todo: Add logic to store some of the paymentIntent data in a database.
-
+		// If the payment intent is successful, store the Stripe customer and payment intent.
+		if (paymentIntent.status === "succeeded") {
+			// Store the Stripe donation.
+			
+		}
 
 		// Return the Stripe payment intent.
 		return NextResponse.json({

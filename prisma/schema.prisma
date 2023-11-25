@@ -11,26 +11,41 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  firstName String?
-  lastName  String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  donations Donation[]
+  userId        String    @id @default(uuid())
+  userEmail     String    @unique
+  userPassword  String
+  userFirstName String?
+  userLastName  String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  donor         Donor?
+}
+
+model Donor {
+  id              String      @id @default(uuid())
+  donorId         String      @unique
+  donorEmail      String
+  donorFirstName  String
+  donorLastName   String
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  userId          String?     @unique
+  user            User?       @relation(fields: [userId], references: [userId])
+  donorDonations  Donation[] 
 }
 
 model Donation {
-  id                  String @id @default(uuid())
-  amount              Int
-  currency            String
-  stripeCustomerId    String
-  stripeEmail         String
-  stripePaymentMethod String
-  stripePaymentStatus String
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-  userId              String
-  user                User   @relation(fields: [userId], references: [id])
+  id                    String    @id @default(uuid())
+  donationId            String
+  donationAmount        Int
+  donationCurrency      String
+  donationPaymentMethod String    // ** Decide whether to keep or delete this column.
+  donationStatus        String    // To learn more, see: https://stripe.com/docs/payments/paymentintents/lifecycle#intent-statuses
+  donationReceiptEmail  String
+  donationFirstName     String
+  donationLastName      String
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  donorId               String
+  donor                 Donor     @relation(fields: [donorId], references: [donorId])
 }
