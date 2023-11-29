@@ -18,9 +18,9 @@ type PaymentIntentRequest = {
 // Create a Stripe payment intent.
 export async function POST(
 	request: NextRequest,
-	response: NextResponse,
 ) {
 	try {
+
 		// Destructure the request body.
 		const { 
 			amount,
@@ -106,9 +106,13 @@ export async function POST(
 
 		// Return the Stripe payment intent.
 		return NextResponse.json({
-			client_secret: paymentIntent.client_secret,
-			// Todo: Potentially return other payment intent data.
+			statusCode: 200,
+			body: {
+				client_secret: paymentIntent.client_secret,
+				// Todo: Potentially return other payment intent data, if necessary for the client.
+			},
 		})
+
 	} catch (error: any) {
 		// Return the error.
 		return NextResponse.json({
@@ -117,4 +121,3 @@ export async function POST(
 		})
 	}
 }
-

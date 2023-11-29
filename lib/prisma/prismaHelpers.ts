@@ -2,14 +2,14 @@
 import { prisma } from "./"
 
 // Types.
-type Donor = {
+type DonorRecord = {
 	donorId: string
 	donorEmail: string
 	donorFirstName: string
 	donorLastName: string
 }
 
-type Donation  = {
+type DonationRecord  = {
 	donationId: string
 	donationAmount: number
 	donationCurrency: string
@@ -22,7 +22,7 @@ export async function updateDonor(
 	customerEmail: string,
 	customerFirstName: string,
 	customerLastName: string,
-): Promise<Donor> {
+): Promise<DonorRecord> {
 	// Update the existing donor.
 	const donor = await prisma.donor.update({
 		where: {
@@ -77,7 +77,7 @@ export async function insertDonation(
 	paymentIntentCurrency: string,
 	paymentIntentStatus: string,
 	customerId: string,
-): Promise<Donation> {
+): Promise<DonationRecord> {
 	// Insert the new donation.
 	const donation = await prisma.donation.create({
 		data: {

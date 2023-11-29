@@ -1,8 +1,16 @@
 // Stripe client.
 export { stripe } from "./stripe"
 
-// Stripe helpers.
+// Stripe promise.
+export { stripePromise } from "./stripePromise"
+
+// Stripe customer.
 export {
 	getAndUpdateStripeCustomer,
 	postStripeCustomer,
-} from "./stripeHelpers"
+} from "./customers"
+
+// Stripe payment intent.
+export {
+	fetchStripePaymentIntent,
+} from "./payments"
