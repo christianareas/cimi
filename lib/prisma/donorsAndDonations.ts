@@ -1,5 +1,5 @@
 // Dependencies.
-import { prisma } from "./"
+import { prisma } from "."
 
 // Types.
 type DonorRecord = {

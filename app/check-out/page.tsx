@@ -3,23 +3,27 @@ import { useState, useEffect } from "react"
 import { fetchStripePaymentIntent } from "@/lib/stripe"
 import { Elements } from "@stripe/react-stripe-js"
 import { stripePromise } from "@/lib/stripe"
-import { CheckoutForm } from "@/components/CheckoutForm"
+import { CheckoutForm } from "@/components/stripe/CheckoutForm"
 
 // Check Out page.
 export default function CheckOutPage() {
-	// Set the initial client secret state.
+	// Set the initial state.
 	const [clientSecret, setClientSecret] = useState("")
 
-	// Create a Stripe payment intent through the server as soon as the page loads.
+	// As soon as the page loads, fetch the Stripe client secret from the server.
 	useEffect(() => {
-		// Create a Stripe payment intent.
-		const createStripePaymentIntent = async () => {
+		// Fetch the Stripe client secret.
+		const fetchStripeClientSecret = async () => {
 			try {
+				// Fetch the Stripe payment intent.
 				const data = await fetchStripePaymentIntent("/api/payment-intent", {
+					// Todo: Update with the real body.
 					items: [{
 						id: "widget"
 					}],
 				})
+
+				// Update the state.
 				setClientSecret(data.clientSecret)
 			} catch (error) {
 				// Todo: Add better error handling.
@@ -29,13 +33,12 @@ export default function CheckOutPage() {
 		}
 
 		// Call the function.
-		createStripePaymentIntent()
+		fetchStripeClientSecret()
 	}, [])
 
 	// Stripe Elements options.
 	const stripeElementsOptions = {
 		clientSecret,
-		theme: "stripe",
 	}
 
 	// Render the page.

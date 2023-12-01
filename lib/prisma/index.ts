@@ -4,4 +4,4 @@ export {
 	updateDonor,
 	insertDonor,
 	insertDonation,
-} from "./prismaHelpers"
+} from "./donorsAndDonations"
