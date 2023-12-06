@@ -19,7 +19,6 @@ export const SignUpForm = () => {
 
 	// Handle form submit.
 	const handleFormSubmit = async (event: FormEvent) => {
-		// Don’t redirect the user on submit.
 		event.preventDefault()
 		
 		// Set the loading state.

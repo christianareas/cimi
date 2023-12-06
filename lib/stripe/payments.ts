@@ -13,13 +13,16 @@ export async function fetchStripePaymentIntent(
 ): Promise<PaymentIntentResponse> {
 	try {
 		// Fetch the Stripe payment intent.
-		const response = await fetch(endpoint, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
+		const response = await fetch(
+			endpoint,
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(body),
 			},
-			body: JSON.stringify(body),
-		})
+		)
 
 		// If the response is not okay, throw an error.
 		if (!response.ok) {
@@ -41,7 +44,7 @@ export async function getStripePaymentStatus(
 	clientSecret: string,
 	setMessage: (message: string) => void,
 ): Promise<void> {
-	// If there’s no Stripe object, return.
+	// If there’s no Stripe instance, return.
 	if (!stripe) return
 
 	try {
@@ -54,15 +57,15 @@ export async function getStripePaymentStatus(
 		// Get the payment intent status and set the appropriate message.
 		if (paymentIntentResponse.paymentIntent.status) {
 			switch (paymentIntentResponse.paymentIntent.status) {
-				// Todo: Add better messages.
+				// Todo: Add more statuses and better messages.
 				case "succeeded":
-					setMessage("Payment succeeded!")
+					setMessage("Your payment succeeded.")
 					break
 				case "processing":
-					setMessage("Your payment is processing.")
+					setMessage("Your payment’s processing.")
 					break
 				case "requires_payment_method":
-					setMessage("Your payment was not successful, please try again.")
+					setMessage("You must provide a payment method.")
 					break
 				default:
 					setMessage("Something went wrong.")
