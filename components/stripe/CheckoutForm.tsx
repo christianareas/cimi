@@ -1,7 +1,7 @@
 // Dependencies.
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 import { useState, useEffect, FormEvent } from "react"
-import { getStripePaymentStatus } from "@/lib/stripe/payments"
+import { getStripePaymentStatus } from "@/lib/stripe/client"
 
 // Checkout Form component.
 export const CheckoutForm = () => {
@@ -45,7 +45,7 @@ export const CheckoutForm = () => {
 			elements,
 			confirmParams: {
 				// Todo: Update with the real URL.
-				return_url: "http://localhost:3000",
+				return_url: "http://localhost:3000/",
 			},
 		})
 
@@ -65,10 +65,25 @@ export const CheckoutForm = () => {
 	const paymentElementOptions = {
 	}
 
+	const [donationAmount, setDonationAmount] = useState("50") // **
+
 	// Render the component.
 	// Todo: Style and refactor.
 	return (
 		<form onSubmit={handleFormSubmit}>
+			{/* ** */}
+			<label htmlFor="donationAmount">
+				Donation Amount
+				<input 
+					id="donationAmount"
+					type="number" 
+					value={donationAmount} 
+					onChange={event => setDonationAmount(event.target.value)} 
+					min="1"
+				/>
+			</label>
+			{/* ** */}
+
 			<PaymentElement
 				options={paymentElementOptions}
 			/>

@@ -1,8 +1,10 @@
+"use client"
+
 // Dependencies.
 import { useState, useEffect } from "react"
-import { fetchStripePaymentIntent } from "@/lib/stripe"
+import { fetchStripePaymentIntent } from "@/lib/stripe/server"
 import { Elements } from "@stripe/react-stripe-js"
-import { stripePromise } from "@/lib/stripe"
+import { stripePromise } from "@/lib/stripe/client"
 import { CheckoutForm } from "@/components/stripe/CheckoutForm"
 
 // Check Out page.
@@ -46,7 +48,7 @@ export default function CheckOutPage() {
 		<>
 			{clientSecret && (
 				<Elements stripe={stripePromise} options={stripeElementsOptions}>
-					{/* <CheckoutForm /> */}
+					<CheckoutForm />
 				</Elements>
 			)}
 		</>

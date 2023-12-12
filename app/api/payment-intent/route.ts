@@ -1,6 +1,6 @@
 // Dependencies.
 import { NextRequest, NextResponse } from "next/server"
-import { stripe, getAndUpdateStripeCustomer, postStripeCustomer } from "@/lib/stripe"
+import { stripe, getAndUpdateStripeCustomer, postStripeCustomer } from "@/lib/stripe/server"
 import { updateDonor, insertDonor, insertDonation } from "@/lib/prisma"
 
 // Types.
