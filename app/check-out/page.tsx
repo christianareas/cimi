@@ -2,10 +2,10 @@
 
 // Dependencies.
 import { useState, useEffect } from "react"
-import { fetchStripePaymentIntent } from "@/lib/stripe/server"
+// import { fetchStripePaymentIntent } from "@/app/_lib/stripe/server"
 import { Elements } from "@stripe/react-stripe-js"
-import { stripePromise } from "@/lib/stripe/client"
-import { CheckoutForm } from "@/components/stripe/CheckoutForm"
+import { stripePromise } from "@/app/_lib/stripe/client"
+import { CheckoutForm } from "@/app/_components/stripe/CheckoutForm"
 
 // Check Out page.
 export default function CheckOutPage() {
@@ -18,12 +18,23 @@ export default function CheckOutPage() {
 		const fetchStripeClientSecret = async () => {
 			try {
 				// Fetch the Stripe payment intent.
-				const data = await fetchStripePaymentIntent("/api/payment-intent", {
-					// Todo: Update with the real body.
-					items: [{
-						id: "widget"
-					}],
+				const response = await fetch("/api/payment-intent", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						items: [{ id: "widget" }],
+					}),
 				})
+
+				// If the response is not okay, throw an error.
+				if (!response.ok) {
+					throw new Error(`HTTP error, status: ${response.status}`)
+				}
+
+				// Get the response data.
+				const data = await response.json()
 
 				// Update the state.
 				setClientSecret(data.clientSecret)

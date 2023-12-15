@@ -1,7 +1,7 @@
 // Dependencies.
 import type { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { prisma } from "@/lib/prisma"
+import { prisma } from "@/app/_lib/prisma"
 import { compare } from "bcryptjs"
 
 // Configure NextAuth.

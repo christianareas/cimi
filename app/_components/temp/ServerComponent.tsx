@@ -1,6 +1,6 @@
 // Dependencies.
 import { getServerSession } from "next-auth"
-import { authOptions } from "@/lib/auth"
+import { authOptions } from "@/app/_lib/auth"
 
 // Server component.
 export const ServerComponent = async () => {

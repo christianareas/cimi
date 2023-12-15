@@ -1,7 +1,7 @@
 // Dependencies.
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 import { useState, useEffect, FormEvent } from "react"
-import { getStripePaymentStatus } from "@/lib/stripe/client"
+import { getStripePaymentStatus } from "@/app/_lib/stripe/client"
 
 // Checkout Form component.
 export const CheckoutForm = () => {

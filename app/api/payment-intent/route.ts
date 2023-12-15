@@ -1,7 +1,10 @@
 // Dependencies.
 import { NextRequest, NextResponse } from "next/server"
-import { stripe, getAndUpdateStripeCustomer, postStripeCustomer } from "@/lib/stripe/server"
-import { updateDonor, insertDonor, insertDonation } from "@/lib/prisma"
+import { stripe, getAndUpdateStripeCustomer, postStripeCustomer } from "@/app/_lib/stripe/server"
+import { updateDonor, insertDonor, insertDonation } from "@/app/_lib/prisma"
+
+// Stipe client.
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 
 // Types.
 type PaymentIntentRequest = {

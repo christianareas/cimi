@@ -3,16 +3,16 @@
 // Dependencies.
 import { useState, FormEvent, ChangeEvent } from "react"
 import { signIn } from "next-auth/react"
-import { Header } from "@/components/auth/Header"
-import { EmailField } from "@/components/auth/EmailField"
-import { PasswordField } from "@/components/auth/PasswordField"
-import { SubmitButton } from "@/components/auth/SubmitButton"
+import { Header } from "@/app/_components/auth/Header"
+import { EmailField } from "@/app/_components/auth/EmailField"
+import { PasswordField } from "@/app/_components/auth/PasswordField"
+import { SubmitButton } from "@/app/_components/auth/SubmitButton"
 
-// Sign-In Form component.
-export const SignInForm = () => {
+// Sign-Up Form component.
+export const SignUpForm = () => {
 	// Set the initial states.
 	let [loading, setLoading] = useState(false)
-	let [formValues, setFormValues] = useState({
+	let [ formValues, setFormValues ] = useState({
 		email: "",
 		password: "",
 	})
@@ -25,23 +25,27 @@ export const SignInForm = () => {
 		setLoading(true)
 
 		try {
-			// Sign in the user.
-			const response = await signIn("credentials", {
-				email: formValues.email,
-				password: formValues.password,
-				redirect: true,
-				callbackUrl: "/",
+			// Call the API.
+			const response = await fetch("/api/sign-up", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formValues),
 			})
 
 			// Reset the loading state.
 			setLoading(false)
 
-			// If there’s an error, return it.
-			if (response?.error) {
-				alert(response?.error)
+			// If the response is not okay, return an error.
+			if (!response.ok) {
+				alert((await response.json()).message)
 				return
 			}
-			
+
+			// Sign in the user and redirect them to the homepage.
+			signIn(undefined, {
+				redirect: true,
+				callbackUrl: "/",
+			})
 		} catch (error: any) {
 			// Reset the loading state.
 			setLoading(false)
@@ -63,7 +67,7 @@ export const SignInForm = () => {
 			[name]: value,
 		})
 	}
-
+	
 	// Render the component.
 	return (
 		<form
@@ -71,7 +75,7 @@ export const SignInForm = () => {
 			className="flex flex-col"
 		>
 			<Header
-				headerText="Sign In"
+				headerText="Sign Up"
 			/>
 
 			<EmailField
@@ -86,8 +90,9 @@ export const SignInForm = () => {
 
 			<SubmitButton
 				loading={loading}
-				buttonText="Sign In"
+				buttonText="Sign Up"
 			/>
+
 		</form>
-	)
+	)	
 }

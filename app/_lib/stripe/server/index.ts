@@ -6,8 +6,3 @@ export {
 	getAndUpdateStripeCustomer,
 	postStripeCustomer,
 } from "./customers"
-
-// Stripe payment intent.
-export {
-	fetchStripePaymentIntent,
-} from "./payments"
