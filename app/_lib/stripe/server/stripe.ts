@@ -1,9 +1,13 @@
-// Todo: Use import instead of require and add error handling.
+// Dependencies.
+import Stripe from "stripe"
 
-// const stripeSecretKey = process.env.STRIPE_SECRET_KEY
+// Stripe secret key.
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 
-// if (!stripeSecretKey) {
-// 	throw new Error("STRIPE_SECRET_KEY is undefined.")
-// }
+// If the Stripe secret key is undefined, throw an error.
+if (!stripeSecretKey) {
+    throw new Error("STRIPE_SECRET_KEY is undefined.")
+}
 
-export const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+// Create a new Stripe instance.
+export const stripe = new Stripe(stripeSecretKey)

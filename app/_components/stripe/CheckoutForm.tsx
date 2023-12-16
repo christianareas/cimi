@@ -1,7 +1,7 @@
 // Dependencies.
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 import { useState, useEffect, FormEvent } from "react"
-import { getStripePaymentStatus } from "@/app/_lib/stripe/client"
+import { Stripe } from "@stripe/stripe-js"
 
 // Checkout Form component.
 export const CheckoutForm = () => {
@@ -15,19 +15,47 @@ export const CheckoutForm = () => {
 
 	// Get the Stripe payment status from Stripe.
 	useEffect(() => {
-		// Get the client secret from the URL.
-		const clientSecret = new URLSearchParams(window.location.search)
-			.get("payment_intent_client_secret")
-		
-		// If there is no client secret, return.
-		if (!clientSecret) return
+		// Get the Stripe payment status from Stripe.
+		const getPaymentStatus = async () => {
+			// Get the client secret from the URL.
+			const clientSecret = new URLSearchParams(window.location.search)
+				.get("payment_intent_client_secret")
 
-		// Get the Stripe payment status.
-		getStripePaymentStatus(
-			stripe,
-			clientSecret,
-			setMessage,
-		)
+			// If there is no client secret or Stripe instance, return.
+			if (!clientSecret || !stripe) return
+
+			try {
+				// Get the Stripe payment intent.
+				const paymentIntentResponse = await stripe.retrievePaymentIntent(clientSecret)
+				
+				// If there’s no payment intent status, return.
+				if (!paymentIntentResponse.paymentIntent) return
+		
+				// Get the payment intent status and set the appropriate message.
+				switch (paymentIntentResponse.paymentIntent.status) {
+					// Todo: Add more statuses and better messages.
+					case "succeeded":
+						setMessage("Your payment succeeded.")
+						break
+					case "processing":
+						setMessage("Your payment’s processing.")
+						break
+					case "requires_payment_method":
+						setMessage("You must provide a payment method.")
+						break
+					default:
+						setMessage("Something went wrong.")
+						break
+				}
+			} catch (error) {
+				// Todo: Add better error handling.
+				console.error(error)
+				throw error
+			}
+		}
+		
+		// Call the function.
+		getPaymentStatus()
 	}, [stripe])
 
 	// Handle the form.

@@ -2,7 +2,6 @@
 
 // Dependencies.
 import { useState, useEffect } from "react"
-// import { fetchStripePaymentIntent } from "@/app/_lib/stripe/server"
 import { Elements } from "@stripe/react-stripe-js"
 import { stripePromise } from "@/app/_lib/stripe/client"
 import { CheckoutForm } from "@/app/_components/stripe/CheckoutForm"
