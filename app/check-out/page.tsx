@@ -35,6 +35,8 @@ export default function CheckOutPage() {
 				// Get the response data.
 				const data = await response.json()
 
+				console.log(`Stripe client secret: ${clientSecret}`) // **
+
 				// Update the state.
 				setClientSecret(data.clientSecret)
 			} catch (error) {

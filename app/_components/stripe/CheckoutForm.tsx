@@ -1,7 +1,6 @@
 // Dependencies.
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 import { useState, useEffect, FormEvent } from "react"
-import { Stripe } from "@stripe/stripe-js"
 
 // Checkout Form component.
 export const CheckoutForm = () => {
@@ -13,13 +12,12 @@ export const CheckoutForm = () => {
 	const [message, setMessage] = useState<string | null>(null)
 	const [loading, setLoading] = useState(false)
 
-	// Get the Stripe payment status from Stripe.
+	// Get the Stripe payment intent status from Stripe.
 	useEffect(() => {
-		// Get the Stripe payment status from Stripe.
-		const getPaymentStatus = async () => {
+		// Get the Stripe payment intent status.
+		const getStripePaymentIntentStatus = async () => {
 			// Get the client secret from the URL.
-			const clientSecret = new URLSearchParams(window.location.search)
-				.get("payment_intent_client_secret")
+			const clientSecret = new URLSearchParams(window.location.search).get("payment_intent_client_secret")
 
 			// If there is no client secret or Stripe instance, return.
 			if (!clientSecret || !stripe) return
@@ -28,7 +26,7 @@ export const CheckoutForm = () => {
 				// Get the Stripe payment intent.
 				const paymentIntentResponse = await stripe.retrievePaymentIntent(clientSecret)
 				
-				// If there’s no payment intent status, return.
+				// If there’s no payment intent, return.
 				if (!paymentIntentResponse.paymentIntent) return
 		
 				// Get the payment intent status and set the appropriate message.
@@ -55,7 +53,7 @@ export const CheckoutForm = () => {
 		}
 		
 		// Call the function.
-		getPaymentStatus()
+		getStripePaymentIntentStatus()
 	}, [stripe])
 
 	// Handle the form.
@@ -98,32 +96,22 @@ export const CheckoutForm = () => {
 	// Render the component.
 	// Todo: Style and refactor.
 	return (
-		<form onSubmit={handleFormSubmit}>
-			{/* ** */}
-			<label htmlFor="donationAmount">
-				Donation Amount
-				<input 
-					id="donationAmount"
-					type="number" 
-					value={donationAmount} 
-					onChange={event => setDonationAmount(event.target.value)} 
-					min="1"
+		<>
+			<p>Test</p>
+			<form onSubmit={handleFormSubmit}>
+				<PaymentElement
+					options={paymentElementOptions}
 				/>
-			</label>
-			{/* ** */}
-
-			<PaymentElement
-				options={paymentElementOptions}
-			/>
-      
-			<button
-				type="submit"
-				disabled={loading || !stripe || !elements}
-			>
-				{loading ? "Loading..." : "Donate"}
-      </button>
-      
-			{message && <p>{message}</p>}
-    </form>
+				
+				<button
+					type="submit"
+					disabled={loading || !stripe || !elements}
+				>
+					{loading ? "Loading..." : "Donate"}
+				</button>
+				
+				{message && <p>{message}</p>}
+			</form>
+		</>
 	)
 }

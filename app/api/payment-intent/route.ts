@@ -16,6 +16,7 @@ type PaymentIntentRequest = {
 		firstName: string
 		lastName: string
 	}
+	return_url: string
 }
 
 // Create a Stripe payment intent.
@@ -34,6 +35,7 @@ export async function POST(
 				firstName,
 				lastName,
 			},
+			return_url,
 		} = (await request.json()) as PaymentIntentRequest
 
 		// Validate the amount.
@@ -85,6 +87,7 @@ export async function POST(
 			customer: stripeCustomer.customerId,
 			receipt_email,
 			confirm: true,
+			return_url,
 		})
 
 		// If customer ID is missing, throw an error.
