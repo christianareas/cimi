@@ -1,7 +1,7 @@
 export { prisma } from "./prisma"
 
 export {
-	updateDonor,
+	upsertDonor,
 	insertDonor,
 	insertDonation,
 } from "./donorsAndDonations"

@@ -17,18 +17,24 @@ type DonationRecord  = {
 }
 
 // Update the donor in the database.
-export async function updateDonor(
+export async function upsertDonor(
 	customerId: string,
 	customerEmail: string,
 	customerFirstName: string,
 	customerLastName: string,
 ): Promise<DonorRecord> {
 	// Update the existing donor.
-	const donor = await prisma.donor.update({
+	const donor = await prisma.donor.upsert({
 		where: {
 			donorId: customerId,
 		},
-		data: {
+		update: {
+			donorEmail: customerEmail,
+			donorFirstName: customerFirstName,
+			donorLastName: customerLastName,
+		},
+		create: {
+			donorId: customerId,
 			donorEmail: customerEmail,
 			donorFirstName: customerFirstName,
 			donorLastName: customerLastName,

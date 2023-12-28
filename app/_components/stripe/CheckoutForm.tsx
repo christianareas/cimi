@@ -91,27 +91,22 @@ export const CheckoutForm = () => {
 	const paymentElementOptions = {
 	}
 
-	const [donationAmount, setDonationAmount] = useState("50") // **
-
 	// Render the component.
 	// Todo: Style and refactor.
 	return (
-		<>
-			<p>Test</p>
-			<form onSubmit={handleFormSubmit}>
-				<PaymentElement
-					options={paymentElementOptions}
-				/>
-				
-				<button
-					type="submit"
-					disabled={loading || !stripe || !elements}
-				>
-					{loading ? "Loading..." : "Donate"}
-				</button>
-				
-				{message && <p>{message}</p>}
-			</form>
-		</>
+		<form onSubmit={handleFormSubmit}>
+			<PaymentElement
+				options={paymentElementOptions}
+			/>
+			
+			<button
+				type="submit"
+				disabled={loading || !stripe || !elements}
+			>
+				{loading ? "Loading..." : "Donate"}
+			</button>
+			
+			{message && <p>{message}</p>}
+		</form>
 	)
 }

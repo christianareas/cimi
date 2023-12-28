@@ -1,10 +1,8 @@
 // Dependencies.
 import { NextRequest, NextResponse } from "next/server"
+import { validateDonationAmount } from "@/app/_lib/stripe/server"
 import { stripe, getAndUpdateStripeCustomer, postStripeCustomer } from "@/app/_lib/stripe/server"
-import { updateDonor, insertDonor, insertDonation } from "@/app/_lib/prisma"
-
-// Stipe client.
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+import { upsertDonor, insertDonor, insertDonation } from "@/app/_lib/prisma"
 
 // Types.
 type PaymentIntentRequest = {
@@ -38,11 +36,8 @@ export async function POST(
 			return_url,
 		} = (await request.json()) as PaymentIntentRequest
 
-		// Validate the amount.
-		// Todo: Validate other amounts and the currencies.
-		if (amount < 50) {
-			throw new Error("Amount must be greater than 0.50.")
-		}
+		// Validate the donation amount.
+		validateDonationAmount(amount)
 
 		// Get and update the Stripe customer in Stripe.
 		let stripeCustomer = await getAndUpdateStripeCustomer(
@@ -53,7 +48,7 @@ export async function POST(
 
 		// If the Stripe customer exists, update them in the database.
 		if (stripeCustomer) {
-			await updateDonor(
+			await upsertDonor(
 				stripeCustomer.customerId,
 				stripeCustomer.customerEmail,
 				stripeCustomer.customerFirstName,
@@ -113,10 +108,8 @@ export async function POST(
 		// Return the Stripe payment intent.
 		return NextResponse.json({
 			statusCode: 200,
-			body: {
-				client_secret: paymentIntent.client_secret,
-				// Todo: Potentially return other payment intent data, if necessary for the client.
-			},
+			clientSecret: paymentIntent.client_secret,
+			// Todo: Potentially return other payment intent data, if necessary for the client.
 		})
 
 	} catch (error: any) {

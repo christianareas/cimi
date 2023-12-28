@@ -23,7 +23,15 @@ export default function CheckOutPage() {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						items: [{ id: "widget" }],
+						"amount": 50,
+						"currency": "usd",
+						"receipt_email": "two@test.com",
+						"payment_method": "pm_card_visa",
+						"metadata": {
+							"firstName": "Christian",
+							"lastName": "Areas"
+						},
+						"return_url": "http://localhost:3000/"					
 					}),
 				})
 
@@ -34,8 +42,6 @@ export default function CheckOutPage() {
 
 				// Get the response data.
 				const data = await response.json()
-
-				console.log(`Stripe client secret: ${clientSecret}`) // **
 
 				// Update the state.
 				setClientSecret(data.clientSecret)
