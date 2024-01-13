@@ -11,11 +11,11 @@ datasource db {
 }
 
 model User {
-  userId        String    @id @default(uuid())
-  userEmail     String    @unique
-  userPassword  String
-  userFirstName String?
-  userLastName  String?
+  id        String    @id @default(uuid())
+  email     String    @unique
+  password  String
+  firstName String?
+  lastName  String?
   donor         Donor?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
@@ -28,7 +28,7 @@ model Donor {
   donorFirstName  String
   donorLastName   String
   userId          String?     @unique
-  user            User?       @relation(fields: [userId], references: [userId])
+  user            User?       @relation(fields: [id], references: [id])
   donorDonations  Donation[] 
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt

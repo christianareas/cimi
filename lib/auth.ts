@@ -32,7 +32,7 @@ export const authOptions: NextAuthOptions = {
         // Find the user by their email.
         const user = await prisma.user.findUnique({
           where: {
-            userEmail: credentials.email
+            email: credentials.email,
           },
         })
         // If there’s no user, return null.
@@ -40,15 +40,15 @@ export const authOptions: NextAuthOptions = {
           return null
         }
         // If the password’s incorrect, return null.
-        if (!(await compare(credentials.password, user.userPassword))) {
+        if (!(await compare(credentials.password, user.password))) {
           return null
         }
         // Return the user.
         return {
-          id: user.userId,
-          email: user.userEmail,
-          firstName: user.userFirstName,
-          lastName: user.userLastName,
+          id: user.id,
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName,
           testKey: "I am a testKey, and so can you.",
         }
       },
