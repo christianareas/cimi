@@ -24,7 +24,7 @@ model User {
 model Donor {
   id              String      @id @default(uuid())
   donorId         String      @unique
-  donorEmail      String
+  donorEmail      String      @unique
   donorFirstName  String
   donorLastName   String
   userId          String?     @unique

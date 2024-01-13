@@ -3,8 +3,8 @@
 // Dependencies.
 import { useState, useEffect } from "react"
 import { Elements } from "@stripe/react-stripe-js"
-import { stripePromise } from "@/app/_lib/stripe/client"
-import { CheckoutForm } from "@/app/_components/stripe/CheckoutForm"
+import { stripePromise } from "@/lib/stripe/client"
+import { CheckoutForm } from "@/components/stripe/CheckoutForm"
 
 // Check Out page.
 export default function CheckOutPage() {

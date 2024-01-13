@@ -1,5 +1,5 @@
 // Dependencies.
-import { SignInForm } from "@/app/_components/auth/SignInForm"
+import { SignInForm } from "@/components/auth/SignInForm"
 
 // Sign In page.
 export default function SignInPage() {

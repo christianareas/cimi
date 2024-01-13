@@ -1,5 +1,5 @@
 // Dependencies.
-import { prisma } from "@/app/_lib/prisma"
+import { prisma } from "@/lib/prisma"
 import { hash } from "bcryptjs"
 import { NextResponse } from "next/server"
 

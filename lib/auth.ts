@@ -1,7 +1,7 @@
 // Dependencies.
 import type { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
-import { prisma } from "@/app/_lib/prisma"
+import { prisma } from "@/lib/prisma"
 import { compare } from "bcryptjs"
 
 // Configure NextAuth.
@@ -32,7 +32,7 @@ export const authOptions: NextAuthOptions = {
         // Find the user by their email.
         const user = await prisma.user.findUnique({
           where: {
-            email: credentials.email
+            userEmail: credentials.email
           },
         })
         // If there’s no user, return null.
@@ -40,15 +40,15 @@ export const authOptions: NextAuthOptions = {
           return null
         }
         // If the password’s incorrect, return null.
-        if (!(await compare(credentials.password, user.password))) {
+        if (!(await compare(credentials.password, user.userPassword))) {
           return null
         }
         // Return the user.
         return {
-          id: user.id,
-          email: user.email,
-          firstName: user.firstName,
-          lastName: user.lastName,
+          id: user.userId,
+          email: user.userEmail,
+          firstName: user.userFirstName,
+          lastName: user.userLastName,
           testKey: "I am a testKey, and so can you.",
         }
       },
