@@ -22,7 +22,6 @@ export async function POST(
 	request: NextRequest,
 ) {
 	try {
-
 		// Destructure the request body.
 		const { 
 			amount,
@@ -46,7 +45,7 @@ export async function POST(
 			lastName,
 		)
 
-		// If the Stripe customer exists, update them in the database.
+		// If the Stripe customer exists, upsert them in the database.
 		if (stripeCustomer) {
 			await upsertDonor(
 				stripeCustomer.customerId,
