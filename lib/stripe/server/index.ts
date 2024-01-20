@@ -3,6 +3,7 @@ export { stripe } from "./stripe"
 
 // Stripe donation.
 export {
+	createStripePaymentIntent,
 	validateDonationAmount,
 } from "./donations"
 

@@ -1,24 +1,9 @@
+"use client"
+
 // Dependencies.
 import { useState } from "react"
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
-
-// Create Stripe payment intent.
-const createStripePaymentIntent = async (formData: FormData) => {
-	// Server action.
-	"use server"
-
-	try {
-		// Get the donation amount.
-		const donationAmount = formData.get("donationAmount")
-
-		// Todo.
-
-	} catch (error) {
-		// Todo: Add better error handling.
-		console.error(error)
-		throw error
-	}
-}
+import { createStripePaymentIntent } from "@/lib/stripe/server"
 
 // Donate component.
 export const DonateForm = () => {

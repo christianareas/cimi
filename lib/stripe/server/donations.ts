@@ -1,3 +1,20 @@
+"use server"
+
+// Create Stripe payment intent.
+export const createStripePaymentIntent = async (formData: FormData) => {
+	try {
+		// Get the donation amount.
+		const donationAmount = formData.get("donationAmount")
+
+		// Todo. **
+
+	} catch (error) {
+		// Todo: Add better error handling.
+		console.error(error)
+		throw error
+	}
+}
+
 // Validate the donation amount.
 export const validateDonationAmount = (amount: number) => {
 	// Donation amount limits.
