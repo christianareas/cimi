@@ -12,10 +12,9 @@
     "update-prisma": "npm i prisma@latest @prisma/client@latest",
     "update-auth": "npm i bcryptjs@latest jsonwebtoken@latest next-auth@latest",
     "update-stripe": "npm i stripe@latest @stripe/stripe-js@latest @stripe/react-stripe-js@latest",
-    "update-builder": "npm i -D @builder.io/react@latest",
     "update-tailwind": "npm i -D tailwindcss@latest postcss@latest autoprefixer@latest",
     "update-eslint": "npm i -D eslint@^8.x eslint-config-next@latest",
-    "update-all": "npm run update-ts && npm run update-next && npm run update-prisma && npm run update-auth && npm run update-stripe && npm run update-builder && npm run update-tailwind && npm run update-eslint"
+    "update-all": "npm run update-ts && npm run update-next && npm run update-prisma && npm run update-auth && npm run update-stripe && npm run update-tailwind && npm run update-eslint"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -26,11 +25,11 @@
     "@stripe/stripe-js": "^3.3.0",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
-    "next": "^14.2.1",
+    "next": "^14.2.2",
     "next-auth": "^4.24.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "stripe": "^15.2.0"
+    "stripe": "^15.3.0"
   },
   "devDependencies": {
     "@builder.io/react": "^3.2.6",
@@ -41,7 +40,7 @@
     "@types/react-dom": "^18.2.25",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.1",
+    "eslint-config-next": "^14.2.2",
     "postcss": "^8.4.38",
     "prisma": "^5.12.1",
     "tailwindcss": "^3.4.3",
