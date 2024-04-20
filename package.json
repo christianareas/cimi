@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-ts": "npm i -D typescript@latest @builder.io/react@latest @types/bcryptjs@latest @types/jsonwebtoken@latest @types/node@latest @types/react@latest @types/react-dom@latest",
+    "update-ts": "npm i -D typescript@latest @types/bcryptjs@latest @types/jsonwebtoken@latest @types/node@latest @types/react@latest @types/react-dom@latest",
     "update-next": "npm i next@latest react@latest react-dom@latest",
     "update-prisma": "npm i prisma@latest @prisma/client@latest",
     "update-auth": "npm i bcryptjs@latest jsonwebtoken@latest next-auth@latest",
@@ -32,7 +32,6 @@
     "stripe": "^15.3.0"
   },
   "devDependencies": {
-    "@builder.io/react": "^3.2.6",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.12.7",
