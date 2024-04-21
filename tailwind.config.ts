@@ -8,10 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        "cimi-black": "#151515",
+        "cimi-blue": "#1D48FF",
+        "cimi-cream": "#FFF0DD",
+        "cimi-green": "#00632F",
+        "cimi-pink": "#FFAED9",
+        "cimi-purple": "#7100C9",
+        "cimi-red": "#FF4A01",
+        "cimi-yellow": "#FFDF00",
       },
     },
   },

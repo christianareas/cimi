@@ -1,27 +1,12 @@
 // Dependencies.
-import {
-  SignUpButton,
-  SignInButton,
-  SignOutButton,
-  AccountButton,
-} from "../components/temp/Buttons"
-import { ClientComponent } from "../components/temp/ClientComponent"
-import { ServerComponent } from "../components/temp/ServerComponent"
+import Logo from "@/components/design/Logo"
 
 // Home.
 export default function Home() {
   // Render.
   return(
     <main>
-      {/* Buttons */}
-      <SignUpButton />
-      <SignInButton />
-      <SignOutButton />
-      <AccountButton />
-
-      {/* Components */}
-      <ClientComponent />
-      <ServerComponent />
+			<Logo />
     </main>
   )
 }
