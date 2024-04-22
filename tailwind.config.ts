@@ -18,8 +18,15 @@ const config: Config = {
         "cimi-red": "#FF4A01",
         "cimi-yellow": "#FFDF00",
       },
+      fontFamily: {
+        ancho: [
+          "Ancho",
+          "sans-serif",
+        ],
+      },
     },
   },
   plugins: [],
 }
+
 export default config
