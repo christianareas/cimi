@@ -17,14 +17,18 @@ export default function Menu() {
 			open={isOpen}
 			onOpenChange={setIsOpen}
 		>
+
 			<Dialog.Trigger asChild>
 				<button>
-					{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
+					{
+						isOpen ?
+						<Cross1Icon /> :
+						<HamburgerMenuIcon />
+					}
 				</button>
 			</Dialog.Trigger>
+
 			<Dialog.Content>
-				<Dialog.Title></Dialog.Title>
-				<Dialog.Description></Dialog.Description>
 				<nav className="font-montserrat font-regular text-sm">
 					<Link
 						className="block p-2 text-blue-500 hover:text-blue-700"
@@ -46,6 +50,7 @@ export default function Menu() {
 					</Link>
 				</nav>
 			</Dialog.Content>
+
 		</Dialog.Root>
 	)
 }
