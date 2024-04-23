@@ -23,6 +23,10 @@ const config: Config = {
           "Ancho",
           "sans-serif",
         ],
+        montserrat: [
+          "Montserrat",
+          "sans-serif",
+        ],
       },
     },
   },

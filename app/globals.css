@@ -1,50 +1,24 @@
 /* Ancho Font */
 @font-face {
   font-family: "Ancho";
-  src: url("/fonts/ancho-thin.otf") format("opentype");
-  font-weight: 100;
+  src: url("/fonts/ancho-variable.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
-  font-display: swap;
+}
+
+/* Montserrat Font */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Ancho";
-  src: url("/fonts/ancho-light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Ancho";
-  src: url("/fonts/ancho-normal.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Ancho";
-  src: url("/fonts/ancho-medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Ancho";
-  src: url("/fonts/ancho-bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Ancho";
-  src: url("/fonts/ancho-extrabold.otf") format("opentype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-variable-italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
 }
 
 /* Tailwind CSS Directives */
