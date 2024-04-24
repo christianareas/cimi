@@ -11,8 +11,15 @@ export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false)
 
+	// Types.
+	type Link = {
+		href: string
+		label: string
+		subLinks?: Link[]
+	}
+
 	// Links.
-	const links = [
+	const links: Link[] = [
 		{ href: "#", label: "About" },
 		{ href: "#", label: "Events" },
 		{ href: "#", label: "Donor Info" },
@@ -25,7 +32,9 @@ export default function Menu() {
 	]
 
 	// Render links.
-	// function renderLinks(links) {}
+	function renderLinks(links: Link[]) {
+		// todo
+	}
 
 	// Render.
 	return (

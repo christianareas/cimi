@@ -5,6 +5,8 @@ import { DonateForm } from "@/components/stripe/DonateForm"
 export default function DonatePage() {
 	// Render the component.
 	return (
-		<DonateForm />
+		<div>
+			{/* <DonateForm /> */}
+		</div>
 	)
 }
