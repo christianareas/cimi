@@ -4,7 +4,7 @@
 import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
-import MenuLinks from "@/components/design/MenuLinks"
+import MenuLinks from "@/components/design/Header/MenuLinks"
 
 // Menu component.
 export default function Menu() {
@@ -18,7 +18,7 @@ export default function Menu() {
 		{ href: "#", label: "Donor Info" },
 		{ href: "#", label: "Join", subLinks: [
 			{ href: "#", label: "Be a Member" },
-			{ href: "#", label: "Be a Volunteer" }
+			{ href: "#", label: "Be a Volunteer" },
 		]},
 		{ href: "#", label: "Newsletter" },
 		{ href: "#", label: "Contact" },
@@ -31,7 +31,7 @@ export default function Menu() {
 			onOpenChange={setIsOpen}
 		>
 			<Dialog.Trigger asChild>
-				<button>
+				<button className="bg-cimi-dark-cream rounded-t-lg m-0 p-2">
 					{
 						isOpen ?
 						<Cross1Icon /> :
@@ -40,8 +40,8 @@ export default function Menu() {
 				</button>
 			</Dialog.Trigger>
 			<Dialog.Content>
-				<nav className="font-ancho font-light text-sm">
-					<ul>
+				<nav className="flex items-center justify-center min-h-full bg-cimi-dark-cream rounded-b-lg mt-0">
+					<ul className="font-ancho font-light text-sm">
 							{links.map((link, index) => (
 								<MenuLinks key={index} {...link} />
 							))}

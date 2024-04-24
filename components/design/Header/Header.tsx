@@ -1,6 +1,6 @@
 // Dependencies.
-import Logo from "@/components/design/Logo"
-import Menu from "@/components/design/Menu"
+import Logo from "@/components/design/Header/Logo"
+import Menu from "@/components/design/Header/Menu"
 
 // Header component.
 export default function Header() {

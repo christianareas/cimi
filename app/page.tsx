@@ -1,5 +1,5 @@
 // Dependencies.
-import Header from "@/components/design/Header"
+import Header from "@/components/design/Header/Header"
 
 // Home page.
 export default function Home() {

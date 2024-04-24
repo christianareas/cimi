@@ -18,15 +18,12 @@ export default function MenuLinks({
 	children,
 }: MenuLinksProps) {
 	return (
-		<li>
-			<Link
-				href={href}
-				className="block p-2 text-blue-500 hover:text-blue-700"
-			>
+		<li className="mx-3 my-3">
+			<Link href={href}>
 				{label || children}
 			</Link>
 			{subLinks && (
-				<ul>
+				<ul className="list-disc">
 					{subLinks.map((subLink, index) => (
 						<MenuLinks
 							key={index}
