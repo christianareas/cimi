@@ -25,9 +25,7 @@ export default function Menu() {
 	]
 
 	// Render links.
-	function renderLinks(links) {
-		
-	}
+	// function renderLinks(links) {}
 
 	// Render.
 	return (
