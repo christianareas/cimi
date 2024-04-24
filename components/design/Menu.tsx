@@ -4,22 +4,15 @@
 import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
-import MenuLink from "@/components/design/MenuLink"
+import MenuLinks from "@/components/design/MenuLinks"
 
 // Menu component.
 export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false)
 
-	// Types.
-	type Link = {
-		href: string
-		label: string
-		subLinks?: Link[]
-	}
-
 	// Links.
-	const links: Link[] = [
+	const links = [
 		{ href: "#", label: "About" },
 		{ href: "#", label: "Events" },
 		{ href: "#", label: "Donor Info" },
@@ -31,18 +24,12 @@ export default function Menu() {
 		{ href: "#", label: "Contact" },
 	]
 
-	// Render links.
-	function renderLinks(links: Link[]) {
-		// todo
-	}
-
 	// Render.
 	return (
 		<Dialog.Root
 			open={isOpen}
 			onOpenChange={setIsOpen}
 		>
-
 			<Dialog.Trigger asChild>
 				<button>
 					{
@@ -52,10 +39,13 @@ export default function Menu() {
 					}
 				</button>
 			</Dialog.Trigger>
-
 			<Dialog.Content>
 				<nav className="font-ancho font-light text-sm">
-
+					<ul>
+							{links.map((link, index) => (
+								<MenuLinks key={index} {...link} />
+							))}
+					</ul>
 				</nav>
 			</Dialog.Content>
 
