@@ -11,11 +11,37 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
+  id        String    @id @default(uuid())
+  email     String    @unique
   password  String
   firstName String?
   lastName  String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  donor     Donor?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Donor {
+  id              String      @id @default(uuid())
+  donorId         String      @unique
+  donorEmail      String      @unique
+  donorFirstName  String
+  donorLastName   String
+  userId          String?     @unique
+  user            User?       @relation(fields: [userId], references: [id])
+  donorDonations  Donation[] 
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model Donation {
+  id                    String    @id @default(uuid())
+  donationId            String
+  donationAmount        Int
+  donationCurrency      String
+  donationStatus        String    // To learn more, see: https://stripe.com/docs/payments/paymentintents/lifecycle#intent-statuses
+  donorId               String
+  donor                 Donor     @relation(fields: [donorId], references: [donorId])
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
 }

@@ -5,7 +5,7 @@ type User = {
   email: string
 }
 
-// Page.
+// Account page.
 export default async function Account() {
   // Get users.
   const users: User[] = await fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json())

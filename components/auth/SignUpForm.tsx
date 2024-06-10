@@ -19,7 +19,6 @@ export const SignUpForm = () => {
 
 	// Handle form submit.
 	const handleFormSubmit = async (event: FormEvent) => {
-		// Don’t redirect the user on submit.
 		event.preventDefault()
 		
 		// Set the loading state.
@@ -30,7 +29,10 @@ export const SignUpForm = () => {
 			const response = await fetch("/api/sign-up", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formValues),
+				body: JSON.stringify({
+					email: formValues.email,
+					password: formValues.password,
+				}),
 			})
 
 			// Reset the loading state.

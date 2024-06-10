@@ -1,9 +1,33 @@
+/* Ancho Font */
+@font-face {
+  font-family: "Ancho";
+  src: url("/fonts/ancho-variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Montserrat Font */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-variable-italic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* Tailwind CSS Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*
-:root {
+/* Custom CSS (uncomment if needed) */
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -25,5 +49,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-*/
+} */
