@@ -31,13 +31,15 @@ export default function Menu() {
 			onOpenChange={setIsOpen}
 		>
 			<Dialog.Trigger asChild>
-				<button className="bg-cimi-dark-cream rounded-t-lg m-0 p-2">
-					{
-						isOpen ?
-						<Cross1Icon /> :
-						<HamburgerMenuIcon />
-					}
-				</button>
+				<nav className="flex items-center">
+					<button className="bg-cimi-cream rounded-t-lg m-0 p-2 ml-auto">
+						{
+							isOpen ?
+							<Cross1Icon /> :
+							<HamburgerMenuIcon />
+						}
+					</button>
+				</nav>
 			</Dialog.Trigger>
 			<Dialog.Content>
 				<nav className="flex items-center justify-center min-h-full bg-cimi-dark-cream rounded-b-lg mt-0">
