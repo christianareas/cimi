@@ -11,7 +11,13 @@ export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false)
 
-	// Links.
+	// Menu button background.
+	const menuButtonBg =
+		isOpen ?
+		"bg-cimi-dark-cream" :
+		"bg-cimi-cream"
+
+		// Links.
 	const links = [
 		{ href: "#", label: "About" },
 		{ href: "#", label: "Events" },
@@ -30,17 +36,17 @@ export default function Menu() {
 			open={isOpen}
 			onOpenChange={setIsOpen}
 		>
-			<Dialog.Trigger asChild>
-				<nav className="flex items-center">
-					<button className="bg-cimi-cream rounded-t-lg m-0 p-2 ml-auto">
+			<nav className="flex items-center">
+				<Dialog.Trigger asChild>
+					<button className={`rounded-t-lg m-0 p-2 ml-auto ${menuButtonBg}`}>
 						{
 							isOpen ?
 							<Cross1Icon /> :
 							<HamburgerMenuIcon />
 						}
 					</button>
-				</nav>
-			</Dialog.Trigger>
+				</Dialog.Trigger>
+			</nav>
 			<Dialog.Content>
 				<nav className="flex items-center justify-center min-h-full bg-cimi-dark-cream rounded-b-lg mt-0">
 					<ul className="font-ancho font-light text-sm">
