@@ -5,17 +5,12 @@ import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
 import MenuLinks from "@/components/design/Header/MenuLinks"
+import Image from "next/image"
 
 // Menu component.
 export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false)
-
-	// Menu button background.
-	const menuButtonBg =
-		isOpen ?
-		"bg-cimi-dark-cream" :
-		"bg-cimi-cream"
 
 		// Links.
 	const links = [
@@ -38,7 +33,7 @@ export default function Menu() {
 		>
 			<nav className="flex items-center">
 				<Dialog.Trigger asChild>
-					<button className={`rounded-t-lg m-0 p-2 ml-auto ${menuButtonBg}`}>
+					<button className={`rounded-t-lg m-0 p-2 ml-auto ${isOpen ? "bg-cimi-dark-cream" : "bg-cimi-cream"}`}>
 						{
 							isOpen ?
 							<Cross1Icon /> :
@@ -48,12 +43,38 @@ export default function Menu() {
 				</Dialog.Trigger>
 			</nav>
 			<Dialog.Content>
-				<nav className="flex items-center justify-center min-h-full bg-cimi-dark-cream rounded-b-lg mt-0">
-					<ul className="font-ancho font-light text-sm">
-							{links.map((link, index) => (
-								<MenuLinks key={index} {...link} />
-							))}
-					</ul>
+				<nav className="font-ancho bg-cimi-dark-cream rounded-l-lg rounded-b-lg ">
+					<section className="flex flex-col items-center rounded-b-lg py-6">
+						<ul className="font-light text-sm space-y-5">
+								{links.map((link, index) => (
+									<MenuLinks key={index} {...link} />
+								))}
+						</ul>
+					</section>
+					<section className="flex flex-col items-center bg-cimi-blue rounded-lg p-6 space-y-5">
+						<p className="text-cimi-cream font-bold text-2xl">
+							Donate to the Community
+						</p>
+						<button>
+							<Image
+								src="/images/give-to-cimi.svg"
+								alt="Give to CIMI"
+								width={163}
+								height={47}
+							/>
+						</button>
+						<p className="text-cimi-cream font-bold text-2xl">
+							Join the Community
+						</p>
+						<button>
+							<Image
+								src="/images/join-cimi.svg"
+								alt="Join CIMI"
+								width={163}
+								height={47}
+							/>
+						</button>
+					</section>
 				</nav>
 			</Dialog.Content>
 
