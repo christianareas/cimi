@@ -3,6 +3,7 @@
 // Dependencies.
 import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
 import MenuLinks from "@/components/design/Header/MenuLinks"
 import Image from "next/image"
@@ -43,6 +44,10 @@ export default function Menu() {
 				</Dialog.Trigger>
 			</nav>
 			<Dialog.Content>
+				<VisuallyHidden>
+					<Dialog.Title>Menu</Dialog.Title>
+					<Dialog.Description>Todo</Dialog.Description>
+				</VisuallyHidden>
 				<nav className="font-ancho bg-cimi-dark-cream rounded-l-lg rounded-b-lg ">
 					<section className="flex flex-col items-center rounded-b-lg py-6">
 						<ul className="font-light text-sm space-y-5">
