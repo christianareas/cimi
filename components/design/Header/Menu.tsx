@@ -7,7 +7,7 @@ import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import MenuLinks from "@/components/design/Header/MenuLinks";
 import links from "@/data/links";
-import Image from "next/image";
+import MenuContent from "@/components/design/Header/MenuContent";
 
 // Menu component.
 export default function Menu() {
@@ -36,29 +36,8 @@ export default function Menu() {
 					<section className="flex flex-col items-center rounded-b-lg py-6">
 						<MenuLinks links={links} />
 					</section>
-					<section className="flex flex-col items-center bg-cimi-blue rounded-lg p-6 space-y-5">
-						<p className="text-cimi-cream font-bold text-2xl">
-							Donate to the Community
-						</p>
-						<button type="button">
-							<Image
-								src="/images/give-to-cimi.svg"
-								alt="Give to CIMI"
-								width={163}
-								height={47}
-							/>
-						</button>
-						<p className="text-cimi-cream font-bold text-2xl">
-							Join the Community
-						</p>
-						<button type="button">
-							<Image
-								src="/images/join-cimi.svg"
-								alt="Join CIMI"
-								width={163}
-								height={47}
-							/>
-						</button>
+					<section className="flex flex-col items-center rounded-lg p-6 space-y-5 bg-cimi-blue">
+						<MenuContent />
 					</section>
 				</nav>
 			</Dialog.Content>
