@@ -1,14 +1,14 @@
 // Dependencies.
-import { ReactNode } from "react"
-import Link from "next/link"
+import Link from "next/link";
 
 // Types.
 type MenuLinksProps = {
-	href: string
-	label: string
-	subLinks?: MenuLinksProps[]
-	children?: ReactNode
-}
+	href: string;
+	id: string;
+	label: string;
+	subLinks?: MenuLinksProps[];
+	children?: React.ReactNode;
+};
 
 // MenuLinks component.
 export default function MenuLinks({
@@ -19,19 +19,14 @@ export default function MenuLinks({
 }: MenuLinksProps) {
 	return (
 		<li className="mx-3 my-3">
-			<Link href={href}>
-				{label || children}
-			</Link>
+			<Link href={href}>{label || children}</Link>
 			{subLinks && (
 				<ul className="list-disc">
-					{subLinks.map((subLink, index) => (
-						<MenuLinks
-							key={index}
-							{...subLink}
-						/>
+					{subLinks.map((subLink) => (
+						<MenuLinks key={subLink.id} {...subLink} />
 					))}
 				</ul>
 			)}
 		</li>
-	)
+	);
 }
