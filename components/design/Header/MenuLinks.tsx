@@ -2,31 +2,29 @@
 import Link from "next/link";
 
 // Types.
-type MenuLinksProps = {
+type LinkType = {
 	href: string;
 	id: string;
 	label: string;
-	subLinks?: MenuLinksProps[];
-	children?: React.ReactNode;
+	subLinks?: LinkType[];
+};
+
+type MenuLinksProps = {
+	links: LinkType[];
+	isNested?: boolean;
 };
 
 // MenuLinks component.
-export default function MenuLinks({
-	href,
-	label,
-	subLinks,
-	children,
-}: MenuLinksProps) {
+export default function MenuLinks({ links, isNested = false }: MenuLinksProps) {
+	// Render.
 	return (
-		<li className="mx-3 my-3">
-			<Link href={href}>{label || children}</Link>
-			{subLinks && (
-				<ul className="list-disc">
-					{subLinks.map((subLink) => (
-						<MenuLinks key={subLink.id} {...subLink} />
-					))}
-				</ul>
-			)}
-		</li>
+		<ul className={isNested ? "list-disc" : "font-light text-sm space-y-5"}>
+			{links.map((link) => (
+				<li key={link.id} className="mx-3 my-3">
+					<Link href={link.href}>{link.label}</Link>
+					{link.subLinks && <MenuLinks links={link.subLinks} isNested={true} />}
+				</li>
+			))}
+		</ul>
 	);
 }

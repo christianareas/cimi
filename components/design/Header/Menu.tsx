@@ -3,33 +3,16 @@
 // Dependencies.
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import MenuLinks from "@/components/design/Header/MenuLinks";
+import links from "@/data/links";
 import Image from "next/image";
 
 // Menu component.
 export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false);
-
-	// Links.
-	const links = [
-		{ href: "#", id: "about", label: "About" },
-		{ href: "#", id: "events", label: "Events" },
-		{ href: "#", id: "donor-info", label: "Donor Info" },
-		{
-			href: "#",
-			id: "join",
-			label: "Join",
-			subLinks: [
-				{ href: "#", id: "be-a-member", label: "Be a Member" },
-				{ href: "#", id: "be-a-volunteer", label: "Be a Volunteer" },
-			],
-		},
-		{ href: "#", id: "newsletter", label: "Newsletter" },
-		{ href: "#", id: "contact", label: "Contact" },
-	];
 
 	// Render.
 	return (
@@ -51,11 +34,7 @@ export default function Menu() {
 				</VisuallyHidden>
 				<nav className="font-ancho bg-cimi-dark-cream rounded-l-lg rounded-b-lg ">
 					<section className="flex flex-col items-center rounded-b-lg py-6">
-						<ul className="font-light text-sm space-y-5">
-							{links.map((link) => (
-								<MenuLinks key={link.id} {...link} />
-							))}
-						</ul>
+						<MenuLinks links={links} />
 					</section>
 					<section className="flex flex-col items-center bg-cimi-blue rounded-lg p-6 space-y-5">
 						<p className="text-cimi-cream font-bold text-2xl">
