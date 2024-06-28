@@ -11,5 +11,11 @@
 		"rules": {
 			"recommended": true
 		}
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"semicolons": "asNeeded"
+		}
 	}
 }
