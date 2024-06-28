@@ -21,7 +21,7 @@ export default function Menu() {
 				<Dialog.Trigger asChild>
 					<button
 						type="button"
-						className={`rounded-t-lg m-0 p-2 ml-auto ${isOpen ? "bg-cimi-dark-cream" : "bg-cimi-cream"}`}
+						className={`rounded-t-lg m-0 p-2 ml-auto ${isOpen ? "bg-cimi-dark-cream sm:text-cimi-cream sm:bg-cimi-blue" : "bg-cimi-cream"}`}
 					>
 						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
 					</button>
@@ -35,11 +35,13 @@ export default function Menu() {
 					</Dialog.Description>
 				</VisuallyHidden>
 				<nav className="font-ancho bg-cimi-dark-cream rounded-l-lg rounded-b-lg mx-6">
-					<section className="flex flex-col rounded-b-lg px-3 py-6">
-						<MenuLinks links={links} />
-					</section>
-					<section className="flex flex-col rounded-lg p-6 bg-cimi-blue">
-						<MenuContent />
+					<section className="flex flex-col sm:flex-row rounded-b-lg">
+						<section className="sm:w-1/2 p-9">
+							<MenuLinks links={links} />
+						</section>
+						<section className="sm:w-1/2 rounded-lg p-9 bg-cimi-blue sm:rounded-tr-none">
+							<MenuContent />
+						</section>
 					</section>
 				</nav>
 			</Dialog.Content>
