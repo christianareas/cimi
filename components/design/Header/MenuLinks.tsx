@@ -1,37 +1,32 @@
 // Dependencies.
-import { ReactNode } from "react"
 import Link from "next/link"
 
 // Types.
-type MenuLinksProps = {
+type LinkType = {
 	href: string
+	id: string
 	label: string
-	subLinks?: MenuLinksProps[]
-	children?: ReactNode
+	subLinks?: LinkType[]
+}
+
+type MenuLinksProps = {
+	links: LinkType[]
+	isNested?: boolean
 }
 
 // MenuLinks component.
-export default function MenuLinks({
-	href,
-	label,
-	subLinks,
-	children,
-}: MenuLinksProps) {
+export default function MenuLinks({ links, isNested = false }: MenuLinksProps) {
+	// Render.
 	return (
-		<li className="mx-3 my-3">
-			<Link href={href}>
-				{label || children}
-			</Link>
-			{subLinks && (
-				<ul className="list-disc">
-					{subLinks.map((subLink, index) => (
-						<MenuLinks
-							key={index}
-							{...subLink}
-						/>
-					))}
-				</ul>
-			)}
-		</li>
+		<ul
+			className={`font-normal ${!isNested ? "list-none space-y-6" : "list-disc space-y-0"}`}
+		>
+			{links.map((link) => (
+				<li key={link.id} className="mx-4 my-2">
+					<Link href={link.href}>{link.label}</Link>
+					{link.subLinks && <MenuLinks links={link.subLinks} isNested={true} />}
+				</li>
+			))}
+		</ul>
 	)
 }

@@ -5,8 +5,8 @@ import Menu from "@/components/design/Header/Menu"
 // Header component.
 export default function Header() {
 	// Render.
-	return(
-		<header>
+	return (
+		<header className="font-ancho">
 			<Logo />
 			<Menu />
 		</header>
