@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function MenuContent() {
 	// Render.
 	return (
-		<ul className="text-cimi-cream font-bold text-2xl space-y-4 list-none">
+		<ul className="list-none text-cimi-cream font-bold text-2xl mx-4 space-y-6">
 			<li>
 				<p>Donate to the Community</p>
 				<button type="button" className="mt-2">

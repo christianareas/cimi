@@ -17,11 +17,11 @@ export default function Menu() {
 	// Render.
 	return (
 		<Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-			<nav className="flex items-center pr-6">
+			<nav className="flex items-center">
 				<Dialog.Trigger asChild>
 					<button
 						type="button"
-						className={`rounded-t-lg m-0 p-2 ml-auto ${isOpen ? "bg-cimi-dark-cream sm:text-cimi-cream sm:bg-cimi-blue" : "bg-cimi-cream"}`}
+						className={`rounded-t-lg p-5 ml-auto ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:text-cimi-cream sm:bg-cimi-blue"}`}
 					>
 						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
 					</button>
@@ -34,12 +34,12 @@ export default function Menu() {
 						Navigation links and the option to donate to or join CIMI.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="font-ancho bg-cimi-dark-cream rounded-l-lg rounded-b-lg mx-6">
-					<section className="flex flex-col sm:flex-row rounded-b-lg">
-						<section className="sm:w-1/2 p-9">
+				<nav className="rounded-l-lg rounded-b-lg mb-5 max-w-screen-lg ml-auto">
+					<section className="flex flex-col sm:flex-row rounded-b-lg bg-cimi-dark-cream">
+						<section className="sm:w-1/2 p-10">
 							<MenuLinks links={links} />
 						</section>
-						<section className="sm:w-1/2 rounded-lg p-9 bg-cimi-blue sm:rounded-tr-none">
+						<section className="bg-cimi-blue sm:w-1/2 p-10 rounded-lg sm:rounded-tr-none">
 							<MenuContent />
 						</section>
 					</section>
