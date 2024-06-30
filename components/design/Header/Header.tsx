@@ -6,7 +6,7 @@ import Menu from "@/components/design/Header/Menu"
 export default function Header() {
 	// Render.
 	return (
-		<header className="font-ancho">
+		<header className="font-ancho max-w-screen-lg mx-auto">
 			<Logo />
 			<Menu />
 		</header>

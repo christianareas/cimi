@@ -5,7 +5,7 @@ import Header from "@/components/design/Header/Header"
 export default function Home() {
 	// Render.
 	return (
-		<main className="font-montserrat font-regular text-sm m-5">
+		<main className="max-w-screen-xl mx-auto font-montserrat font-regular text-sm p-5">
 			<Header />
 
 			<h1 className="font-ancho font-bold text-xl">Mujeres apoyando mujeres</h1>
