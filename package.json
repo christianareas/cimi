@@ -7,16 +7,16 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "update-ts": "npm i -D typescript@latest @types/bcryptjs@latest @types/jsonwebtoken@latest @types/node@latest @types/react@latest @types/react-dom@latest",
-    "update-next": "npm i next@latest react@latest react-dom@latest",
-    "update-prisma": "npm i prisma@latest @prisma/client@latest",
-    "update-auth": "npm i bcryptjs@latest jsonwebtoken@latest next-auth@latest",
-    "update-stripe": "npm i stripe@latest @stripe/stripe-js@latest @stripe/react-stripe-js@latest",
-    "update-tailwind": "npm i -D tailwindcss@latest postcss@latest autoprefixer@latest",
-    "update-radix": "npm i @radix-ui/react-icons@latest @radix-ui/react-dialog@latest",
-    "update-eslint": "npm i -D eslint@^8.x eslint-config-next@latest",
+    "update:ts": "npm i -D typescript@latest @types/bcryptjs@latest @types/jsonwebtoken@latest @types/node@latest @types/react@latest @types/react-dom@latest",
+    "update:next": "npm i next@latest react@latest react-dom@latest",
+    "update:prisma": "npm i prisma@latest @prisma/client@latest",
+    "update:auth": "npm i bcryptjs@latest jsonwebtoken@latest next-auth@latest",
+    "update:stripe": "npm i stripe@latest @stripe/stripe-js@latest @stripe/react-stripe-js@latest",
+    "update:tailwind": "npm i -D tailwindcss@latest postcss@latest autoprefixer@latest",
+    "update:radix": "npm i @radix-ui/react-icons@latest @radix-ui/react-dialog@latest",
+    "update:eslint": "npm i -D eslint@^8.x eslint-config-next@latest",
     "update:biome": "npm i -D @biomejs/biome@latest",
-    "update-all": "npm run update-ts && npm run update-next && npm run update-prisma && npm run update-auth && npm run update-stripe && npm run update-tailwind && npm run update-radix && npm run update-eslint && npm run update:biome && npm outdated"
+    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:prisma && npm run update:auth && npm run update:stripe && npm run update:tailwind && npm run update:radix && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
