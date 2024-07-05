@@ -5,12 +5,12 @@ import Image from "next/image"
 export default function Logo() {
 	return (
 		<Image
-			className="mt-5"
+			priority={true}
 			src="/images/cimi.svg"
 			alt="CIMI"
 			width={217}
 			height={97}
-			priority={true}
+			className="w-auto"
 		/>
 	)
 }
