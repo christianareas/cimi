@@ -1,5 +1,6 @@
 // Dependencies.
 import Header from "@/components/design/Header/Header"
+import Footer from "@/components/design/Footer/Footer"
 
 // Home page.
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
 				changing workforce, and inspire the next generation of community
 				leaders.
 			</p>
+
+			<Footer />
 		</main>
 	)
 }
