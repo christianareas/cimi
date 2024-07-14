@@ -31,10 +31,10 @@ export default function NewsletterForm({ className }: NewsletterFormProps) {
 						/>
 					</Form.Control>
 					<Form.Message match="valueMissing">
-						<p className="px-2 pt-2 text-red-600">Enter an email.</p>
+						<p className="px-2 pt-2 text-pink-200">Enter an email.</p>
 					</Form.Message>
 					<Form.Message className="FormMessage" match="typeMismatch">
-						<p className="px-2 pt-2 text-red-600">Enter a valid email.</p>
+						<p className="px-2 pt-2 text-pink-200">Enter a valid email.</p>
 					</Form.Message>
 				</Form.Field>
 				<Form.Submit asChild>
