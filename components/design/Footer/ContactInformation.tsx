@@ -1,11 +1,18 @@
 // Dependencies.
 import Image from "next/image"
 
+// Types.
+interface ContactInformationProps {
+	className?: string
+}
+
 // ContactInformation component.
-export default function ContactInformation() {
+export default function ContactInformation({
+	className,
+}: ContactInformationProps) {
 	// Render.
 	return (
-		<article className="space-y-2 lg:flex-1">
+		<article className={className}>
 			<Image
 				src="/images/cimi-footer.svg"
 				alt="CIMI"

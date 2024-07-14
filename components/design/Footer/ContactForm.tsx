@@ -2,11 +2,16 @@
 import * as Form from "@radix-ui/react-form"
 import Image from "next/image"
 
+// Types.
+interface ContactFormProps {
+	className?: string
+}
+
 // ContactForm component.
-export default function ContactForm() {
+export default function ContactForm({ className }: ContactFormProps) {
 	// Render.
 	return (
-		<article className="space-y-2 lg:flex-1">
+		<article className={className}>
 			<Form.Root className="space-y-2">
 				<Form.Field name="message">
 					<Form.Label>
