@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function NewsletterForm() {
 	// Render.
 	return (
-		<article className="lg:flex-1 space-y-2">
+		<article className="space-y-2 lg:flex-1">
 			<Form.Root className="space-y-2">
 				<Form.Field name="email">
 					<Form.Label>
@@ -21,7 +21,7 @@ export default function NewsletterForm() {
 						<input
 							type="email"
 							placeholder="Enter your email."
-							className="bg-cimi-purple border-b border-cimi-cream w-full py-2"
+							className="w-full border-cimi-cream border-b bg-cimi-purple py-2"
 							required
 						/>
 					</Form.Control>

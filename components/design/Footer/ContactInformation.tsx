@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function ContactInformation() {
 	// Render.
 	return (
-		<article className="lg:flex-1 space-y-2">
+		<article className="space-y-2 lg:flex-1">
 			<Image
 				src="/images/cimi-footer.svg"
 				alt="CIMI"
