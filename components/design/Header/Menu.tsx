@@ -22,6 +22,7 @@ export default function Menu() {
 					<button
 						type="button"
 						className={`ml-auto rounded-t-lg p-5 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
+						aria-label="Main Menu"
 					>
 						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
 					</button>
@@ -29,7 +30,7 @@ export default function Menu() {
 			</nav>
 			<Dialog.Content>
 				<VisuallyHidden>
-					<Dialog.Title>The Site’s Main Navigation Menu</Dialog.Title>
+					<Dialog.Title>Main Menu</Dialog.Title>
 					<Dialog.Description>
 						Navigation links and the option to donate to or join CIMI.
 					</Dialog.Description>
