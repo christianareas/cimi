@@ -13,7 +13,7 @@
     "update:auth": "npm i bcryptjs@latest jsonwebtoken@latest next-auth@latest",
     "update:stripe": "npm i stripe@latest @stripe/stripe-js@latest @stripe/react-stripe-js@latest",
     "update:tailwind": "npm i -D tailwindcss@latest postcss@latest autoprefixer@latest",
-    "update:radix": "npm i @radix-ui/react-icons@latest @radix-ui/react-dialog@latest",
+    "update:radix": "npm i @radix-ui/react-dialog@latest @radix-ui/react-form@latest @radix-ui/react-icons@latest @radix-ui/react-visually-hidden@latest",
     "update:eslint": "npm i -D eslint@^8.x eslint-config-next@latest",
     "update:biome": "npm i -D @biomejs/biome@latest",
     "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:prisma && npm run update:auth && npm run update:stripe && npm run update:tailwind && npm run update:radix && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
@@ -24,6 +24,7 @@
   "dependencies": {
     "@prisma/client": "^5.16.2",
     "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-form": "^0.1.0",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-visually-hidden": "^1.1.0",
     "@stripe/react-stripe-js": "^2.7.3",
