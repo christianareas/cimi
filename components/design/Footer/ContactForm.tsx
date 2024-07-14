@@ -30,7 +30,7 @@ export default function ContactForm({ className }: ContactFormProps) {
 						/>
 					</Form.Control>
 					<Form.Message match="valueMissing">
-						<p className="px-2 pt-2 text-red-300">Enter a message.</p>
+						<p className="px-2 pt-2 text-red-600">Enter a message.</p>
 					</Form.Message>
 				</Form.Field>
 				<Form.Submit asChild>
