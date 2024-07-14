@@ -11,7 +11,7 @@ interface NewsletterFormProps {
 export default function NewsletterForm({ className }: NewsletterFormProps) {
 	// Render.
 	return (
-		<article className={className}>
+		<article className={`space-y-2 ${className}`}>
 			<Form.Root className="space-y-2">
 				<Form.Field name="email">
 					<Form.Label>
@@ -19,17 +19,20 @@ export default function NewsletterForm({ className }: NewsletterFormProps) {
 							Sign up for the CIMI newsletter
 						</p>
 					</Form.Label>
-					<Form.Message match="valueMissing">
-						<p className="py-2 text-red-400">Enter an email.</p>
-					</Form.Message>
 					<Form.Control asChild>
 						<input
 							type="email"
 							placeholder="Enter your email."
-							className="w-full border-cimi-cream border-b bg-cimi-purple py-2"
+							className="w-full border-cimi-cream border-b bg-cimi-purple p-2"
 							required
 						/>
 					</Form.Control>
+					<Form.Message match="valueMissing">
+						<p className="px-2 pt-2 text-red-400">Enter an email.</p>
+					</Form.Message>
+					<Form.Message className="FormMessage" match="typeMismatch">
+						<p className="px-2 pt-2 text-red-400">Enter a valid email.</p>
+					</Form.Message>
 				</Form.Field>
 				<Form.Submit asChild>
 					<section className="flex justify-end">

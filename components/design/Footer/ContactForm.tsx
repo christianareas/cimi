@@ -11,7 +11,7 @@ interface ContactFormProps {
 export default function ContactForm({ className }: ContactFormProps) {
 	// Render.
 	return (
-		<article className={className}>
+		<article className={`space-y-2 ${className}`}>
 			<Form.Root className="space-y-2">
 				<Form.Field name="message">
 					<Form.Label>
@@ -19,18 +19,16 @@ export default function ContactForm({ className }: ContactFormProps) {
 							TO: info@runningwithcimi.org
 						</p>
 					</Form.Label>
-					<Form.Message match="valueMissing">
-						<p className="border border-t-0 p-2 text-red-400">
-							Enter a message.
-						</p>
-					</Form.Message>
 					<Form.Control asChild>
 						<textarea
 							placeholder="Write us a message."
-							className="h-24 w-full rounded-b-lg border border-cimi-cream border-t-0 bg-cimi-purple p-2"
+							className="h-16 w-full rounded-b-lg border border-cimi-cream border-t-0 bg-cimi-purple p-2"
 							required
 						/>
 					</Form.Control>
+					<Form.Message match="valueMissing">
+						<p className="px-2 pt-2 text-red-400">Enter a message.</p>
+					</Form.Message>
 				</Form.Field>
 				<Form.Submit asChild>
 					<section className="flex justify-end">
