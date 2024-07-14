@@ -8,7 +8,7 @@ export default function Footer() {
 	// Render.
 	return (
 		<footer className="bg-cimi-purple text-cimi-cream p-10">
-			<section className="max-w-screen-lg mx-auto font-semibold text-xs space-y-10">
+			<section className="flex flex-col lg:flex-row max-w-screen-lg mx-auto font-semibold text-xs space-y-20 lg:space-y-0 lg:space-x-20 px-5">
 				<ContactInformation />
 				<ContactForm />
 				<NewsletterForm />

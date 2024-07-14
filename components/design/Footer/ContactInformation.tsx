@@ -1,12 +1,11 @@
 // Dependencies.
 import Image from "next/image"
-import Link from "next/link"
 
 // ContactInformation component.
 export default function ContactInformation() {
 	// Render.
 	return (
-		<article className="space-y-2">
+		<article className="lg:flex-1 space-y-2">
 			<Image
 				src="/images/cimi-footer.svg"
 				alt="CIMI"

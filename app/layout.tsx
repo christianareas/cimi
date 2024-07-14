@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="bg-cimi-cream font-montserrat font-regular text-sm p-5">
+			<body className="bg-cimi-cream font-montserrat font-regular text-sm">
 				<NextAuthProviders>{children}</NextAuthProviders>
 			</body>
 		</html>

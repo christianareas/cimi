@@ -6,10 +6,10 @@ import Image from "next/image"
 export default function ContactForm() {
 	// Render.
 	return (
-		<article className="space-y-2">
+		<article className="lg:flex-1 space-y-2">
 			<Form.Root className="space-y-2">
 				<Form.Field name="message">
-					<Form.Label className="FormLabel">
+					<Form.Label>
 						<p className="border border-cimi-cream rounded-t-lg p-2">
 							TO: info@runningwithcimi.org
 						</p>
@@ -28,15 +28,17 @@ export default function ContactForm() {
 					</Form.Control>
 				</Form.Field>
 				<Form.Submit asChild>
-					<button type="submit">
-						<Image
-							src={"/images/buttons/lets-chat.svg"}
-							alt={"Let's Chat!"}
-							width={163}
-							height={47}
-							className="w-auto"
-						/>
-					</button>
+					<section className="flex justify-end">
+						<button type="submit">
+							<Image
+								src={"/images/buttons/lets-chat.svg"}
+								alt={"Let's Chat!"}
+								width={163}
+								height={47}
+								className="w-auto"
+							/>
+						</button>
+					</section>
 				</Form.Submit>
 			</Form.Root>
 		</article>
