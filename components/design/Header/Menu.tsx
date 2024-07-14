@@ -34,14 +34,12 @@ export default function Menu() {
 						Navigation links and the option to donate to or join CIMI.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="mb-5 max-w-screen-lg ml-auto">
-					<section className="flex flex-col sm:flex-row rounded-l-lg rounded-b-lg bg-cimi-dark-cream">
-						<section className="sm:w-1/2 p-10">
-							<MenuLinks links={links} />
-						</section>
-						<section className="bg-cimi-blue sm:w-1/2 p-10 rounded-lg sm:rounded-tr-none">
-							<MenuContent />
-						</section>
+				<nav className="max-w-screen-lg ml-auto flex flex-col sm:flex-row rounded-l-lg rounded-b-lg bg-cimi-dark-cream">
+					<section className="sm:w-1/2 py-10 px-5 sm:p-10">
+						<MenuLinks links={links} />
+					</section>
+					<section className="bg-cimi-blue rounded-lg sm:rounded-tr-none sm:w-1/2 py-10 px-5 sm:p-10">
+						<MenuContent />
 					</section>
 				</nav>
 			</Dialog.Content>

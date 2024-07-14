@@ -10,7 +10,7 @@ export default function MenuContent() {
 				<p>Donate to the Community</p>
 				<button type="button">
 					<Image
-						src="/images/give-to-cimi.svg"
+						src="/images/buttons/give-to-cimi.svg"
 						alt="Give to CIMI"
 						width={163}
 						height={47}
@@ -22,7 +22,7 @@ export default function MenuContent() {
 				<p>Join the Community</p>
 				<button type="button">
 					<Image
-						src="/images/join-cimi.svg"
+						src="/images/buttons/join-cimi.svg"
 						alt="Join CIMI"
 						width={163}
 						height={47}
