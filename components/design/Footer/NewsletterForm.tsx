@@ -9,6 +9,9 @@ interface NewsletterFormProps {
 
 // NewsletterForm component.
 export default function NewsletterForm({ className }: NewsletterFormProps) {
+	// Button text.
+	const subscribeButton = "Sign Up"
+
 	// Render.
 	return (
 		<article className={`space-y-2 ${className}`}>
@@ -36,10 +39,10 @@ export default function NewsletterForm({ className }: NewsletterFormProps) {
 				</Form.Field>
 				<Form.Submit asChild>
 					<section className="flex justify-end">
-						<button type="submit">
+						<button type="submit" aria-label={subscribeButton}>
 							<Image
 								src="/images/buttons/sign-up.svg"
-								alt="Sign Up"
+								alt={subscribeButton}
 								width={163}
 								height={47}
 								className="w-auto"

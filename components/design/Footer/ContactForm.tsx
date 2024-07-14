@@ -9,6 +9,9 @@ interface ContactFormProps {
 
 // ContactForm component.
 export default function ContactForm({ className }: ContactFormProps) {
+	// Button text.
+	const contactButton = "Let's Chat!"
+
 	// Render.
 	return (
 		<article className={`space-y-2 ${className}`}>
@@ -32,10 +35,10 @@ export default function ContactForm({ className }: ContactFormProps) {
 				</Form.Field>
 				<Form.Submit asChild>
 					<section className="flex justify-end">
-						<button type="submit">
+						<button type="submit" aria-label={contactButton}>
 							<Image
 								src="/images/buttons/lets-chat.svg"
-								alt="Let's Chat!"
+								alt={contactButton}
 								width={163}
 								height={47}
 								className="w-auto"
