@@ -11,6 +11,15 @@ export default function Home() {
 		<Fragment>
 			<Header />
 			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
+			<DummyMain />
 			<Footer />
 		</Fragment>
 	)

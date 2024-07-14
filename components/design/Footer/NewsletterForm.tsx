@@ -30,8 +30,8 @@ export default function NewsletterForm() {
 					<section className="flex justify-end">
 						<button type="submit">
 							<Image
-								src={"/images/buttons/sign-up.svg"}
-								alt={"Sign Up"}
+								src="/images/buttons/sign-up.svg"
+								alt="Sign Up"
 								width={163}
 								height={47}
 								className="w-auto"

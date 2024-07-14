@@ -31,8 +31,8 @@ export default function ContactForm() {
 					<section className="flex justify-end">
 						<button type="submit">
 							<Image
-								src={"/images/buttons/lets-chat.svg"}
-								alt={"Let's Chat!"}
+								src="/images/buttons/lets-chat.svg"
+								alt="Let's Chat!"
 								width={163}
 								height={47}
 								className="w-auto"
