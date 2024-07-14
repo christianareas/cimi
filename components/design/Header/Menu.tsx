@@ -17,6 +17,7 @@ export default function Menu() {
 	// Render.
 	return (
 		<Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
+			{/* Todo: Vertically align logo and hamburger menu (try putting content on a separate row). */}
 			<nav className="flex items-center">
 				<Dialog.Trigger asChild>
 					<button

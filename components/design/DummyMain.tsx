@@ -2,7 +2,7 @@
 export default function DummyMain() {
 	// Render.
 	return (
-		<main className="max-w-screen-md mx-auto p-10">
+		<main className="mx-auto max-w-screen-md p-10">
 			<h1 className="font-ancho font-bold text-xl">Mujeres apoyando mujeres</h1>
 			<h2 className="font-ancho font-light text-lg">See us run the world</h2>
 			<p>

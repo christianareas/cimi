@@ -10,6 +10,7 @@ export default function Home() {
 	return (
 		<Fragment>
 			<Header />
+
 			<DummyMain />
 			<DummyMain />
 			<DummyMain />
@@ -20,6 +21,7 @@ export default function Home() {
 			<DummyMain />
 			<DummyMain />
 			<DummyMain />
+
 			<Footer />
 		</Fragment>
 	)
