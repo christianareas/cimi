@@ -21,7 +21,7 @@ export default function Menu() {
 				<Dialog.Trigger asChild>
 					<button
 						type="button"
-						className={`rounded-t-lg p-5 ml-auto ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:text-cimi-cream sm:bg-cimi-blue"}`}
+						className={`ml-auto rounded-t-lg p-5 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
 					>
 						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
 					</button>
@@ -34,11 +34,11 @@ export default function Menu() {
 						Navigation links and the option to donate to or join CIMI.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="max-w-screen-lg ml-auto flex flex-col sm:flex-row rounded-l-lg rounded-b-lg bg-cimi-dark-cream">
-					<section className="sm:w-1/2 py-10 px-5 sm:p-10">
+				<nav className="ml-auto flex max-w-screen-lg flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream sm:flex-row">
+					<section className="px-5 py-10 sm:w-1/2 sm:p-10">
 						<MenuLinks links={links} />
 					</section>
-					<section className="bg-cimi-blue rounded-lg sm:rounded-tr-none sm:w-1/2 py-10 px-5 sm:p-10">
+					<section className="rounded-lg bg-cimi-blue px-5 py-10 sm:w-1/2 sm:rounded-tr-none sm:p-10">
 						<MenuContent />
 					</section>
 				</nav>
