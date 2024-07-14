@@ -1,6 +1,7 @@
 // Dependencies.
 import { Fragment } from "react"
 import Header from "@/components/design/Header/Header"
+import ColorfulBorder from "@/components/design/ColorfulBorder"
 import Footer from "@/components/design/Footer/Footer"
 import DummyMain from "@/components/design/DummyMain"
 
@@ -22,6 +23,7 @@ export default function Home() {
 			<DummyMain />
 			<DummyMain />
 
+			<ColorfulBorder />
 			<Footer />
 		</Fragment>
 	)
