@@ -1,6 +1,5 @@
 // Dependencies.
 import "./globals.css"
-import { NextAuthProviders } from "./providers"
 
 // Metadata.
 export const metadata = {
@@ -17,7 +16,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className="bg-cimi-cream font-montserrat font-regular text-sm">
-				<NextAuthProviders>{children}</NextAuthProviders>
+				{children}
 			</body>
 		</html>
 	)
