@@ -1,8 +1,8 @@
 // Dependencies.
 import { Fragment } from "react"
 import Header from "@/components/design/Header/Header"
+import HomeContent from "@/components/design/Home/HomeContent"
 import Footer from "@/components/design/Footer/Footer"
-import DummyMain from "@/components/design/DummyMain"
 
 // Home page.
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 	return (
 		<Fragment>
 			<Header />
-			<DummyMain />
+			<HomeContent />
 			<Footer />
 		</Fragment>
 	)
