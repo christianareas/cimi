@@ -12,7 +12,7 @@ export default function Donate() {
 				alt="Donate"
 				width={175}
 				height={84}
-				className="ml-auto w-auto"
+				className="ml-auto w-auto py-5"
 			/>
 		</Link>
 	)
