@@ -19,7 +19,7 @@ export default function Hero({ src }: HeroProps) {
 				alt="todo"
 				width={1440}
 				height={534}
-				className="w-auto mx-auto"
+				className="mx-auto w-auto"
 			/>
 			<ColorfulBorder />
 		</section>
