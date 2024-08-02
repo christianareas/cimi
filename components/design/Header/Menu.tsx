@@ -17,11 +17,13 @@ export default function Menu() {
 	// Render.
 	return (
 		<Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
+			{/* Todo: Vertically align logo and hamburger menu (try putting content on a separate row). */}
 			<nav className="flex items-center">
 				<Dialog.Trigger asChild>
 					<button
 						type="button"
-						className={`rounded-t-lg p-5 ml-auto ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:text-cimi-cream sm:bg-cimi-blue"}`}
+						className={`ml-auto rounded-t-lg p-5 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
+						aria-label="Main Menu"
 					>
 						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
 					</button>
@@ -29,19 +31,17 @@ export default function Menu() {
 			</nav>
 			<Dialog.Content>
 				<VisuallyHidden>
-					<Dialog.Title>The Site’s Main Navigation Menu</Dialog.Title>
+					<Dialog.Title>Main Menu</Dialog.Title>
 					<Dialog.Description>
 						Navigation links and the option to donate to or join CIMI.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="mb-5 max-w-screen-lg ml-auto">
-					<section className="flex flex-col sm:flex-row rounded-l-lg rounded-b-lg bg-cimi-dark-cream">
-						<section className="sm:w-1/2 p-10">
-							<MenuLinks links={links} />
-						</section>
-						<section className="bg-cimi-blue sm:w-1/2 p-10 rounded-lg sm:rounded-tr-none">
-							<MenuContent />
-						</section>
+				<nav className="ml-auto flex max-w-screen-lg flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream sm:flex-row">
+					<section className="px-5 py-10 sm:w-1/2 sm:p-10">
+						<MenuLinks links={links} />
+					</section>
+					<section className="rounded-lg bg-cimi-blue px-5 py-10 sm:w-1/2 sm:rounded-tr-none sm:p-10">
+						<MenuContent />
 					</section>
 				</nav>
 			</Dialog.Content>

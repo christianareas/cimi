@@ -1,26 +1,26 @@
 // Types.
 type LinkType = {
-	href: string;
-	id: string;
-	label: string;
-	subLinks?: LinkType[];
-};
+	href: string
+	id: string
+	label: string
+	subLinks?: LinkType[]
+}
 
 const links: LinkType[] = [
-	{ href: "#", id: "about", label: "About" },
-	{ href: "#", id: "events", label: "Events" },
-	{ href: "#", id: "donor-info", label: "Donor Info" },
+	{ href: "#todo", id: "about", label: "About" },
+	{ href: "#todo", id: "events", label: "Events" },
+	{ href: "#todo", id: "donor-info", label: "Donor Info" },
 	{
-		href: "#",
+		href: "#todo",
 		id: "join",
 		label: "Join",
 		subLinks: [
-			{ href: "#", id: "be-a-member", label: "Be a Member" },
-			{ href: "#", id: "be-a-volunteer", label: "Be a Volunteer" },
+			{ href: "#todo", id: "be-a-member", label: "Be a Member" },
+			{ href: "#todo", id: "be-a-volunteer", label: "Be a Volunteer" },
 		],
 	},
-	{ href: "#", id: "newsletter", label: "Newsletter" },
-	{ href: "#", id: "contact", label: "Contact" },
-];
+	{ href: "#todo", id: "newsletter", label: "Newsletter" },
+	{ href: "#todo", id: "contact", label: "Contact" },
+]
 
-export default links;
+export default links

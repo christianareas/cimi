@@ -4,23 +4,21 @@ import { NextAuthProviders } from "./providers"
 
 // Metadata.
 export const metadata = {
-  title: "Next App",
-  description: "Next.js app with NextAuth.js",
+	title: "Next App",
+	description: "Next.js app with NextAuth.js",
 }
 
 // Layout.
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode
+	children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className="bg-cimi-cream">
-        <NextAuthProviders>
-          {children}
-        </NextAuthProviders>
-      </body>
-    </html>
-  )
+	return (
+		<html lang="en">
+			<body className="bg-cimi-cream font-montserrat font-regular text-sm">
+				<NextAuthProviders>{children}</NextAuthProviders>
+			</body>
+		</html>
+	)
 }

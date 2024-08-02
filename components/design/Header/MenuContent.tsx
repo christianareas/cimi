@@ -3,15 +3,19 @@ import Image from "next/image"
 
 // MenuContent component.
 export default function MenuContent() {
+	// Button text.
+	const giveButton = "Give to CIMI"
+	const joinButton = "Join CIMI"
+
 	// Render.
 	return (
-		<ul className="list-none text-cimi-cream font-bold text-2xl mx-4 space-y-6">
+		<ul className="mx-4 list-none space-y-6 font-bold text-2xl text-cimi-cream">
 			<li>
 				<p>Donate to the Community</p>
-				<button type="button">
+				<button type="button" aria-label={giveButton}>
 					<Image
-						src="/images/give-to-cimi.svg"
-						alt="Give to CIMI"
+						src="/images/buttons/give-to-cimi.svg"
+						alt={giveButton}
 						width={163}
 						height={47}
 						className="mt-2 w-auto"
@@ -20,10 +24,10 @@ export default function MenuContent() {
 			</li>
 			<li>
 				<p>Join the Community</p>
-				<button type="button">
+				<button type="button" aria-label={joinButton}>
 					<Image
-						src="/images/join-cimi.svg"
-						alt="Join CIMI"
+						src="/images/buttons/join-cimi.svg"
+						alt={joinButton}
 						width={163}
 						height={47}
 						className="mt-2 w-auto"
