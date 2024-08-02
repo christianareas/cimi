@@ -15,7 +15,6 @@ export default function ContactInformation({
 	return (
 		<article className={`space-y-2 ${className}`}>
 			<Link href="/">
-				{/* Todo: Get a better SVG. */}
 				<Image
 					src="/images/cimi-footer.svg"
 					alt="CIMI"
@@ -25,7 +24,6 @@ export default function ContactInformation({
 				/>
 			</Link>
 			<a href="#todo">
-				{/* Todo: Get a better SVG. */}
 				<Image
 					src="/images/social-media/facebook.svg"
 					alt="Facebook"

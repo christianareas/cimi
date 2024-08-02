@@ -14,7 +14,7 @@ export default function ContactForm({ className }: ContactFormProps) {
 
 	// Render.
 	return (
-		<article className={`space-y-2 ${className}`}>
+		<article className={`w-full space-y-2 ${className}`}>
 			<Form.Root className="space-y-2">
 				<Form.Field name="message">
 					<Form.Label>
