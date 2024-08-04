@@ -13,10 +13,10 @@
     "update:stripe": "npm i stripe@latest @stripe/stripe-js@latest @stripe/react-stripe-js@latest",
     "update:tailwind": "npm i -D tailwindcss@latest postcss@latest autoprefixer@latest",
     "update:radix": "npm i @radix-ui/react-dialog@latest @radix-ui/react-form@latest @radix-ui/react-icons@latest @radix-ui/react-visually-hidden@latest",
-    "update:remark": "npm i remark@latest remark-html@latest",
+    "update:markdown": "npm i react-markdown@latest remark-gfm@latest",
     "update:eslint": "npm i -D eslint@^8.x eslint-config-next@latest",
     "update:biome": "npm i -D @biomejs/biome@latest",
-    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:prisma && npm run update:stripe && npm run update:tailwind && npm run update:radix && npm run update:remark && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
+    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:prisma && npm run update:stripe && npm run update:tailwind && npm run update:radix && npm run update:markdown && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -32,8 +32,8 @@
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
     "stripe": "^16.6.0"
   },
   "devDependencies": {

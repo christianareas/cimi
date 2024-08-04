@@ -1,12 +1,14 @@
 // Dependencies.
-import Mission from "@/components/design/Home/Mission"
+import Markdown from "@/components/design/Markdown"
 
 // HomeContent component.
 export default function HomeContent() {
 	// Render.
 	return (
 		<main className="mx-auto max-w-screen-md">
-			<Mission />
+			<article className="space-y-3 p-20 text-center font-medium text-base">
+				<Markdown slug="home/mission" />
+			</article>
 		</main>
 	)
 }
