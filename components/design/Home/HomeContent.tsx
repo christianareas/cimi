@@ -7,7 +7,11 @@ export default function HomeContent() {
 	return (
 		<main className="mx-auto max-w-screen-md">
 			<article className="space-y-3 p-20 text-center font-medium text-base">
-				<Markdown slug="home/mission" />
+				<Markdown
+					slug="home/mission"
+					h2ClassName="font-ancho font-bold text-2xl text-cimi-blue"
+					boldClassName="font-extrabold"
+				/>
 			</article>
 		</main>
 	)
