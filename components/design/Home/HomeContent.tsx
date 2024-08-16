@@ -15,7 +15,7 @@ export default function HomeContent() {
 			/>
 
 			<section className="lg:flex">
-				<article className="lg:flex-1">
+				<article className="lg:w-1/2">
 					<Image
 						src="/images/home/about.jpg"
 						alt="About CIMI"
@@ -48,7 +48,7 @@ export default function HomeContent() {
 					buttonLink="#todo"
 				/>
 
-				<article className="lg:flex-1">
+				<article className="lg:w-1/2">
 					<Image
 						src="/images/home/upcoming-events.jpg"
 						alt="About CIMI"
