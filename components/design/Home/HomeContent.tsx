@@ -87,6 +87,12 @@ export default function HomeContent() {
 					Our Team
 				</h2>
 			</article>
+
+			<article className="space-y-3 rounded-lg bg-cimi-red p-20 text-center font-normal">
+				<h2 className="font-ancho font-bold text-2xl text-cimi-cream">
+					Testimonials
+				</h2>
+			</article>
 		</main>
 	)
 }
