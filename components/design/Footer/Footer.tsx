@@ -1,4 +1,7 @@
 // Dependencies.
+import MarkdownCard from "@/components/design/MarkdownCard"
+import Link from "next/link"
+import Image from "next/image"
 import ColorfulBorder from "@/components/design/ColorfulBorder"
 import ContactInformation from "@/components/design/Footer/ContactInformation"
 import ContactForm from "@/components/design/Footer/ContactForm"
@@ -8,15 +11,40 @@ import NewsletterForm from "@/components/design/Footer/NewsletterForm"
 export default function Footer() {
 	// Render.
 	return (
-		<section>
+		<footer>
+			<section className="lg:flex">
+				<MarkdownCard
+					file="home/join-the-community.md"
+					bgClassName="bg-cimi-pink"
+					h2ClassName="font-ancho font-bold text-2xl"
+					boldClassName="font-extrabold"
+					buttonSrc="/images/home/join-cimi-black-pink.svg"
+					buttonAlt="CIMI"
+					buttonLink="#todo"
+				/>
+
+				<MarkdownCard
+					file="home/donate-to-the-community.md"
+					bgClassName="bg-cimi-yellow"
+					h2ClassName="font-ancho font-bold text-2xl"
+					boldClassName="font-extrabold"
+					buttonSrc="/images/home/give-to-cimi-black-yellow.svg"
+					buttonAlt="CIMI"
+					buttonLink="#todo"
+				/>
+			</section>
+
 			<ColorfulBorder />
-			<footer className="bg-cimi-purple px-10 py-20 text-cimi-cream">
+
+			<section className="bg-cimi-purple px-10 py-20 text-cimi-cream">
 				<section className="mx-auto flex max-w-xs flex-col items-center space-y-20 px-5 font-semibold text-xs lg:max-w-screen-lg lg:flex-row lg:space-x-20 lg:space-y-2">
 					<ContactInformation className="lg:flex-1" />
+
 					<ContactForm className="lg:flex-1" />
+
 					<NewsletterForm className="lg:flex-1" />
 				</section>
-			</footer>
-		</section>
+			</section>
+		</footer>
 	)
 }

@@ -7,26 +7,26 @@ import type { NextRequest } from "next/server"
 
 // Get Markdown.
 export async function GET(request: NextRequest) {
-	// Get the slug.
+	// Get the file.
 	const { searchParams } = new URL(request.url)
-	const slug = searchParams.get("slug")
+	const file = searchParams.get("file")
 
-	// If there’s no slug, return an error.
-	if (!slug) {
+	// If there’s no file, return an error.
+	if (!file) {
 		return NextResponse.json(
-			{ error: "You must define a `slug` query parameter." },
+			{ error: "You must define a `file` query parameter." },
 			{ status: 400 },
 		)
 	}
 
 	// Get the Markdown content.
 	try {
-		const markdown = getMarkdown(slug)
+		const markdown = getMarkdown(file)
 		return NextResponse.json({ markdown }, { status: 200 })
 	} catch (error) {
 		return NextResponse.json(
 			{
-				error: `Couldn’t find a Markdown file. Ensure the data/content/${slug}.md file exists.`,
+				error: `Couldn’t find a Markdown file. Ensure the data/content/${file} file exists.`,
 			},
 			{ status: 404 },
 		)
