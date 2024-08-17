@@ -9,7 +9,8 @@ export default function HomeContent() {
 		<main>
 			<MarkdownCard
 				file="home/mission.md"
-				h2ClassName="font-ancho font-bold text-2xl text-cimi-blue"
+				articleClassName="lg:w-1/2 mx-auto"
+				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
 				boldClassName="font-extrabold"
 			/>
@@ -27,8 +28,9 @@ export default function HomeContent() {
 
 				<MarkdownCard
 					file="home/about-cimi.md"
+					articleClassName="lg:w-1/2"
+					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"
-					h2ClassName="font-ancho font-bold text-2xl"
 					fontClassName="text-cimi-cream"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/read-our-story.svg"
@@ -40,8 +42,9 @@ export default function HomeContent() {
 			<section className="lg:flex">
 				<MarkdownCard
 					file="home/upcoming-events.md"
+					articleClassName="lg:w-1/2"
+					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-yellow"
-					h2ClassName="font-ancho font-bold text-2xl"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/learn-more-black-yellow.svg"
 					buttonAlt="CIMI"
@@ -62,8 +65,9 @@ export default function HomeContent() {
 			<section className="lg:flex">
 				<MarkdownCard
 					file="home/become-a-member.md"
+					articleClassName="lg:flex-1"
+					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-green"
-					h2ClassName="font-ancho font-bold text-2xl"
 					fontClassName="text-cimi-cream"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/join-cimi-cream-green.svg"
@@ -73,8 +77,9 @@ export default function HomeContent() {
 
 				<MarkdownCard
 					file="home/donate-to-cimi.md"
+					articleClassName="lg:flex-1"
+					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-pink"
-					h2ClassName="font-ancho font-bold text-2xl"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/join-cimi-black-pink.svg"
 					buttonAlt="CIMI"

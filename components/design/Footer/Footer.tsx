@@ -1,7 +1,5 @@
 // Dependencies.
 import MarkdownCard from "@/components/design/MarkdownCard"
-import Link from "next/link"
-import Image from "next/image"
 import ColorfulBorder from "@/components/design/ColorfulBorder"
 import ContactInformation from "@/components/design/Footer/ContactInformation"
 import ContactForm from "@/components/design/Footer/ContactForm"
@@ -15,8 +13,9 @@ export default function Footer() {
 			<section className="lg:flex">
 				<MarkdownCard
 					file="home/join-the-community.md"
+					articleClassName="lg:flex-1"
+					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-pink"
-					h2ClassName="font-ancho font-bold text-2xl"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/join-cimi-black-pink.svg"
 					buttonAlt="CIMI"
@@ -25,8 +24,9 @@ export default function Footer() {
 
 				<MarkdownCard
 					file="home/donate-to-the-community.md"
+					articleClassName="lg:flex-1"
+					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-yellow"
-					h2ClassName="font-ancho font-bold text-2xl"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/give-to-cimi-black-yellow.svg"
 					buttonAlt="CIMI"

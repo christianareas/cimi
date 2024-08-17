@@ -9,6 +9,8 @@ import Image from "next/image"
 // Types.
 type MarkdownCardProps = {
 	file: string
+	articleClassName?: string
+	sectionClassName?: string
 	bgClassName?: string
 	h2ClassName?: string
 	fontClassName?: string
@@ -21,6 +23,8 @@ type MarkdownCardProps = {
 // MarkdownCard component.
 export default function MarkdownCard({
 	file,
+	articleClassName,
+	sectionClassName,
 	bgClassName,
 	h2ClassName,
 	fontClassName,
@@ -53,9 +57,17 @@ export default function MarkdownCard({
 	// Set up the classes.
 	const components = {
 		h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
-			<h2 className={h2ClassName} {...props}>
+			<h2
+				className={`pb-3 font-ancho font-bold text-2xl ${h2ClassName}`}
+				{...props}
+			>
 				{children}
 			</h2>
+		),
+		p: ({ children, ...props }: React.ComponentProps<"p">) => (
+			<p className={"py-2"} {...props}>
+				{children}
+			</p>
 		),
 		strong: ({ children, ...props }: React.ComponentProps<"strong">) => (
 			<strong className={boldClassName} {...props}>
@@ -68,31 +80,36 @@ export default function MarkdownCard({
 	return (
 		<article
 			className={[
+				articleClassName,
 				bgClassName,
 				fontClassName,
-				"space-y-3 rounded-lg p-20 text-center lg:flex-1",
+				"rounded-lg p-20 text-center",
 			]
 				.filter(Boolean)
 				// biome-ignore lint/nursery/useSortedClasses: False positive.
 				.join(" ")}
 		>
-			<ReactMarkdown
-				remarkPlugins={[remarkGfm]}
-				rehypePlugins={[rehypeRaw]}
-				components={components}
-			>
-				{markdown}
-			</ReactMarkdown>
+			<section className={sectionClassName}>
+				<ReactMarkdown
+					remarkPlugins={[remarkGfm]}
+					rehypePlugins={[rehypeRaw]}
+					components={components}
+				>
+					{markdown}
+				</ReactMarkdown>
+			</section>
 			{buttonSrc && buttonAlt && buttonLink && (
-				<Link href={buttonLink}>
-					<Image
-						src={buttonSrc}
-						alt={buttonAlt}
-						width={163}
-						height={47}
-						className="mx-auto w-auto pt-5"
-					/>
-				</Link>
+				<section className={sectionClassName}>
+					<Link href={buttonLink}>
+						<Image
+							src={buttonSrc}
+							alt={buttonAlt}
+							width={163}
+							height={47}
+							className="mx-auto w-auto pt-5 pb-2"
+						/>
+					</Link>
+				</section>
 			)}
 		</article>
 	)
