@@ -6,24 +6,23 @@ import Image from "next/image"
 type HeroProps = {
 	src: string
 	alt: string
-	width: number
-	height: number
 }
 
 // Hero component.
-export default function Hero({ src, alt, width, height }: HeroProps) {
+export default function Hero({ src, alt }: HeroProps) {
 	// Render.
 	return (
 		<section>
 			<ColorfulBorder />
-			<Image
-				priority={true}
-				src={src}
-				alt={alt}
-				width={width}
-				height={height}
-				className="mx-auto w-auto"
-			/>
+			<section className="relative w-full pb-[28.13%]">
+				<Image
+					priority={true}
+					src={src}
+					alt={alt}
+					fill
+					className="absolute inset-0 rounded-lg object-cover object-bottom"
+				/>
+			</section>
 			<ColorfulBorder />
 		</section>
 	)
