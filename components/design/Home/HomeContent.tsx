@@ -18,12 +18,12 @@ export default function HomeContent() {
 			/>
 
 			<section className="lg:flex">
-				<article className="relative w-full pb-[100%] lg:w-1/2 lg:pb-[50%]">
+				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
 						src="/images/home/about.jpg"
 						alt="About CIMI"
 						fill
-						className="absolute inset-0 rounded-lg object-cover object-center"
+						className="absolute inset-0 rounded-lg object-cover object-bottom"
 					/>
 				</article>
 				<MarkdownCard
@@ -50,12 +50,12 @@ export default function HomeContent() {
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>
-				<article className="relative w-full pb-[100%] lg:w-1/2 lg:pb-[50%]">
+				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
 						src="/images/home/upcoming-events.jpg"
 						alt="About CIMI"
 						fill
-						className="absolute inset-0 rounded-lg object-cover object-center"
+						className="absolute inset-0 rounded-lg object-cover object-top"
 					/>
 				</article>
 			</section>
