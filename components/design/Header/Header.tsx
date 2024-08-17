@@ -14,7 +14,12 @@ export default function Header() {
 				<Menu />
 				<Donate />
 			</section>
-			<Hero src="/images/heroes/home.png" />
+			<Hero
+				src="/images/heroes/home.png"
+				alt="todo"
+				width={1440}
+				height={534}
+			/>
 		</header>
 	)
 }

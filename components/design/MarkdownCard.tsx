@@ -8,7 +8,7 @@ import Image from "next/image"
 
 // Types.
 type MarkdownCardProps = {
-	file: string
+	src: string
 	articleClassName?: string
 	sectionClassName?: string
 	bgClassName?: string
@@ -22,7 +22,7 @@ type MarkdownCardProps = {
 
 // MarkdownCard component.
 export default function MarkdownCard({
-	file,
+	src,
 	articleClassName,
 	sectionClassName,
 	bgClassName,
@@ -34,10 +34,10 @@ export default function MarkdownCard({
 	buttonLink,
 }: MarkdownCardProps) {
 	// Fetch the Markdown content.
-	async function fetchMarkdown(file: string) {
+	async function fetchMarkdown(src: string) {
 		// Fetch.
 		const baseUrl = process.env.NEXT_PUBLIC_API_URL
-		const response = await fetch(`${baseUrl}/api/markdown?file=${file}`, {
+		const response = await fetch(`${baseUrl}/api/markdown?src=${src}`, {
 			cache: "no-store",
 		})
 
@@ -52,7 +52,7 @@ export default function MarkdownCard({
 	}
 
 	// Use the Markdown content.
-	const markdown = use(fetchMarkdown(file))
+	const markdown = use(fetchMarkdown(src))
 
 	// Set up the classes.
 	const components = {

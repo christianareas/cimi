@@ -5,10 +5,13 @@ import Image from "next/image"
 // Types.
 type HeroProps = {
 	src: string
+	alt: string
+	width: number
+	height: number
 }
 
 // Hero component.
-export default function Hero({ src }: HeroProps) {
+export default function Hero({ src, alt, width, height }: HeroProps) {
 	// Render.
 	return (
 		<section>
@@ -16,9 +19,9 @@ export default function Hero({ src }: HeroProps) {
 			<Image
 				priority={true}
 				src={src}
-				alt="todo"
-				width={1440}
-				height={534}
+				alt={alt}
+				width={width}
+				height={height}
 				className="mx-auto w-auto"
 			/>
 			<ColorfulBorder />

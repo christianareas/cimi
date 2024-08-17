@@ -8,7 +8,7 @@ export default function HomeContent() {
 	return (
 		<main>
 			<MarkdownCard
-				file="home/mission.md"
+				src="home/mission.md"
 				articleClassName="lg:w-1/2 mx-auto"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
@@ -27,7 +27,7 @@ export default function HomeContent() {
 				</article>
 
 				<MarkdownCard
-					file="home/about-cimi.md"
+					src="home/about-cimi.md"
 					articleClassName="lg:w-1/2"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"
@@ -41,7 +41,7 @@ export default function HomeContent() {
 
 			<section className="lg:flex">
 				<MarkdownCard
-					file="home/upcoming-events.md"
+					src="home/upcoming-events.md"
 					articleClassName="lg:w-1/2"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-yellow"
@@ -64,7 +64,7 @@ export default function HomeContent() {
 
 			<section className="lg:flex">
 				<MarkdownCard
-					file="home/become-a-member.md"
+					src="home/become-a-member.md"
 					articleClassName="lg:flex-1"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-green"
@@ -76,7 +76,7 @@ export default function HomeContent() {
 				/>
 
 				<MarkdownCard
-					file="home/donate-to-cimi.md"
+					src="home/donate-to-cimi.md"
 					articleClassName="lg:flex-1"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-pink"

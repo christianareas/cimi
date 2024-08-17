@@ -12,7 +12,7 @@ export default function Footer() {
 		<footer>
 			<section className="lg:flex">
 				<MarkdownCard
-					file="home/join-the-community.md"
+					src="home/join-the-community.md"
 					articleClassName="lg:flex-1"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-pink"
@@ -23,7 +23,7 @@ export default function Footer() {
 				/>
 
 				<MarkdownCard
-					file="home/donate-to-the-community.md"
+					src="home/donate-to-the-community.md"
 					articleClassName="lg:flex-1"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-yellow"
