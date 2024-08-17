@@ -27,7 +27,6 @@ export default function HomeContent() {
 						className="rounded-lg"
 					/>
 				</article>
-
 				<MarkdownCard
 					src="home/about-cimi.md"
 					articleClassName="lg:w-1/2"
@@ -35,7 +34,7 @@ export default function HomeContent() {
 					bgClassName="bg-cimi-blue"
 					fontClassName="text-cimi-cream"
 					boldClassName="font-extrabold"
-					buttonSrc="/images/home/read-our-story.svg"
+					buttonSrc="/images/home/buttons/read-our-story.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>
@@ -48,11 +47,10 @@ export default function HomeContent() {
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-yellow"
 					boldClassName="font-extrabold"
-					buttonSrc="/images/home/learn-more-black-yellow.svg"
+					buttonSrc="/images/home//buttons/learn-more-black-yellow.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>
-
 				<article className="lg:w-1/2">
 					<Image
 						src="/images/home/upcoming-events.jpg"
@@ -72,18 +70,17 @@ export default function HomeContent() {
 					bgClassName="bg-cimi-green"
 					fontClassName="text-cimi-cream"
 					boldClassName="font-extrabold"
-					buttonSrc="/images/home/join-cimi-cream-green.svg"
+					buttonSrc="/images/home//buttons/join-cimi-cream-green.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>
-
 				<MarkdownCard
 					src="home/donate-to-cimi.md"
 					articleClassName="lg:flex-1"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-pink"
 					boldClassName="font-extrabold"
-					buttonSrc="/images/home/join-cimi-black-pink.svg"
+					buttonSrc="/images/home//buttons/join-cimi-black-pink.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>

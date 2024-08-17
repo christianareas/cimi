@@ -17,18 +17,17 @@ export default function Footer() {
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-pink"
 					boldClassName="font-extrabold"
-					buttonSrc="/images/home/join-cimi-black-pink.svg"
+					buttonSrc="/images/home//buttons/join-cimi-black-pink.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>
-
 				<MarkdownCard
 					src="home/donate-to-the-community.md"
 					articleClassName="lg:flex-1"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-yellow"
 					boldClassName="font-extrabold"
-					buttonSrc="/images/home/give-to-cimi-black-yellow.svg"
+					buttonSrc="/images/home//buttons/give-to-cimi-black-yellow.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
 				/>
