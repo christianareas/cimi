@@ -1,6 +1,8 @@
 // Dependencies.
 import MarkdownCard from "@/components/design/MarkdownCard"
 import Image from "next/image"
+import Team from "@/components/design/Home/Team"
+import Testimonials from "@/components/design/Home/Testimonials"
 
 // HomeContent component.
 export default function HomeContent() {
@@ -87,17 +89,9 @@ export default function HomeContent() {
 				/>
 			</section>
 
-			<article className="space-y-3 rounded-lg p-20 text-center font-normal">
-				<h2 className="font-ancho font-bold text-2xl text-cimi-blue">
-					Our Team
-				</h2>
-			</article>
+			<Team />
 
-			<article className="space-y-3 rounded-lg bg-cimi-red p-20 text-center font-normal">
-				<h2 className="font-ancho font-bold text-2xl text-cimi-cream">
-					Testimonials
-				</h2>
-			</article>
+			<Testimonials />
 		</main>
 	)
 }
