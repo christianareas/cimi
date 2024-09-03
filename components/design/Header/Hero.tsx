@@ -14,7 +14,7 @@ export default function Hero({ src, alt }: HeroProps) {
 	return (
 		<section>
 			<ColorfulBorder />
-			<section className="relative w-full pb-[28.13%]">
+			<section className="relative w-full pb-[56.25%] lg:pb-[28.13%]">
 				<Image
 					priority={true}
 					src={src}
