@@ -25,7 +25,11 @@ export default function Menu() {
 						className={`ml-auto rounded-t-lg p-5 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
 						aria-label="Main Menu"
 					>
-						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
+						{isOpen ? (
+							<Cross1Icon className="h-8 w-8" />
+						) : (
+							<HamburgerMenuIcon className="h-8 w-8 text-cimi-blue" />
+						)}
 					</button>
 				</Dialog.Trigger>
 			</nav>
