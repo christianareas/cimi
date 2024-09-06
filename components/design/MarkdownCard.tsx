@@ -15,9 +15,10 @@ type MarkdownCardProps = {
 	h2ClassName?: string
 	fontClassName?: string
 	boldClassName?: string
+	buttonLink?: string
 	buttonSrc?: string
 	buttonAlt?: string
-	buttonLink?: string
+	buttonClassName?: string
 }
 
 // MarkdownCard component.
@@ -29,9 +30,10 @@ export default function MarkdownCard({
 	h2ClassName,
 	fontClassName,
 	boldClassName,
+	buttonLink,
 	buttonSrc,
 	buttonAlt,
-	buttonLink,
+	buttonClassName,
 }: MarkdownCardProps) {
 	// Fetch the Markdown content.
 	async function fetchMarkdown(src: string) {
@@ -83,7 +85,7 @@ export default function MarkdownCard({
 				articleClassName,
 				bgClassName,
 				fontClassName,
-				"rounded-lg p-20 text-center",
+				"rounded-lg p-20",
 			]
 				.filter(Boolean)
 				// biome-ignore lint/nursery/useSortedClasses: False positive.
@@ -98,7 +100,7 @@ export default function MarkdownCard({
 					{markdown}
 				</ReactMarkdown>
 			</section>
-			{buttonSrc && buttonAlt && buttonLink && (
+			{buttonLink && buttonSrc && buttonAlt && (
 				<section className={sectionClassName}>
 					<Link href={buttonLink}>
 						<Image
@@ -106,7 +108,10 @@ export default function MarkdownCard({
 							alt={buttonAlt}
 							width={163}
 							height={47}
-							className="mx-auto w-auto pt-5 pb-2"
+							className={[buttonClassName, "w-auto pt-5 pb-2"]
+								.filter(Boolean)
+								// biome-ignore lint/nursery/useSortedClasses: False positive.
+								.join(" ")}
 						/>
 					</Link>
 				</section>

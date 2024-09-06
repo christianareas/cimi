@@ -18,7 +18,7 @@ export default function Testimonials() {
 				</Tabs.List>
 				<Tabs.Content value="tab-one">
 					<article className="mx-auto grid grid-cols-4 items-center text-left text-cimi-cream">
-						<ChevronLeftIcon className="ml-auto h-8 w-8 text-cimi-cream" />
+						<ChevronLeftIcon className="ml-auto h-8 w-8 cursor-pointer text-cimi-cream" />
 						<section className="px-10">
 							<Image
 								src="/images/home/testimonials/maria-perla.jpg"
@@ -39,7 +39,7 @@ export default function Testimonials() {
 							<p className="font-ancho text-2xl">”</p>
 							<p className="font-bold text-xs">–Mom</p>
 						</section>
-						<ChevronRightIcon className="mr-auto h-8 w-8 text-cimi-cream" />
+						<ChevronRightIcon className="mr-auto h-8 w-8 cursor-pointer text-cimi-cream" />
 					</article>
 				</Tabs.Content>
 				<Tabs.Content value="tab-two">

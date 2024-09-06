@@ -13,23 +13,25 @@ export default function Footer() {
 			<section className="lg:flex">
 				<MarkdownCard
 					src="home/join-the-community.md"
-					articleClassName="lg:flex-1"
+					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-pink"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home//buttons/join-cimi-black-pink.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
+					buttonClassName="mx-auto"
 				/>
 				<MarkdownCard
 					src="home/donate-to-the-community.md"
-					articleClassName="lg:flex-1"
+					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-yellow"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home//buttons/give-to-cimi-black-yellow.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
+					buttonClassName="mx-auto"
 				/>
 			</section>
 

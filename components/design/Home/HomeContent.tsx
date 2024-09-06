@@ -11,7 +11,7 @@ export default function HomeContent() {
 		<main>
 			<MarkdownCard
 				src="home/mission.md"
-				articleClassName="lg:w-1/2 mx-auto"
+				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
 				boldClassName="font-extrabold"
@@ -28,7 +28,7 @@ export default function HomeContent() {
 				</article>
 				<MarkdownCard
 					src="home/about-cimi.md"
-					articleClassName="lg:w-1/2"
+					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"
 					fontClassName="text-cimi-cream"
@@ -36,19 +36,21 @@ export default function HomeContent() {
 					buttonSrc="/images/home/buttons/read-our-story.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
+					buttonClassName="mx-auto lg:mx-0"
 				/>
 			</section>
 
 			<section className="lg:flex">
 				<MarkdownCard
 					src="home/upcoming-events.md"
-					articleClassName="lg:w-1/2"
+					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-yellow"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home//buttons/learn-more-black-yellow.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
+					buttonClassName="mx-auto lg:mx-0"
 				/>
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -63,7 +65,7 @@ export default function HomeContent() {
 			<section className="lg:flex">
 				<MarkdownCard
 					src="home/become-a-member.md"
-					articleClassName="lg:flex-1"
+					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-green"
 					fontClassName="text-cimi-cream"
@@ -71,16 +73,18 @@ export default function HomeContent() {
 					buttonSrc="/images/home//buttons/join-cimi-cream-green.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
+					buttonClassName="mx-auto"
 				/>
 				<MarkdownCard
 					src="home/donate-to-cimi.md"
-					articleClassName="lg:flex-1"
+					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-pink"
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home//buttons/join-cimi-black-pink.svg"
 					buttonAlt="CIMI"
 					buttonLink="#todo"
+					buttonClassName="mx-auto"
 				/>
 			</section>
 
