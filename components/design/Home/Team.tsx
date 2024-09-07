@@ -1,7 +1,7 @@
 // Dependencies.
 import Image from "next/image"
 
-// Team component.
+// Component.
 export default function Team() {
 	// Render.
 	return (

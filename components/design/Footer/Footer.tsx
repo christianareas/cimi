@@ -1,18 +1,18 @@
 // Dependencies.
-import MarkdownCard from "@/components/design/MarkdownCard"
+import ContentCard from "@/components/design/ContentCard"
 import ColorfulBorder from "@/components/design/ColorfulBorder"
 import ContactInformation from "@/components/design/Footer/ContactInformation"
 import ContactForm from "@/components/design/Footer/ContactForm"
 import NewsletterForm from "@/components/design/Footer/NewsletterForm"
 
-// Footer component.
+// Component.
 export default function Footer() {
 	// Render.
 	return (
 		<footer>
 			<section className="lg:flex">
-				<MarkdownCard
-					src="home/join-the-community.md"
+				<ContentCard
+					contentSrc="home/join-the-community.md"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-pink"
@@ -22,8 +22,8 @@ export default function Footer() {
 					buttonLink="#todo"
 					buttonClassName="mx-auto"
 				/>
-				<MarkdownCard
-					src="home/donate-to-the-community.md"
+				<ContentCard
+					contentSrc="home/donate-to-the-community.md"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-yellow"

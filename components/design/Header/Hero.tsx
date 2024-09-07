@@ -8,7 +8,7 @@ type HeroProps = {
 	alt: string
 }
 
-// Hero component.
+// Component.
 export default function Hero({ src, alt }: HeroProps) {
 	// Render.
 	return (

@@ -14,7 +14,7 @@ type MenuLinksProps = {
 	isNested?: boolean
 }
 
-// MenuLinks component.
+// Component.
 export default function MenuLinks({ links, isNested = false }: MenuLinksProps) {
 	// Render.
 	return (

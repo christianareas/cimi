@@ -7,7 +7,7 @@ interface NewsletterFormProps {
 	className?: string
 }
 
-// NewsletterForm component.
+// Component.
 export default function NewsletterForm({ className }: NewsletterFormProps) {
 	// Button text.
 	const subscribeButton = "Sign Up"

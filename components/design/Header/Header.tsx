@@ -4,7 +4,7 @@ import Menu from "@/components/design/Header/Menu"
 import Donate from "@/components/design/Header/Donate"
 import Hero from "@/components/design/Header/Hero"
 
-// Header component.
+// Component.
 export default function Header() {
 	// Render.
 	return (

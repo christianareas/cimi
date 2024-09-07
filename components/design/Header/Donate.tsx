@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-// Donate component.
+// Component.
 export default function Donate() {
 	// Render.
 	return (

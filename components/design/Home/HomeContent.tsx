@@ -1,5 +1,5 @@
 // Dependencies.
-import MarkdownCard from "@/components/design/MarkdownCard"
+import ContentCard from "@/components/design/ContentCard"
 import Image from "next/image"
 import Team from "@/components/design/Home/Team"
 import Testimonials from "@/components/design/Home/Testimonials"
@@ -9,8 +9,8 @@ export default function HomeContent() {
 	// Render.
 	return (
 		<main>
-			<MarkdownCard
-				src="home/mission.md"
+			<ContentCard
+				contentSrc="home/mission.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
@@ -26,8 +26,8 @@ export default function HomeContent() {
 						className="absolute inset-0 rounded-lg object-cover object-bottom"
 					/>
 				</article>
-				<MarkdownCard
-					src="home/about-cimi.md"
+				<ContentCard
+					contentSrc="home/about-cimi.md"
 					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"
@@ -41,8 +41,8 @@ export default function HomeContent() {
 			</section>
 
 			<section className="lg:flex">
-				<MarkdownCard
-					src="home/upcoming-events.md"
+				<ContentCard
+					contentSrc="home/upcoming-events.md"
 					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-yellow"
@@ -63,8 +63,8 @@ export default function HomeContent() {
 			</section>
 
 			<section className="lg:flex">
-				<MarkdownCard
-					src="home/become-a-member.md"
+				<ContentCard
+					contentSrc="home/become-a-member.md"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-green"
@@ -75,8 +75,8 @@ export default function HomeContent() {
 					buttonLink="#todo"
 					buttonClassName="mx-auto"
 				/>
-				<MarkdownCard
-					src="home/donate-to-cimi.md"
+				<ContentCard
+					contentSrc="home/donate-to-cimi.md"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-pink"

@@ -7,7 +7,7 @@ interface ContactInformationProps {
 	className?: string
 }
 
-// ContactInformation component.
+// Component.
 export default function ContactInformation({
 	className,
 }: ContactInformationProps) {

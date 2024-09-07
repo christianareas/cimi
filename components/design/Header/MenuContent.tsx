@@ -1,7 +1,7 @@
 // Dependencies.
 import Image from "next/image"
 
-// MenuContent component.
+// Component.
 export default function MenuContent() {
 	// Button text.
 	const giveButton = "Give to CIMI"

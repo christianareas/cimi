@@ -7,8 +7,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 // Types.
-type MarkdownCardProps = {
-	src: string
+type ContentCardProps = {
+	contentSrc: string
 	articleClassName?: string
 	sectionClassName?: string
 	bgClassName?: string
@@ -21,9 +21,9 @@ type MarkdownCardProps = {
 	buttonClassName?: string
 }
 
-// MarkdownCard component.
-export default function MarkdownCard({
-	src,
+// Component.
+export default function ContentCard({
+	contentSrc,
 	articleClassName,
 	sectionClassName,
 	bgClassName,
@@ -34,7 +34,7 @@ export default function MarkdownCard({
 	buttonSrc,
 	buttonAlt,
 	buttonClassName,
-}: MarkdownCardProps) {
+}: ContentCardProps) {
 	// Fetch the Markdown content.
 	async function fetchMarkdown(src: string) {
 		// Fetch.
@@ -54,7 +54,7 @@ export default function MarkdownCard({
 	}
 
 	// Use the Markdown content.
-	const markdown = use(fetchMarkdown(src))
+	const markdown = use(fetchMarkdown(contentSrc))
 
 	// Set up the classes.
 	const components = {

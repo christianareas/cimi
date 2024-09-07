@@ -9,7 +9,7 @@ import MenuLinks from "@/components/design/Header/MenuLinks"
 import links from "@/data/links"
 import MenuContent from "@/components/design/Header/MenuContent"
 
-// Menu component.
+// Component.
 export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false)
