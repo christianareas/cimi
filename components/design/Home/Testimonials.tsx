@@ -59,8 +59,8 @@ export default function Testimonials() {
 
 						<Tabs.Content value="second-tab">
 							<TestimonialCard
-								imgSrc="/images/home/testimonials/maria-perla.jpg"
-								imgAlt="Maria Perla"
+								imgSrc="/images/home/testimonials/rosario-fernanda.jpg"
+								imgAlt="Rosario Fernanda"
 								contentSrc="During the pandemic, I was so grateful because CIMI never left us. It supported [my family] 100%. In short, CIMI is a blessing."
 								testimonialSrc="Mom"
 							/>
@@ -68,8 +68,8 @@ export default function Testimonials() {
 
 						<Tabs.Content value="third-tab">
 							<TestimonialCard
-								imgSrc="/images/home/testimonials/maria-perla.jpg"
-								imgAlt="Maria Perla"
+								imgSrc="/images/home/testimonials/walk-program.jpg"
+								imgAlt="Walk Program"
 								contentSrc="Being a member for more than five years has been an opportunity for me because it has helped me physically, emotionally, and financially and has helped me manage stress. It has helped me learn about myself."
 								testimonialSrc="Mom"
 							/>
@@ -77,8 +77,8 @@ export default function Testimonials() {
 
 						<Tabs.Content value="fourth-tab">
 							<TestimonialCard
-								imgSrc="/images/home/testimonials/maria-perla.jpg"
-								imgAlt="Maria Perla"
+								imgSrc="/images/home/testimonials/tania-tiara.jpg"
+								imgAlt="Tania Tiara"
 								contentSrc="I am grateful for meeting my two best friends. I am grateful for the opportunities that I have been given, like learning how to code."
 								testimonialSrc="High school student"
 							/>
