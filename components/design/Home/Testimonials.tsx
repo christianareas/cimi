@@ -12,7 +12,7 @@ export default function Testimonials() {
 	const [currentTab, setCurrentTab] = useState("first-tab")
 
 	// Tabs.
-	const tabs = ["first-tab", "second-tab", "third-tab"]
+	const tabs = ["first-tab", "second-tab", "third-tab", "fourth-tab"]
 
 	// Switch to the previous tab.
 	function switchToPreviousTab() {
@@ -58,11 +58,30 @@ export default function Testimonials() {
 						</Tabs.Content>
 
 						<Tabs.Content value="second-tab">
-							<p>Second tab.</p>
+							<TestimonialCard
+								imgSrc="/images/home/testimonials/maria-perla.jpg"
+								imgAlt="Maria Perla"
+								contentSrc="During the pandemic, I was so grateful because CIMI never left us. It supported [my family] 100%. In short, CIMI is a blessing."
+								testimonialSrc="Mom"
+							/>
 						</Tabs.Content>
 
 						<Tabs.Content value="third-tab">
-							<p>Third tab.</p>
+							<TestimonialCard
+								imgSrc="/images/home/testimonials/maria-perla.jpg"
+								imgAlt="Maria Perla"
+								contentSrc="Being a member for more than five years has been an opportunity for me because it has helped me physically, emotionally, and financially and has helped me manage stress. It has helped me learn about myself."
+								testimonialSrc="Mom"
+							/>
+						</Tabs.Content>
+
+						<Tabs.Content value="fourth-tab">
+							<TestimonialCard
+								imgSrc="/images/home/testimonials/maria-perla.jpg"
+								imgAlt="Maria Perla"
+								contentSrc="I am grateful for meeting my two best friends. I am grateful for the opportunities that I have been given, like learning how to code."
+								testimonialSrc="High school student"
+							/>
 						</Tabs.Content>
 
 						<button type="button" onClick={switchToNextTab}>
