@@ -1,18 +1,18 @@
 "use client"
 
 // Dependencies.
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import * as Tabs from "@radix-ui/react-tabs"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import TestimonialCard from "@/components/design/Home/TestimonialCard"
+
+// Tabs.
+const tabs = ["first-tab", "second-tab", "third-tab", "fourth-tab"]
 
 // Component.
 export default function Testimonials() {
 	// Set the initial state.
 	const [currentTab, setCurrentTab] = useState("first-tab")
-
-	// Tabs.
-	const tabs = ["first-tab", "second-tab", "third-tab", "fourth-tab"]
 
 	// Switch to the previous tab.
 	function switchToPreviousTab() {
@@ -29,6 +29,19 @@ export default function Testimonials() {
 		setCurrentTab(tabs[nextIndex])
 	}
 
+	// Automatically switch to the next tab.
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentTab((previousTab) => {
+				const currentIndex = tabs.indexOf(previousTab)
+				const nextIndex =
+					currentIndex === tabs.length - 1 ? 0 : currentIndex + 1
+				return tabs[nextIndex]
+			})
+		}, 3000)
+		return () => clearInterval(interval)
+	}, [])
+
 	// Render.
 	return (
 		<section className="bg-cimi-red px-10 py-20 text-center font-normal lg:text-left">
@@ -38,6 +51,7 @@ export default function Testimonials() {
 						<Tabs.Trigger value="first-tab" />
 						<Tabs.Trigger value="second-tab" />
 						<Tabs.Trigger value="third-tab" />
+						<Tabs.Trigger value="fourth-tab" />
 					</Tabs.List>
 					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream">
 						Testimonials of Members
