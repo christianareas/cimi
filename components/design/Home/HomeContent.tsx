@@ -23,6 +23,7 @@ export default function HomeContent() {
 						src="/images/home/about.jpg"
 						alt="About CIMI"
 						fill
+						sizes="(max-width: 1024px) 100vw, 50vw"
 						className="absolute inset-0 rounded-lg object-cover object-bottom"
 					/>
 				</article>
@@ -57,6 +58,7 @@ export default function HomeContent() {
 						src="/images/home/upcoming-events.jpg"
 						alt="About CIMI"
 						fill
+						sizes="(max-width: 1024px) 100vw, 50vw"
 						className="absolute inset-0 rounded-lg object-cover object-top"
 					/>
 				</article>

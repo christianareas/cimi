@@ -17,6 +17,7 @@ export default function Team() {
 							src="/images/home/team/aracely-areas.jpg"
 							alt="Aracely Areas"
 							fill
+							sizes="(max-width: 1024px) 50vw, 25vw"
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
@@ -30,6 +31,7 @@ export default function Team() {
 							src="/images/home/team/ivonne-figueroa.jpg"
 							alt="Ivonne Figueroa"
 							fill
+							sizes="(max-width: 1024px) 50vw, 25vw"
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
@@ -43,6 +45,7 @@ export default function Team() {
 							src="/images/home/team/kamille-matias.jpg"
 							alt="Kamille Matias"
 							fill
+							sizes="(max-width: 1024px) 50vw, 25vw"
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
@@ -56,6 +59,7 @@ export default function Team() {
 							src="/images/home/team/maya-bergstrom.jpg"
 							alt="Maya Bergstrom"
 							fill
+							sizes="(max-width: 1024px) 50vw, 25vw"
 							className="absolute inset-0 rounded-lg object-cover object-top"
 						/>
 					</section>

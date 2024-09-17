@@ -24,6 +24,7 @@ export default function TestimonialCard({
 					src={imgSrc}
 					alt={imgAlt}
 					fill
+					sizes="(max-width: 1024px) 100vw, 492px"
 					className="absolute inset-0 mx-auto mb-5 rounded-lg object-cover lg:mb-0"
 				/>
 			</section>
