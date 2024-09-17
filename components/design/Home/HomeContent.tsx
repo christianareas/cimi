@@ -4,7 +4,7 @@ import Image from "next/image"
 import Team from "@/components/design/Home/Team"
 import Testimonials from "@/components/design/Home/Testimonials"
 
-// HomeContent component.
+// Component.
 export default function HomeContent() {
 	// Render.
 	return (
