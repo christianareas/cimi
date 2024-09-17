@@ -9,7 +9,7 @@ import MenuLinks from "@/components/design/Header/MenuLinks"
 import links from "@/data/links"
 import MenuContent from "@/components/design/Header/MenuContent"
 
-// Menu component.
+// Component.
 export default function Menu() {
 	// Set initial state.
 	const [isOpen, setIsOpen] = useState(false)
@@ -25,7 +25,11 @@ export default function Menu() {
 						className={`ml-auto rounded-t-lg p-5 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
 						aria-label="Main Menu"
 					>
-						{isOpen ? <Cross1Icon /> : <HamburgerMenuIcon />}
+						{isOpen ? (
+							<Cross1Icon className="h-8 w-8" />
+						) : (
+							<HamburgerMenuIcon className="h-8 w-8 text-cimi-blue" />
+						)}
 					</button>
 				</Dialog.Trigger>
 			</nav>

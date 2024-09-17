@@ -7,7 +7,7 @@ interface ContactFormProps {
 	className?: string
 }
 
-// ContactForm component.
+// Component.
 export default function ContactForm({ className }: ContactFormProps) {
 	// Button text.
 	const contactButton = "Let's Chat!"

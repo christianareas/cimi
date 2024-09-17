@@ -4,7 +4,7 @@ import Menu from "@/components/design/Header/Menu"
 import Donate from "@/components/design/Header/Donate"
 import Hero from "@/components/design/Header/Hero"
 
-// Header component.
+// Component.
 export default function Header() {
 	// Render.
 	return (
@@ -14,7 +14,7 @@ export default function Header() {
 				<Menu />
 				<Donate />
 			</section>
-			<Hero src="/images/heroes/home.png" />
+			<Hero src="/images/heroes/home.png" alt="todo" />
 		</header>
 	)
 }

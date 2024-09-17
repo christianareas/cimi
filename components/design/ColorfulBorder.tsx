@@ -1,4 +1,4 @@
-// ColorfulBorder component.
+// Component.
 export default function ColorfulBorder() {
 	// Render.
 	return (

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-// Logo component.
+// Component.
 export default function Logo() {
 	return (
 		<Link href="/">
