@@ -36,7 +36,7 @@ export default function HomeContent() {
 					boldClassName="font-extrabold"
 					buttonSrc="/images/home/buttons/read-our-story.svg"
 					buttonAlt="CIMI"
-					buttonLink="#todo"
+					buttonLink="about"
 					buttonClassName="mx-auto lg:mx-0"
 				/>
 			</section>

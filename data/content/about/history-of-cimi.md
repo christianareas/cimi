@@ -1,0 +1,3 @@
+## History of CIMI
+
+**CIMI was founded in 2012 by Aracely Areas**, a software professional with a passion for education and exercise. Aracely originally formed CIMI (“Carrera Internacional de la Mujer Iniciativa” or the “international women’s race initiative”) to organize races and give free entry to women from underserved communities in her home country of Nicaragua. As CIMI grew, Aracely sought to find more ways to positively impact the lives of women of all ages. Today, CIMI serves Latina women and their families across the San Jose area by offering a variety of programs to support physical, mental, educational, and community well-being.
