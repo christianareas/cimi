@@ -10,7 +10,7 @@ export default function Values() {
 				Our Values
 			</h2>
 
-			<section className="grid grid-cols-2 gap-5 uppercase lg:mx-auto lg:max-w-screen-lg lg:grid-cols-4">
+			<section className="grid grid-cols-2 gap-20 uppercase lg:mx-auto lg:max-w-screen-lg lg:grid-cols-4">
 				<article>
 					<section className="relative w-full pb-[100%]">
 						<Image

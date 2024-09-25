@@ -9,7 +9,11 @@ export default function About() {
 	// Render.
 	return (
 		<Fragment>
-			<Header />
+			<Header
+				imageSrc="/images/heroes/about.jpg"
+				imageAlt="todo"
+				imageClassName="object-[50%_55%]"
+			/>
 			<AboutContent />
 			<Footer />
 		</Fragment>

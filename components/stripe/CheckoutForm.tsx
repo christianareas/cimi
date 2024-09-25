@@ -1,6 +1,6 @@
 // Dependencies.
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
-import { useState, useEffect, FormEvent } from "react"
+import { useState, useEffect, type FormEvent } from "react"
 
 // Checkout Form component.
 export const CheckoutForm = () => {

@@ -9,7 +9,11 @@ export default function Home() {
 	// Render.
 	return (
 		<Fragment>
-			<Header />
+			<Header
+				imageSrc="/images/heroes/home.jpg"
+				imageAlt="todo"
+				imageClassName="object-[50%_80%]"
+			/>
 			<HomeContent />
 			<Footer />
 		</Fragment>

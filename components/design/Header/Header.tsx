@@ -4,8 +4,19 @@ import Menu from "@/components/design/Header/Menu"
 import Donate from "@/components/design/Header/Donate"
 import Hero from "@/components/design/Header/Hero"
 
+// Types.
+type HeaderProps = {
+	imageSrc: string
+	imageAlt: string
+	imageClassName?: string
+}
+
 // Component.
-export default function Header() {
+export default function Header({
+	imageSrc,
+	imageAlt,
+	imageClassName,
+}: HeaderProps) {
 	// Render.
 	return (
 		<header>
@@ -14,7 +25,11 @@ export default function Header() {
 				<Menu />
 				<Donate />
 			</section>
-			<Hero src="/images/heroes/home.png" alt="todo" />
+			<Hero
+				imageSrc={imageSrc}
+				imageAlt={imageAlt}
+				imageClassName={imageClassName}
+			/>
 		</header>
 	)
 }
