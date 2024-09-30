@@ -2,12 +2,14 @@
 import ContentCard from "@/components/design/ContentCard"
 import Values from "@/components/design/About/Values"
 import Image from "next/image"
+import Timeline from "@/components/design/About/Timeline"
 
 // Component.
 export default function AboutContent() {
 	// Render.
 	return (
 		<main>
+			{/* CIMI'S MISSION */}
 			<ContentCard
 				contentSrc="about/mission.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -16,8 +18,10 @@ export default function AboutContent() {
 				boldClassName="font-extrabold"
 			/>
 
+			{/* CIMI VALUES */}
 			<Values />
 
+			{/* HISTORY OF CIMI */}
 			<ContentCard
 				contentSrc="about/history-of-cimi.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -26,6 +30,10 @@ export default function AboutContent() {
 				boldClassName="font-extrabold"
 			/>
 
+			{/* CIMI TIMELINE */}
+			<Timeline />
+
+			{/* WHO IS CIMI MADE OF */}
 			<section className="lg:flex">
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -45,6 +53,8 @@ export default function AboutContent() {
 					boldClassName="font-extrabold"
 				/>
 			</section>
+
+			{/* MEET THE TEAM */}
 		</main>
 	)
 }

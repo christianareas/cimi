@@ -9,6 +9,7 @@ export default function HomeContent() {
 	// Render.
 	return (
 		<main>
+			{/* CIMI'S MISSION */}
 			<ContentCard
 				contentSrc="home/mission.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -17,6 +18,7 @@ export default function HomeContent() {
 				boldClassName="font-extrabold"
 			/>
 
+			{/* ABOUT CIMI */}
 			<section className="lg:flex">
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -41,6 +43,7 @@ export default function HomeContent() {
 				/>
 			</section>
 
+			{/* UPCOMING EVENTS */}
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home/upcoming-events.md"
@@ -64,6 +67,7 @@ export default function HomeContent() {
 				</article>
 			</section>
 
+			{/* BECOME A MEMBER AND DONATE TO CIMI */}
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home/become-a-member.md"
@@ -90,8 +94,10 @@ export default function HomeContent() {
 				/>
 			</section>
 
+			{/* OUR TEAM */}
 			<Team />
 
+			{/* TESTIMONIALS OF MEMBERS */}
 			<Testimonials />
 		</main>
 	)

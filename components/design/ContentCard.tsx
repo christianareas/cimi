@@ -13,6 +13,7 @@ type ContentCardProps = {
 	sectionClassName?: string
 	bgClassName?: string
 	h2ClassName?: string
+	h3ClassName?: string
 	fontClassName?: string
 	boldClassName?: string
 	buttonLink?: string
@@ -28,6 +29,7 @@ export default function ContentCard({
 	sectionClassName,
 	bgClassName,
 	h2ClassName,
+	h3ClassName,
 	fontClassName,
 	boldClassName,
 	buttonLink,
@@ -65,6 +67,11 @@ export default function ContentCard({
 			>
 				{children}
 			</h2>
+		),
+		h3: ({ children, ...props }: React.ComponentProps<"h3">) => (
+			<h3 className={`font-ancho font-bold text-xl ${h3ClassName}`} {...props}>
+				{children}
+			</h3>
 		),
 		p: ({ children, ...props }: React.ComponentProps<"p">) => (
 			<p className={"py-2"} {...props}>
