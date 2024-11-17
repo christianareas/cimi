@@ -1,9 +1,9 @@
 // Dependencies.
-import ContentCard from "@/src/components/design/ContentCard"
-import ColorfulBorder from "@/src/components/design/ColorfulBorder"
-import ContactInformation from "@/src/components/design/Footer/ContactInformation"
-import ContactForm from "@/src/components/design/Footer/ContactForm"
-import NewsletterForm from "@/src/components/design/Footer/NewsletterForm"
+import ContentCard from "@/components/design/ContentCard"
+import ColorfulBorder from "@/components/design/ColorfulBorder"
+import ContactInformation from "@/components/design/Footer/ContactInformation"
+import ContactForm from "@/components/design/Footer/ContactForm"
+import NewsletterForm from "@/components/design/Footer/NewsletterForm"
 
 // Component.
 export default function Footer() {
