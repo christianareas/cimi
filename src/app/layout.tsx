@@ -3,8 +3,8 @@ import "./globals.css"
 
 // Metadata.
 export const metadata = {
-	title: "Next App",
-	description: "Next.js app with NextAuth.js",
+	title: "CIMI",
+	description: "CIMI...",
 }
 
 // Layout.

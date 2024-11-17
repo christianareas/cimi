@@ -1,8 +1,8 @@
 // Dependencies.
-import Logo from "@/components/design/Header/Logo"
-import Menu from "@/components/design/Header/Menu"
-import Donate from "@/components/design/Header/Donate"
-import Hero from "@/components/design/Header/Hero"
+import Logo from "@/src/components/design/Header/Logo"
+import Menu from "@/src/components/design/Header/Menu"
+import Donate from "@/src/components/design/Header/Donate"
+import Hero from "@/src/components/design/Header/Hero"
 
 // Types.
 type HeaderProps = {
