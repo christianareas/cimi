@@ -1,7 +1,6 @@
 # CIMI
 
-## Back-End Integrations
+## Potential Back-End Integrations
 
-- NextAuth.js
 - Stripe
 - Eventbrite
