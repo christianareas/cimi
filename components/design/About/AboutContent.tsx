@@ -34,8 +34,8 @@ export default function AboutContent() {
 			<Timeline />
 
 			{/* WHO IS CIMI MADE OF */}
-			<section className="lg:flex">
-				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
+			<article className="lg:flex">
+				<section className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
 						src="/images/about/who-is-cimi-made-of.png"
 						alt="A fun picture of the CIMI board"
@@ -43,7 +43,7 @@ export default function AboutContent() {
 						sizes="(max-width: 1024px) 100vw, 50vw"
 						className="absolute inset-0 rounded-lg object-cover object-bottom"
 					/>
-				</article>
+				</section>
 				<ContentCard
 					contentSrc="about/who-is-cimi-made-of.md"
 					articleClassName="lg:w-1/2 text-center lg:text-left"
@@ -52,7 +52,7 @@ export default function AboutContent() {
 					fontClassName="text-cimi-cream"
 					boldClassName="font-extrabold"
 				/>
-			</section>
+			</article>
 
 			{/* MEET THE TEAM */}
 		</main>
