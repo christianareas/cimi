@@ -1,11 +1,13 @@
 // Dependencies.
+import ColorfulDot from "@/components/design/ColorfulDot"
 import Image from "next/image"
 
 // Component.
 export default function Timeline() {
 	return (
-		<article className="ml-20 pr-20 pb-20 font-medium">
-			<section className="border-cimi-blue border-l-4 pb-20 pl-10">
+		<article className="relative ml-20 pr-20 pb-20 font-medium">
+			<ColorfulDot cimiColor="cimi-pink" />
+			<section className="ml-1.5 border-cimi-blue border-l-4 pb-20 pl-10">
 				<section className="relative w-full pb-[56.25%]">
 					<Image
 						src="/images/about/milestones/1.jpg"
@@ -17,7 +19,8 @@ export default function Timeline() {
 				</section>
 			</section>
 
-			<section className="border-cimi-blue border-l-4 pb-28 pl-10">
+			<ColorfulDot cimiColor="cimi-green" />
+			<section className="ml-1.5 border-cimi-blue border-l-4 pb-28 pl-10">
 				<h3 className="pb-5 font-ancho font-bold text-cimi-blue text-xl">
 					The first CIMI-sponsored race was held in 2013 in Nicaragua.
 				</h3>

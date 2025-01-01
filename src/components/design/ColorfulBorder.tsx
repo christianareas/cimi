@@ -4,10 +4,13 @@ export default function ColorfulBorder() {
 	return (
 		<section className="flex w-full flex-col">
 			<section
-				className="h-2.5 bg-center bg-repeat-x"
+				className=""
 				style={{
 					backgroundImage: "url(/images/colorful-border.svg)",
+					backgroundPosition: "center",
+					backgroundRepeat: "repeat-x",
 					backgroundSize: "contain",
+					height: "10px",
 				}}
 			/>
 		</section>
