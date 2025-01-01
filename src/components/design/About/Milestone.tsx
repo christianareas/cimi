@@ -18,6 +18,7 @@ type MilestoneProps = {
 	colorfulDotColor: CimiColors
 	imageSrc: string
 	imageAlt: string
+	imagePosition: string
 	title: string
 	content: string
 }
@@ -27,13 +28,14 @@ export default function Milestone({
 	colorfulDotColor,
 	imageSrc,
 	imageAlt,
+	imagePosition,
 	title,
 	content,
 }: MilestoneProps) {
 	return (
 		<article className="relative ml-20 pr-20 font-medium lg:mx-auto lg:flex lg:h-full lg:max-w-screen-lg lg:pr-0">
 			{/* Image. */}
-			<section className="flex flex-col lg:w-1/2 ">
+			<section className="lg:w-1/2 ">
 				<section className="z-50 lg:hidden">
 					<ColorfulDot cimiColor={colorfulDotColor} />
 				</section>
@@ -44,7 +46,7 @@ export default function Milestone({
 							alt={imageAlt}
 							fill
 							sizes="(max-width: 1024px) 100vw, 50vw"
-							className="absolute inset-0 rounded-lg object-cover object-[50%_35%]"
+							className={`${imagePosition} absolute inset-0 rounded-lg object-cover`}
 						/>
 					</section>
 				</section>
