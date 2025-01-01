@@ -15,7 +15,7 @@ export default function Timeline() {
 
 			<Milestone
 				colorfulDotColor="cimi-green"
-				imageSrc="/images/about/milestones/1.jpg"
+				imageSrc="/images/about/milestones/2.jpg"
 				imageAlt="todo"
 				title="CIMI began a community support program called Adopt-a-Family."
 				content="Donors are matched to a family they support during the holidays."
@@ -23,7 +23,7 @@ export default function Timeline() {
 
 			<Milestone
 				colorfulDotColor="cimi-yellow"
-				imageSrc="/images/about/milestones/1.jpg"
+				imageSrc="/images/about/milestones/3.jpg"
 				imageAlt="todo"
 				title="In early 2017, the 5th annual CIMI Nicaragua 5k race took place."
 				content="The event drew nearly 900 runners and 70% of them were women. Races also expanded in San Jose, in addition to educational opportunities."
@@ -31,7 +31,7 @@ export default function Timeline() {
 
 			<Milestone
 				colorfulDotColor="cimi-red"
-				imageSrc="/images/about/milestones/1.jpg"
+				imageSrc="/images/about/milestones/4.jpg"
 				imageAlt="todo"
 				title="CIMI started an initiative to provide technology to girls in need."
 				content="In partnership with the Computer History Museum in Mountain View, California, CIMI created the Design_Code_Bootcamp at the Computer History Museum to provide girls in grades 6 through 8 with an opportunity to participate in engaging, hands-on STEAM (science, technology, engineering, arts, math) workshops."
@@ -39,7 +39,7 @@ export default function Timeline() {
 
 			<Milestone
 				colorfulDotColor="cimi-purple"
-				imageSrc="/images/about/milestones/1.jpg"
+				imageSrc="/images/about/milestones/5.jpg"
 				imageAlt="todo"
 				title="CIMI sponsored 10 girls to participate in a Google Robotics workshop."
 				content="Coming from underserved communities, these girls were able to participate in the Girl Powered VEX Robotics Workshop at the Google Event Center. They learned about designing, building, and programming robots in a sold-out event with 550 participants."
@@ -47,7 +47,7 @@ export default function Timeline() {
 
 			<Milestone
 				colorfulDotColor="cimi-blue"
-				imageSrc="/images/about/milestones/1.jpg"
+				imageSrc="/images/about/milestones/6.jpg"
 				imageAlt="todo"
 				title="CIMI pivoted to virtual when COVID-19 hit."
 				content="While COVID-19 paused large gatherings like races, CIMI   continued their community-centered programs like gas card giveaways and school supply donations and focus on educational programs."
@@ -55,7 +55,7 @@ export default function Timeline() {
 
 			<Milestone
 				colorfulDotColor="cimi-pink"
-				imageSrc="/images/about/milestones/1.jpg"
+				imageSrc="/images/about/milestones/7.jpg"
 				imageAlt="todo"
 				title="CIMI’s impact continues to grow."
 				content="The organization now offers physical activities—like volleyball skills workshops, runs, and trail walks—which helps participants gain confidence, manage stress, and build healthy habits. CIMI also offers education programs like coding bootcamps, computer basics classes, robotics, and public speaking opportunities."
