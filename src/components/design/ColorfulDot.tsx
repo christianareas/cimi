@@ -1,27 +1,17 @@
 // Dependencies.
 import tailwindConfig from "@/tailwind.config"
+import type { CimiColors } from "@/components/design/About/Milestone"
 
 // Types.
-type CimiColor =
-	| "cimi-cream"
-	| "cimi-dark-cream"
-	| "cimi-red"
-	| "cimi-yellow"
-	| "cimi-green"
-	| "cimi-blue"
-	| "cimi-purple"
-	| "cimi-pink"
-	| "cimi-black"
-
 type ColorfulDotProps = {
-	cimiColor: CimiColor
+	cimiColor: CimiColors
 }
 
 // Component.
 export default function ColorfulDot({ cimiColor }: ColorfulDotProps) {
 	// Colors.
 	const tailwindThemeColors = tailwindConfig.theme?.extend?.colors as Record<
-		CimiColor,
+		CimiColors,
 		string
 	>
 	const fillColor = tailwindThemeColors[cimiColor]
@@ -29,6 +19,7 @@ export default function ColorfulDot({ cimiColor }: ColorfulDotProps) {
 	// Render.
 	return (
 		<section
+			className="ml-[-0.375rem]"
 			style={{
 				backgroundPosition: "left",
 				backgroundRepeat: "no-repeat",
@@ -43,7 +34,7 @@ export default function ColorfulDot({ cimiColor }: ColorfulDotProps) {
 				viewBox="0 0 16 16"
 				fill={fillColor}
 			>
-				<title>Colorful Dot</title>
+				<title>{`${cimiColor} dot`}</title>
 				<circle cx="8" cy="8" r="8" />
 			</svg>
 		</section>

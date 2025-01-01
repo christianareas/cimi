@@ -95,7 +95,6 @@ export default function ContentCard({
 				"rounded-lg p-20",
 			]
 				.filter(Boolean)
-				// biome-ignore lint/nursery/useSortedClasses: False positive.
 				.join(" ")}
 		>
 			<section className={sectionClassName}>
@@ -117,7 +116,6 @@ export default function ContentCard({
 							height={47}
 							className={[buttonClassName, "w-auto pt-5 pb-2"]
 								.filter(Boolean)
-								// biome-ignore lint/nursery/useSortedClasses: False positive.
 								.join(" ")}
 						/>
 					</Link>

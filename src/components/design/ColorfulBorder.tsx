@@ -4,7 +4,6 @@ export default function ColorfulBorder() {
 	return (
 		<section className="flex w-full flex-col">
 			<section
-				className=""
 				style={{
 					backgroundImage: "url(/images/colorful-border.svg)",
 					backgroundPosition: "center",
