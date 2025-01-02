@@ -11,6 +11,8 @@ export default function EventsContent() {
 				*****************
 			*/}
 
+			<p>Events page!</p>
+
 			{/*
 				******
 				Events
