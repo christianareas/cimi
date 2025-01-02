@@ -39,9 +39,15 @@ export default function ContentCard({
 }: ContentCardProps) {
 	// Fetch the Markdown content.
 	async function fetchMarkdown(src: string) {
+		// Base URL.
+		let baseUrl = ""
+		if (process.env.NODE_ENV === "development") {
+			baseUrl = `http://localhost:${process.env.PORT}`
+		} else if (process.env.NODE_ENV === "production") {
+			baseUrl = `https://${process.env.VERCEL_URL}`
+		}
+
 		// Fetch.
-		const baseUrl =
-			process.env.NEXT_PUBLIC_API_URL || `https://${process.env.VERCEL_URL}`
 		const response = await fetch(`${baseUrl}/api/markdown?src=${src}`, {
 			cache: "no-store",
 		})
