@@ -10,7 +10,11 @@ export default function AboutContent() {
 	// Render.
 	return (
 		<main>
-			{/* Mission */}
+			{/*
+				**************
+				CIMI’s Mission
+				**************
+			*/}
 			<ContentCard
 				contentSrc="about/mission.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -19,10 +23,18 @@ export default function AboutContent() {
 				boldClassName="font-extrabold"
 			/>
 
-			{/* Values */}
+			{/*
+				**********
+				Our Values
+				**********
+			*/}
 			<Values />
 
-			{/* History */}
+			{/*
+				***************
+				History of CIMI
+				***************
+			*/}
 			<ContentCard
 				contentSrc="about/history-of-cimi.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -31,10 +43,18 @@ export default function AboutContent() {
 				boldClassName="font-extrabold"
 			/>
 
-			{/* Timeline */}
+			{/*
+				********
+				Timeline
+				********
+			*/}
 			<Timeline />
 
-			{/* Who */}
+			{/*
+				********************
+				Who Is CIMI Made Of?
+				********************
+			*/}
 			<article className="lg:flex">
 				<section className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -55,7 +75,11 @@ export default function AboutContent() {
 				/>
 			</article>
 
-			{/* Team */}
+			{/*
+				*************
+				Meet the Team
+				*************
+			*/}
 			<Team />
 		</main>
 	)
