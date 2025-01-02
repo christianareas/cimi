@@ -55,7 +55,7 @@ export default function Team() {
 						<p className="pt-3 font-medium text-sm normal-case">
 							Ivonne Figueroa is a UX Researcher and holds a doctorate in Human
 							Factors and Applied Psychology. As a first-generation college
-							graduate the stories of CIMI's youth resonate with Ivonne’s own
+							graduate the stories of CIMI’s youth resonate with Ivonne’s own
 							experiences. She believes education is the most powerful equalizer
 							and is also a long time runner. Ivonne values CIMI’s mission of
 							helping participants to be stronger physically and mentally.
@@ -80,7 +80,7 @@ export default function Team() {
 						<h4 className="font-semibold">Secretary</h4>
 						<p className="pt-3 font-medium text-sm normal-case">
 							Kamille Shan is a Technical Project Manager in Silicon Valley. She
-							believes in the importance of fitness to everyone's lives. Kamille
+							believes in the importance of fitness to everyone’s lives. Kamille
 							is also passionate about encouraging youth to be interested in
 							STEM. Outside of work, Kamille loves to bake and share the
 							calories.
