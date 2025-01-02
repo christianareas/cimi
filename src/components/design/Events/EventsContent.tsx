@@ -11,7 +11,6 @@ export default function EventsContent() {
 				What’s Happening?
 				*****************
 			*/}
-
 			<ContentCard
 				contentSrc="events/intro.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -25,6 +24,13 @@ export default function EventsContent() {
 				Events
 				******
 			*/}
+			{/* 
+				- Upcoming Events || Past Events
+				- Upcoming Events
+					- Event -> Event page
+				- Past Events
+					- Event -> Event page
+			 */}
 		</main>
 	)
 }
