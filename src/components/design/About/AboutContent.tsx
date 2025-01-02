@@ -1,8 +1,9 @@
 // Dependencies.
 import ContentCard from "@/components/design/ContentCard"
-import Values from "@/components/design/About/Values"
 import Image from "next/image"
+import Values from "@/components/design/About/Values"
 import Timeline from "@/components/design/About/Timeline"
+import Team from "@/components/design/About/Team"
 
 // Component.
 export default function AboutContent() {
@@ -55,6 +56,7 @@ export default function AboutContent() {
 			</article>
 
 			{/* Team */}
+			<Team />
 		</main>
 	)
 }

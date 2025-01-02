@@ -10,9 +10,9 @@ export default function Values() {
 				Our Values
 			</h2>
 
-			<section className="grid grid-cols-2 gap-20 uppercase lg:mx-auto lg:max-w-screen-lg lg:grid-cols-4">
-				<article>
-					<section className="relative w-full pb-[100%]">
+			<section className="grid grid-cols-2 gap-10 uppercase lg:mx-auto lg:max-w-screen-md lg:grid-cols-4">
+				<article className="flex flex-col items-center">
+					<section className="relative h-[164px] w-[164px]">
 						<Image
 							src="/images/about/values/education-as-a-key-to-success.svg"
 							alt="Education as a key to success"
@@ -21,11 +21,13 @@ export default function Values() {
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
-					<h3 className="font-semibold">Education as a key to success</h3>
+					<h3 className="max-w-[164px] pt-2 font-semibold">
+						Education as a key to success
+					</h3>
 				</article>
 
-				<article>
-					<section className="relative w-full pb-[100%]">
+				<article className="flex flex-col items-center">
+					<section className="relative h-[164px] w-[164px]">
 						<Image
 							src="/images/about/values/exercise-for-empowerment.svg"
 							alt="Exercise for empowerment"
@@ -34,11 +36,13 @@ export default function Values() {
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
-					<h3 className="font-semibold">Exercise for empowerment</h3>
+					<h3 className="max-w-[164px] pt-2 font-semibold">
+						Exercise for empowerment
+					</h3>
 				</article>
 
-				<article>
-					<section className="relative w-full pb-[100%]">
+				<article className="flex flex-col items-center">
+					<section className="relative h-[164px] w-[164px]">
 						<Image
 							src="/images/about/values/family-inclusive-activities.svg"
 							alt="Family-inclusive activities"
@@ -47,11 +51,13 @@ export default function Values() {
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
-					<h3 className="font-semibold">Family-inclusive activities</h3>
+					<h3 className="max-w-[164px] pt-2 font-semibold">
+						Family-inclusive activities
+					</h3>
 				</article>
 
-				<article>
-					<section className="relative w-full pb-[100%]">
+				<article className="flex flex-col items-center">
+					<section className="relative h-[164px] w-[164px]">
 						<Image
 							src="/images/about/values/community-focused-outreach.svg"
 							alt="Community-focused outreach"
@@ -60,7 +66,9 @@ export default function Values() {
 							className="absolute inset-0 rounded-lg object-cover object-top"
 						/>
 					</section>
-					<h3 className="font-semibold">Community-focused outreach</h3>
+					<h3 className="max-w-[164px] pt-2 font-semibold">
+						Community-focused outreach
+					</h3>
 				</article>
 			</section>
 		</article>
