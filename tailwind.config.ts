@@ -10,7 +10,7 @@ const config: Config = {
 			colors: {
 				"cimi-cream": "#FFF0DD",
 				"cimi-dark-cream": "#FFE6C5",
-				"cimi-red": "#FF4A01",
+				"cimi-red-orange": "#FF4A01",
 				"cimi-yellow": "#FFDF00",
 				"cimi-green": "#00632F",
 				"cimi-blue": "#1D48FF",

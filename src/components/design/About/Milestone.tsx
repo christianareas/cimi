@@ -6,7 +6,7 @@ import Image from "next/image"
 export type CimiColors =
 	| "cimi-cream"
 	| "cimi-dark-cream"
-	| "cimi-red"
+	| "cimi-red-orange"
 	| "cimi-yellow"
 	| "cimi-green"
 	| "cimi-blue"

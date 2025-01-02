@@ -1,4 +1,5 @@
 // Dependencies.
+import ContentCard from "@/components/design/ContentCard"
 
 // Component.
 export default function EventsContent() {
@@ -11,7 +12,13 @@ export default function EventsContent() {
 				*****************
 			*/}
 
-			<p>Events page!</p>
+			<ContentCard
+				contentSrc="events/intro.md"
+				articleClassName="lg:w-1/2 mx-auto text-center"
+				h2ClassName="text-cimi-red-orange"
+				fontClassName="font-medium"
+				boldClassName="font-extrabold"
+			/>
 
 			{/*
 				******

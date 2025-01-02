@@ -44,7 +44,7 @@ export default function Testimonials() {
 
 	// Render.
 	return (
-		<section className="bg-cimi-red px-10 py-20 text-center font-normal lg:text-left">
+		<section className="bg-cimi-red-orange px-10 py-20 text-center font-normal lg:text-left">
 			<section className="lg:mx-auto lg:max-w-screen-lg">
 				<Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
 					<Tabs.List className="hidden">

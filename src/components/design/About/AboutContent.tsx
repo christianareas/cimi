@@ -16,7 +16,7 @@ export default function AboutContent() {
 				**************
 			*/}
 			<ContentCard
-				contentSrc="about/mission.md"
+				contentSrc="about/intro.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"

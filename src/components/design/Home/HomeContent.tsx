@@ -11,7 +11,7 @@ export default function HomeContent() {
 		<main>
 			{/* CIMI'S MISSION */}
 			<ContentCard
-				contentSrc="home/mission.md"
+				contentSrc="home/intro.md"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"

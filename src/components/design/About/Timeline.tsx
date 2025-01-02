@@ -33,7 +33,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-red"
+				colorfulDotColor="cimi-red-orange"
 				imageSrc="/images/about/milestones/4.jpg"
 				imageAlt="todo"
 				imagePosition="object-center"
