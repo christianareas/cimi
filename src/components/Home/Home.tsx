@@ -1,8 +1,8 @@
 // Dependencies.
-import ContentCard from "@/components/design/ContentCard"
+import ContentCard from "@/components/Shared/ContentCard"
 import Image from "next/image"
-import Team from "@/components/design/Home/Team"
-import Testimonials from "@/components/design/Home/Testimonials"
+import Team from "@/components/Home/Team"
+import Testimonials from "@/components/Home/Testimonials"
 
 // Component.
 export default function HomeContent() {

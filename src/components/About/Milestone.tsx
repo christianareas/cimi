@@ -1,5 +1,5 @@
 // Dependencies.
-import ColorfulDot from "@/components/design/ColorfulDot"
+import ColorfulDot from "@/components/About/ColorfulDot"
 import Image from "next/image"
 
 // Types.

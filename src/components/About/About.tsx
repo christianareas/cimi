@@ -1,9 +1,9 @@
 // Dependencies.
-import ContentCard from "@/components/design/ContentCard"
+import ContentCard from "@/components/Shared/ContentCard"
 import Image from "next/image"
-import Values from "@/components/design/About/Values"
-import Timeline from "@/components/design/About/Timeline"
-import Team from "@/components/design/About/Team"
+import Values from "@/components/About/Values"
+import Timeline from "@/components/About/Timeline"
+import Team from "@/components/About/Team"
 
 // Component.
 export default function AboutContent() {

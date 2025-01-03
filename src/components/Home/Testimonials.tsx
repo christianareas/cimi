@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react"
 import * as Tabs from "@radix-ui/react-tabs"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import TestimonialCard from "@/components/design/Home/TestimonialCard"
+import TestimonialCard from "@/components/Home/TestimonialCard"
 
 // Tabs.
 const tabs = ["first-tab", "second-tab", "third-tab", "fourth-tab"]

@@ -1,5 +1,5 @@
 // Dependencies.
-import ContentCard from "@/components/design/ContentCard"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function EventsContent() {

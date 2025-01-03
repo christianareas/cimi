@@ -5,9 +5,9 @@ import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
-import MenuLinks from "@/components/design/Header/MenuLinks"
+import MenuLinks from "@/components/Layout/Header/Menu/MenuLinks"
 import links from "@/data/links"
-import MenuContent from "@/components/design/Header/MenuContent"
+import MenuContent from "@/components/Layout/Header/Menu/MenuContent"
 
 // Component.
 export default function Menu() {

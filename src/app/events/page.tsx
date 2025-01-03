@@ -1,8 +1,8 @@
 // Dependencies.
 import { Fragment } from "react"
-import Header from "@/components/design/Header/Header"
-import EventsContent from "@/components/design/Events/EventsContent"
-import Footer from "@/components/design/Footer/Footer"
+import Header from "@/components/Layout/Header/Header"
+import EventsContent from "@/components/Events/Events"
+import Footer from "@/components/Layout/Footer/Footer"
 
 // Page.
 export default function About() {

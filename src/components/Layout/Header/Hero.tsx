@@ -1,5 +1,5 @@
 // Dependencies.
-import ColorfulBorder from "@/components/design/ColorfulBorder"
+import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import Image from "next/image"
 
 // Types.

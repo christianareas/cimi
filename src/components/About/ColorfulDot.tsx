@@ -1,6 +1,6 @@
 // Dependencies.
 import tailwindConfig from "@/tailwind.config"
-import type { CimiColors } from "@/components/design/About/Milestone"
+import type { CimiColors } from "@/components/About/Milestone"
 
 // Types.
 type ColorfulDotProps = {

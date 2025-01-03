@@ -1,5 +1,5 @@
 // Dependencies.
-import Milestone from "@/components/design/About/Milestone"
+import Milestone from "@/components/About/Milestone"
 
 // Component.
 export default function Timeline() {
