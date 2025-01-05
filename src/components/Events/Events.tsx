@@ -1,5 +1,6 @@
 // Dependencies.
 import ContentCard from "@/components/Shared/ContentCard"
+import UpcomingAndPastEvents from "@/components/Events/UpcomingAndPastEvents"
 
 // Component.
 export default function EventsContent() {
@@ -20,17 +21,11 @@ export default function EventsContent() {
 			/>
 
 			{/*
-				******
-				Events
-				******
+				************************
+				Upcoming and Past Events
+				************************
 			*/}
-			{/* 
-				- Upcoming Events || Past Events
-				- Upcoming Events
-					- Event -> Event page
-				- Past Events
-					- Event -> Event page
-			 */}
+			<UpcomingAndPastEvents />
 		</main>
 	)
 }

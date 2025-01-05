@@ -1,17 +1,17 @@
 // Dependencies.
 import { NextResponse } from "next/server"
-import getMarkdown from "@/lib/content/getMarkdown"
+import getMarkdown from "@/lib/getMarkdown"
 
 // Types.
 import type { NextRequest } from "next/server"
 
-// Get Markdown.
+// GET request.
 export async function GET(request: NextRequest) {
-	// Get the file.
+	// Get the file source from the query parameters.
 	const { searchParams } = new URL(request.url)
 	const src = searchParams.get("src")
 
-	// If there’s no file, return an error.
+	// If there’s no file source, return an error.
 	if (!src) {
 		return NextResponse.json(
 			{ error: "You must define a `src` query parameter." },
