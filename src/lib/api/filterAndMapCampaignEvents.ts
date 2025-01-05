@@ -14,7 +14,7 @@ type CampaignEvent = {
 	raised: number
 	donors: number
 	currency: string
-	cover: { url: string; type: string; source: string } | null
+	cover: { url: string; type: string; source: string; embed_url: string } | null
 	status: string
 	timezone: string
 	end_at: string | null
@@ -40,16 +40,21 @@ type CampaignEvent = {
 
 // Filter and map campaign events.
 export default function filterAndMapCampaignEvents(data: CampaignEvent[]) {
+	const now = new Date()
+
 	return data
-		.filter((campaignEvent) => campaignEvent.type === "event")
+		.filter(
+			(campaignEvent) =>
+				campaignEvent.type === "event" && campaignEvent.status === "active",
+		)
 		.map((campaignEvent) => ({
 			campaignId: campaignEvent.id,
-			campaignStatus: campaignEvent.status,
 			campaignTitle: campaignEvent.title,
 			campaignSubtitle: campaignEvent.subtitle,
-			campaignCoverUrl: campaignEvent.cover?.url,
-			campaignCoverType: campaignEvent.cover?.type,
-			campaignCoverSource: campaignEvent.cover?.source,
+			campaignCoverType: campaignEvent.cover?.type || null,
+			campaignCoverSource: campaignEvent.cover?.source || null,
+			campaignCoverUrl: campaignEvent.cover?.url || null,
+			campaignCoverEmbedUrl: campaignEvent.cover?.embed_url || null,
 			campaignDescription: campaignEvent.description,
 			campaignSlug: campaignEvent.slug,
 			campaignUrl: campaignEvent.url,
@@ -62,19 +67,22 @@ export default function filterAndMapCampaignEvents(data: CampaignEvent[]) {
 			campaignUpdatedAt: campaignEvent.updated_at,
 			campaignEndAt: campaignEvent.end_at,
 			eventId: campaignEvent.event_id,
-			eventType: campaignEvent.event?.type,
-			eventTitle: campaignEvent.event?.title,
-			eventDetails: campaignEvent.event?.details,
-			eventPrivate: campaignEvent.event?.private,
-			eventTicketsRequired: campaignEvent.event?.tickets_required,
-			eventAddress: campaignEvent.event?.location_name,
-			eventAddressFormatted: campaignEvent.event?.address_formatted,
-			eventGooglePlaceId: campaignEvent.event?.google_place_id,
-			eventTimezone: campaignEvent.event?.timezone,
-			eventStartAt: campaignEvent.event?.start_at,
-			eventEndAt: campaignEvent.event?.end_at,
-			eventLivestream: campaignEvent.event?.livestream,
-			eventLivestreamStartAt: campaignEvent.event?.livestream_start_at,
-			eventLivestreamEndAt: campaignEvent.event?.livestream_end_at,
+			eventType: campaignEvent.event?.type || null,
+			eventTitle: campaignEvent.event?.title || null,
+			eventDetails: campaignEvent.event?.details || null,
+			eventPrivate: campaignEvent.event?.private || null,
+			eventTicketsRequired: campaignEvent.event?.tickets_required || null,
+			eventAddress: campaignEvent.event?.location_name || null,
+			eventAddressFormatted: campaignEvent.event?.address_formatted || null,
+			eventGooglePlaceId: campaignEvent.event?.google_place_id || null,
+			eventTimezone: campaignEvent.event?.timezone || null,
+			eventStartAt: campaignEvent.event?.start_at || null,
+			eventEndAt: campaignEvent.event?.end_at || null,
+			eventUpcoming: campaignEvent.event?.end_at
+				? new Date(campaignEvent.event.end_at) > now
+				: false,
+			eventLivestream: campaignEvent.event?.livestream || null,
+			eventLivestreamStartAt: campaignEvent.event?.livestream_start_at || null,
+			eventLivestreamEndAt: campaignEvent.event?.livestream_end_at || null,
 		}))
 }

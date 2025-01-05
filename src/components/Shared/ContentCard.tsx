@@ -48,9 +48,7 @@ export default function ContentCard({
 		}
 
 		// Fetch.
-		const response = await fetch(`${baseUrl}/api/markdown?src=${src}`, {
-			cache: "no-store",
-		})
+		const response = await fetch(`${baseUrl}/api/markdown?src=${src}`)
 
 		// If the response is not OK, throw an error.
 		if (!response.ok) {

@@ -1,7 +1,7 @@
 // Dependencies.
 import { NextResponse } from "next/server"
-import fetchGivebutterData from "@/lib/fetchGivebutterData"
-import filterAndMapCampaignEvents from "@/lib/filterAndMapCampaignEvents"
+import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
+import filterAndMapCampaignEvents from "@/lib/api/filterAndMapCampaignEvents"
 
 // Types.
 import type { NextRequest } from "next/server"

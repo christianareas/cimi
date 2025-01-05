@@ -1,6 +1,6 @@
 // Dependencies.
 import { NextResponse } from "next/server"
-import getMarkdown from "@/lib/getMarkdown"
+import getMarkdown from "@/lib/api/getMarkdown"
 
 // Types.
 import type { NextRequest } from "next/server"
