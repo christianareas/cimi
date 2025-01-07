@@ -1,5 +1,6 @@
 // Dependencies.
 import fetchData from "@/lib/ui/fetchData"
+import { use } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
@@ -23,7 +24,7 @@ type ContentCardProps = {
 }
 
 // Component.
-export default async function ContentCard({
+export default function ContentCard({
 	contentSrc,
 	articleClassName,
 	sectionClassName,
@@ -37,9 +38,8 @@ export default async function ContentCard({
 	buttonAlt,
 	buttonClassName,
 }: ContentCardProps) {
-	const { markdown } = await fetchData(
-		`/api/markdown?src=${contentSrc}`,
-		"cache",
+	const { markdown } = use(
+		fetchData(`/api/markdown?src=${contentSrc}`, "cache"),
 	)
 
 	// Set up the classes.
