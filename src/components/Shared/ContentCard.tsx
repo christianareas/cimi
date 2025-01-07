@@ -39,7 +39,7 @@ export default async function ContentCard({
 }: ContentCardProps) {
 	const { markdown } = await fetchData(
 		`/api/markdown?src=${contentSrc}`,
-		"no-cache",
+		"cache",
 	)
 
 	// Set up the classes.
