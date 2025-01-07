@@ -1,5 +1,8 @@
 // Fetch data.
-export default async function fetchData(endpoint: string) {
+export default async function fetchData(
+	endpoint: string,
+	cache: "cache" | "no-cache" = "no-cache",
+) {
 	// Environments.
 	const nodeEnvironment = process.env.NODE_ENV
 	const vercelEnvironment = process.env.VERCEL_ENV
@@ -21,7 +24,7 @@ export default async function fetchData(endpoint: string) {
 
 	try {
 		const response = await fetch(`${baseUrl}${endpoint}`, {
-			cache: "no-store",
+			cache: cache === "cache" ? "force-cache" : "no-store",
 		})
 
 		// If the response is not OK, throw an error.

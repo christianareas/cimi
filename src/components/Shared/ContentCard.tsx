@@ -37,7 +37,10 @@ export default async function ContentCard({
 	buttonAlt,
 	buttonClassName,
 }: ContentCardProps) {
-	const { markdown } = await fetchData(`/api/markdown?src=${contentSrc}`)
+	const { markdown } = await fetchData(
+		`/api/markdown?src=${contentSrc}`,
+		"no-cache",
+	)
 
 	// Set up the classes.
 	const components = {

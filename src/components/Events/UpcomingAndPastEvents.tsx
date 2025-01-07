@@ -22,7 +22,7 @@ type CampaignEvent = {
 
 // Component.
 export default async function UpcomingAndPastEvents() {
-	const { campaignEvents } = await fetchData("/api/givebutterEvents	")
+	const { campaignEvents } = await fetchData("/api/givebutterEvents", "cache")
 	const upcomingAndPastCampaignEvents = [
 		{
 			id: "upcoming-events",
@@ -49,6 +49,7 @@ export default async function UpcomingAndPastEvents() {
 					{upcomingAndPastCampaignEvent.events.map(
 						(campaignEvent: CampaignEvent) => (
 							<section className="pb-10" key={campaignEvent.campaignId}>
+								<h3>{campaignEvent.eventTitle}</h3>
 								<p>
 									<a href={campaignEvent.campaignUrl}>
 										{campaignEvent.campaignUrl}
