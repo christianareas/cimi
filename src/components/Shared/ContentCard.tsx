@@ -1,5 +1,5 @@
 // Dependencies.
-import { use } from "react"
+import fetchData from "@/lib/ui/fetchData"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
@@ -23,7 +23,7 @@ type ContentCardProps = {
 }
 
 // Component.
-export default function ContentCard({
+export default async function ContentCard({
 	contentSrc,
 	articleClassName,
 	sectionClassName,
@@ -37,33 +37,7 @@ export default function ContentCard({
 	buttonAlt,
 	buttonClassName,
 }: ContentCardProps) {
-	// Fetch the Markdown content.
-	async function fetchMarkdown(src: string) {
-		// Base URL.
-		let baseUrl = ""
-		if (process.env.NODE_ENV === "development") {
-			baseUrl = `http://localhost:${process.env.PORT}`
-		} else if (process.env.NODE_ENV === "production") {
-			baseUrl = `https://${process.env.VERCEL_URL}`
-		}
-
-		// Fetch.
-		const response = await fetch(`${baseUrl}/api/markdown?src=${src}`, {
-			cache: "no-store",
-		})
-
-		// If the response is not OK, throw an error.
-		if (!response.ok) {
-			throw new Error("Couldn’t fetch the Markdown content.")
-		}
-
-		// Return the Markdown content.
-		const { markdown } = await response.json()
-		return markdown
-	}
-
-	// Use the Markdown content.
-	const markdown = use(fetchMarkdown(contentSrc))
+	const { markdown } = await fetchData(`/api/markdown?src=${contentSrc}`)
 
 	// Set up the classes.
 	const components = {

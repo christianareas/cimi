@@ -20,8 +20,9 @@ export default async function fetchData(endpoint: string) {
 	}
 
 	try {
-		// Fetch.
-		const response = await fetch(`${baseUrl}${endpoint}`)
+		const response = await fetch(`${baseUrl}${endpoint}`, {
+			cache: "no-store",
+		})
 
 		// If the response is not OK, throw an error.
 		if (!response.ok) {
