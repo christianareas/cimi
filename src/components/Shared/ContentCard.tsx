@@ -1,6 +1,6 @@
 // Dependencies.
-import fetchData from "@/lib/ui/fetchData"
 import { use } from "react"
+import fetchData from "@/lib/ui/fetchData"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"

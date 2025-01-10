@@ -1,6 +1,6 @@
 // Dependencies.
-import fetchData from "@/lib/ui/fetchData"
 import { use } from "react"
+import fetchData from "@/lib/ui/fetchData"
 
 // Types.
 type CampaignEvent = {
@@ -23,7 +23,8 @@ type CampaignEvent = {
 
 // Component.
 export default function UpcomingAndPastEvents() {
-	const { campaignEvents } = use(fetchData("/api/givebutterEvents", "cache"))
+	const { campaignEvents } = use(fetchData("/api/givebutterEvents", "no-cache"))
+
 	const upcomingAndPastCampaignEvents = [
 		{
 			id: "upcoming-events",
