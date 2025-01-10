@@ -38,9 +38,7 @@ export default function ContentCard({
 	buttonAlt,
 	buttonClassName,
 }: ContentCardProps) {
-	const { markdown } = use(
-		fetchData(`/api/markdown?src=${contentSrc}`, "cache"),
-	)
+	const markdown = "Lorem ipsum."
 
 	// Set up the classes.
 	const components = {

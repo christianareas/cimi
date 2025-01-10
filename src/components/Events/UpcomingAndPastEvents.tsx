@@ -1,6 +1,5 @@
 // Dependencies.
-import { use } from "react"
-import fetchData from "@/lib/ui/fetchData"
+import { campaignEvents } from "@/data/content/events/campaignEvents"
 
 // Types.
 type CampaignEvent = {
@@ -23,21 +22,19 @@ type CampaignEvent = {
 
 // Component.
 export default function UpcomingAndPastEvents() {
-	const { campaignEvents } = use(fetchData("/api/givebutterEvents", "no-cache"))
-
 	const upcomingAndPastCampaignEvents = [
 		{
 			id: "upcoming-events",
 			heading: "Upcoming Events",
 			events: campaignEvents.filter(
-				(campaignEvent: CampaignEvent) => campaignEvent.eventUpcoming,
+				(campaignEvent) => campaignEvent.eventUpcoming,
 			),
 		},
 		{
 			id: "past-events",
 			heading: "Past Events",
 			events: campaignEvents.filter(
-				(campaignEvent: CampaignEvent) => !campaignEvent.eventUpcoming,
+				(campaignEvent) => !campaignEvent.eventUpcoming,
 			),
 		},
 	]
@@ -48,34 +45,32 @@ export default function UpcomingAndPastEvents() {
 			{upcomingAndPastCampaignEvents.map((upcomingAndPastCampaignEvent) => (
 				<article key={upcomingAndPastCampaignEvent.id} className="px-20">
 					<h2 className="pb-2">{upcomingAndPastCampaignEvent.heading}</h2>
-					{upcomingAndPastCampaignEvent.events.map(
-						(campaignEvent: CampaignEvent) => (
-							<section className="pb-10" key={campaignEvent.campaignId}>
-								<h3>{campaignEvent.eventTitle}</h3>
-								<p>
-									<a href={campaignEvent.campaignUrl}>
-										{campaignEvent.campaignUrl}
-									</a>
-								</p>
-								<p>
-									<strong>eventPrivate:</strong>{" "}
-									{campaignEvent.eventPrivate ? "Yes" : "No"}
-								</p>
-								<p>
-									<strong>eventAddress:</strong>{" "}
-									{campaignEvent.eventPrivate
-										? "Private"
-										: campaignEvent.eventAddress}
-								</p>
-								<p>
-									<strong>eventAddressFormatted:</strong>{" "}
-									{campaignEvent.eventPrivate
-										? "Private"
-										: campaignEvent.eventAddressFormatted}
-								</p>
-							</section>
-						),
-					)}
+					{upcomingAndPastCampaignEvent.events.map((campaignEvent) => (
+						<section className="pb-10" key={campaignEvent.campaignId}>
+							<h3>{campaignEvent.eventTitle}</h3>
+							<p>
+								<a href={campaignEvent.campaignUrl}>
+									{campaignEvent.campaignUrl}
+								</a>
+							</p>
+							<p>
+								<strong>eventPrivate:</strong>{" "}
+								{campaignEvent.eventPrivate ? "Yes" : "No"}
+							</p>
+							<p>
+								<strong>eventAddress:</strong>{" "}
+								{campaignEvent.eventPrivate
+									? "Private"
+									: campaignEvent.eventAddress}
+							</p>
+							<p>
+								<strong>eventAddressFormatted:</strong>{" "}
+								{campaignEvent.eventPrivate
+									? "Private"
+									: campaignEvent.eventAddressFormatted}
+							</p>
+						</section>
+					))}
 				</article>
 			))}
 		</section>
