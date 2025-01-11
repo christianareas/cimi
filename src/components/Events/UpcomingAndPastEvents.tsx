@@ -2,12 +2,12 @@
 
 // Dependencies.
 import { useState, useEffect } from "react"
-import { campaignEvents as initialCampaignEvents } from "@/data/content/events/campaignEvents"
+import { initialCampaignEvents } from "@/data/content/events/initialCampaignEvents"
 import fetchData from "@/lib/ui/fetchData"
 
 // Component.
 export default function UpcomingAndPastEvents() {
-	// Set the initial states.
+	// Set the initial state.
 	const [campaignEvents, setCampaignEvents] = useState(initialCampaignEvents)
 
 	// Fetch the latest campaign events.

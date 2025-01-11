@@ -97,8 +97,11 @@ export default function filterMapAndSaveCampaignEvents(data: CampaignEvent[]) {
 	) {
 		try {
 			fs.writeFile(
-				path.join(process.cwd(), "/src/data/content/events/campaignEvents.ts"),
-				`export const campaignEvents = ${JSON.stringify(campaignEvents, null, 2)}`,
+				path.join(
+					process.cwd(),
+					"/src/data/content/events/initialCampaignEvents.ts",
+				),
+				`export const initialCampaignEvents = ${JSON.stringify(campaignEvents, null, 2)}`,
 				"utf8",
 			)
 		} catch (error) {

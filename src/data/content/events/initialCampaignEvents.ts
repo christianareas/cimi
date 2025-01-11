@@ -1,4 +1,4 @@
-export const campaignEvents = [
+export const initialCampaignEvents = [
 	{
 		campaignId: 341610,
 		campaignTitle: "Finish the CIMI Website",
