@@ -1,3 +1,7 @@
+// Dependencies.
+import path from "node:path"
+import fs from "node:fs/promises"
+
 // Types.
 type CampaignEvent = {
 	id: number
@@ -38,11 +42,11 @@ type CampaignEvent = {
 	updated_at: string
 }
 
-// Filter and map campaign events.
-export default function filterAndMapCampaignEvents(data: CampaignEvent[]) {
+// Filter, map, and save campaign events.
+export default function filterMapAndSaveCampaignEvents(data: CampaignEvent[]) {
+	// Filter and map.
 	const now = new Date()
-
-	return data
+	const campaignEvents = data
 		.filter(
 			(campaignEvent) =>
 				campaignEvent.type === "event" && campaignEvent.status === "active",
@@ -85,4 +89,22 @@ export default function filterAndMapCampaignEvents(data: CampaignEvent[]) {
 			eventLivestreamStartAt: campaignEvent.event?.livestream_start_at || null,
 			eventLivestreamEndAt: campaignEvent.event?.livestream_end_at || null,
 		}))
+
+	// Save.
+	if (
+		process.env.NODE_ENV === "development" ||
+		process.env.VERCEL_ENV === "development"
+	) {
+		try {
+			fs.writeFile(
+				path.join(process.cwd(), "/src/data/content/events/campaignEvents.ts"),
+				`export const campaignEvents = ${JSON.stringify(campaignEvents, null, 2)}`,
+				"utf8",
+			)
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
+	return campaignEvents
 }

@@ -1,25 +1,6 @@
 // Dependencies.
 import { campaignEvents } from "@/data/content/events/campaignEvents"
 
-// Types.
-type CampaignEvent = {
-	campaignId: number
-	campaignUrl: string
-	campaignCoverType: string
-	campaignCoverSource: string
-	campaignCoverUrl: string
-	campaignCoverEmbedUrl: string
-	eventTitle: string
-	eventDetails: string
-	eventTimezone: string
-	eventStartAt: string
-	eventEndAt: string
-	eventUpcoming: boolean
-	eventPrivate: boolean
-	eventAddress: string
-	eventAddressFormatted: string
-}
-
 // Component.
 export default function UpcomingAndPastEvents() {
 	const upcomingAndPastCampaignEvents = [

@@ -9,7 +9,10 @@ export default async function fetchData(
 
 	// Base URL.
 	let baseUrl = ""
-	if (nodeEnvironment && vercelEnvironment === undefined) {
+	if (
+		nodeEnvironment === "development" ||
+		vercelEnvironment === "development"
+	) {
 		baseUrl = `http://localhost:${process.env.PORT || 3000}`
 	} else if (
 		vercelEnvironment === "preview" ||

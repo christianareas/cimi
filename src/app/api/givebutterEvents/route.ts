@@ -1,20 +1,16 @@
 // Dependencies.
 import { NextResponse } from "next/server"
 import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
-import filterAndMapCampaignEvents from "@/lib/api/filterAndMapCampaignEvents"
-
-// Types.
-import type { NextRequest } from "next/server"
+import filterMapAndSaveCampaignEvents from "@/lib/api/filterMapAndSaveCampaignEvents"
 
 // GET request.
-export async function GET(request: NextRequest) {
+export async function GET() {
 	try {
 		// Fetch.
 		const response = await fetchGivebutterData("/campaigns")
-		const data = response.data
 
 		// Filter and map.
-		const campaignEvents = filterAndMapCampaignEvents(data)
+		const campaignEvents = filterMapAndSaveCampaignEvents(response.data)
 
 		// Return.
 		return NextResponse.json({ campaignEvents }, { status: 200 })
