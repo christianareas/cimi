@@ -1,8 +1,29 @@
+"use client"
+
 // Dependencies.
-import { campaignEvents } from "@/data/content/events/campaignEvents"
+import { useState, useEffect } from "react"
+import { campaignEvents as initialCampaignEvents } from "@/data/content/events/campaignEvents"
+import fetchData from "@/lib/ui/fetchData"
 
 // Component.
 export default function UpcomingAndPastEvents() {
+	// Set the initial state.
+	const [campaignEvents, setCampaignEvents] = useState(initialCampaignEvents)
+
+	// Fetch the latest campaign events.
+	useEffect(() => {
+		async function fetchCampaignEvents() {
+			const response = await fetchData(
+				"/api/givebutterEvents",
+				"no-cache",
+			)
+			const freshCampaignEvents = response.campaignEvents
+			setCampaignEvents(freshCampaignEvents)
+		}
+		fetchCampaignEvents()
+	}, [])
+
+	// Prepare the upcoming and past events.
 	const upcomingAndPastCampaignEvents = [
 		{
 			id: "upcoming-events",

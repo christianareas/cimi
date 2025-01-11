@@ -40,6 +40,5 @@ export default async function fetchData(
 		return await response.json()
 	} catch (error) {
 		console.error(error)
-		return { data: [] }
 	}
 }
