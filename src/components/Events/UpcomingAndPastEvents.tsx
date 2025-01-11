@@ -7,18 +7,19 @@ import fetchData from "@/lib/ui/fetchData"
 
 // Component.
 export default function UpcomingAndPastEvents() {
-	// Set the initial state.
+	// Set the initial states.
 	const [campaignEvents, setCampaignEvents] = useState(initialCampaignEvents)
 
 	// Fetch the latest campaign events.
 	useEffect(() => {
 		async function fetchCampaignEvents() {
-			const response = await fetchData(
-				"/api/givebutterEvents",
-				"no-cache",
-			)
-			const freshCampaignEvents = response.campaignEvents
-			setCampaignEvents(freshCampaignEvents)
+			try {
+				const response = await fetchData("/api/givebutterEvents", "no-cache")
+				const latestCampaignEvents = response.campaignEvents
+				setCampaignEvents(latestCampaignEvents)
+			} catch (error) {
+				console.error(error)
+			}
 		}
 		fetchCampaignEvents()
 	}, [])
@@ -26,15 +27,15 @@ export default function UpcomingAndPastEvents() {
 	// Prepare the upcoming and past events.
 	const upcomingAndPastCampaignEvents = [
 		{
-			id: "upcoming-events",
-			heading: "Upcoming Events",
+			eventsType: "upcoming-events",
+			eventsHeading: "Upcoming Events",
 			events: campaignEvents.filter(
 				(campaignEvent) => campaignEvent.eventUpcoming,
 			),
 		},
 		{
-			id: "past-events",
-			heading: "Past Events",
+			eventsType: "past-events",
+			eventsHeading: "Past Events",
 			events: campaignEvents.filter(
 				(campaignEvent) => !campaignEvent.eventUpcoming,
 			),
@@ -44,10 +45,13 @@ export default function UpcomingAndPastEvents() {
 	// Render.
 	return (
 		<section>
-			{upcomingAndPastCampaignEvents.map((upcomingAndPastCampaignEvent) => (
-				<article key={upcomingAndPastCampaignEvent.id} className="px-20">
-					<h2 className="pb-2">{upcomingAndPastCampaignEvent.heading}</h2>
-					{upcomingAndPastCampaignEvent.events.map((campaignEvent) => (
+			{upcomingAndPastCampaignEvents.map((upcomingOrPastCampaignEvents) => (
+				<article
+					key={upcomingOrPastCampaignEvents.eventsType}
+					className="px-20"
+				>
+					<h2 className="pb-2">{upcomingOrPastCampaignEvents.eventsHeading}</h2>
+					{upcomingOrPastCampaignEvents.events.map((campaignEvent) => (
 						<section className="pb-10" key={campaignEvent.campaignId}>
 							<h3>{campaignEvent.eventTitle}</h3>
 							<p>
