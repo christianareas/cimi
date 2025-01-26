@@ -9,25 +9,12 @@ import type { NextRequest } from "next/server"
 export async function GET(request: NextRequest) {
 	// Get the file source from the query parameters.
 	const { searchParams } = new URL(request.url)
-	const src = searchParams.get("src")
-
-	if (!src) {
-		return NextResponse.json(
-			{ error: "You must define a `src` query parameter." },
-			{ status: 400 },
-		)
-	}
-
-	if (src === "/") {
-		return NextResponse.json(
-			{ error: "You must define a more specific `src` query parameter." },
-			{ status: 400 },
-		)
-	}
+	const src = searchParams.get("src") ?? ""
 
 	// Get the Markdown content.
 	try {
 		const markdown = getMarkdown(src)
+
 		return NextResponse.json({ markdown }, { status: 200 })
 	} catch (error) {
 		return NextResponse.json(

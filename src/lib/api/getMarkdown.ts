@@ -15,45 +15,34 @@ export default function getMarkdown(src: string) {
 
 	// Format the directory or file name.
 	function formatName(pathOrFileName: string) {
-		return pathOrFileName
-			.replace(/\.md$/, "")
-			.split("-")
-			.map((word, index) =>
-				index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1),
-			)
-			.join("")
+		return pathOrFileName.replace(/\.md$/, "")
 	}
 
 	// If the source is a file.
 	if (absoluteSrcStats.isFile()) {
-		throw new Error() // Todo.
+		return fs.readFileSync(absoluteSrcPath, "utf-8")
 	}
 
 	// If the source is a directory.
-	if (absoluteSrcStats.isDirectory()) {
-		const directoryName = formatName(path.basename(absoluteSrcPath))
-		const directoryContents = fs.readdirSync(absoluteSrcPath)
+	const directoryContents = fs.readdirSync(absoluteSrcPath)
 
-		const markdownObject: Markdown = { [directoryName]: {} }
+	const markdownObject: Markdown = {}
 
-		for (const directoryItem of directoryContents) {
-			const directoryItemPath = path.join(absoluteSrcPath, directoryItem)
-			const directoryItemStats = fs.statSync(directoryItemPath)
+	for (const directoryItem of directoryContents) {
+		const directoryItemPath = path.join(absoluteSrcPath, directoryItem)
+		const directoryItemStats = fs.statSync(directoryItemPath)
 
-			if (directoryItemStats.isDirectory()) {
-				const nestedMarkdownObject = getMarkdown(path.join(src, directoryItem))
-				if (typeof markdownObject[directoryName] === "object") {
-					Object.assign(markdownObject[directoryName], nestedMarkdownObject)
-				}
-			} else if (directoryItem.endsWith(".md")) {
-				const fileName = formatName(directoryItem)
-				const fileContents = fs.readFileSync(directoryItemPath, "utf-8")
-				if (typeof markdownObject[directoryName] === "object") {
-					markdownObject[directoryName][fileName] = fileContents
-				}
-			}
+		if (directoryItemStats.isDirectory()) {
+			markdownObject[formatName(directoryItem)] = getMarkdown(
+				path.join(src, directoryItem),
+			)
+		} else if (directoryItem.endsWith(".md")) {
+			markdownObject[formatName(directoryItem)] = fs.readFileSync(
+				directoryItemPath,
+				"utf-8",
+			)
 		}
-
-		return markdownObject
 	}
+
+	return markdownObject
 }
