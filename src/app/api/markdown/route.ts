@@ -11,10 +11,16 @@ export async function GET(request: NextRequest) {
 	const { searchParams } = new URL(request.url)
 	const src = searchParams.get("src")
 
-	// If there’s no file source, return an error.
 	if (!src) {
 		return NextResponse.json(
 			{ error: "You must define a `src` query parameter." },
+			{ status: 400 },
+		)
+	}
+
+	if (src === "/") {
+		return NextResponse.json(
+			{ error: "You must define a more specific `src` query parameter." },
 			{ status: 400 },
 		)
 	}

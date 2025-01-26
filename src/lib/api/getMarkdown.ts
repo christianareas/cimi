@@ -26,7 +26,7 @@ export default function getMarkdown(src: string) {
 
 	// If the source is a file.
 	if (absoluteSrcStats.isFile()) {
-		throw new Error("Files aren’t supported. Use a directory.")
+		throw new Error() // Todo.
 	}
 
 	// If the source is a directory.
