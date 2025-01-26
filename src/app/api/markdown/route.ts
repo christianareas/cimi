@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
 	} catch (error) {
 		return NextResponse.json(
 			{
-				error: `Couldn’t find a Markdown file. Ensure the data/content/${src} file exists.`,
+				error: `Couldn’t find any Markdown files. Ensure one exists at /src/data/content${src}.`,
 			},
 			{ status: 404 },
 		)

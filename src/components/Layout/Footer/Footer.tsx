@@ -1,4 +1,5 @@
 // Dependencies.
+import getMarkdown from "@/lib/api/getMarkdown"
 import ContentCard from "@/components/Shared/ContentCard"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import ContactInformation from "@/components/Layout/Footer/ContactInformation"

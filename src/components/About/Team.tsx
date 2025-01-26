@@ -10,7 +10,7 @@ export default function Team() {
 			</h2>
 
 			<section className="uppercase lg:mx-auto lg:max-w-screen-md lg:text-left">
-				<article className="flex flex-col items-center pb-10 lg:flex-row lg:items-start">
+				<article className="flex flex-col items-center pb-20 lg:flex-row lg:items-start">
 					<section className="relative h-[200px] w-[200px] lg:basis-auto">
 						<Image
 							src="/images/home/team/aracely-areas.jpg"
@@ -20,7 +20,7 @@ export default function Team() {
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
-					<section className="pt-3 lg:basis-2/3 lg:pt-[100px] lg:pl-10">
+					<section className="pt-3 lg:basis-2/3 lg:pt-0 lg:pl-10">
 						<h3 className="font-ancho font-bold text-cimi-blue text-xl">
 							Aracely Areas
 						</h3>
@@ -37,7 +37,7 @@ export default function Team() {
 					</section>
 				</article>
 
-				<article className="flex flex-col items-center pb-10 lg:flex-row lg:items-start">
+				<article className="flex flex-col items-center pb-20 lg:flex-row lg:items-start">
 					<section className="relative h-[200px] w-[200px] lg:basis-auto">
 						<Image
 							src="/images/home/team/ivonne-figueroa.jpg"
@@ -47,7 +47,7 @@ export default function Team() {
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
-					<section className="pt-3 lg:basis-2/3 lg:pt-[100px] lg:pl-10">
+					<section className="pt-3 lg:basis-2/3 lg:pt-0 lg:pl-10">
 						<h3 className="font-ancho font-bold text-cimi-blue text-xl">
 							Ivonne Figueroa
 						</h3>
@@ -63,7 +63,7 @@ export default function Team() {
 					</section>
 				</article>
 
-				<article className="flex flex-col items-center pb-10 lg:flex-row lg:items-start">
+				<article className="flex flex-col items-center pb-20 lg:flex-row lg:items-start">
 					<section className="relative h-[200px] w-[200px] lg:basis-auto">
 						<Image
 							src="/images/home/team/kamille-matias.jpg"
@@ -73,7 +73,7 @@ export default function Team() {
 							className="absolute inset-0 rounded-lg object-cover"
 						/>
 					</section>
-					<section className="pt-3 lg:basis-2/3 lg:pt-[100px] lg:pl-10">
+					<section className="pt-3 lg:basis-2/3 lg:pt-0 lg:pl-10">
 						<h3 className="font-ancho font-bold text-cimi-blue text-xl">
 							Kamille Matias
 						</h3>
@@ -88,7 +88,7 @@ export default function Team() {
 					</section>
 				</article>
 
-				<article className="flex flex-col items-center pb-10 lg:flex-row lg:items-start">
+				<article className="flex flex-col items-center pb-20 lg:flex-row lg:items-start">
 					<section className="relative h-[200px] w-[200px] lg:basis-auto">
 						<Image
 							src="/images/home/team/maya-bergstrom.jpg"
@@ -98,7 +98,7 @@ export default function Team() {
 							className="absolute inset-0 rounded-lg object-cover object-top"
 						/>
 					</section>
-					<section className="pt-3 lg:basis-2/3 lg:pt-[100px] lg:pl-10">
+					<section className="pt-3 lg:basis-2/3 lg:pt-0 lg:pl-10">
 						<h3 className="font-ancho font-bold text-cimi-blue text-xl">
 							Maya Bergstrom
 						</h3>
