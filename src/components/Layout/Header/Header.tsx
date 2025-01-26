@@ -20,7 +20,7 @@ export default function Header({
 	// Render.
 	return (
 		<header>
-			<section className="mx-auto max-w-screen-lg px-5 pt-5 font-ancho">
+			<section className="mx-auto max-w-(--breakpoint-lg) px-5 pt-5 font-ancho">
 				<Logo />
 				<Menu />
 				<Donate />

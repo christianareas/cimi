@@ -9,7 +9,7 @@ export default function Team() {
 				Meet the Team
 			</h2>
 
-			<section className="uppercase lg:mx-auto lg:max-w-screen-md lg:text-left">
+			<section className="uppercase lg:mx-auto lg:max-w-(--breakpoint-md) lg:text-left">
 				<article className="flex flex-col items-center pb-20 lg:flex-row lg:items-start">
 					<section className="relative h-[200px] w-[200px] lg:basis-auto">
 						<Image

@@ -10,7 +10,7 @@ export default function Team() {
 				Our Team
 			</h2>
 
-			<section className="grid grid-cols-2 gap-5 uppercase lg:mx-auto lg:max-w-screen-md lg:grid-cols-4">
+			<section className="grid grid-cols-2 gap-5 uppercase lg:mx-auto lg:max-w-(--breakpoint-md) lg:grid-cols-4">
 				<article>
 					<section className="relative w-full pb-[100%]">
 						<Image

@@ -40,7 +40,7 @@ export default function Menu() {
 						Navigation links and the option to donate to or join CIMI.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="ml-auto flex max-w-screen-lg flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream sm:flex-row">
+				<nav className="ml-auto flex max-w-(--breakpoint-lg) flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream sm:flex-row">
 					<section className="px-5 py-10 sm:w-1/2 sm:p-10">
 						<MenuLinks links={links} />
 					</section>

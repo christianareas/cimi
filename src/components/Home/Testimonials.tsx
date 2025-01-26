@@ -45,7 +45,7 @@ export default function Testimonials() {
 	// Render.
 	return (
 		<section className="bg-cimi-red-orange px-10 py-20 text-center font-normal lg:text-left">
-			<section className="lg:mx-auto lg:max-w-screen-lg">
+			<section className="lg:mx-auto lg:max-w-(--breakpoint-lg)">
 				<Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
 					<Tabs.List className="hidden">
 						<Tabs.Trigger value="first-tab" />
@@ -57,7 +57,7 @@ export default function Testimonials() {
 						Testimonials of Members
 					</h2>
 
-					<section className="mx-auto grid grid-cols-[1fr,5fr,1fr] items-center py-2 text-cimi-cream">
+					<section className="mx-auto grid grid-cols-[1fr_5fr_1fr] items-center py-2 text-cimi-cream">
 						<button type="button" onClick={switchToPreviousTab}>
 							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20" />
 						</button>

@@ -10,7 +10,7 @@ export default function Values() {
 				Our Values
 			</h2>
 
-			<section className="grid grid-cols-2 gap-10 uppercase lg:mx-auto lg:max-w-screen-md lg:grid-cols-4">
+			<section className="grid grid-cols-2 gap-10 uppercase lg:mx-auto lg:max-w-(--breakpoint-md) lg:grid-cols-4">
 				<article className="flex flex-col items-center">
 					<section className="relative h-[164px] w-[164px]">
 						<Image

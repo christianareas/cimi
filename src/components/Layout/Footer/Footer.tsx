@@ -39,7 +39,7 @@ export default function Footer() {
 			<ColorfulBorder />
 
 			<section className="bg-cimi-purple px-10 py-20 text-cimi-cream">
-				<section className="mx-auto flex max-w-xs flex-col items-center space-y-20 px-5 font-semibold text-xs lg:max-w-screen-lg lg:flex-row lg:space-x-20 lg:space-y-2">
+				<section className="mx-auto flex max-w-xs flex-col items-center space-y-20 px-5 font-semibold text-xs lg:max-w-(--breakpoint-lg) lg:flex-row lg:space-x-20 lg:space-y-2">
 					<ContactInformation className="lg:flex-1" />
 
 					<ContactForm className="lg:flex-1" />

@@ -33,7 +33,7 @@ export default function Milestone({
 	content,
 }: MilestoneProps) {
 	return (
-		<article className="relative ml-20 pr-20 font-medium lg:mx-auto lg:flex lg:h-full lg:max-w-screen-lg lg:pr-0">
+		<article className="relative ml-20 pr-20 font-medium lg:mx-auto lg:flex lg:h-full lg:max-w-(--breakpoint-lg) lg:pr-0">
 			{/* Image. */}
 			<section className="lg:w-1/2 ">
 				<section className="z-50 lg:hidden">
@@ -57,7 +57,7 @@ export default function Milestone({
 				<section className="z-50 hidden lg:block">
 					<ColorfulDot cimiColor={colorfulDotColor} />
 				</section>
-				<section className="flex-grow border-cimi-blue border-l-4 pb-20 pl-10 lg:mt-[-0.95rem]">
+				<section className="grow border-cimi-blue border-l-4 pb-20 pl-10 lg:mt-[-0.95rem]">
 					<h3 className="pb-5 font-ancho font-bold text-cimi-blue text-xl">
 						{title}
 					</h3>
