@@ -11,7 +11,7 @@ export default function HomeContent() {
 		<main>
 			{/* CIMI'S MISSION */}
 			<ContentCard
-				contentSrc="home/intro.md"
+				contentSrc="home.intro"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
@@ -30,7 +30,7 @@ export default function HomeContent() {
 					/>
 				</article>
 				<ContentCard
-					contentSrc="home/about-cimi.md"
+					contentSrc="home.about-cimi"
 					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"
@@ -46,7 +46,7 @@ export default function HomeContent() {
 			{/* UPCOMING EVENTS */}
 			<section className="lg:flex">
 				<ContentCard
-					contentSrc="home/upcoming-events.md"
+					contentSrc="home.upcoming-events"
 					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-yellow"
@@ -70,7 +70,7 @@ export default function HomeContent() {
 			{/* BECOME A MEMBER AND DONATE TO CIMI */}
 			<section className="lg:flex">
 				<ContentCard
-					contentSrc="home/become-a-member.md"
+					contentSrc="home.become-a-member"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-green"
@@ -82,7 +82,7 @@ export default function HomeContent() {
 					buttonClassName="mx-auto"
 				/>
 				<ContentCard
-					contentSrc="home/donate-to-cimi.md"
+					contentSrc="home.donate-to-cimi"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-pink"

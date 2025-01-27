@@ -16,7 +16,7 @@ export default function AboutContent() {
 				**************
 			*/}
 			<ContentCard
-				contentSrc="about/intro.md"
+				contentSrc="about.intro"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
@@ -36,7 +36,7 @@ export default function AboutContent() {
 				***************
 			*/}
 			<ContentCard
-				contentSrc="about/history-of-cimi.md"
+				contentSrc="about.history-of-cimi"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
@@ -66,7 +66,7 @@ export default function AboutContent() {
 					/>
 				</section>
 				<ContentCard
-					contentSrc="about/who-is-cimi-made-of.md"
+					contentSrc="about.who-is-cimi-made-of"
 					articleClassName="lg:w-1/2 text-center lg:text-left"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"

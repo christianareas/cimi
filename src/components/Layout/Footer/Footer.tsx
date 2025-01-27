@@ -1,5 +1,4 @@
 // Dependencies.
-import getMarkdown from "@/lib/api/getAndSaveMarkdown"
 import ContentCard from "@/components/Shared/ContentCard"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import ContactInformation from "@/components/Layout/Footer/ContactInformation"
@@ -13,7 +12,7 @@ export default function Footer() {
 		<footer>
 			<section className="lg:flex">
 				<ContentCard
-					contentSrc="home/join-the-community.md"
+					contentSrc="layout.footer.join-the-community"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 ml-auto"
 					bgClassName="bg-cimi-pink"
@@ -24,7 +23,7 @@ export default function Footer() {
 					buttonClassName="mx-auto"
 				/>
 				<ContentCard
-					contentSrc="home/donate-to-the-community.md"
+					contentSrc="layout.footer.donate-to-the-community"
 					articleClassName="lg:flex-1 text-center"
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-yellow"

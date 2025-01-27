@@ -1,6 +1,5 @@
 // Dependencies.
-import { use } from "react"
-import fetchData from "@/lib/ui/fetchData"
+import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
@@ -8,6 +7,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 // Types.
+import type { Markdown } from "@/lib/api/getAndSaveMarkdown"
+
 type ContentCardProps = {
 	contentSrc: string
 	articleClassName?: string
@@ -21,6 +22,23 @@ type ContentCardProps = {
 	buttonSrc?: string
 	buttonAlt?: string
 	buttonClassName?: string
+}
+
+// Helpers.
+function resolveContentSrcPath(
+	object: Markdown,
+	path: string,
+): string | undefined {
+	const keys = path.split(".")
+	let current: Markdown | string | undefined = object
+	for (const key of keys) {
+		if (typeof current === "object" && current !== null && key in current) {
+			current = current[key]
+		} else {
+			return undefined
+		}
+	}
+	return typeof current === "string" ? current : undefined
 }
 
 // Component.
@@ -38,7 +56,8 @@ export default function ContentCard({
 	buttonAlt,
 	buttonClassName,
 }: ContentCardProps) {
-	const markdown = "Lorem ipsum."
+	// Get the content.
+	const content = resolveContentSrcPath(markdown, contentSrc)
 
 	// Set up the classes.
 	const components = {
@@ -85,7 +104,7 @@ export default function ContentCard({
 					rehypePlugins={[rehypeRaw]}
 					components={components}
 				>
-					{markdown}
+					{content}
 				</ReactMarkdown>
 			</section>
 			{buttonLink && buttonSrc && buttonAlt && (

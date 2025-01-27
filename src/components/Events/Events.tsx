@@ -13,7 +13,7 @@ export default function EventsContent() {
 				*****************
 			*/}
 			<ContentCard
-				contentSrc="events/intro.md"
+				contentSrc="events.intro"
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-red-orange"
 				fontClassName="font-medium"
