@@ -10,7 +10,7 @@ export async function GET() {
 		const response = await fetchGivebutterData("/campaigns")
 
 		// Filter and map.
-		const campaignEvents = filterMapAndSaveCampaignEvents(response.data)
+		const campaignEvents = await filterMapAndSaveCampaignEvents(response.data)
 
 		// Return.
 		return NextResponse.json({ campaignEvents }, { status: 200 })

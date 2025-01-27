@@ -102,7 +102,7 @@ export const initialCampaignEvents = [
     "eventTimezone": "America/Los_Angeles",
     "eventStartAt": "2025-01-19 04:00:00",
     "eventEndAt": "2025-01-19 10:00:00",
-    "eventUpcoming": true,
+    "eventUpcoming": false,
     "eventLivestream": null,
     "eventLivestreamStartAt": null,
     "eventLivestreamEndAt": null

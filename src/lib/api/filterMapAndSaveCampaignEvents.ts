@@ -1,6 +1,6 @@
 // Dependencies.
-import path from "node:path"
 import fs from "node:fs/promises"
+import path from "node:path"
 
 // Types.
 type CampaignEvent = {
@@ -43,7 +43,9 @@ type CampaignEvent = {
 }
 
 // Filter, map, and save campaign events.
-export default function filterMapAndSaveCampaignEvents(data: CampaignEvent[]) {
+export default async function filterMapAndSaveCampaignEvents(
+	data: CampaignEvent[],
+) {
 	// Filter and map.
 	const now = new Date()
 	const campaignEvents = data
@@ -96,7 +98,7 @@ export default function filterMapAndSaveCampaignEvents(data: CampaignEvent[]) {
 		process.env.VERCEL_ENV === "development"
 	) {
 		try {
-			fs.writeFile(
+			await fs.writeFile(
 				path.join(
 					process.cwd(),
 					"/src/data/content/events/initialCampaignEvents.ts",
