@@ -11,7 +11,7 @@ const links: LinkType[] = [
 	{ href: "events", id: "events", label: "Events" },
 	{ href: "#todo", id: "donor-info", label: "Donor Info" },
 	{
-		href: "#todo",
+		href: "join",
 		id: "join",
 		label: "Join",
 		subLinks: [
