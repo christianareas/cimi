@@ -118,10 +118,10 @@ export default function UpcomingAndPastEvents() {
 								{campaignEvent.eventTitle}
 							</h3>
 							<h4 className="font-ancho font-medium text-cimi-red-orange">
-								{campaignEvent.eventStartAt
-									? `${campaignEvent.eventStartAt} – `
+								{campaignEvent.eventStartAt}
+								{campaignEvent.eventEndAt
+									? ` – ${campaignEvent.eventEndAt}`
 									: null}
-								{campaignEvent.eventEndAt}
 							</h4>
 							<section>{campaignEvent.eventDetails}</section>
 						</article>

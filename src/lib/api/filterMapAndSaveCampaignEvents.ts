@@ -84,8 +84,8 @@ export default async function filterMapAndSaveCampaignEvents(
 			eventTimezone: campaignEvent.event?.timezone || null,
 			eventStartAt: campaignEvent.event?.start_at || null,
 			eventEndAt: campaignEvent.event?.end_at || null,
-			eventUpcoming: campaignEvent.event?.end_at
-				? new Date(campaignEvent.event.end_at) > now
+			eventUpcoming: campaignEvent.event?.start_at
+				? new Date(campaignEvent.event.start_at) > now
 				: false,
 			eventLivestream: campaignEvent.event?.livestream || null,
 			eventLivestreamStartAt: campaignEvent.event?.livestream_start_at || null,
