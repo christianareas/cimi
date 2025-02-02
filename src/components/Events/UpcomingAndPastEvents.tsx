@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { initialCampaignEvents } from "@/data/content/events/initialCampaignEvents"
 import fetchData from "@/lib/ui/fetchData"
 import * as Select from "@radix-ui/react-select"
-import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { ChevronDownIcon, ExternalLinkIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -147,13 +147,17 @@ export default function UpcomingAndPastEvents() {
 								{campaignEvent.eventDetails}
 							</section>
 
-							<Link href={campaignEvent.campaignUrl}>
+							<Link
+								href={campaignEvent.campaignUrl}
+								className="flex items-center space-x-1"
+							>
 								<Image
 									src="/images/buttons/learn-more.svg"
 									alt="Learn More"
 									width={163}
 									height={47}
 								/>
+								<ExternalLinkIcon className="h-6 w-6 text-cimi-red-orange" />
 							</Link>
 						</article>
 					))
