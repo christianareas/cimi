@@ -6,6 +6,8 @@ import { initialCampaignEvents } from "@/data/content/events/initialCampaignEven
 import fetchData from "@/lib/ui/fetchData"
 import * as Select from "@radix-ui/react-select"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
+import Link from "next/link"
+import Image from "next/image"
 
 // Component.
 export default function UpcomingAndPastEvents() {
@@ -117,13 +119,42 @@ export default function UpcomingAndPastEvents() {
 							<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
 								{campaignEvent.eventTitle}
 							</h3>
-							<h4 className="font-ancho font-medium text-cimi-red-orange">
-								{campaignEvent.eventStartAt}
-								{campaignEvent.eventEndAt
-									? ` – ${campaignEvent.eventEndAt}`
-									: null}
-							</h4>
-							<section>{campaignEvent.eventDetails}</section>
+
+							{campaignEvent.eventStartAt ? (
+								<h4 className="font-ancho font-medium text-cimi-red-orange">
+									{campaignEvent.eventStartAt}
+									{campaignEvent.eventEndAt
+										? ` – ${campaignEvent.eventEndAt}`
+										: null}
+								</h4>
+							) : null}
+
+							{campaignEvent.campaignCoverType === "image" &&
+							campaignEvent.campaignCoverUrl ? (
+								<section className="py-4">
+									<section className="relative aspect-video">
+										<Image
+											src={campaignEvent.campaignCoverUrl}
+											alt="Learn More"
+											fill
+											className="object-cover"
+										/>
+									</section>
+								</section>
+							) : null}
+
+							<section className="pt-4 pb-10">
+								{campaignEvent.eventDetails}
+							</section>
+
+							<Link href={campaignEvent.campaignUrl}>
+								<Image
+									src="/images/buttons/learn-more.svg"
+									alt="Learn More"
+									width={163}
+									height={47}
+								/>
+							</Link>
 						</article>
 					))
 				)}

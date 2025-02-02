@@ -1,4 +1,5 @@
 // Dependencies.
+import formatDate from "@/lib/util/formateDate"
 import fs from "node:fs/promises"
 import path from "node:path"
 
@@ -82,8 +83,15 @@ export default async function filterMapAndSaveCampaignEvents(
 			eventAddressFormatted: campaignEvent.event?.address_formatted || null,
 			eventGooglePlaceId: campaignEvent.event?.google_place_id || null,
 			eventTimezone: campaignEvent.event?.timezone || null,
-			eventStartAt: campaignEvent.event?.start_at || null,
-			eventEndAt: campaignEvent.event?.end_at || null,
+			eventStartAt: campaignEvent.event?.start_at
+				? formatDate(
+						campaignEvent.event?.start_at,
+						campaignEvent.event?.timezone,
+					)
+				: null,
+			eventEndAt: campaignEvent.event?.end_at
+				? formatDate(campaignEvent.event?.end_at, campaignEvent.event?.timezone)
+				: null,
 			eventUpcoming: campaignEvent.event?.start_at
 				? new Date(campaignEvent.event.start_at) > now
 				: false,
