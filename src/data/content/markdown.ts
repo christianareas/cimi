@@ -36,6 +36,10 @@ export const markdown = {
 		"upcoming-events":
 			"## Upcoming Events\n\nCIMI events are a great way to meet people, learn something new, and have fun. Whether you want to join a walk-and-talk, get tips on how to start running, learn computer basics (or even how to code!), there are many opportunities to connect throughout the year.\n",
 	},
+	join: {
+		"get-involved":
+			"## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",
+	},
 	layout: {
 		footer: {
 			"donate-to-the-community":
