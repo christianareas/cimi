@@ -149,7 +149,7 @@ export default function UpcomingAndPastEvents() {
 
 							<Link
 								href={campaignEvent.campaignUrl}
-								className="flex items-center space-x-1"
+								className="flex items-start space-x-1"
 							>
 								<Image
 									src="/images/buttons/learn-more.svg"
@@ -157,7 +157,7 @@ export default function UpcomingAndPastEvents() {
 									width={163}
 									height={47}
 								/>
-								<ExternalLinkIcon className="h-6 w-6 text-cimi-red-orange" />
+								<ExternalLinkIcon className="mt-1 h-4 w-4 text-cimi-red-orange" />
 							</Link>
 						</article>
 					))

@@ -1,5 +1,5 @@
 // Dependencies.
-import formatDate from "@/lib/util/formateDate"
+import formatDate from "@/lib/util/formatDate"
 import fs from "node:fs/promises"
 import path from "node:path"
 
