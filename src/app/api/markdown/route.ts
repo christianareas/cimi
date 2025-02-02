@@ -1,32 +1,21 @@
 // Dependencies.
 import { NextResponse } from "next/server"
-import getMarkdown from "@/lib/content/getMarkdown"
+import getMarkdown from "@/lib/api/getAndSaveMarkdown"
 
 // Types.
 import type { NextRequest } from "next/server"
 
-// Get Markdown.
+// GET request.
 export async function GET(request: NextRequest) {
-	// Get the file.
-	const { searchParams } = new URL(request.url)
-	const src = searchParams.get("src")
-
-	// If there’s no file, return an error.
-	if (!src) {
-		return NextResponse.json(
-			{ error: "You must define a `src` query parameter." },
-			{ status: 400 },
-		)
-	}
-
-	// Get the Markdown content.
 	try {
-		const markdown = getMarkdown(src)
+		const markdown = await getMarkdown()
+
 		return NextResponse.json({ markdown }, { status: 200 })
 	} catch (error) {
 		return NextResponse.json(
 			{
-				error: `Couldn’t find a Markdown file. Ensure the data/content/${src} file exists.`,
+				error:
+					"Couldn’t find any Markdown files. Ensure one exists at /src/data/content/.",
 			},
 			{ status: 404 },
 		)

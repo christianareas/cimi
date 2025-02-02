@@ -1,52 +1,58 @@
-/* Ancho Font */
-@font-face {
-  font-family: "Ancho";
-  src: url("/fonts/ancho-variable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
+@import "tailwindcss";
+
+@theme {
+	/* Colors. */
+	--color-cimi-cream: #fff0dd;
+	--color-cimi-dark-cream: #ffe6c5;
+	--color-cimi-red-orange: #ff4a01;
+	--color-cimi-yellow: #ffdf00;
+	--color-cimi-green: #00632f;
+	--color-cimi-blue: #1d48ff;
+	--color-cimi-purple: #7100c9;
+	--color-cimi-pink: #ffaed9;
+	--color-cimi-black: #151515;
+	/* Fonts. */
+	--font-ancho: Ancho, sans-serif;
+	--font-montserrat: Montserrat, sans-serif;
 }
 
-/* Montserrat Font */
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/montserrat-variable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: url("/fonts/montserrat-variable-italic.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: italic;
+@layer base {
+	@font-face {
+		font-family: "Ancho";
+		src: url("/fonts/ancho-variable.ttf") format("truetype");
+		font-weight: 100 900;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/montserrat-variable.ttf") format("truetype");
+		font-weight: 100 900;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Montserrat";
+		src: url("/fonts/montserrat-variable-italic.ttf") format("truetype");
+		font-weight: 100 900;
+		font-style: italic;
+	}
 }
-
-/* Tailwind CSS Directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom CSS (uncomment if needed) */
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
