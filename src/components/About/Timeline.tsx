@@ -11,7 +11,7 @@ export default function Timeline() {
 				imageAlt="todo"
 				imagePosition="object-[50%_35%]"
 				title="The first CIMI-sponsored race was held in 2013 in Nicaragua."
-				year="YYYY"
+				year="2013"
 				content="Over 250 people participated—many of them women who were running for the first time. After completing her first 5k, one woman commented “I never thought I would be able to do something like this.”"
 			/>
 
@@ -31,7 +31,7 @@ export default function Timeline() {
 				imageAlt="todo"
 				imagePosition="object-center"
 				title="In early 2017, the 5th annual CIMI Nicaragua 5k race took place."
-				year="YYYY"
+				year="2017"
 				content="The event drew nearly 900 runners and 70% of them were women. Races also expanded in San Jose, in addition to educational opportunities."
 			/>
 
@@ -61,7 +61,7 @@ export default function Timeline() {
 				imageAlt="todo"
 				imagePosition="object-center"
 				title="CIMI pivoted to virtual when COVID-19 hit."
-				year="YYYY"
+				year="2020"
 				content="While COVID-19 paused large gatherings like races, CIMI   continued their community-centered programs like gas card giveaways and school supply donations and focus on educational programs."
 			/>
 
