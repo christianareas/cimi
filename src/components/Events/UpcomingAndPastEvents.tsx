@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { initialCampaignEvents } from "@/data/content/events/initialCampaignEvents"
 import fetchData from "@/lib/ui/fetchData"
 import * as Select from "@radix-ui/react-select"
-import { ChevronDownIcon, ExternalLinkIcon } from "@radix-ui/react-icons"
+import { ChevronDownIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -115,50 +115,50 @@ export default function UpcomingAndPastEvents() {
 					</p>
 				) : (
 					selectedCampaignEvents.events.map((campaignEvent) => (
-						<article className="py-10" key={campaignEvent.campaignId}>
-							<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
-								{campaignEvent.eventTitle}
-							</h3>
-
-							{campaignEvent.eventStartAt ? (
-								<h4 className="font-ancho font-medium text-cimi-red-orange">
-									{campaignEvent.eventStartAt}
-									{campaignEvent.eventEndAt
-										? ` – ${campaignEvent.eventEndAt}`
-										: null}
-								</h4>
-							) : null}
-
-							{campaignEvent.campaignCoverType === "image" &&
-							campaignEvent.campaignCoverUrl ? (
-								<section className="py-4">
+						<article
+							className="py-10 font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
+							key={campaignEvent.campaignId}
+						>
+							<section className="pb-10 lg:w-1/2 lg:pr-10">
+								{campaignEvent.campaignCoverType === "image" &&
+								campaignEvent.campaignCoverUrl ? (
 									<section className="relative aspect-video">
 										<Image
 											src={campaignEvent.campaignCoverUrl}
 											alt="Learn More"
 											fill
-											className="object-cover"
+											className="rounded-lg object-cover"
 										/>
 									</section>
-								</section>
-							) : null}
-
-							<section className="pt-4 pb-10">
-								{campaignEvent.eventDetails}
+								) : null}
 							</section>
 
-							<Link
-								href={campaignEvent.campaignUrl}
-								className="flex items-start space-x-1"
-							>
-								<Image
-									src="/images/buttons/learn-more.svg"
-									alt="Learn More"
-									width={163}
-									height={47}
-								/>
-								<ExternalLinkIcon className="mt-1 h-4 w-4 text-cimi-red-orange" />
-							</Link>
+							<section className="lg:w-1/2 lg:pl-10">
+								<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
+									{campaignEvent.eventTitle}
+								</h3>
+
+								{campaignEvent.eventStartAt ? (
+									<h4 className="font-ancho font-medium text-cimi-red-orange">
+										{campaignEvent.eventEndAt
+											? `${campaignEvent.eventStartAt.replace(/\s*[A-Z]{2,4}$/, "")} – ${campaignEvent.eventEndAt}`
+											: campaignEvent.eventStartAt}
+									</h4>
+								) : null}
+
+								<section className="pt-4 pb-10">
+									{campaignEvent.eventDetails}
+								</section>
+
+								<Link href={campaignEvent.campaignUrl}>
+									<Image
+										src="/images/buttons/learn-more.svg"
+										alt="Learn More"
+										width={163}
+										height={47}
+									/>
+								</Link>
+							</section>
 						</article>
 					))
 				)}
