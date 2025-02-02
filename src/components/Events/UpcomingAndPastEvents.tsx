@@ -52,9 +52,13 @@ export default function UpcomingAndPastEvents() {
 	// Render.
 	return (
 		<section className="px-20">
-			{/* Event Selector */}
+			{/*
+				**************
+				Event Selector
+				**************
+			*/}
 			<section className="mx-auto pb-20">
-				<section className="flex flex-col items-center justify-center">
+				<section className="flex justify-center">
 					<Select.Root
 						value={selectedCampaignEvents.toString()}
 						onValueChange={(value) =>
@@ -62,11 +66,11 @@ export default function UpcomingAndPastEvents() {
 						}
 					>
 						<Select.Trigger
-							className="flex rounded-lg border border-cimi-red-orange py-0 pr-2 pl-4"
+							className="flex w-96 justify-between rounded-lg border border-cimi-red-orange py-1 pr-3 pl-4 font-ancho font-bold text-2xl text-cimi-red-orange"
 							aria-label="Upcoming or Past Events"
 						>
 							<Select.Value>
-								<h2 className="pt-2 pr-1 pb-1 font-ancho font-bold text-2xl text-cimi-red-orange">
+								<h2 className="pt-1">
 									{
 										upcomingAndPastCampaignEvents[selectedCampaignEventType]
 											.eventsHeading
@@ -74,19 +78,21 @@ export default function UpcomingAndPastEvents() {
 								</h2>
 							</Select.Value>
 							<Select.Icon>
-								<ChevronDownIcon className="mt-1 h-8 w-8 text-cimi-red-orange" />
+								<ChevronDownIcon className="h-8 w-8 text-cimi-red-orange" />
 							</Select.Icon>
 						</Select.Trigger>
 						<Select.Portal>
-							<Select.Content className="">
-								<Select.Viewport className="mx-auto flex flex-col items-center justify-center rounded-lg border border-cimi-red-orange bg-cimi-cream px-5 py-2">
-									{upcomingAndPastCampaignEvents.map((group, index) => (
+							<Select.Content>
+								<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-2xl text-cimi-red-orange">
+									{upcomingAndPastCampaignEvents.map((campaignEvent, index) => (
 										<Select.Item
-											key={group.eventsType}
+											key={campaignEvent.eventsType}
 											value={index.toString()}
 										>
-											<h2 className="pt-1 pr-2 font-ancho font-bold text-2xl text-cimi-red-orange">
-												<Select.ItemText>{group.eventsHeading}</Select.ItemText>
+											<h2 className="pt-1">
+												<Select.ItemText>
+													{campaignEvent.eventsHeading}
+												</Select.ItemText>
 											</h2>
 										</Select.Item>
 									))}
@@ -96,7 +102,11 @@ export default function UpcomingAndPastEvents() {
 					</Select.Root>
 				</section>
 
-				{/* Events */}
+				{/*
+				******
+				Events
+				******
+			*/}
 				{selectedCampaignEvents.events.length === 0 ? (
 					<p className="flex justify-center p-5 text-gray-500 text-xs italic">
 						No {selectedCampaignEvents.eventsType.replace("-", " ")}.
