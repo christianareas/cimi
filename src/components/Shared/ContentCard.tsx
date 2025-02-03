@@ -1,4 +1,5 @@
 // Dependencies.
+import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
 import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -7,8 +8,6 @@ import Link from "next/link"
 import Image from "next/image"
 
 // Types.
-import type { Markdown } from "@/lib/api/getAndSaveMarkdown"
-
 type ContentCardProps = {
 	contentSrc: string
 	articleClassName?: string
@@ -22,23 +21,6 @@ type ContentCardProps = {
 	buttonSrc?: string
 	buttonAlt?: string
 	buttonClassName?: string
-}
-
-// Helpers.
-function resolveContentSrcPath(
-	object: Markdown,
-	path: string,
-): string | undefined {
-	const keys = path.split(".")
-	let current: Markdown | string | undefined = object
-	for (const key of keys) {
-		if (typeof current === "object" && current !== null && key in current) {
-			current = current[key]
-		} else {
-			return undefined
-		}
-	}
-	return typeof current === "string" ? current : undefined
 }
 
 // Component.

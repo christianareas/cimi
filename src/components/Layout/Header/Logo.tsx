@@ -5,15 +5,17 @@ import Image from "next/image"
 // Component.
 export default function Logo() {
 	return (
-		<Link href="/">
-			<Image
-				priority={true}
-				src="/images/cimi.svg"
-				alt="CIMI"
-				width={217}
-				height={97}
-				className="w-auto"
-			/>
-		</Link>
+		<section className="relative z-50 w-1/2">
+			<Link href="/">
+				<Image
+					priority={true}
+					src="/images/cimi.svg"
+					alt="CIMI"
+					width={217}
+					height={97}
+					className="w-auto"
+				/>
+			</Link>
+		</section>
 	)
 }
