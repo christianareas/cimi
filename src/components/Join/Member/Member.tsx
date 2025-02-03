@@ -26,7 +26,7 @@ export default function MemberContent() {
 			BECOME A MEMBER TODAY
 			*********************
 			*/}
-			<article className="mx-auto w-2/5 text-center lg:w-1/5">
+			<article className="mx-auto w-60 text-center">
 				<h2 className="font-ancho font-bold text-2xl text-cimi-blue ">
 					Become a Member Today
 				</h2>
@@ -40,6 +40,12 @@ export default function MemberContent() {
 			*/}
 			<section className="mx-auto p-20 text-center font-ancho text-cimi-blue lg:w-1/2">
 				<h2 className="font-bold text-2xl ">Member FAQs</h2>
+
+				<CollapsibleContentButton
+					buttonTextSrc="join.member.buttons.1-button-text"
+					collapsibleContentSrc="join.member.buttons.1-collapsible-content"
+					colorScheme="cimi-blue"
+				/>
 			</section>
 		</main>
 	)

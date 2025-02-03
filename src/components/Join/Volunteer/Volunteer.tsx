@@ -26,7 +26,7 @@ export default function VolunteerContent() {
 			BECOME A VOLUNTEER TODAY
 			************************
 			*/}
-			<article className="mx-auto w-1/2 text-center lg:w-1/4">
+			<article className="mx-auto w-80 text-center">
 				<h2 className="font-ancho font-bold text-2xl text-cimi-green ">
 					Become a Volunteer Today
 				</h2>

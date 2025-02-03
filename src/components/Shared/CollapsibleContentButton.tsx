@@ -2,6 +2,7 @@
 
 // Dependencies.
 import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
+import { colorsSchemes } from "@/data/colorSchemes"
 import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -14,8 +15,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 type CollapsibleButtonProps = {
 	buttonTextSrc: string
 	collapsibleContentSrc: string
-	colorScheme: string
-	buttonTextClassName?: string
+	colorScheme: "cimi-blue" | "cimi-green"
 }
 
 // Component.
@@ -23,19 +23,21 @@ export default function CollapsibleContentButton({
 	buttonTextSrc,
 	collapsibleContentSrc,
 	colorScheme,
-	buttonTextClassName,
 }: CollapsibleButtonProps) {
 	// Set initial state.
 	const [open, setOpen] = useState(false)
 
-	// Get the content.
+	// Content.
 	const buttonText = resolveContentSrcPath(markdown, buttonTextSrc)
 	const collapsibleContent = resolveContentSrcPath(
 		markdown,
 		collapsibleContentSrc,
 	)
 
-	// Set up the classes.
+	// Color schemes.
+	const colorClasses = colorsSchemes[colorScheme]
+
+	// Markdown classes.
 	const components = {
 		p: ({ children, ...props }: React.ComponentProps<"p">) => (
 			<p className={"py-2"} {...props}>
@@ -61,14 +63,7 @@ export default function CollapsibleContentButton({
 				<Collapsible.Trigger asChild>
 					<button
 						type="button"
-						className={[
-							`border-${colorScheme}`,
-							`shadow-${colorScheme}`,
-							`text-${colorScheme}`,
-							"flex w-xs justify-between rounded-lg border-2 px-4 py-2 text-left shadow-[4px_4px_0] lg:min-h-24 lg:w-[350px]",
-						]
-							.filter(Boolean)
-							.join(" ")}
+						className={`flex w-xs justify-between rounded-lg border-2 px-4 py-2 text-left shadow-[4px_4px_0] lg:min-h-24 lg:w-[350px ${colorClasses}`}
 					>
 						<section>
 							<ReactMarkdown
