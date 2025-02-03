@@ -63,9 +63,9 @@ export default function CollapsibleContentButton({
 						type="button"
 						className={[
 							`border-${colorScheme}`,
-							`text-${colorScheme}`,
-							"flex w-xs justify-between rounded-lg border-2 px-4 py-2 text-left shadow-[4px_4px_0_rgba(0,0,0,1)] lg:min-h-24 lg:w-[350px]",
 							`shadow-${colorScheme}`,
+							`text-${colorScheme}`,
+							"flex w-xs justify-between rounded-lg border-2 px-4 py-2 text-left shadow-[4px_4px_0] lg:min-h-24 lg:w-[350px]",
 						]
 							.filter(Boolean)
 							.join(" ")}

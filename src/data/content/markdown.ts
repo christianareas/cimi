@@ -69,6 +69,16 @@ export const markdown = {
 		},
 		"get-involved":
 			"## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",
+		member: {
+			buttons: {},
+			"cimi-members":
+				"## CIMI Members\n\nGoing from one level of training to the next and reaching each finishing line, our participants enhance their problem-solving skills and learn to be more focused. Each achievement helps them to be their more confident self and gain more power to be successful in their personal and professional life.\n",
+		},
+		volunteer: {
+			buttons: {},
+			"cimi-volunteers":
+				"## CIMI Volunteers\n\nCIMI volunteers are professionals driven by a strong desire to elevate the organization. They bring technical and business skills to the table, aiming to take CIMI to new heights. These volunteers are not just supporters; they are **active contributors**, working passionately to help CIMI achieve its mission. Their commitment exemplifies the **impact that individuals can make** when inspired by a powerful vision.",
+		},
 	},
 	layout: {
 		footer: {
