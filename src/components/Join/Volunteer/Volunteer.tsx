@@ -39,7 +39,7 @@ export default function VolunteerContent() {
 			**************
 			*/}
 			<section className="mx-auto p-20 lg:w-full">
-				<h2 className="text-center font-ancho font-bold text-2xl text-cimi-green">
+				<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
 					Volunteer FAQs
 				</h2>
 
