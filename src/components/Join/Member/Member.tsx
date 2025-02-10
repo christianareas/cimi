@@ -38,12 +38,53 @@ export default function MemberContent() {
 			MEMBER FAQS
 			***********
 			*/}
-			<section className="mx-auto p-20 text-center font-ancho text-cimi-blue lg:w-1/2">
-				<h2 className="font-bold text-2xl ">Member FAQs</h2>
+			<section className="mx-auto p-20 lg:w-full">
+				<h2 className="text-center font-ancho font-bold text-2xl text-cimi-blue">
+					Member FAQs
+				</h2>
 
 				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.1-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
 					collapsibleContentSrc="join.member.buttons.1-collapsible-content"
+					colorScheme="cimi-blue"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.member.buttons.2-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.member.buttons.2-collapsible-content"
+					colorScheme="cimi-blue"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.member.buttons.3-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.member.buttons.3-collapsible-content"
+					colorScheme="cimi-blue"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.member.buttons.4-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.member.buttons.4-collapsible-content"
+					colorScheme="cimi-blue"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.member.buttons.5-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.member.buttons.5-collapsible-content"
 					colorScheme="cimi-blue"
 				/>
 			</section>

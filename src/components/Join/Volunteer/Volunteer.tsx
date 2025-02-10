@@ -38,8 +38,46 @@ export default function VolunteerContent() {
 			VOLUNTEER FAQS
 			**************
 			*/}
-			<section className="mx-auto p-20 text-center font-ancho text-cimi-green lg:w-1/2">
-				<h2 className="font-bold text-2xl ">Volunteer FAQs</h2>
+			<section className="mx-auto p-20 lg:w-full">
+				<h2 className="text-center font-ancho font-bold text-2xl text-cimi-green">
+					Volunteer FAQs
+				</h2>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.volunteer.buttons.1-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.volunteer.buttons.1-collapsible-content"
+					colorScheme="cimi-green"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.volunteer.buttons.2-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.volunteer.buttons.2-collapsible-content"
+					colorScheme="cimi-green"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.volunteer.buttons.3-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.volunteer.buttons.3-collapsible-content"
+					colorScheme="cimi-green"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="join.volunteer.buttons.4-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho"
+					collapsibleContentSrc="join.volunteer.buttons.4-collapsible-content"
+					colorScheme="cimi-green"
+				/>
 			</section>
 		</main>
 	)

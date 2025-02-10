@@ -1,1 +1,1 @@
-I want to share my expertise by **teaching** a CIMI class.
+### How do I learn about upcoming CIMI events?

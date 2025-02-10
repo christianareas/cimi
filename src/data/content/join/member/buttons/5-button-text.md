@@ -1,1 +1,1 @@
-I want to **tutor** elementary, middle, or high school students in CIMI.
+### I am ready to join! How do I become a member? 

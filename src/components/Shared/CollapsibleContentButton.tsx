@@ -13,14 +13,20 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
 // Types.
 type CollapsibleButtonProps = {
+	dimensions: "w-xs lg:w-[350px]" | "w-xs lg:w-xl"
 	buttonTextSrc: string
+	buttonDimensions: "w-xs lg:min-h-24 lg:w-[350px]" | "w-xs lg:w-xl"
+	buttonClassName: "shadow-[4px_4px_0]" | "font-ancho"
 	collapsibleContentSrc: string
 	colorScheme: "cimi-blue" | "cimi-green"
 }
 
 // Component.
 export default function CollapsibleContentButton({
+	dimensions,
 	buttonTextSrc,
+	buttonDimensions,
+	buttonClassName,
 	collapsibleContentSrc,
 	colorScheme,
 }: CollapsibleButtonProps) {
@@ -58,12 +64,14 @@ export default function CollapsibleContentButton({
 
 	// Render.
 	return (
-		<article className="mx-auto mb-5 flex justify-center font-medium lg:basis-1/2">
+		<article
+			className={`mx-auto mb-5 flex justify-center font-medium lg:basis-1/2 ${dimensions}`}
+		>
 			<Collapsible.Root open={open} onOpenChange={setOpen}>
 				<Collapsible.Trigger asChild>
 					<button
 						type="button"
-						className={`flex w-xs justify-between rounded-lg border-2 px-4 py-2 text-left shadow-[4px_4px_0] lg:min-h-24 lg:w-[350px ${colorClasses}`}
+						className={`flex items-center justify-between rounded-lg border-2 px-4 py-2 text-left ${buttonDimensions} ${buttonClassName} ${colorClasses}`}
 					>
 						<section>
 							<ReactMarkdown
@@ -84,7 +92,7 @@ export default function CollapsibleContentButton({
 					</button>
 				</Collapsible.Trigger>
 
-				<Collapsible.Content className="w-xs px-5 pt-5">
+				<Collapsible.Content className="px-5 pt-2">
 					<ReactMarkdown
 						remarkPlugins={[remarkGfm]}
 						rehypePlugins={[rehypeRaw]}

@@ -1,1 +1,1 @@
-I want to **make a donation** to CIMI.
+### What is the time commitment if I want to join CIMI?

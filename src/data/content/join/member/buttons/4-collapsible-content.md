@@ -1,1 +1,1 @@
-We gladly welcome any individual interested in sharing their expertise and knowledge in topics like computer literacy, coding, engineering, and more! Send us an email at [info@runwithcimi.org](#) to get the conversation started. 
+To learn about upcoming events, sign up for our [newsletter](#todo), follow us on [social media](#todo), and check our [website](#todo) often.

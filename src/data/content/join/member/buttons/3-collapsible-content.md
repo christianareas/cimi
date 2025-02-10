@@ -1,1 +1,1 @@
-Find out more info on the [Donor Info](#) page to see how your donation today will support CIMI in its mission. 
+We ask that you log a minimum of 20 minutes of walking or running, three times per week. We will help you track your activity, and you will be entered to win prizes for logging your time. The tracking system we use is online, so you can even track activity if you are traveling outside the country!
