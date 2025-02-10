@@ -45,6 +45,11 @@ export default function CollapsibleContentButton({
 
 	// Markdown classes.
 	const components = {
+		h4: ({ children, ...props }: React.ComponentProps<"h4">) => (
+			<h4 className={"font-extrabold text-cimi-blue"} {...props}>
+				{children}
+			</h4>
+		),
 		p: ({ children, ...props }: React.ComponentProps<"p">) => (
 			<p className={"py-2"} {...props}>
 				{children}
@@ -54,6 +59,16 @@ export default function CollapsibleContentButton({
 			<a className={"underline"} {...props}>
 				{children}
 			</a>
+		),
+		ul: ({ children, ...props }: React.ComponentProps<"ul">) => (
+			<ul className={"py-2"} {...props}>
+				{children}
+			</ul>
+		),
+		li: ({ children, ...props }: React.ComponentProps<"li">) => (
+			<li className={"mx-4 list-disc"} {...props}>
+				{children}
+			</li>
 		),
 		strong: ({ children, ...props }: React.ComponentProps<"strong">) => (
 			<strong className={"font-extrabold"} {...props}>
