@@ -1,0 +1,1 @@
+Absolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.

@@ -7,16 +7,16 @@ type LinkType = {
 }
 
 const links: LinkType[] = [
-	{ href: "about", id: "about", label: "About" },
-	{ href: "events", id: "events", label: "Events" },
+	{ href: "/about", id: "about", label: "About" },
+	{ href: "/events", id: "events", label: "Events" },
 	{ href: "#todo", id: "donor-info", label: "Donor Info" },
 	{
-		href: "#todo",
+		href: "/join",
 		id: "join",
 		label: "Join",
 		subLinks: [
-			{ href: "#todo", id: "be-a-member", label: "Be a Member" },
-			{ href: "#todo", id: "be-a-volunteer", label: "Be a Volunteer" },
+			{ href: "/join/member", id: "member", label: "Be a Member" },
+			{ href: "/join/volunteer", id: "volunteer", label: "Be a Volunteer" },
 		],
 	},
 	{ href: "#todo", id: "newsletter", label: "Newsletter" },

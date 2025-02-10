@@ -17,12 +17,11 @@ export default function Menu() {
 	// Render.
 	return (
 		<Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-			{/* Todo: Vertically align logo and hamburger menu (try putting content on a separate row). */}
-			<nav className="flex items-center">
+			<nav className="-mt-20 flex items-center">
 				<Dialog.Trigger asChild>
 					<button
 						type="button"
-						className={`ml-auto rounded-t-lg p-5 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
+						className={`ml-auto rounded-t-lg px-5 pt-5 pb-10 ${!isOpen ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
 						aria-label="Main Menu"
 					>
 						{isOpen ? (

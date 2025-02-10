@@ -105,10 +105,10 @@ export default function UpcomingAndPastEvents() {
 				</section>
 
 				{/*
-				******
-				Events
-				******
-			*/}
+					******
+					Events
+					******
+				*/}
 				{selectedCampaignEvents.events.length === 0 ? (
 					<p className="flex justify-center p-5 text-gray-500 text-xs italic">
 						No {selectedCampaignEvents.eventsType.replace("-", " ")}.
