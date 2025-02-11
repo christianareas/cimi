@@ -2,7 +2,7 @@
 
 // Dependencies.
 import { useState, useEffect } from "react"
-import { initialCampaignEvents } from "@/data/content/events/initialCampaignEvents"
+import { initialCampaigns } from "@/data/content/events/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
 import * as Select from "@radix-ui/react-select"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
@@ -12,44 +12,39 @@ import Image from "next/image"
 // Component.
 export default function UpcomingAndPastEvents() {
 	// Set the initial state.
-	const [campaignEvents, setCampaignEvents] = useState(initialCampaignEvents)
-	const [selectedCampaignEventType, setSelectedCampaignEventType] = useState(0)
+	const [campaigns, setCampaigns] = useState(initialCampaigns)
+	const [selectedEventType, setSelectedEventType] = useState(0)
 
-	// Fetch the latest campaign events.
+	// Fetch the latest campaigns.
 	useEffect(() => {
-		async function fetchCampaignEvents() {
+		async function fetchCampaigns() {
 			try {
-				const response = await fetchData("/api/givebutterEvents", "no-cache")
-				const latestCampaignEvents = response.campaignEvents
-				setCampaignEvents(latestCampaignEvents)
+				const response = await fetchData("/api/givebutterCampaigns", "no-cache")
+				const latestCampaigns = response.campaigns
+				setCampaigns(latestCampaigns)
 			} catch (error) {
 				console.error(error)
 			}
 		}
-		fetchCampaignEvents()
+		fetchCampaigns()
 	}, [])
 
 	// Prepare the upcoming and past events.
-	const upcomingAndPastCampaignEvents = [
+	const upcomingAndPastEvents = [
 		{
 			eventsType: "upcoming-events",
 			eventsHeading: "Upcoming Events",
-			events: campaignEvents.filter(
-				(campaignEvent) => campaignEvent.eventUpcoming,
-			),
+			events: campaigns.filter((campaign) => campaign.eventUpcoming),
 		},
 		{
 			eventsType: "past-events",
 			eventsHeading: "Past Events",
-			events: campaignEvents.filter(
-				(campaignEvent) => !campaignEvent.eventUpcoming,
-			),
+			events: campaigns.filter((campaign) => !campaign.eventUpcoming),
 		},
 	]
 
 	// Get the selected events.
-	const selectedCampaignEvents =
-		upcomingAndPastCampaignEvents[selectedCampaignEventType]
+	const selectedEvents = upcomingAndPastEvents[selectedEventType]
 
 	// Render.
 	return (
@@ -62,10 +57,8 @@ export default function UpcomingAndPastEvents() {
 			<section className="mx-auto pb-20">
 				<section className="flex justify-center">
 					<Select.Root
-						value={selectedCampaignEvents.toString()}
-						onValueChange={(value) =>
-							setSelectedCampaignEventType(Number(value))
-						}
+						value={selectedEvents.toString()}
+						onValueChange={(value) => setSelectedEventType(Number(value))}
 					>
 						<Select.Trigger
 							className="flex w-96 justify-between rounded-lg border border-cimi-red-orange py-1 pr-3 pl-4 font-ancho font-bold text-2xl text-cimi-red-orange"
@@ -73,10 +66,7 @@ export default function UpcomingAndPastEvents() {
 						>
 							<Select.Value>
 								<h2 className="pt-1">
-									{
-										upcomingAndPastCampaignEvents[selectedCampaignEventType]
-											.eventsHeading
-									}
+									{upcomingAndPastEvents[selectedEventType].eventsHeading}
 								</h2>
 							</Select.Value>
 							<Select.Icon>
@@ -86,15 +76,13 @@ export default function UpcomingAndPastEvents() {
 						<Select.Portal>
 							<Select.Content>
 								<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-2xl text-cimi-red-orange">
-									{upcomingAndPastCampaignEvents.map((campaignEvent, index) => (
+									{upcomingAndPastEvents.map((event, index) => (
 										<Select.Item
-											key={campaignEvent.eventsType}
+											key={event.eventsType}
 											value={index.toString()}
 										>
 											<h2 className="pt-1">
-												<Select.ItemText>
-													{campaignEvent.eventsHeading}
-												</Select.ItemText>
+												<Select.ItemText>{event.eventsHeading}</Select.ItemText>
 											</h2>
 										</Select.Item>
 									))}
@@ -109,22 +97,22 @@ export default function UpcomingAndPastEvents() {
 					Events
 					******
 				*/}
-				{selectedCampaignEvents.events.length === 0 ? (
+				{selectedEvents.events.length === 0 ? (
 					<p className="flex justify-center p-5 text-gray-500 text-xs italic">
-						No {selectedCampaignEvents.eventsType.replace("-", " ")}.
+						No {selectedEvents.eventsType.replace("-", " ")}.
 					</p>
 				) : (
-					selectedCampaignEvents.events.map((campaignEvent) => (
+					selectedEvents.events.map((campaign) => (
 						<article
 							className="py-10 font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
-							key={campaignEvent.campaignId}
+							key={campaign.campaignId}
 						>
 							<section className="pb-10 lg:w-1/2 lg:pr-10">
-								{campaignEvent.campaignCoverType === "image" &&
-								campaignEvent.campaignCoverUrl ? (
+								{campaign.campaignCoverType === "image" &&
+								campaign.campaignCoverUrl ? (
 									<section className="relative aspect-video">
 										<Image
-											src={campaignEvent.campaignCoverUrl}
+											src={campaign.campaignCoverUrl}
 											alt="Learn More"
 											fill
 											className="rounded-lg object-cover"
@@ -135,22 +123,22 @@ export default function UpcomingAndPastEvents() {
 
 							<section className="lg:w-1/2 lg:pl-10">
 								<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
-									{campaignEvent.eventTitle}
+									{campaign.eventTitle}
 								</h3>
 
-								{campaignEvent.eventStartAt ? (
+								{campaign.eventStartAt ? (
 									<h4 className="font-ancho font-medium text-cimi-red-orange">
-										{campaignEvent.eventEndAt
-											? `${campaignEvent.eventStartAt.replace(/\s*[A-Z]{2,4}$/, "")} – ${campaignEvent.eventEndAt}`
-											: campaignEvent.eventStartAt}
+										{campaign.eventEndAt
+											? `${campaign.eventStartAt.replace(/\s*[A-Z]{2,4}$/, "")} – ${campaign.eventEndAt}`
+											: campaign.eventStartAt}
 									</h4>
 								) : null}
 
 								<section className="pt-4 pb-10">
-									{campaignEvent.eventDetails}
+									{campaign.eventDetails}
 								</section>
 
-								<Link href={campaignEvent.campaignUrl}>
+								<Link href={campaign.campaignUrl}>
 									<Image
 										src="/images/buttons/learn-more.svg"
 										alt="Learn More"
