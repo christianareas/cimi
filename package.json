@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && rm -rf .next/cache/webpack",
     "start": "next start",
     "lint": "next lint",
     "reinstall": "rm -rf node_modules && rm -rf .next && rm package-lock.json && npm i",
@@ -39,7 +39,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "eslint-config-next": "^15.1.7",
     "tailwindcss": "^4.0.6",
     "typescript": "^5.7.3"
