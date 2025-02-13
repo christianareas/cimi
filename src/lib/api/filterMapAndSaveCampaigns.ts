@@ -57,6 +57,7 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 		)
 		.map((campaign) => ({
 			campaignId: campaign.id,
+			campaignAccountId: campaign.account_id,
 			campaignType: campaign.type === "fundraise" ? "page" : campaign.type,
 			campaignTitle: campaign.title,
 			campaignSubtitle: campaign.subtitle,
@@ -65,6 +66,7 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			campaignCoverUrl: campaign.cover?.url || null,
 			campaignCoverEmbedUrl: campaign.cover?.embed_url || null,
 			campaignDescription: campaign.description,
+			campaignCode: campaign.code,
 			campaignSlug: campaign.slug,
 			campaignUrl: campaign.url,
 			campaignCurrency: campaign.currency,
