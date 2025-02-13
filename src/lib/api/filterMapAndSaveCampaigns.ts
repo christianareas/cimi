@@ -1,5 +1,5 @@
 // Dependencies.
-import formatDate from "../../util/formatDate"
+import formatDate from "@/util/formatDate"
 import fs from "node:fs/promises"
 import path from "node:path"
 
@@ -51,13 +51,15 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 	const now = new Date()
 	const campaigns = data
 		.filter(
-			(campaign) => campaign.type === "event" && campaign.status === "active",
+			(campaign) =>
+				["event", "fundraise"].includes(campaign.type) &&
+				campaign.status === "active",
 		)
 		.map((campaign) => ({
 			campaignId: campaign.id,
+			campaignType: campaign.type === "fundraise" ? "page" : campaign.type,
 			campaignTitle: campaign.title,
 			campaignSubtitle: campaign.subtitle,
-
 			campaignCoverType: campaign.cover?.type || null,
 			campaignCoverSource: campaign.cover?.source || null,
 			campaignCoverUrl: campaign.cover?.url || null,
