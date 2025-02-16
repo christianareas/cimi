@@ -80,5 +80,8 @@ export const markdown = {
       "join-the-community": "## Join the Community\n\nThere’s so many ways you can get involved! Become a member, volunteer, tutor, and more. Opportunities are available in-person and virtually.\n"
     },
     "header": {}
+  },
+  "newsletter": {
+    "intro": "## CIMI’s Activities\n\nFollow our newsletter to read about recent CIMI programs, find out what participants have been learning, and see fun photos from events.\n"
   }
 }

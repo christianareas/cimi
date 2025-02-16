@@ -30,7 +30,7 @@ export default function MemberContent() {
 				<h2 className="font-ancho font-bold text-2xl text-cimi-blue ">
 					Become a Member Today
 				</h2>
-				<Button buttonText="Sign Up" colorScheme="cimi-blue" />
+				<Button buttonText="Sign Up" buttonLink="" colorScheme="cimi-blue" />
 			</article>
 
 			{/*
@@ -39,7 +39,7 @@ export default function MemberContent() {
 			***********
 			*/}
 			<section className="mx-auto p-20 lg:w-full">
-				<h2 className="text-center font-ancho font-bold text-2xl text-cimi-blue">
+				<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-blue">
 					Member FAQs
 				</h2>
 

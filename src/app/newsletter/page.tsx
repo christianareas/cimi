@@ -1,20 +1,20 @@
 // Dependencies.
 import { Fragment } from "react"
 import Header from "@/components/Layout/Header/Header"
-import EventsContent from "@/components/Events/Events"
+import NewsletterContent from "@/components/Newsletter/Newsletter"
 import Footer from "@/components/Layout/Footer/Footer"
 
 // Page.
-export default function Events() {
+export default function Newsletter() {
 	// Render.
 	return (
 		<Fragment>
 			<Header
-				imageSrc="/images/heroes/events.jpg"
+				imageSrc="/images/heroes/newsletter.jpg"
 				imageAlt="todo"
-				imageClassName="object-[50%_55%]"
+				imageClassName="object-[50%_45%]"
 			/>
-			<EventsContent />
+			<NewsletterContent />
 			<Footer />
 		</Fragment>
 	)

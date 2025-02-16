@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
 			},
 		],
 	},
+	outputFileTracingExcludes: {
+		"/api/**": [".next/cache/webpack/**"],
+	},
 }
 
 export default nextConfig
