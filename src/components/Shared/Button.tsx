@@ -9,8 +9,10 @@ type ButtonProps = {
 	colorScheme:
 		| "cimi-blue"
 		| "cimi-green"
-		| "cimi-purple-light"
 		| "cimi-purple-dark"
+		| "cimi-purple-light"
+		| "cimi-red-orange-light"
+		| "cimi-red-orange-dark"
 }
 
 // Component.

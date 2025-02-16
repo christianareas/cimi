@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react"
 import { initialCampaigns } from "@/data/content/events/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
+import Link from "next/link"
 import Image from "next/image"
 import Button from "@/components/Shared/Button"
 
@@ -55,12 +56,14 @@ export default function NewsletterPosts() {
 							{campaign.campaignCoverType === "image" &&
 							campaign.campaignCoverUrl ? (
 								<section className="relative aspect-video">
-									<Image
-										src={campaign.campaignCoverUrl}
-										alt="Learn More"
-										fill
-										className="rounded-lg object-cover"
-									/>
+									<Link href={campaign.campaignUrl}>
+										<Image
+											src={campaign.campaignCoverUrl}
+											alt="Learn More"
+											fill
+											className="rounded-lg object-cover"
+										/>
+									</Link>
 								</section>
 							) : null}
 						</section>

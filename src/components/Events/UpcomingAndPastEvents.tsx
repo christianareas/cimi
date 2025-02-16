@@ -8,6 +8,7 @@ import * as Select from "@radix-ui/react-select"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import Image from "next/image"
+import Button from "@/components/Shared/Button"
 
 // Component.
 export default function UpcomingAndPastEvents() {
@@ -137,12 +138,14 @@ export default function UpcomingAndPastEvents() {
 								{campaign.campaignCoverType === "image" &&
 								campaign.campaignCoverUrl ? (
 									<section className="relative aspect-video">
-										<Image
-											src={campaign.campaignCoverUrl}
-											alt="Learn More"
-											fill
-											className="rounded-lg object-cover"
-										/>
+										<Link href={campaign.campaignUrl}>
+											<Image
+												src={campaign.campaignCoverUrl}
+												alt="Learn More"
+												fill
+												className="rounded-lg object-cover"
+											/>
+										</Link>
 									</section>
 								) : null}
 							</section>
@@ -164,14 +167,11 @@ export default function UpcomingAndPastEvents() {
 									{campaign.eventDetails}
 								</section>
 
-								<Link href={campaign.campaignUrl}>
-									<Image
-										src="/images/buttons/learn-more.svg"
-										alt="Learn More"
-										width={163}
-										height={47}
-									/>
-								</Link>
+								<Button
+									buttonText="Learn More"
+									buttonLink={campaign.campaignUrl}
+									colorScheme="cimi-red-orange-dark"
+								/>
 							</section>
 						</article>
 					))
