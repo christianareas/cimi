@@ -13,6 +13,16 @@ export const markdown = {
     },
     "who-is-cimi-made-of": "## Who is CIMI Made Of?\n\nThe CIMI board members are passionate advocates for the organization's core values. They are driven by a shared mission to motivate and empower the community they serve toward greater achievement. Their dedication to CIMI's vision makes the organization a beacon of hope and inspiration, fostering success among the underserved Latinx community in San Jose.\n"
   },
+  "donate": {
+    "buttons": {
+      "1-button-text": "### How does CIMI use funds from donors?\n",
+      "1-collapsible-content": "As a 503(c) non-profit organization, CIMI relies on financial support from donors like you. All gifts are put into an unrestricted fund, allowing CIMI to use them for operational expenses like robotics supplies, running shoes, and tutoring materials. It also allows CIMI’s operations to evolve with the needs of the community. For example, we may give money to local families in need during the holidays, purchase school supplies for local classrooms, or provide gas cards to low-income parents involved in CIMI.\n",
+      "2-button-text": "### Can I give money intended for a specific use, like waiving race fees for first-time runners?\n",
+      "2-collapsible-content": "We welcome gifts for specific CIMI activities, such as the Adopt-a-Family annual event or coding classes. All other CIMI gifts will be placed in an unrestricted fund to help us with basic operational costs. Unrestricted funds are critical to non-profit organizations, as they allow us to meet immediate needs.\n",
+      "3-button-text": "### I am ready to donate. How can I maximize my impact?\n",
+      "3-collapsible-content": "We encourage you to speak to your employer about whether they participate in corporate matching programs. Matched gifts to CIMI may be tax-deductible for your employer and will help us provide even more life-changing programs and events for local families.\n"
+    }
+  },
   "events": {
     "intro": "## What’s Happening?\n\nCIMI events are a great way to meet new people, learn something new, and get active. Check out some of our upcoming events in the San Jose area.\n"
   },
@@ -47,7 +57,7 @@ export const markdown = {
     "get-involved": "## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",
     "member": {
       "buttons": {
-        "1-button-text": "### What kind of activities does CIMI offer?\n",
+        "1-button-text": "### \n",
         "1-collapsible-content": "We offer a variety of programs for young women and their mothers—plus events for the whole family to enjoy together. \n\n#### Core CIMI programs\n\n- **Exercise for the whole family**\n\t- 0-5k running and walking (no experience necessary!)\n\t- Saturday morning family walks\n- **Empowering classes for moms and daughters**\n\t- Coding classes for girls\n\t- Computer basics courses for moms\n\t- Robotics lessons\n\t- Tutoring\n- **Community-building events**\n\t- Free shoe giveaways\n\t- Holiday events for local families\n\t- Gas card giveaways\n\t- Adopt-a-Family holiday drive\n",
         "2-button-text": "### I don’t have any experience running. Can I still join CIMI?\n",
         "2-collapsible-content": "Absolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.\n",

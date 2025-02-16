@@ -47,7 +47,7 @@ export default function VolunteerContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.1-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.1-collapsible-content"
 					colorScheme="cimi-green"
 				/>
@@ -56,7 +56,7 @@ export default function VolunteerContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.2-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.2-collapsible-content"
 					colorScheme="cimi-green"
 				/>
@@ -65,7 +65,7 @@ export default function VolunteerContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.3-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.3-collapsible-content"
 					colorScheme="cimi-green"
 				/>
@@ -74,7 +74,7 @@ export default function VolunteerContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.4-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.4-collapsible-content"
 					colorScheme="cimi-green"
 				/>

@@ -47,7 +47,7 @@ export default function MemberContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.1-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.1-collapsible-content"
 					colorScheme="cimi-blue"
 				/>
@@ -56,7 +56,7 @@ export default function MemberContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.2-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.2-collapsible-content"
 					colorScheme="cimi-blue"
 				/>
@@ -65,7 +65,7 @@ export default function MemberContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.3-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.3-collapsible-content"
 					colorScheme="cimi-blue"
 				/>
@@ -74,7 +74,7 @@ export default function MemberContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.4-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.4-collapsible-content"
 					colorScheme="cimi-blue"
 				/>
@@ -83,7 +83,7 @@ export default function MemberContent() {
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.5-button-text"
 					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.5-collapsible-content"
 					colorScheme="cimi-blue"
 				/>

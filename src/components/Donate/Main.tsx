@@ -1,0 +1,61 @@
+// Dependencies.
+import Button from "@/components/Shared/Button"
+import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
+
+// Component.
+export default function Main() {
+	// Render.
+	return (
+		<main>
+			{/*
+			*************
+			DONATION FORM
+			*************
+			*/}
+
+			{/*
+			*********
+			THANK YOU
+			*********
+			*/}
+
+			{/*
+			**********
+			DONOR FAQS
+			**********
+			*/}
+			<section className="mx-auto p-20 lg:w-full">
+				<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
+					Donor FAQs
+				</h2>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="donate.buttons.1-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho font-bold text-lg"
+					collapsibleContentSrc="donate.buttons.1-collapsible-content"
+					colorScheme="cimi-green"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="donate.buttons.2-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho font-bold text-lg"
+					collapsibleContentSrc="donate.buttons.2-collapsible-content"
+					colorScheme="cimi-green"
+				/>
+
+				<CollapsibleContentButton
+					dimensions="w-xs lg:w-xl"
+					buttonTextSrc="donate.buttons.3-button-text"
+					buttonDimensions="w-xs lg:w-xl"
+					buttonClassName="font-ancho font-bold text-lg"
+					collapsibleContentSrc="donate.buttons.3-collapsible-content"
+					colorScheme="cimi-green"
+				/>
+			</section>
+		</main>
+	)
+}
