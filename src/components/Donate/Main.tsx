@@ -1,5 +1,5 @@
 // Dependencies.
-import Button from "@/components/Shared/Button"
+import ContentCard from "@/components/Shared/ContentCard"
 import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
 // Component.
@@ -12,6 +12,13 @@ export default function Main() {
 			DONATION FORM
 			*************
 			*/}
+			<ContentCard
+				contentSrc="events.intro"
+				articleClassName="lg:w-1/2 mx-auto text-center"
+				h2ClassName="text-cimi-green"
+				fontClassName="font-medium"
+				boldClassName="font-extrabold"
+			/>
 
 			{/*
 			*********

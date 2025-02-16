@@ -4,7 +4,7 @@ import Button from "@/components/Shared/Button"
 import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
 // Component.
-export default function MemberContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>

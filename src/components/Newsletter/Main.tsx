@@ -3,7 +3,7 @@ import ContentCard from "@/components/Shared/ContentCard"
 import NewsletterPosts from "@/components/Newsletter/NewsletterPosts"
 
 // Component.
-export default function NewsletterContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>

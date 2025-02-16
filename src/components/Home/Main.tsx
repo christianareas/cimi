@@ -5,7 +5,7 @@ import Team from "@/components/Home/Team"
 import Testimonials from "@/components/Home/Testimonials"
 
 // Component.
-export default function HomeContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>

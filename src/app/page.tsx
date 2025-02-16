@@ -1,7 +1,7 @@
 // Dependencies.
 import { Fragment } from "react"
 import Header from "@/components/Layout/Header/Header"
-import HomeContent from "@/components/Home/Home"
+import Main from "@/components/Home/Main"
 import Footer from "@/components/Layout/Footer/Footer"
 
 // Page.
@@ -14,7 +14,7 @@ export default function Home() {
 				imageAlt="todo"
 				imageClassName="object-[50%_80%]"
 			/>
-			<HomeContent />
+			<Main />
 			<Footer />
 		</Fragment>
 	)

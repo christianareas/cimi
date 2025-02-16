@@ -3,7 +3,7 @@ import ContentCard from "@/components/Shared/ContentCard"
 import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
 // Component.
-export default function JoinContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>

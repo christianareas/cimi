@@ -1,7 +1,7 @@
 // Dependencies.
 import { Fragment } from "react"
 import Header from "@/components/Layout/Header/Header"
-import NewsletterContent from "@/components/Newsletter/Newsletter"
+import Main from "@/components/Newsletter/Main"
 import Footer from "@/components/Layout/Footer/Footer"
 
 // Page.
@@ -14,7 +14,7 @@ export default function Newsletter() {
 				imageAlt="todo"
 				imageClassName="object-[50%_45%]"
 			/>
-			<NewsletterContent />
+			<Main />
 			<Footer />
 		</Fragment>
 	)
