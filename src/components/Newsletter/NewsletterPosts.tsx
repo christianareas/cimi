@@ -80,7 +80,7 @@ export default function NewsletterPosts() {
 								</h4>
 							) : null}
 
-							<section className="pt-4 pb-10">
+							<section className="space-y-4 pt-4 pb-10">
 								{parse(campaign.campaignDescription)}
 							</section>
 
