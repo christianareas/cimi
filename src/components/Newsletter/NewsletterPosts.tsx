@@ -6,6 +6,7 @@ import { initialCampaigns } from "@/data/content/events/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
 import Link from "next/link"
 import Image from "next/image"
+import parse from "html-react-parser"
 import Button from "@/components/Shared/Button"
 
 // Component.
@@ -80,7 +81,7 @@ export default function NewsletterPosts() {
 							) : null}
 
 							<section className="pt-4 pb-10">
-								{campaign.campaignDescription}
+								{parse(campaign.campaignDescription)}
 							</section>
 
 							<Button
