@@ -13,11 +13,11 @@ export default function Main() {
 			*************
 			*/}
 			<ContentCard
-				contentSrc="events.intro"
-				articleClassName="lg:w-1/2 mx-auto text-center"
-				h2ClassName="text-cimi-green"
+				contentSrc="donate.thank-you"
+				articleClassName="lg:w-1/2 mx-auto"
+				h2ClassName="text-cimi-green text-center"
 				fontClassName="font-medium"
-				boldClassName="font-extrabold"
+				boldClassName="text-cimi-green font-extrabold"
 			/>
 
 			{/*

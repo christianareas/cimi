@@ -61,6 +61,16 @@ export default function ContentCard({
 				{children}
 			</p>
 		),
+		ul: ({ children, ...props }: React.ComponentProps<"ul">) => (
+			<ul className={"space-y-2 py-2"} {...props}>
+				{children}
+			</ul>
+		),
+		li: ({ children, ...props }: React.ComponentProps<"li">) => (
+			<li className={"mx-3 list-disc"} {...props}>
+				{children}
+			</li>
+		),
 		strong: ({ children, ...props }: React.ComponentProps<"strong">) => (
 			<strong className={boldClassName} {...props}>
 				{children}

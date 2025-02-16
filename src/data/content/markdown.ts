@@ -21,7 +21,8 @@ export const markdown = {
       "2-collapsible-content": "We welcome gifts for specific CIMI activities, such as the Adopt-a-Family annual event or coding classes. All other CIMI gifts will be placed in an unrestricted fund to help us with basic operational costs. Unrestricted funds are critical to non-profit organizations, as they allow us to meet immediate needs.\n",
       "3-button-text": "### I am ready to donate. How can I maximize my impact?\n",
       "3-collapsible-content": "We encourage you to speak to your employer about whether they participate in corporate matching programs. Matched gifts to CIMI may be tax-deductible for your employer and will help us provide even more life-changing programs and events for local families.\n"
-    }
+    },
+    "thank-you": "## Thanks to donors like you, CIMI can provide empowering programs, access to educational opportunities, and support for low-income families.\n\n**Financial gifts to CIMI will directly benefit local families by providing:**\n\n- Free running shoes and exercise clothes for women and girls in low-income homes\n- Gas cards for families to commute to work and school\n- Race entries for runners and walkers\n- Robotics programs for Latina girls interested in STEM\n- Incentives to complete activity goals (e.g. CIMI swag)\n- Grocery store gift cards for CIMI families as part of the Adopt-a-Family annual event\n- MacBooks, iPads, and other technology for girls in coding classes\n- Basic needs for families experiencing temporary hardships, including groceries, rent money, and children’s clothes\n"
   },
   "events": {
     "intro": "## What’s Happening?\n\nCIMI events are a great way to meet new people, learn something new, and get active. Check out some of our upcoming events in the San Jose area.\n"
