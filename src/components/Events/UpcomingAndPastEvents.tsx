@@ -34,12 +34,38 @@ export default function UpcomingAndPastEvents() {
 		{
 			eventsType: "upcoming-events",
 			eventsHeading: "Upcoming Events",
-			events: campaigns.filter((campaign) => campaign.eventUpcoming),
+			events: campaigns
+				.filter(
+					(campaign) =>
+						campaign.campaignType === "event" && campaign.eventUpcoming,
+				)
+				.sort((a, b) => {
+					if (!a.eventStartAt && !b.eventStartAt) return 0
+					if (!a.eventStartAt) return 1
+					if (!b.eventStartAt) return -1
+					return (
+						new Date(a.eventStartAt).getTime() -
+						new Date(b.eventStartAt).getTime()
+					)
+				}),
 		},
 		{
 			eventsType: "past-events",
 			eventsHeading: "Past Events",
-			events: campaigns.filter((campaign) => !campaign.eventUpcoming),
+			events: campaigns
+				.filter(
+					(campaign) =>
+						campaign.campaignType === "event" && !campaign.eventUpcoming,
+				)
+				.sort((a, b) => {
+					if (!a.eventStartAt && !b.eventStartAt) return 0
+					if (!a.eventStartAt) return 1
+					if (!b.eventStartAt) return -1
+					return (
+						new Date(b.eventStartAt).getTime() -
+						new Date(a.eventStartAt).getTime()
+					)
+				}),
 		},
 	]
 

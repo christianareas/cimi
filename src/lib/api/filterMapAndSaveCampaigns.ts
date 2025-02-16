@@ -52,8 +52,9 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 	const campaigns = data
 		.filter(
 			(campaign) =>
+				campaign.status === "active" &&
 				["event", "fundraise"].includes(campaign.type) &&
-				campaign.status === "active",
+				campaign.end_at !== null,
 		)
 		.map((campaign) => ({
 			campaignId: campaign.id,
@@ -74,9 +75,15 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			campaignRaised: campaign.raised,
 			campaignDonors: campaign.donors,
 			campaignTimezone: campaign.timezone,
-			campaignCreatedAt: campaign.created_at,
-			campaignUpdatedAt: campaign.updated_at,
-			campaignEndAt: campaign.end_at,
+			campaignCreatedAt: campaign.created_at
+				? formatDate(campaign.created_at, campaign.timezone)
+				: null,
+			campaignUpdatedAt: campaign.updated_at
+				? formatDate(campaign.updated_at, campaign.timezone)
+				: null,
+			campaignEndAt: campaign.end_at
+				? formatDate(campaign.end_at, campaign.timezone)
+				: null,
 			eventId: campaign.event_id,
 			eventType: campaign.event?.type || null,
 			eventTitle: campaign.event?.title || null,
@@ -93,9 +100,10 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			eventEndAt: campaign.event?.end_at
 				? formatDate(campaign.event?.end_at, campaign.event?.timezone)
 				: null,
-			eventUpcoming: campaign.event?.start_at
-				? new Date(campaign.event.start_at) > now
-				: false,
+			eventUpcoming:
+				campaign.event?.start_at != null
+					? new Date(campaign.event.start_at) > now
+					: null,
 			eventLivestream: campaign.event?.livestream || null,
 			eventLivestreamStartAt: campaign.event?.livestream_start_at || null,
 			eventLivestreamEndAt: campaign.event?.livestream_end_at || null,

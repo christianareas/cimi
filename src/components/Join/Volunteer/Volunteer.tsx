@@ -30,7 +30,7 @@ export default function VolunteerContent() {
 				<h2 className="font-ancho font-bold text-2xl text-cimi-green ">
 					Become a Volunteer Today
 				</h2>
-				<Button buttonText="Sign Up" colorScheme="cimi-green" />
+				<Button buttonText="Sign Up" buttonLink="" colorScheme="cimi-green" />
 			</article>
 
 			{/*

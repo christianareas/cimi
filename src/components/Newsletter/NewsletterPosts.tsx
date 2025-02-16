@@ -4,8 +4,8 @@
 import { useState, useEffect } from "react"
 import { initialCampaigns } from "@/data/content/events/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
-import Link from "next/link"
 import Image from "next/image"
+import Button from "@/components/Shared/Button"
 
 // Component.
 export default function NewsletterPosts() {
@@ -26,6 +26,13 @@ export default function NewsletterPosts() {
 		fetchCampaigns()
 	}, [])
 
+	// Sort campaigns.
+	const sortedCampaigns = [...campaigns].sort((a, b) => {
+		return (
+			new Date(b.campaignEndAt).getTime() - new Date(a.campaignEndAt).getTime()
+		)
+	})
+
 	// Render.
 	return (
 		<section className="px-20">
@@ -39,17 +46,17 @@ export default function NewsletterPosts() {
 					No newsletter posts.
 				</p>
 			) : (
-				campaigns.map((campaignEvent) => (
+				sortedCampaigns.map((campaign) => (
 					<article
 						className="py-10 font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
-						key={campaignEvent.campaignId}
+						key={campaign.campaignId}
 					>
 						<section className="pb-10 lg:w-1/2 lg:pr-10">
-							{campaignEvent.campaignCoverType === "image" &&
-							campaignEvent.campaignCoverUrl ? (
+							{campaign.campaignCoverType === "image" &&
+							campaign.campaignCoverUrl ? (
 								<section className="relative aspect-video">
 									<Image
-										src={campaignEvent.campaignCoverUrl}
+										src={campaign.campaignCoverUrl}
 										alt="Learn More"
 										fill
 										className="rounded-lg object-cover"
@@ -59,30 +66,25 @@ export default function NewsletterPosts() {
 						</section>
 
 						<section className="lg:w-1/2 lg:pl-10">
-							<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
-								{campaignEvent.eventTitle}
+							<h3 className="font-ancho font-bold text-cimi-purple text-xl">
+								{campaign.campaignTitle}
 							</h3>
 
-							{campaignEvent.eventStartAt ? (
-								<h4 className="font-ancho font-medium text-cimi-red-orange">
-									{campaignEvent.eventEndAt
-										? `${campaignEvent.eventStartAt.replace(/\s*[A-Z]{2,4}$/, "")} – ${campaignEvent.eventEndAt}`
-										: campaignEvent.eventStartAt}
+							{campaign.campaignEndAt ? (
+								<h4 className="font-ancho font-medium text-cimi-purple">
+									{campaign.campaignEndAt}
 								</h4>
 							) : null}
 
 							<section className="pt-4 pb-10">
-								{campaignEvent.eventDetails}
+								{campaign.campaignDescription}
 							</section>
 
-							<Link href={campaignEvent.campaignUrl}>
-								<Image
-									src="/images/buttons/learn-more.svg"
-									alt="Learn More"
-									width={163}
-									height={47}
-								/>
-							</Link>
+							<Button
+								buttonText="Learn More"
+								buttonLink={campaign.campaignUrl}
+								colorScheme="cimi-purple-dark"
+							/>
 						</section>
 					</article>
 				))

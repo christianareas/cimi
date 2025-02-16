@@ -30,7 +30,7 @@ export default function MemberContent() {
 				<h2 className="font-ancho font-bold text-2xl text-cimi-blue ">
 					Become a Member Today
 				</h2>
-				<Button buttonText="Sign Up" colorScheme="cimi-blue" />
+				<Button buttonText="Sign Up" buttonLink="" colorScheme="cimi-blue" />
 			</article>
 
 			{/*

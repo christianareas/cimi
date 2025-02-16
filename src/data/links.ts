@@ -19,7 +19,7 @@ const links: LinkType[] = [
 			{ href: "/join/volunteer", id: "volunteer", label: "Be a Volunteer" },
 		],
 	},
-	{ href: "#todo", id: "newsletter", label: "Newsletter" },
+	{ href: "/newsletter", id: "newsletter", label: "Newsletter" },
 	{ href: "#todo", id: "contact", label: "Contact" },
 ]
 
