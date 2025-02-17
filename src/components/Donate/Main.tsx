@@ -1,4 +1,5 @@
 // Dependencies.
+import DonateForm from "@/components/Donate/DonateForm"
 import ContentCard from "@/components/Shared/ContentCard"
 import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
@@ -12,26 +13,27 @@ export default function Main() {
 			DONATION FORM
 			*************
 			*/}
-			<ContentCard
-				contentSrc="donate.thank-you"
-				articleClassName="lg:w-1/2 mx-auto"
-				h2ClassName="text-cimi-green text-center"
-				fontClassName="font-medium"
-				boldClassName="text-cimi-green font-extrabold"
-			/>
+			<DonateForm />
 
 			{/*
 			*********
 			THANK YOU
 			*********
 			*/}
+			<ContentCard
+				contentSrc="donate.thank-you"
+				articleClassName="lg:w-2/3 lg:max-w-4xl mx-auto"
+				h2ClassName="text-cimi-green text-center"
+				fontClassName="font-medium"
+				boldClassName="text-cimi-green font-extrabold"
+			/>
 
 			{/*
 			**********
 			DONOR FAQS
 			**********
 			*/}
-			<section className="mx-auto p-20 lg:w-full">
+			<section className="mx-auto px-20 pb-20 lg:w-full">
 				<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
 					Donor FAQs
 				</h2>
@@ -39,7 +41,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="donate.buttons.1-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="donate.buttons.1-collapsible-content"
 					colorScheme="cimi-green"
@@ -48,7 +50,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="donate.buttons.2-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="donate.buttons.2-collapsible-content"
 					colorScheme="cimi-green"
@@ -57,7 +59,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="donate.buttons.3-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="donate.buttons.3-collapsible-content"
 					colorScheme="cimi-green"

@@ -58,7 +58,7 @@ export const markdown = {
     "get-involved": "## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",
     "member": {
       "buttons": {
-        "1-button-text": "### \n",
+        "1-button-text": "### What kind of activities does CIMI offer?\n",
         "1-collapsible-content": "We offer a variety of programs for young women and their mothers—plus events for the whole family to enjoy together. \n\n#### Core CIMI programs\n\n- **Exercise for the whole family**\n\t- 0-5k running and walking (no experience necessary!)\n\t- Saturday morning family walks\n- **Empowering classes for moms and daughters**\n\t- Coding classes for girls\n\t- Computer basics courses for moms\n\t- Robotics lessons\n\t- Tutoring\n- **Community-building events**\n\t- Free shoe giveaways\n\t- Holiday events for local families\n\t- Gas card giveaways\n\t- Adopt-a-Family holiday drive\n",
         "2-button-text": "### I don’t have any experience running. Can I still join CIMI?\n",
         "2-collapsible-content": "Absolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.\n",

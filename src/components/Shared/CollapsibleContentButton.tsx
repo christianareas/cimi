@@ -15,7 +15,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 type CollapsibleButtonProps = {
 	dimensions: "w-xs lg:w-[350px]" | "w-xs lg:w-xl"
 	buttonTextSrc: string
-	buttonDimensions: "w-xs lg:min-h-24 lg:w-[350px]" | "w-xs lg:w-xl"
+	buttonDimensions: "w-xs lg:min-h-24 lg:w-[350px]" | "w-xs lg:w-2xl"
 	buttonClassName: "shadow-[4px_4px_0]" | "font-ancho font-bold text-lg"
 	collapsibleContentSrc: string
 	colorScheme: "cimi-blue" | "cimi-green"

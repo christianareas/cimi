@@ -30,7 +30,12 @@ export default function Main() {
 				<h2 className="font-ancho font-bold text-2xl text-cimi-green ">
 					Become a Volunteer Today
 				</h2>
-				<Button buttonText="Sign Up" buttonLink="" colorScheme="cimi-green" />
+				<Button
+					buttonText="Sign Up"
+					buttonLink=""
+					buttonWidth="w-40"
+					colorScheme="cimi-green"
+				/>
 			</article>
 
 			{/*
@@ -46,7 +51,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.1-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.1-collapsible-content"
 					colorScheme="cimi-green"
@@ -55,7 +60,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.2-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.2-collapsible-content"
 					colorScheme="cimi-green"
@@ -64,7 +69,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.3-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.3-collapsible-content"
 					colorScheme="cimi-green"
@@ -73,7 +78,7 @@ export default function Main() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.4-button-text"
-					buttonDimensions="w-xs lg:w-xl"
+					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.4-collapsible-content"
 					colorScheme="cimi-green"
