@@ -87,6 +87,7 @@ export default function NewsletterPosts() {
 							<Button
 								buttonText="Learn More"
 								buttonLink={campaign.campaignUrl}
+								buttonWidth="w-40"
 								colorScheme="cimi-purple-dark"
 							/>
 						</section>
