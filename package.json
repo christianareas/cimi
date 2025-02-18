@@ -14,6 +14,7 @@
     "update:radix": "npm i @radix-ui/react-collapsible@latest @radix-ui/react-dialog@latest @radix-ui/react-form@latest @radix-ui/react-icons@latest @radix-ui/react-radio-group@latest @radix-ui/react-select@latest @radix-ui/react-tabs@latest @radix-ui/react-visually-hidden@latest",
     "update:markdown": "npm i react-markdown@latest rehype-raw@latest remark-gfm@latest",
     "update:html": "npm i html-react-parser@latest",
+    "update:stripe": "npm i stripe@latest",
     "update:eslint": "npm i -D eslint@latest eslint-config-next@latest",
     "update:biome": "npm i -D @biomejs/biome@latest",
     "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:radix && npm run update:markdown && npm run update:html && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
@@ -33,14 +34,15 @@
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.3",
     "rehype-raw": "^7.0.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "stripe": "^17.6.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@tailwindcss/postcss": "^4.0.6",
     "@types/node": "^22.13.4",
-    "@types/react": "^19.0.9",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.20.1",
     "eslint-config-next": "^15.1.7",

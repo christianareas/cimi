@@ -1,9 +1,10 @@
 // Fetch Givebutter data.
 export default async function fetchGivebutterData(endpoint: string) {
+	// Base URL.
 	const baseUrl = "https://api.givebutter.com/v1"
-	const apiKey = process.env.GIVEBUTTER_API_KEY
 
-	// If there’s no API key, return an error.
+	// API key.
+	const apiKey = process.env.GIVEBUTTER_API_KEY
 	if (!apiKey) {
 		throw new Error(
 			"Error: There’s no GIVEBUTTER_API_KEY environment variable.",

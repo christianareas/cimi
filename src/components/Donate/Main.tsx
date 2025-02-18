@@ -8,18 +8,10 @@ export default function Main() {
 	// Render.
 	return (
 		<main>
-			{/*
-			*************
-			DONATION FORM
-			*************
-			*/}
+			{/* Donation Form. */}
 			<DonateForm />
 
-			{/*
-			*********
-			THANK YOU
-			*********
-			*/}
+			{/* Thank You. */}
 			<ContentCard
 				contentSrc="donate.thank-you"
 				articleClassName="lg:w-2/3 lg:max-w-4xl mx-auto"
@@ -28,11 +20,7 @@ export default function Main() {
 				boldClassName="text-cimi-green font-extrabold"
 			/>
 
-			{/*
-			**********
-			DONOR FAQS
-			**********
-			*/}
+			{/* Donor FAQs */}
 			<section className="mx-auto px-20 pb-20 lg:w-full">
 				<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
 					Donor FAQs
