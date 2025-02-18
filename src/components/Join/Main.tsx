@@ -33,7 +33,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.1-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"
@@ -41,7 +41,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.2-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"
@@ -49,7 +49,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.3-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"
@@ -57,7 +57,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.4-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 				</section>
 				<section>
@@ -67,7 +67,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.5-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"
@@ -75,7 +75,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.6-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"
@@ -83,7 +83,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.7-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"
@@ -91,7 +91,7 @@ export default function Main() {
 						buttonDimensions="w-xs lg:min-h-24 lg:w-[350px]"
 						buttonClassName="shadow-[4px_4px_0]"
 						collapsibleContentSrc="join.buttons.8-collapsible-content"
-						colorScheme="cimi-blue"
+						colorScheme="cimi-blue-light"
 					/>
 				</section>
 			</section>

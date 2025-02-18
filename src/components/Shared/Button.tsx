@@ -8,9 +8,11 @@ type ButtonProps = {
 	buttonLink: string
 	buttonWidth: "w-40" | "w-20"
 	colorScheme:
-		| "cimi-blue"
+		| "neutral-light"
+		| "neutral-dark"
+		| "cimi-blue-light"
 		| "cimi-blue-dark"
-		| "cimi-green"
+		| "cimi-green-light"
 		| "cimi-green-dark"
 		| "cimi-purple-dark"
 		| "cimi-purple-light"

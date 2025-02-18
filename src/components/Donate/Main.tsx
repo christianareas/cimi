@@ -32,7 +32,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="donate.buttons.1-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
@@ -41,7 +41,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="donate.buttons.2-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
@@ -50,7 +50,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="donate.buttons.3-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 			</section>
 		</main>

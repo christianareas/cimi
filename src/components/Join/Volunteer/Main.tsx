@@ -34,7 +34,7 @@ export default function Main() {
 					buttonText="Sign Up"
 					buttonLink=""
 					buttonWidth="w-40"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 			</article>
 
@@ -54,7 +54,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.1-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
@@ -63,7 +63,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.2-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
@@ -72,7 +72,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.3-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
@@ -81,7 +81,7 @@ export default function Main() {
 					buttonDimensions="w-xs lg:w-2xl"
 					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.4-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 			</section>
 		</main>
