@@ -18,4 +18,9 @@ export const colorsSchemes = {
 		"border-cimi-red-orange bg-cimi-cream text-cimi-red-orange shadow-cimi-red-orange",
 	"cimi-red-orange-dark":
 		"border-cimi-cream bg-cimi-red-orange text-cimi-cream shadow-cimi-red-orange",
+
+	"neutral-light":
+		"border-neutral-500 bg-cimi-cream text-neutral-500 shadow-neutral-500",
+	"neutral-dark":
+		"border-cimi-cream bg-neutral-500 text-cimi-cream shadow-neutral-500",
 }
