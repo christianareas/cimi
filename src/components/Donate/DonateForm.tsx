@@ -58,7 +58,7 @@ export default function DonateForm() {
 	}
 
 	// Fetch the donation URL.
-	async function fetchDonationUrl() {
+	async function checkOutDonor() {
 		// Prepare the donation amount.
 		let donationAmount = 0
 		if (presetDonationAmount === "other") {
@@ -67,6 +67,7 @@ export default function DonateForm() {
 			donationAmount = Number.parseInt(presetDonationAmount, 10)
 		}
 
+		// Fetch the donation URL.
 		const { url } = await fetchData({
 			method: "POST",
 			endpoint: "/api/stripeCheckoutSession",
@@ -74,9 +75,8 @@ export default function DonateForm() {
 			cache: "no-cache",
 		})
 
+		// Navigate the donor to the checkout URL.
 		window.location.assign(url)
-
-		return donationAmount
 	}
 
 	// Render.
@@ -181,7 +181,7 @@ export default function DonateForm() {
 							<button
 								type="button"
 								disabled={disableContinueButton(presetDonationAmount)}
-								onClick={fetchDonationUrl}
+								onClick={checkOutDonor}
 								className={`w-32 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 									disableContinueButton(presetDonationAmount)
 										? colorsSchemes["neutral-light"]
