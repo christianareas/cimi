@@ -2,6 +2,7 @@
 
 // Dependencies.
 import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 import * as Form from "@radix-ui/react-form"
 import * as RadioGroup from "@radix-ui/react-radio-group"
 import { colorsSchemes } from "@/data/colorSchemes"
@@ -45,8 +46,8 @@ export default function DonateForm() {
 		return validationErrors
 	}
 
-	// Validate preset donation amount.
-	function validateDonationAmount(presetDonationAmount: string) {
+	// Disable continue button.
+	function disableContinueButton(presetDonationAmount: string) {
 		return (
 			presetDonationAmount === "" ||
 			(presetDonationAmount === "other" &&
@@ -56,18 +57,26 @@ export default function DonateForm() {
 		)
 	}
 
-	// Get the donation amount.
-	function getDonationAmount() {
-		let donationAmountNumber = 0
+	// Fetch the donation URL.
+	async function fetchDonationUrl() {
+		// Prepare the donation amount.
+		let donationAmount = 0
 		if (presetDonationAmount === "other") {
-			donationAmountNumber = Number.parseFloat(otherDonationAmount) * 100
+			donationAmount = Number.parseFloat(otherDonationAmount) * 100
 		} else {
-			donationAmountNumber = Number.parseInt(presetDonationAmount, 10)
+			donationAmount = Number.parseInt(presetDonationAmount, 10)
 		}
 
-		console.log(`donationAmount in cents: ${donationAmountNumber}`) // **
+		const { url } = await fetchData({
+			method: "POST",
+			endpoint: "/api/stripeCheckoutSession",
+			body: { donationAmount },
+			cache: "no-cache",
+		})
 
-		return donationAmountNumber
+		window.location.assign(url)
+
+		return donationAmount
 	}
 
 	// Render.
@@ -171,10 +180,10 @@ export default function DonateForm() {
 						<Form.Submit asChild>
 							<button
 								type="button"
-								disabled={validateDonationAmount(presetDonationAmount)}
-								onClick={getDonationAmount}
+								disabled={disableContinueButton(presetDonationAmount)}
+								onClick={fetchDonationUrl}
 								className={`w-32 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
-									validateDonationAmount(presetDonationAmount)
+									disableContinueButton(presetDonationAmount)
 										? colorsSchemes["neutral-light"]
 										: colorsSchemes["cimi-green-dark"]
 								}`}
