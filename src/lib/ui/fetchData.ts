@@ -1,6 +1,3 @@
-// Dependencies.
-import defineSiteBaseUrl from "@/util/defineSiteBaseUrl"
-
 // Types.
 interface FetchDataTypes {
 	method: "GET" | "POST"
@@ -16,8 +13,6 @@ export default async function fetchData({
 	body,
 	cache,
 }: FetchDataTypes) {
-	const siteBaseUrl = defineSiteBaseUrl()
-
 	// Fetch options.
 	const options: RequestInit = {
 		method,
@@ -32,13 +27,11 @@ export default async function fetchData({
 	}
 
 	try {
-		const response = await fetch(`${siteBaseUrl}${endpoint}`, options)
+		const response = await fetch(`${endpoint}`, options)
 
 		// If the response is not OK, throw an error.
 		if (!response.ok) {
-			throw new Error(
-				`${siteBaseUrl}${endpoint} ${response.status} ${response.statusText}`,
-			)
+			throw new Error(`${endpoint} ${response.status} ${response.statusText}`)
 		}
 
 		return await response.json()
