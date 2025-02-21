@@ -9,13 +9,9 @@ export async function POST(request: Request) {
 		// Stripe API key.
 		const apiKey = process.env.STRIPE_API_KEY
 
-		console.log(`apiKey: ${apiKey}`) // **
-
 		if (!apiKey) {
 			throw new Error("Error: There’s no STRIPE_API_KEY environment variable.")
 		}
-
-		console.log(`apiKey: ${apiKey}`) // **
 
 		// Stripe.
 		const stripe = new Stripe(apiKey)
@@ -29,12 +25,8 @@ export async function POST(request: Request) {
 			)
 		}
 
-		console.log(`donationAmount: ${donationAmount}`) // **
-
 		// Site base URL.
 		const siteBaseUrl = defineSiteBaseUrl()
-
-		console.log(`siteBaseUrl: ${siteBaseUrl}`) // **
 
 		// Stripe checkout session.
 		const stripeCheckoutSession = await stripe.checkout.sessions.create({
@@ -52,8 +44,6 @@ export async function POST(request: Request) {
 			success_url: `${siteBaseUrl}/donate`,
 			cancel_url: `${siteBaseUrl}/donate`,
 		})
-
-		console.log(`url: ${stripeCheckoutSession.url}`) // **
 
 		// Return.
 		return NextResponse.json(
