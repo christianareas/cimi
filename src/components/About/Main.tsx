@@ -6,7 +6,7 @@ import Timeline from "@/components/About/Timeline"
 import Team from "@/components/About/Team"
 
 // Component.
-export default function AboutContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>

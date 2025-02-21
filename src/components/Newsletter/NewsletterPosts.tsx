@@ -18,7 +18,11 @@ export default function NewsletterPosts() {
 	useEffect(() => {
 		async function fetchCampaigns() {
 			try {
-				const response = await fetchData("/api/givebutterCampaigns", "no-cache")
+				const response = await fetchData({
+					method: "GET",
+					endpoint: "/api/givebutterCampaigns",
+					cache: "no-cache",
+				})
 				const latestCampaigns = response.campaigns
 				setCampaigns(latestCampaigns)
 			} catch (error) {
@@ -87,6 +91,7 @@ export default function NewsletterPosts() {
 							<Button
 								buttonText="Learn More"
 								buttonLink={campaign.campaignUrl}
+								buttonWidth="w-40"
 								colorScheme="cimi-purple-dark"
 							/>
 						</section>

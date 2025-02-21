@@ -1,0 +1,1 @@
+We welcome gifts for specific CIMI activities, such as the Adopt-a-Family annual event or coding classes. All other CIMI gifts will be placed in an unrestricted fund to help us with basic operational costs. Unrestricted funds are critical to non-profit organizations, as they allow us to meet immediate needs.

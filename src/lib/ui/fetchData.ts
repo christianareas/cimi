@@ -1,40 +1,37 @@
-// Fetch data.
-export default async function fetchData(
-	endpoint: string,
-	cache: "cache" | "no-cache" = "no-cache",
-) {
-	// Environments.
-	const nodeEnvironment = process.env.NODE_ENV
-	const vercelEnvironment = process.env.VERCEL_ENV
+// Types.
+interface FetchDataTypes {
+	method: "GET" | "POST"
+	endpoint: string
+	body?: { donationAmount: number }
+	cache: "cache" | "no-cache"
+}
 
-	// Base URL.
-	let baseUrl = ""
-	if (
-		nodeEnvironment === "development" ||
-		vercelEnvironment === "development"
-	) {
-		baseUrl = `http://localhost:${process.env.PORT || 3000}`
-	} else if (
-		vercelEnvironment === "preview" ||
-		vercelEnvironment === "production"
-	) {
-		baseUrl = `https://${process.env.VERCEL_URL}`
-	} else {
-		console.log(`Node environment: ${nodeEnvironment}`)
-		console.log(`Vercel environment: ${vercelEnvironment}`)
-		console.error("Your environment isn’t supported.")
+// Fetch data.
+export default async function fetchData({
+	method,
+	endpoint,
+	body,
+	cache,
+}: FetchDataTypes) {
+	// Fetch options.
+	const options: RequestInit = {
+		method,
+		cache: cache === "cache" ? "force-cache" : "no-store",
+		headers: {
+			"Content-Type": "application/json",
+		},
+	}
+
+	if (method === "POST") {
+		options.body = JSON.stringify(body)
 	}
 
 	try {
-		const response = await fetch(`${baseUrl}${endpoint}`, {
-			cache: cache === "cache" ? "force-cache" : "no-store",
-		})
+		const response = await fetch(`${endpoint}`, options)
 
 		// If the response is not OK, throw an error.
 		if (!response.ok) {
-			throw new Error(
-				`${baseUrl}${endpoint} ${response.status} ${response.statusText}`,
-			)
+			throw new Error(`${endpoint} ${response.status} ${response.statusText}`)
 		}
 
 		return await response.json()

@@ -4,7 +4,7 @@ import Button from "@/components/Shared/Button"
 import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
 // Component.
-export default function VolunteerContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>
@@ -30,7 +30,12 @@ export default function VolunteerContent() {
 				<h2 className="font-ancho font-bold text-2xl text-cimi-green ">
 					Become a Volunteer Today
 				</h2>
-				<Button buttonText="Sign Up" buttonLink="" colorScheme="cimi-green" />
+				<Button
+					buttonText="Sign Up"
+					buttonLink=""
+					buttonWidth="w-40"
+					colorScheme="cimi-green-light"
+				/>
 			</article>
 
 			{/*
@@ -46,37 +51,37 @@ export default function VolunteerContent() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.1-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.1-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.2-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.2-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.3-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.3-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.volunteer.buttons.4-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.volunteer.buttons.4-collapsible-content"
-					colorScheme="cimi-green"
+					colorScheme="cimi-green-light"
 				/>
 			</section>
 		</main>

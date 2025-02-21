@@ -6,9 +6,14 @@ import Link from "next/link"
 type ButtonProps = {
 	buttonText: string
 	buttonLink: string
+	buttonWidth: "w-40" | "w-20"
 	colorScheme:
-		| "cimi-blue"
-		| "cimi-green"
+		| "neutral-light"
+		| "neutral-dark"
+		| "cimi-blue-light"
+		| "cimi-blue-dark"
+		| "cimi-green-light"
+		| "cimi-green-dark"
 		| "cimi-purple-dark"
 		| "cimi-purple-light"
 		| "cimi-red-orange-light"
@@ -19,6 +24,7 @@ type ButtonProps = {
 export default function Button({
 	buttonText,
 	buttonLink,
+	buttonWidth,
 	colorScheme,
 }: ButtonProps) {
 	// Color classes.
@@ -29,7 +35,7 @@ export default function Button({
 		<Link href={buttonLink}>
 			<button
 				type="button"
-				className={`mt-5 w-40 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${colorClasses}`}
+				className={`mt-5 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${buttonWidth} ${colorClasses}`}
 			>
 				{buttonText}
 			</button>

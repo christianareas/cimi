@@ -9,7 +9,7 @@ type LinkType = {
 const links: LinkType[] = [
 	{ href: "/about", id: "about", label: "About" },
 	{ href: "/events", id: "events", label: "Events" },
-	{ href: "#todo", id: "donor-info", label: "Donor Info" },
+	{ href: "/donate", id: "donor-info", label: "Donor Info" },
 	{
 		href: "/join",
 		id: "join",

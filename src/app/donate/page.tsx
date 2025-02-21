@@ -1,7 +1,7 @@
 // Dependencies.
 import { Fragment } from "react"
 import Header from "@/components/Layout/Header/Header"
-import Main from "@/components/Join/Main"
+import Main from "@/components/Donate/Main"
 import Footer from "@/components/Layout/Footer/Footer"
 
 // Page.
@@ -10,9 +10,9 @@ export default function About() {
 	return (
 		<Fragment>
 			<Header
-				imageSrc="/images/heroes/join.jpg"
+				imageSrc="/images/heroes/donate.jpg"
 				imageAlt="todo"
-				imageClassName="object-[50%_55%]"
+				imageClassName="object-[50%_30%]"
 			/>
 			<Main />
 			<Footer />

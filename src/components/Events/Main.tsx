@@ -3,7 +3,7 @@ import ContentCard from "@/components/Shared/ContentCard"
 import UpcomingAndPastEvents from "@/components/Events/UpcomingAndPastEvents"
 
 // Component.
-export default function EventsContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>

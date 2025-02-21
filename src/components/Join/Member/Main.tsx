@@ -4,7 +4,7 @@ import Button from "@/components/Shared/Button"
 import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
 // Component.
-export default function MemberContent() {
+export default function Main() {
 	// Render.
 	return (
 		<main>
@@ -30,7 +30,12 @@ export default function MemberContent() {
 				<h2 className="font-ancho font-bold text-2xl text-cimi-blue ">
 					Become a Member Today
 				</h2>
-				<Button buttonText="Sign Up" buttonLink="" colorScheme="cimi-blue" />
+				<Button
+					buttonText="Sign Up"
+					buttonLink=""
+					buttonWidth="w-40"
+					colorScheme="cimi-blue-light"
+				/>
 			</article>
 
 			{/*
@@ -46,46 +51,46 @@ export default function MemberContent() {
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.1-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.1-collapsible-content"
-					colorScheme="cimi-blue"
+					colorScheme="cimi-blue-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.2-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.2-collapsible-content"
-					colorScheme="cimi-blue"
+					colorScheme="cimi-blue-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.3-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.3-collapsible-content"
-					colorScheme="cimi-blue"
+					colorScheme="cimi-blue-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.4-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.4-collapsible-content"
-					colorScheme="cimi-blue"
+					colorScheme="cimi-blue-light"
 				/>
 
 				<CollapsibleContentButton
 					dimensions="w-xs lg:w-xl"
 					buttonTextSrc="join.member.buttons.5-button-text"
-					buttonDimensions="w-xs lg:w-xl"
-					buttonClassName="font-ancho"
+					buttonDimensions="w-xs lg:w-2xl"
+					buttonClassName="font-ancho font-bold text-lg"
 					collapsibleContentSrc="join.member.buttons.5-collapsible-content"
-					colorScheme="cimi-blue"
+					colorScheme="cimi-blue-light"
 				/>
 			</section>
 		</main>
