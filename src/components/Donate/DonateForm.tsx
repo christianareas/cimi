@@ -5,7 +5,7 @@ import { useState } from "react"
 import fetchData from "@/lib/ui/fetchData"
 import * as Form from "@radix-ui/react-form"
 import * as RadioGroup from "@radix-ui/react-radio-group"
-import { colorsSchemes } from "@/data/colorSchemes"
+import { buttonColorsSchemes } from "@/data/colorSchemes"
 
 // Component.
 export default function DonateForm() {
@@ -104,8 +104,8 @@ export default function DonateForm() {
 										value={amount.toString()}
 										className={`w-32 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 											presetDonationAmount === amount.toString()
-												? colorsSchemes["cimi-blue-dark"]
-												: colorsSchemes["cimi-green-dark"]
+												? buttonColorsSchemes["cimi-blue-dark"]
+												: buttonColorsSchemes["cimi-green-dark"]
 										}`}
 									>
 										{formattedDonationAmount}
@@ -184,8 +184,8 @@ export default function DonateForm() {
 								onClick={checkOutDonor}
 								className={`w-32 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 									disableContinueButton(presetDonationAmount)
-										? colorsSchemes["neutral-light"]
-										: colorsSchemes["cimi-green-dark"]
+										? buttonColorsSchemes["neutral-light"]
+										: buttonColorsSchemes["cimi-green-dark"]
 								}`}
 							>
 								Continue

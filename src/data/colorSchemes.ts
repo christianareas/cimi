@@ -1,9 +1,16 @@
-// Color schemes.
-export const colorsSchemes = {
+// Button color schemes.
+export const buttonColorsSchemes = {
 	"neutral-light":
 		"border-neutral-500 bg-cimi-cream text-neutral-500 shadow-neutral-500",
 	"neutral-dark":
 		"border-cimi-cream bg-neutral-500 text-cimi-cream shadow-neutral-500",
+
+	"cimi-cream-blue":
+		"border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream",
+	"cimi-cream-green":
+		"border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream",
+	"cimi-cream-purple":
+		"border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream",
 
 	"cimi-blue-light":
 		"border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-blue",
