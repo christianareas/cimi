@@ -1,26 +1,53 @@
 // Types.
-type LinkType = {
-	href: string
-	id: string
-	label: string
-	subLinks?: LinkType[]
+type LinksType = {
+	linkHref: string
+	linkId: string
+	linkName: string
 }
 
-const links: LinkType[] = [
-	{ href: "/about", id: "about", label: "About" },
-	{ href: "/events", id: "events", label: "Events" },
-	{ href: "/donate", id: "donor-info", label: "Donor Info" },
+// Links.
+export const links: LinksType[] = [
 	{
-		href: "/join",
-		id: "join",
-		label: "Join",
-		subLinks: [
-			{ href: "/join/member", id: "member", label: "Be a Member" },
-			{ href: "/join/volunteer", id: "volunteer", label: "Be a Volunteer" },
-		],
+		linkHref: "/donate",
+		linkId: "donate",
+		linkName: "Donate",
 	},
-	{ href: "/newsletter", id: "newsletter", label: "Newsletter" },
-	{ href: "#todo", id: "contact", label: "Contact" },
+	{
+		linkHref: "/join",
+		linkId: "join",
+		linkName: "Join",
+	},
+	{
+		linkHref: "/events",
+		linkId: "events",
+		linkName: "Events",
+	},
+	{
+		linkHref: "/newsletter",
+		linkId: "newsletter",
+		linkName: "Newsletter",
+	},
+	{
+		linkHref: "/about",
+		linkId: "about",
+		linkName: "About",
+	},
+	{
+		linkHref: "#todo",
+		linkId: "contact",
+		linkName: "Contact",
+	},
 ]
 
-export default links
+export const nestedLinks: LinksType[] = [
+	{
+		linkHref: "/join/member",
+		linkId: "member",
+		linkName: "Be a Member",
+	},
+	{
+		linkHref: "/join/volunteer",
+		linkId: "volunteer",
+		linkName: "Be a Volunteer",
+	},
+]

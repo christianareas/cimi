@@ -3,13 +3,16 @@ import { colorsSchemes } from "@/data/colorSchemes"
 import Link from "next/link"
 
 // Types.
-type ButtonProps = {
+interface ButtonProps {
 	buttonText: string
 	buttonLink: string
 	buttonWidth: "w-40" | "w-20"
 	colorScheme:
 		| "neutral-light"
 		| "neutral-dark"
+		| "cimi-cream-blue"
+		| "cimi-cream-green"
+		| "cimi-cream-purple"
 		| "cimi-blue-light"
 		| "cimi-blue-dark"
 		| "cimi-green-light"
