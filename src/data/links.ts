@@ -1,5 +1,5 @@
 // Types.
-type LinksType = {
+interface LinksType {
 	linkHref: string
 	linkId: string
 	linkName: string

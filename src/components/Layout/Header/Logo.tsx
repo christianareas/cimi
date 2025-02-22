@@ -5,7 +5,7 @@ import Image from "next/image"
 // Component.
 export default function Logo() {
 	return (
-		<section className="relative z-50 w-1/2">
+		<section className="relative z-50 w-3/4">
 			<Link href="/">
 				<Image
 					priority={true}

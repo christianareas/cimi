@@ -34,7 +34,7 @@ export default function Main() {
 					buttonText="Sign Up"
 					buttonLink=""
 					buttonWidth="w-40"
-					colorScheme="cimi-green-light"
+					buttonColorScheme="cimi-green-light"
 				/>
 			</article>
 
