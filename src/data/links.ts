@@ -33,7 +33,7 @@ export const links: LinksType[] = [
 		linkName: "About",
 	},
 	{
-		linkHref: "#todo",
+		linkHref: "#contact",
 		linkId: "contact",
 		linkName: "Contact",
 	},
