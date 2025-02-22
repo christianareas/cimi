@@ -42,14 +42,14 @@ export default function Menu() {
 						Menu links and calls to action.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="flex flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream sm:flex-row">
+				<nav className="flex flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream font-ancho sm:flex-row">
 					<section className="p-10 sm:w-1/2 md:p-20">
-						{/* Links */}
+						{/* Menu links */}
 						<ul className="flex list-none flex-col space-y-5 font-normal">
 							{links.map((link) => (
 								<li key={link.linkId}>
 									<Link href={link.linkHref}>{link.linkName}</Link>
-									{/* Nested links. */}
+									{/* Nested menu links. */}
 									{link.linkId === "join" && (
 										<ul className="list-disc font-normal">
 											{nestedLinks.map((nestedLink) => (
