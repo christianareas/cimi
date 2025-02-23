@@ -14,33 +14,41 @@ export default function Testimonials() {
 		testimonials[0].testimonialTabName,
 	)
 
-	// Switch to previous or next tab.
-	function switchTab(increment: number) {
-		const currentIndex = testimonials.findIndex(
+	// Switch to the next or previous tab.
+	function switchTab(direction: number) {
+		// Current tab index.
+		const currentTabIndex = testimonials.findIndex(
 			({ testimonialTabName }) => testimonialTabName === currentTab,
 		)
-		const newIndex =
-			(currentIndex + increment + testimonials.length) % testimonials.length
-		setCurrentTab(testimonials[newIndex].testimonialTabName)
+		// Next or previous tab index.
+		const nextOrPreviousTabIndex =
+			(currentTabIndex + direction + testimonials.length) % testimonials.length
+
+		setCurrentTab(testimonials[nextOrPreviousTabIndex].testimonialTabName)
 	}
 
 	// Automatically switch to the next tab.
 	useEffect(() => {
-		const interval = setInterval(() => {
+		const tabSwitchInterval = setInterval(() => {
 			setCurrentTab((previousTab) => {
-				const currentIndex = testimonials.findIndex(
+				// Current tab index.
+				const currentTabIndex = testimonials.findIndex(
 					({ testimonialTabName }) => testimonialTabName === previousTab,
 				)
-				const nextIndex =
-					currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1
-				return testimonials[nextIndex].testimonialTabName
+				// Next tab index.
+				const nextTabIndex =
+					currentTabIndex === testimonials.length - 1 ? 0 : currentTabIndex + 1
+
+				return testimonials[nextTabIndex].testimonialTabName
 			})
 		}, 5000)
-		return () => clearInterval(interval)
+
+		// Reset.
+		return () => clearInterval(tabSwitchInterval)
 	}, [])
 
-	// Get the active testimonial.
-	const activeTestimonial = testimonials.find(
+	// Get the current testimonial.
+	const currentTestimonial = testimonials.find(
 		({ testimonialTabName }) => testimonialTabName === currentTab,
 	)
 
@@ -58,7 +66,7 @@ export default function Testimonials() {
 						))}
 					</Tabs.List>
 
-					{/* Heading */}
+					{/* Heading. */}
 					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream">
 						Testimonials of Members
 					</h2>
@@ -69,29 +77,31 @@ export default function Testimonials() {
 							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20" />
 						</button>
 
-						{/* Render only the active testimonial with fade-in */}
-						{activeTestimonial && (
-							<div key={currentTab} className="fade">
-								<article className="lg:grid lg:grid-cols-2 lg:gap-10">
-									<section className="relative mb-5 w-full pb-[100%] lg:mb-0">
-										<Image
-											src={activeTestimonial.testimonialImgSrc}
-											alt={activeTestimonial.testimonialImgAlt}
-											fill
-											sizes="(max-width: 1024px) 100vw, 492px"
-											className="absolute inset-0 mx-auto mb-5 rounded-lg object-cover lg:mb-0"
-										/>
-									</section>
-									<section>
-										<p className="font-ancho text-3xl">“</p>
-										<p>{activeTestimonial.testimonial}</p>
-										<p className="pt-5 font-ancho text-3xl">”</p>
-										<p className="font-bold text-xs">
-											&ndash;{activeTestimonial.testimonialSrc}
-										</p>
-									</section>
-								</article>
-							</div>
+						{/* Testimonial. */}
+						{currentTestimonial && (
+							<article
+								key={currentTab}
+								className="fade lg:grid lg:grid-cols-2 lg:gap-10"
+							>
+								<section className="relative mb-5 w-full pb-[100%] lg:mb-0">
+									<Image
+										src={currentTestimonial.testimonialImgSrc}
+										alt={currentTestimonial.testimonialImgAlt}
+										fill
+										sizes="(max-width: 1024px) 100vw, 50vw"
+										className="absolute inset-0 mx-auto mb-5 rounded-lg object-cover lg:mb-0"
+									/>
+								</section>
+
+								<section>
+									<p className="font-ancho text-3xl">“</p>
+									<p>{currentTestimonial.testimonial}</p>
+									<p className="pt-5 font-ancho text-3xl">”</p>
+									<p className="font-bold text-xs">
+										&ndash;{currentTestimonial.testimonialSrc}
+									</p>
+								</section>
+							</article>
 						)}
 
 						{/* Next tab */}

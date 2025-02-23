@@ -10,49 +10,27 @@ export default function Main() {
 	// Render.
 	return (
 		<main>
-			{/*
-				**************
-				CIMI’s Mission
-				**************
-			*/}
+			{/* CIMI’s Mission */}
 			<ContentCard
 				contentSrc="about.intro"
-				articleClassName="lg:w-1/2 mx-auto text-center"
+				articleClassName="mx-auto text-center lg:w-1/2"
 				h2ClassName="text-cimi-blue"
-				fontClassName="font-medium"
 			/>
 
-			{/*
-				**********
-				Our Values
-				**********
-			*/}
+			{/* Our Values */}
 			<Values />
 
-			{/*
-				***************
-				History of CIMI
-				***************
-			*/}
+			{/* History of CIMI */}
 			<ContentCard
 				contentSrc="about.history-of-cimi"
-				articleClassName="lg:w-1/2 mx-auto text-center"
+				articleClassName="mx-auto text-center lg:w-1/2"
 				h2ClassName="text-cimi-blue"
-				fontClassName="font-medium"
 			/>
 
-			{/*
-				********
-				Timeline
-				********
-			*/}
+			{/* Timeline */}
 			<Timeline />
 
-			{/*
-				********************
-				Who Is CIMI Made Of?
-				********************
-			*/}
+			{/* Who Is CIMI Made Of? */}
 			<article className="lg:flex">
 				<section className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -65,18 +43,14 @@ export default function Main() {
 				</section>
 				<ContentCard
 					contentSrc="about.who-is-cimi-made-of"
-					articleClassName="lg:w-1/2 text-center lg:text-left"
-					sectionClassName="lg:w-3/5 mr-auto"
+					articleClassName="text-center lg:w-1/2 lg:text-left"
+					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
 					bgClassName="bg-cimi-blue"
 					fontClassName="text-cimi-cream"
 				/>
 			</article>
 
-			{/*
-				*************
-				Meet the Team
-				*************
-			*/}
+			{/* Meet the Team */}
 			<Team />
 		</main>
 	)

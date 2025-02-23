@@ -4,15 +4,15 @@ import Image from "next/image"
 
 // Types.
 export type CimiColors =
-	| "cimi-cream"
-	| "cimi-dark-cream"
-	| "cimi-red-orange"
-	| "cimi-yellow"
-	| "cimi-green"
-	| "cimi-blue"
-	| "cimi-purple"
-	| "cimi-pink"
-	| "cimi-black"
+	| "fill-cimi-black"
+	| "fill-cimi-blue"
+	| "fill-cimi-cream"
+	| "fill-cimi-dark-cream"
+	| "fill-cimi-green"
+	| "fill-cimi-pink"
+	| "fill-cimi-purple"
+	| "fill-cimi-red-orange"
+	| "fill-cimi-yellow"
 
 type MilestoneProps = {
 	colorfulDotColor: CimiColors
@@ -35,7 +35,7 @@ export default function Milestone({
 	content,
 }: MilestoneProps) {
 	return (
-		<article className="relative ml-20 pr-20 font-medium lg:mx-auto lg:flex lg:h-full lg:max-w-(--breakpoint-lg) lg:pr-0">
+		<article className="relative ml-10 pr-10 font-medium sm:ml-10 sm:pr-10 lg:mx-auto lg:flex lg:h-full lg:max-w-(--breakpoint-lg) lg:pr-0">
 			{/* Image. */}
 			<section className="lg:w-1/2">
 				<section className="z-50 lg:hidden">

@@ -6,7 +6,7 @@ export default function Timeline() {
 	return (
 		<section className="pb-20">
 			<Milestone
-				colorfulDotColor="cimi-pink"
+				colorfulDotColor="fill-cimi-pink"
 				imageSrc="/images/about/milestones/1.jpg"
 				imageAlt="todo"
 				imagePosition="object-[50%_35%]"
@@ -16,7 +16,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-green"
+				colorfulDotColor="fill-cimi-green"
 				imageSrc="/images/about/milestones/2.jpg"
 				imageAlt="todo"
 				imagePosition="object-bottom"
@@ -26,7 +26,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-yellow"
+				colorfulDotColor="fill-cimi-yellow"
 				imageSrc="/images/about/milestones/3.jpg"
 				imageAlt="todo"
 				imagePosition="object-center"
@@ -36,7 +36,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-red-orange"
+				colorfulDotColor="fill-cimi-red-orange"
 				imageSrc="/images/about/milestones/4.jpg"
 				imageAlt="todo"
 				imagePosition="object-center"
@@ -46,7 +46,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-purple"
+				colorfulDotColor="fill-cimi-purple"
 				imageSrc="/images/about/milestones/5.jpg"
 				imageAlt="todo"
 				imagePosition="object-[50%_35%]"
@@ -56,7 +56,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-blue"
+				colorfulDotColor="fill-cimi-blue"
 				imageSrc="/images/about/milestones/6.jpg"
 				imageAlt="todo"
 				imagePosition="object-center"
@@ -66,7 +66,7 @@ export default function Timeline() {
 			/>
 
 			<Milestone
-				colorfulDotColor="cimi-pink"
+				colorfulDotColor="fill-cimi-pink"
 				imageSrc="/images/about/milestones/7.jpg"
 				imageAlt="todo"
 				imagePosition="object-center"

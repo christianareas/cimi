@@ -22,7 +22,7 @@ export default function Menu() {
 				<nav>
 					<button
 						type="button"
-						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream" : "bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
+						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream" : "fade bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
 						aria-label="Main Menu"
 					>
 						{open ? (
@@ -35,7 +35,7 @@ export default function Menu() {
 			</Dialog.Trigger>
 
 			{/* Menu links and calls to action. */}
-			<Dialog.Content>
+			<Dialog.Content className="fade">
 				<VisuallyHidden>
 					<Dialog.Title>Menu</Dialog.Title>
 					<Dialog.Description>

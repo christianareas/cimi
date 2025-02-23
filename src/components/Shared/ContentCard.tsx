@@ -81,7 +81,7 @@ export default function ContentCard({
 	return (
 		<article
 			className={[
-				"space-y-5 rounded-lg p-10 sm:p-20",
+				"space-y-5 rounded-lg p-10 font-medium sm:p-20",
 				articleClassName,
 				bgClassName,
 				fontClassName,

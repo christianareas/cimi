@@ -26,7 +26,7 @@ export default function ColorfulDot({ cimiColor }: ColorfulDotProps) {
 				viewBox="0 0 16 16"
 			>
 				<title>{`${cimiColor} dot`}</title>
-				<circle cx="8" cy="8" r="8" className={`fill-${cimiColor}`} />
+				<circle cx="8" cy="8" r="8" className={`${cimiColor}`} />
 			</svg>
 		</section>
 	)

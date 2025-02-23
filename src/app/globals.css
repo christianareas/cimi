@@ -1,23 +1,23 @@
+/* Tailwind. */
 @import "tailwindcss";
 
+/* Theme. */
 @theme {
-	/* Colors. */
+	--color-cimi-black: #151515;
+	--color-cimi-blue: #1d48ff;
 	--color-cimi-cream: #fff0dd;
 	--color-cimi-dark-cream: #ffe6c5;
+	--color-cimi-green: #00632f;
+	--color-cimi-pink: #ffaed9;
+	--color-cimi-purple: #7100c9;
 	--color-cimi-red-orange: #ff4a01;
 	--color-cimi-yellow: #ffdf00;
-	--color-cimi-green: #00632f;
-	--color-cimi-blue: #1d48ff;
-	--color-cimi-purple: #7100c9;
-	--color-cimi-pink: #ffaed9;
-	--color-cimi-black: #151515;
 
-	/* Fonts. */
 	--font-ancho: Ancho, sans-serif;
 	--font-montserrat: Montserrat, sans-serif;
 }
 
-/* Fade in. */
+/* Animations. */
 @keyframes fade {
 	from {
 		opacity: 0;
