@@ -18,7 +18,6 @@ export default function Main() {
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
-				boldClassName="font-extrabold"
 			/>
 
 			{/*
@@ -34,7 +33,8 @@ export default function Main() {
 					buttonText="Sign Up"
 					buttonLink=""
 					buttonWidth="w-40"
-					buttonColorScheme="cimi-blue-light"
+					buttonColorClasses="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-blue"
+					buttonType="button"
 				/>
 			</article>
 

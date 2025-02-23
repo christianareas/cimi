@@ -175,7 +175,8 @@ export default function UpcomingAndPastEvents() {
 									buttonText="Learn More"
 									buttonLink={campaign.campaignUrl}
 									buttonWidth="w-40"
-									buttonColorScheme="cimi-red-orange-dark"
+									buttonColorClasses="border-cimi-cream bg-cimi-red-orange text-cimi-cream shadow-cimi-red-orange"
+									buttonType="button"
 								/>
 							</section>
 						</article>

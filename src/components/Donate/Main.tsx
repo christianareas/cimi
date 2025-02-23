@@ -17,7 +17,7 @@ export default function Main() {
 				articleClassName="lg:w-2/3 lg:max-w-4xl mx-auto"
 				h2ClassName="text-cimi-green text-center"
 				fontClassName="font-medium"
-				boldClassName="text-cimi-green font-extrabold"
+				boldClassName="text-cimi-green"
 			/>
 
 			{/* Donor FAQs */}

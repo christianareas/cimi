@@ -20,7 +20,7 @@ export default function Header({
 	// Render.
 	return (
 		<header>
-			<section className="mx-auto mt-5 max-w-(--breakpoint-lg) px-5">
+			<section className="mx-auto mt-5 px-5 lg:max-w-5xl">
 				{/* Logo. */}
 				<section className="relative z-50 w-3/4">
 					<Link href="/">
@@ -41,7 +41,7 @@ export default function Header({
 
 			<section>
 				{/* Donate button. */}
-				<section className="relative z-50 mx-auto max-w-(--breakpoint-lg) px-5">
+				<section className="relative z-50 mx-auto px-5 lg:max-w-5xl">
 					<Link href="/donate">
 						<Image
 							src="/images/buttons/donate.svg"

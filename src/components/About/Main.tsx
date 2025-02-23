@@ -20,7 +20,6 @@ export default function Main() {
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
-				boldClassName="font-extrabold"
 			/>
 
 			{/*
@@ -40,7 +39,6 @@ export default function Main() {
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
-				boldClassName="font-extrabold"
 			/>
 
 			{/*
@@ -71,7 +69,6 @@ export default function Main() {
 					sectionClassName="lg:w-3/5 mr-auto"
 					bgClassName="bg-cimi-blue"
 					fontClassName="text-cimi-cream"
-					boldClassName="font-extrabold"
 				/>
 			</article>
 

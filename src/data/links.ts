@@ -8,6 +8,11 @@ interface LinksType {
 // Links.
 export const links: LinksType[] = [
 	{
+		linkHref: "/about",
+		linkId: "about",
+		linkName: "About",
+	},
+	{
 		linkHref: "/donate",
 		linkId: "donate",
 		linkName: "Donate",
@@ -26,11 +31,6 @@ export const links: LinksType[] = [
 		linkHref: "/newsletter",
 		linkId: "newsletter",
 		linkName: "Newsletter",
-	},
-	{
-		linkHref: "/about",
-		linkId: "about",
-		linkName: "About",
 	},
 	{
 		linkHref: "#contact",
