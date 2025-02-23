@@ -17,7 +17,6 @@ export default function Main() {
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-blue"
 				fontClassName="font-medium"
-				boldClassName="font-extrabold"
 			/>
 
 			{/*
@@ -25,7 +24,7 @@ export default function Main() {
 			BUTTONS
 			*******
 			*/}
-			<section className="pb-20 lg:mx-auto lg:flex lg:max-w-(--breakpoint-md) lg:flex-wrap lg:justify-between">
+			<section className="pb-20 lg:mx-auto lg:flex lg:max-w-5xl lg:flex-wrap lg:justify-between">
 				<section>
 					<CollapsibleContentButton
 						dimensions="w-xs lg:w-[350px]"

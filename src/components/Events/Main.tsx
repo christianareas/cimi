@@ -17,7 +17,6 @@ export default function Main() {
 				articleClassName="lg:w-1/2 mx-auto text-center"
 				h2ClassName="text-cimi-red-orange"
 				fontClassName="font-medium"
-				boldClassName="font-extrabold"
 			/>
 
 			{/*

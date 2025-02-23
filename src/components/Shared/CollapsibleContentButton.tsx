@@ -2,7 +2,7 @@
 
 // Dependencies.
 import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
-import { colorsSchemes } from "@/data/colorSchemes"
+import { buttonColorsSchemes } from "@/data/colorSchemes"
 import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -41,7 +41,7 @@ export default function CollapsibleContentButton({
 	)
 
 	// Color schemes.
-	const colorClasses = colorsSchemes[colorScheme]
+	const colorClasses = buttonColorsSchemes[colorScheme]
 
 	// Markdown classes.
 	const components = {
