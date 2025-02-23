@@ -17,6 +17,20 @@
 	--font-montserrat: Montserrat, sans-serif;
 }
 
+/* Fade in. */
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fade {
+	animation: fade 0.5s ease-in-out;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still

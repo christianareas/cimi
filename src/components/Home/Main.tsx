@@ -9,15 +9,14 @@ export default function Main() {
 	// Render.
 	return (
 		<main>
-			{/* CIMI'S MISSION */}
+			{/* CIMI's Mission. */}
 			<ContentCard
 				contentSrc="home.intro"
-				articleClassName="lg:w-1/2 mx-auto text-center"
+				articleClassName="mx-auto text-center lg:w-1/2"
 				h2ClassName="text-cimi-blue"
-				fontClassName="font-medium"
 			/>
 
-			{/* ABOUT CIMI */}
+			{/* About CIMI */}
 			<section className="lg:flex">
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -30,8 +29,8 @@ export default function Main() {
 				</article>
 				<ContentCard
 					contentSrc="home.about-cimi"
-					articleClassName="lg:w-1/2 text-center lg:text-left"
-					sectionClassName="lg:w-3/5 mr-auto"
+					articleClassName="text-center lg:w-1/2 lg:text-left"
+					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
 					bgClassName="bg-cimi-blue"
 					fontClassName="text-cimi-cream"
 					buttonText="Read Our Story"
@@ -40,12 +39,12 @@ export default function Main() {
 				/>
 			</section>
 
-			{/* UPCOMING EVENTS */}
+			{/* Upcoming Events. */}
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.upcoming-events"
-					articleClassName="lg:w-1/2 text-center lg:text-left"
-					sectionClassName="lg:w-3/5 ml-auto"
+					articleClassName="text-center lg:w-1/2 lg:text-left"
+					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
 					bgClassName="bg-cimi-yellow"
 					buttonText="Learn More"
 					buttonLink="/events"
@@ -62,12 +61,12 @@ export default function Main() {
 				</article>
 			</section>
 
-			{/* BECOME A MEMBER AND DONATE TO CIMI */}
+			{/* Become a Member and Donate to CIMI. */}
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.become-a-member"
-					articleClassName="lg:flex-1 text-center"
-					sectionClassName="lg:w-3/5 ml-auto"
+					articleClassName="text-center lg:w-1/2"
+					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
 					bgClassName="bg-cimi-green"
 					fontClassName="text-cimi-cream"
 					buttonText="Join CIMI"
@@ -76,8 +75,8 @@ export default function Main() {
 				/>
 				<ContentCard
 					contentSrc="home.donate-to-cimi"
-					articleClassName="lg:flex-1 text-center"
-					sectionClassName="lg:w-3/5 mr-auto"
+					articleClassName="text-center lg:w-1/2"
+					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
 					bgClassName="bg-cimi-pink"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
@@ -85,10 +84,10 @@ export default function Main() {
 				/>
 			</section>
 
-			{/* OUR TEAM */}
+			{/* Our Team. */}
 			<Team />
 
-			{/* TESTIMONIALS OF MEMBERS */}
+			{/* Testimonials of Members. */}
 			<Testimonials />
 		</main>
 	)
