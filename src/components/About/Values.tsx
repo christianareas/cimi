@@ -1,12 +1,12 @@
 // Dependencies.
-import { values } from "@/data/values"
+import { values } from "@/data/content/about/values"
 import Image from "next/image"
 
 // Component.
 export default function Values() {
 	// Render.
 	return (
-		<article className="space-y-3 rounded-lg px-10 text-center font-normal sm:p-20">
+		<article className="space-y-3 rounded-lg px-10 text-center font-normal sm:px-20">
 			<h2 className="pb-3 font-ancho font-bold text-2xl text-cimi-blue">
 				Our Values
 			</h2>

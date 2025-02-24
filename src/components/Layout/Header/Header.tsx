@@ -5,7 +5,7 @@ import Menu from "@/components/Layout/Header/Menu"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 
 // Types.
-type HeaderProps = {
+interface HeaderProps {
 	imageSrc: string
 	imageAlt: string
 	imageClassName?: string

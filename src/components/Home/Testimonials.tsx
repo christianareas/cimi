@@ -2,7 +2,7 @@
 
 // Dependencies.
 import { useState, useEffect } from "react"
-import { testimonials } from "@/data/testimonials"
+import { testimonials } from "@/data/content/home/testimonials"
 import * as Tabs from "@radix-ui/react-tabs"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import Image from "next/image"

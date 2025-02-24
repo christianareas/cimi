@@ -1,5 +1,5 @@
 // Dependencies.
-import { teamMembers } from "@/data/teamMember"
+import { teamMembers } from "@/data/content/home/teamMember"
 import Image from "next/image"
 
 // Component.

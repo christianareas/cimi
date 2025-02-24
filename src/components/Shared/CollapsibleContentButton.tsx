@@ -12,7 +12,7 @@ import * as Collapsible from "@radix-ui/react-collapsible"
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
 // Types.
-type CollapsibleButtonProps = {
+interface CollapsibleButtonProps {
 	dimensions: "w-xs lg:w-[350px]" | "w-xs lg:w-xl"
 	buttonTextSrc: string
 	buttonDimensions: "w-xs lg:min-h-24 lg:w-[350px]" | "w-xs lg:w-2xl"

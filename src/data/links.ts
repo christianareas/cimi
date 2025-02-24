@@ -1,58 +1,58 @@
 // Types.
 interface LinksType {
-	linkHref: string
 	linkId: string
+	linkHref: string
 	linkName: string
 }
 
 // Links.
 export const links: LinksType[] = [
 	{
-		linkHref: "/",
 		linkId: "home",
+		linkHref: "/",
 		linkName: "Home",
 	},
 	{
-		linkHref: "/about",
 		linkId: "about",
+		linkHref: "/about",
 		linkName: "About",
 	},
 	{
-		linkHref: "/events",
 		linkId: "events",
+		linkHref: "/events",
 		linkName: "Events",
 	},
 	{
-		linkHref: "/donate",
 		linkId: "donate",
+		linkHref: "/donate",
 		linkName: "Donate",
 	},
 	{
-		linkHref: "/join",
 		linkId: "join",
+		linkHref: "/join",
 		linkName: "Join",
 	},
 	{
-		linkHref: "/newsletter",
 		linkId: "newsletter",
+		linkHref: "/newsletter",
 		linkName: "Newsletter",
 	},
 	{
-		linkHref: "#contact",
 		linkId: "contact",
+		linkHref: "#contact",
 		linkName: "Contact",
 	},
 ]
 
 export const nestedLinks: LinksType[] = [
 	{
-		linkHref: "/join/member",
 		linkId: "member",
+		linkHref: "/join/member",
 		linkName: "Be a Member",
 	},
 	{
-		linkHref: "/join/volunteer",
 		linkId: "volunteer",
+		linkHref: "/join/volunteer",
 		linkName: "Be a Volunteer",
 	},
 ]
