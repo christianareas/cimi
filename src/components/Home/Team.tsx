@@ -12,21 +12,23 @@ export default function Team() {
 			</h2>
 
 			<section className="grid grid-cols-2 gap-5 uppercase sm:gap-10 md:grid-cols-4 lg:mx-auto lg:max-w-2xl">
-				{teamMembers.map(({ teamMember, teamMemberRole, teamMemberImage }) => (
-					<article key={teamMember}>
-						<section className="relative w-full pb-[100%]">
-							<Image
-								src={teamMemberImage}
-								alt={teamMember}
-								fill
-								sizes="(max-width: 1024px) 50vw, 25vw"
-								className="absolute inset-0 rounded-lg object-cover"
-							/>
-						</section>
-						<h3 className="font-black">{teamMember}</h3>
-						<h4 className="font-semibold">{teamMemberRole}</h4>
-					</article>
-				))}
+				{teamMembers.map(
+					({ teamMemberName, teamMemberRole, teamMemberImage }) => (
+						<article key={teamMemberName}>
+							<section className="relative w-full pb-[100%]">
+								<Image
+									src={teamMemberImage}
+									alt={teamMemberName}
+									fill
+									sizes="(max-width: 1024px) 50vw, 25vw"
+									className="absolute inset-0 rounded-lg object-cover"
+								/>
+							</section>
+							<h3 className="font-black">{teamMemberName}</h3>
+							<h4 className="font-semibold">{teamMemberRole}</h4>
+						</article>
+					),
+				)}
 			</section>
 		</article>
 	)
