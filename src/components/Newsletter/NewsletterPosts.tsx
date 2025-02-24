@@ -41,12 +41,8 @@ export default function NewsletterPosts() {
 
 	// Render.
 	return (
-		<section className="px-20">
-			{/*
-					****************
-					Newsletter Posts
-					****************
-				*/}
+		<section className="px-10 pb-10 sm:px-20">
+			{/* Newsletter Posts. */}
 			{campaigns.length === 0 ? (
 				<p className="flex justify-center p-5 text-gray-500 text-xs italic">
 					No newsletter posts.

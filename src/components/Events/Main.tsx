@@ -7,23 +7,14 @@ export default function Main() {
 	// Render.
 	return (
 		<main>
-			{/*
-				*****************
-				What’s Happening?
-				*****************
-			*/}
+			{/* What’s Happening? */}
 			<ContentCard
 				contentSrc="events.intro"
-				articleClassName="lg:w-1/2 mx-auto text-center"
+				articleClassName="mx-auto text-center lg:w-1/2"
 				h2ClassName="text-cimi-red-orange"
-				fontClassName="font-medium"
 			/>
 
-			{/*
-				************************
-				Upcoming and Past Events
-				************************
-			*/}
+			{/* Upcoming and Past Events */}
 			<UpcomingAndPastEvents />
 		</main>
 	)

@@ -7,23 +7,14 @@ export default function Main() {
 	// Render.
 	return (
 		<main>
-			{/*
-				*****************
-				CIMI’s Activities
-				*****************
-			*/}
+			{/* CIMI’s Activities. */}
 			<ContentCard
 				contentSrc="newsletter.intro"
-				articleClassName="lg:w-1/2 mx-auto text-center"
+				articleClassName="mx-auto text-center lg:w-1/2"
 				h2ClassName="text-cimi-purple"
-				fontClassName="font-medium"
 			/>
 
-			{/*
-				****************
-				Newsletter Posts
-				****************
-			*/}
+			{/* Newsletter Posts */}
 			<NewsletterPosts />
 		</main>
 	)

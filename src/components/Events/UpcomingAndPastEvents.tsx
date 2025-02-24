@@ -79,13 +79,9 @@ export default function UpcomingAndPastEvents() {
 
 	// Render.
 	return (
-		<section className="px-20">
-			{/*
-				**************
-				Event Selector
-				**************
-			*/}
-			<section className="mx-auto pb-20">
+		<section className="px-10 pb-10 sm:px-20">
+			<section className="mx-auto">
+				{/* Event selector. */}
 				<section className="flex justify-center">
 					<Select.Root
 						value={selectedEvents.toString()}
@@ -123,11 +119,7 @@ export default function UpcomingAndPastEvents() {
 					</Select.Root>
 				</section>
 
-				{/*
-					******
-					Events
-					******
-				*/}
+				{/* Events */}
 				{selectedEvents.events.length === 0 ? (
 					<p className="flex justify-center p-5 text-gray-500 text-xs italic">
 						No {selectedEvents.eventsType.replace("-", " ")}.
@@ -135,7 +127,7 @@ export default function UpcomingAndPastEvents() {
 				) : (
 					selectedEvents.events.map((campaign) => (
 						<article
-							className="py-10 font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
+							className="fade py-10 font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
 							key={campaign.campaignId}
 						>
 							<section className="pb-10 lg:w-1/2 lg:pr-10">
