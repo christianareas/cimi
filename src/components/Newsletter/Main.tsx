@@ -6,7 +6,7 @@ import NewsletterPosts from "@/components/Newsletter/NewsletterPosts"
 export default function Main() {
 	// Render.
 	return (
-		<main>
+		<main className="fade">
 			{/* CIMI’s Activities. */}
 			<ContentCard
 				contentSrc="newsletter.intro"

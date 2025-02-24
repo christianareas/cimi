@@ -19,7 +19,7 @@ export default function Header({
 }: HeaderProps) {
 	// Render.
 	return (
-		<header>
+		<header className="fade">
 			<section className="mx-auto mt-5 px-5 lg:max-w-5xl">
 				{/* Logo. */}
 				<section className="relative z-50 w-3/4">

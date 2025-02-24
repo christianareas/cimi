@@ -9,7 +9,7 @@ import Team from "@/components/About/Team"
 export default function Main() {
 	// Render.
 	return (
-		<main>
+		<main className="fade">
 			{/* CIMI’s Mission */}
 			<ContentCard
 				contentSrc="about.intro"

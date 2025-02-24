@@ -6,7 +6,7 @@ import UpcomingAndPastEvents from "@/components/Events/UpcomingAndPastEvents"
 export default function Main() {
 	// Render.
 	return (
-		<main>
+		<main className="fade">
 			{/* What’s Happening? */}
 			<ContentCard
 				contentSrc="events.intro"

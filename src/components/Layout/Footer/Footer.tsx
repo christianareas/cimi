@@ -10,7 +10,7 @@ import Button from "@/components/Shared/Button"
 export default function Footer() {
 	// Render.
 	return (
-		<footer>
+		<footer className="fade">
 			{/* Join and donate cards. */}
 			<section className="lg:flex">
 				{/* Join the Community. */}

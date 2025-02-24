@@ -8,7 +8,7 @@ import Testimonials from "@/components/Home/Testimonials"
 export default function Main() {
 	// Render.
 	return (
-		<main>
+		<main className="fade">
 			{/* CIMI's Mission. */}
 			<ContentCard
 				contentSrc="home.intro"

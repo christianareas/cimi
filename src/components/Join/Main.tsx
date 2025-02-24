@@ -6,7 +6,7 @@ import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButt
 export default function Main() {
 	// Render.
 	return (
-		<main>
+		<main className="fade">
 			{/*
 			*************
 			GET INVOLVED!
