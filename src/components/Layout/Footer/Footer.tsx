@@ -39,8 +39,8 @@ export default function Footer() {
 			<ColorfulBorder />
 
 			{/* Purple section. */}
-			<section className="bg-cimi-purple px-10 py-20 text-cimi-cream">
-				<section className="mx-auto flex flex-col items-center space-y-20 font-semibold text-xs lg:max-w-5xl lg:flex-row lg:items-start lg:space-x-20 lg:space-y-0">
+			<section className="bg-cimi-purple p-10 text-cimi-cream sm:p-20">
+				<section className="mx-auto flex flex-col items-center space-y-10 font-semibold text-xs lg:max-w-5xl lg:flex-row lg:items-start lg:space-x-20 lg:space-y-0">
 					{/* Contact information. */}
 					<article className="w-full max-w-md lg:flex-1">
 						{/* Logo. */}

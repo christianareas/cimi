@@ -5,7 +5,7 @@ import Image from "next/image"
 // Component.
 export default function Timeline() {
 	return (
-		<section className="pb-20">
+		<section className="pb-10 sm:pb-20">
 			{milestones.map(
 				({
 					milestoneDotFillColor,
@@ -45,7 +45,7 @@ export default function Timeline() {
 							</section>
 
 							{/* Image. */}
-							<section className="mt-[-0.95rem] border-cimi-blue border-l-4 pb-10 pl-10 lg:mt-0 lg:border-0 lg:pr-10 lg:pb-20 lg:pl-0">
+							<section className="mt-[-0.95rem] border-cimi-blue border-l-4 pb-10 pl-10 sm:pb-20 lg:mt-0 lg:border-0 lg:pr-10 lg:pl-0">
 								<section className="relative aspect-video">
 									<Image
 										src={milestoneImageSrc}
@@ -83,7 +83,7 @@ export default function Timeline() {
 							</section>
 
 							{/* Content. */}
-							<section className="grow border-cimi-blue border-l-4 pb-20 pl-10 lg:mt-[-0.95rem]">
+							<section className="grow border-cimi-blue border-l-4 pb-10 pl-10 sm:pb-20 lg:mt-[-0.95rem]">
 								<h3 className="font-ancho font-bold text-cimi-blue text-xl">
 									{milestoneTitle}
 								</h3>

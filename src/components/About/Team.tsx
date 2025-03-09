@@ -10,7 +10,7 @@ export default function Team() {
 				Meet the Team
 			</h2>
 
-			<section className="space-y-20 uppercase lg:mx-auto lg:max-w-2xl lg:text-left">
+			<section className="space-y-10 uppercase lg:mx-auto lg:max-w-2xl lg:space-y-20 lg:text-left">
 				{teamMembersFull.map((teamMember) => (
 					<article
 						key={teamMember.teamMemberName}
