@@ -5,7 +5,6 @@ import { useState } from "react"
 import fetchData from "@/lib/ui/fetchData"
 import * as Form from "@radix-ui/react-form"
 import * as RadioGroup from "@radix-ui/react-radio-group"
-import { buttonColorsSchemes } from "@/data/colorSchemes"
 
 // Component.
 export default function DonateForm() {
@@ -81,7 +80,7 @@ export default function DonateForm() {
 
 	// Render.
 	return (
-		<section className="mx-auto px-20 pt-20 lg:w-2/3 lg:max-w-4xl">
+		<section className="mx-auto max-w-3xl p-10 sm:px-20 sm:pt-20 sm:pb-0">
 			<section className="rounded-lg border border-cimi-green p-5">
 				<Form.Root>
 					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
@@ -91,7 +90,7 @@ export default function DonateForm() {
 					{/* Donation amounts. */}
 					<Form.Field name="donation-amounts">
 						<RadioGroup.Root
-							className="flex flex-wrap justify-between space-y-5"
+							className="grid grid-cols-2 place-items-center gap-5 sm:grid-cols-4"
 							value={presetDonationAmount}
 							onValueChange={setPresetDonationAmount}
 						>
@@ -102,10 +101,10 @@ export default function DonateForm() {
 									<RadioGroup.Item
 										key={amount}
 										value={amount.toString()}
-										className={`w-32 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
+										className={`w-28 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 											presetDonationAmount === amount.toString()
-												? buttonColorsSchemes["cimi-blue-dark"]
-												: buttonColorsSchemes["cimi-green-dark"]
+												? "border-cimi-cream bg-cimi-blue text-cimi-cream shadow-cimi-blue"
+												: "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green"
 										}`}
 									>
 										{formattedDonationAmount}
@@ -116,7 +115,7 @@ export default function DonateForm() {
 							{/* Other donation amount. */}
 							<RadioGroup.Item value="other">
 								<section className="flex">
-									<section className="rounded-l-lg border border-cimi-green border-r-0 py-3 pr-1 pl-4 text-cimi-green">
+									<section className="rounded-l-lg border-2 border-cimi-green border-r-0 py-3 pr-1 pl-4 font-medium text-cimi-green text-xs">
 										$
 									</section>
 									<Form.Control asChild>
@@ -131,7 +130,7 @@ export default function DonateForm() {
 											onChange={(event) =>
 												setOtherDonationAmount(event.target.value)
 											}
-											className="w-24 rounded-r-lg border border-cimi-green border-l-0 py-3 pr-4 pl-1"
+											className="w-20 rounded-r-lg border-2 border-cimi-green border-l-0 py-3 pr-4 pl-1"
 										/>
 									</Form.Control>
 								</section>
@@ -176,16 +175,19 @@ export default function DonateForm() {
 					</Form.Field>
 
 					{/* Submit button. */}
-					<section className="flex justify-end">
+					<section className="grid grid-cols-2 place-items-center gap-5 sm:grid-cols-4">
+						<section>&nbsp;</section>
+						<section className="hidden sm:inline">&nbsp;</section>
+						<section className="hidden sm:inline">&nbsp;</section>
 						<Form.Submit asChild>
 							<button
 								type="button"
 								disabled={disableContinueButton(presetDonationAmount)}
 								onClick={checkOutDonor}
-								className={`w-32 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
+								className={`mt-5 w-28 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 									disableContinueButton(presetDonationAmount)
-										? buttonColorsSchemes["neutral-light"]
-										: buttonColorsSchemes["cimi-green-dark"]
+										? "border-neutral-500 bg-cimi-cream text-neutral-500 shadow-neutral-500"
+										: "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green"
 								}`}
 							>
 								Continue

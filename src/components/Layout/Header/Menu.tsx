@@ -77,7 +77,7 @@ export default function Menu() {
 									buttonText="Give to CIMI"
 									buttonLink="/donate"
 									buttonWidth="w-40"
-									buttonColorClasses="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
+									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
 									buttonType="button"
 								/>
 							</li>
@@ -89,7 +89,7 @@ export default function Menu() {
 									buttonText="Join CIMI"
 									buttonLink="/join"
 									buttonWidth="w-40"
-									buttonColorClasses="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
+									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
 									buttonType="button"
 								/>
 							</li>

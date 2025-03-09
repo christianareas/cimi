@@ -11,7 +11,7 @@ export default function Timeline() {
 					milestoneDotFillColor,
 					milestoneImageSrc,
 					milestoneImageAlt,
-					milestoneImagePosition: imagePosition,
+					milestoneImagePosition,
 					milestoneTitle,
 					milestoneYear,
 					milestoneContent,
@@ -52,7 +52,7 @@ export default function Timeline() {
 										alt={milestoneImageAlt}
 										fill
 										sizes="(max-width: 1024px) 100vw, 50vw"
-										className={`${imagePosition} absolute inset-0 rounded-lg object-cover`}
+										className={`absolute inset-0 rounded-lg object-cover ${milestoneImagePosition}`}
 									/>
 								</section>
 							</section>

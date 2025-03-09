@@ -2,7 +2,6 @@
 
 // Dependencies.
 import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
-import { buttonColorsSchemes } from "@/data/colorSchemes"
 import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -13,22 +12,20 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
 // Types.
 interface CollapsibleButtonProps {
-	dimensions: "w-xs lg:w-[350px]" | "w-xs lg:w-xl"
 	buttonTextSrc: string
-	buttonDimensions: "w-xs lg:min-h-24 lg:w-[350px]" | "w-xs lg:w-2xl"
-	buttonClassName: "shadow-[4px_4px_0]" | "font-ancho font-bold text-lg"
+	buttonDimensions: "" | ""
+	buttonClassNames:
+		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-blue shadow-[4px_4px_0]" // cimi-blue-light
+		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-green" // cimi-green-light
 	collapsibleContentSrc: string
-	colorScheme: "cimi-blue-light" | "cimi-green-light"
 }
 
 // Component.
 export default function CollapsibleContentButton({
-	dimensions,
 	buttonTextSrc,
 	buttonDimensions,
-	buttonClassName,
+	buttonClassNames,
 	collapsibleContentSrc,
-	colorScheme,
 }: CollapsibleButtonProps) {
 	// Set initial state.
 	const [open, setOpen] = useState(false)
@@ -39,9 +36,6 @@ export default function CollapsibleContentButton({
 		markdown,
 		collapsibleContentSrc,
 	)
-
-	// Color schemes.
-	const colorClasses = buttonColorsSchemes[colorScheme]
 
 	// Markdown classes.
 	const components = {
@@ -79,15 +73,15 @@ export default function CollapsibleContentButton({
 
 	// Render.
 	return (
-		<article
-			className={`mx-auto mb-5 flex justify-center font-medium lg:basis-1/2 ${dimensions}`}
-		>
+		<article className="font-medium">
 			<Collapsible.Root open={open} onOpenChange={setOpen}>
+				{/* Button. */}
 				<Collapsible.Trigger asChild>
 					<button
 						type="button"
-						className={`flex items-center justify-between rounded-lg border-2 px-4 py-2 text-left ${buttonDimensions} ${buttonClassName} ${colorClasses}`}
+						className={`flex items-center rounded-lg border-2 px-4 py-2 text-left ${buttonDimensions} ${buttonClassNames}`}
 					>
+						{/* Button text. */}
 						<section>
 							<ReactMarkdown
 								remarkPlugins={[remarkGfm]}
@@ -97,9 +91,10 @@ export default function CollapsibleContentButton({
 								{buttonText}
 							</ReactMarkdown>
 						</section>
+						{/* Button icon. */}
 						<section>
 							{open ? (
-								<ChevronUpIcon className="h-6 w-6" aria-hidden="true" />
+								<ChevronUpIcon className="ml-2 h-6 w-6" aria-hidden="true" />
 							) : (
 								<ChevronDownIcon className="ml-2 h-6 w-6" aria-hidden="true" />
 							)}
@@ -107,7 +102,8 @@ export default function CollapsibleContentButton({
 					</button>
 				</Collapsible.Trigger>
 
-				<Collapsible.Content className="px-5 pt-2">
+				{/* Collapsible content. */}
+				<Collapsible.Content className="fade px-5 pt-2">
 					<ReactMarkdown
 						remarkPlugins={[remarkGfm]}
 						rehypePlugins={[rehypeRaw]}

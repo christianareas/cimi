@@ -33,7 +33,7 @@ export default function Main() {
 					buttonText="Sign Up"
 					buttonLink=""
 					buttonWidth="w-40"
-					buttonColorClasses="border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-green"
+					buttonClassNames="border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-green"
 					buttonType="button"
 				/>
 			</article>

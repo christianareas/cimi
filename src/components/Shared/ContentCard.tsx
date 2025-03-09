@@ -19,7 +19,7 @@ interface ContentCardProps {
 	fontClassName?: string
 	boldClassName?: string
 	buttonText?: ButtonProps["buttonText"]
-	buttonColorClasses?: ButtonProps["buttonColorClasses"]
+	buttonColorClasses?: ButtonProps["buttonClassNames"]
 	buttonLink?: ButtonProps["buttonLink"]
 }
 
@@ -111,7 +111,7 @@ export default function ContentCard({
 					<Button
 						buttonText={buttonText}
 						buttonWidth="w-40"
-						buttonColorClasses={buttonColorClasses}
+						buttonClassNames={buttonColorClasses}
 						buttonType="button"
 						buttonLink={buttonLink}
 					/>

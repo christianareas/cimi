@@ -7,7 +7,7 @@ interface TeamMemberBiosType {
 	teamMemberBio: string
 }
 
-interface TeamMemberAboutType {
+interface TeamMemberFullType {
 	teamMemberName: string
 	teamMemberRole: string
 	teamMemberImage: string
@@ -38,8 +38,8 @@ const teamMemberBios: TeamMemberBiosType[] = [
 	},
 ]
 
-// Team members about.
-export const teamMembersAbout: TeamMemberAboutType[] = teamMembers.map(
+// Team members full.
+export const teamMembersFull: TeamMemberFullType[] = teamMembers.map(
 	(teamMember) => {
 		const teamMemberBio = teamMemberBios.find(
 			(teamMemberBio) =>

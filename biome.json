@@ -1,5 +1,8 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"files": {
+		"ignore": [".next", "node_modules"]
+	},
 	"organizeImports": {
 		"enabled": true
 	},
@@ -17,8 +20,16 @@
 	},
 	"javascript": {
 		"formatter": {
+			"indentStyle": "tab",
+			"indentWidth": 2,
 			"jsxQuoteStyle": "double",
 			"semicolons": "asNeeded"
+		}
+	},
+	"json": {
+		"formatter": {
+			"indentStyle": "tab",
+			"indentWidth": 2
 		}
 	}
 }

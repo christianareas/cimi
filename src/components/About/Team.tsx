@@ -1,5 +1,5 @@
 // Dependencies.
-import { teamMembersAbout } from "@/data/content/about/teamMembers"
+import { teamMembersFull } from "@/data/content/about/teamMembers"
 import Image from "next/image"
 
 // Component.
@@ -11,7 +11,7 @@ export default function Team() {
 			</h2>
 
 			<section className="space-y-20 uppercase lg:mx-auto lg:max-w-2xl lg:text-left">
-				{teamMembersAbout.map((teamMember) => (
+				{teamMembersFull.map((teamMember) => (
 					<article
 						key={teamMember.teamMemberName}
 						className="flex flex-col items-center lg:flex-row lg:items-start"

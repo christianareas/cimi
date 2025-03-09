@@ -105,7 +105,7 @@ export default function Footer() {
 									<Button
 										buttonText="Let's Chat!"
 										buttonWidth="w-40"
-										buttonColorClasses="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
+										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
 										buttonType="submit"
 										// buttonOnClick=
 									/>
@@ -145,7 +145,7 @@ export default function Footer() {
 									<Button
 										buttonText="Sign Up"
 										buttonWidth="w-40"
-										buttonColorClasses="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
+										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
 										buttonType="submit"
 										// buttonOnClick=
 									/>
