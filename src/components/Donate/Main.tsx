@@ -1,7 +1,7 @@
 // Dependencies.
 import DonateForm from "@/components/Donate/DonateForm"
 import ContentCard from "@/components/Shared/ContentCard"
-import DonorFaqs from "@/components/Donate/DonateFaqs"
+import Faqs from "@/components/Shared/Faqs"
 
 // Component.
 export default function Main() {
@@ -20,8 +20,12 @@ export default function Main() {
 				boldClassName="text-cimi-green"
 			/>
 
-			{/* Donor FAQs */}
-			<DonorFaqs />
+			{/* Donor FAQs. */}
+			<Faqs
+				faqsName="donor"
+				textClassName="text-cimi-green"
+				borderClassName="border-cimi-green"
+			/>
 		</main>
 	)
 }

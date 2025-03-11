@@ -79,47 +79,25 @@ export const markdown = {
 		"get-involved":
 			"## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",
 		member: {
-			buttons: {
-				"1-button-text": "### What kind of activities does CIMI offer?\n",
-				"1-collapsible-content":
-					"We offer a variety of programs for young women and their mothers—plus events for the whole family to enjoy together. \n\n#### Core CIMI programs\n\n- **Exercise for the whole family**\n\t- 0-5k running and walking (no experience necessary!)\n\t- Saturday morning family walks\n- **Empowering classes for moms and daughters**\n\t- Coding classes for girls\n\t- Computer basics courses for moms\n\t- Robotics lessons\n\t- Tutoring\n- **Community-building events**\n\t- Free shoe giveaways\n\t- Holiday events for local families\n\t- Gas card giveaways\n\t- Adopt-a-Family holiday drive\n",
-				"2-button-text":
-					"### I don’t have any experience running. Can I still join CIMI?\n",
-				"2-collapsible-content":
-					"Absolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.\n",
-				"3-button-text":
-					"### What is the time commitment if I want to join CIMI?\n",
-				"3-collapsible-content":
-					"We ask that you log a minimum of 20 minutes of walking or running, three times per week. We will help you track your activity, and you will be entered to win prizes for logging your time. The tracking system we use is online, so you can even track activity if you are traveling outside the country!\n",
-				"4-button-text": "### How do I learn about upcoming CIMI events?\n",
-				"4-collapsible-content":
-					"To learn about upcoming events, sign up for our [newsletter](#todo), follow us on [social media](#todo), and check our [website](#todo) often.\n",
-				"5-button-text": "### I am ready to join! How do I become a member? \n",
-				"5-collapsible-content":
-					"Click [here](#todo) to join today. We are so excited to start training with you\n",
-			},
 			"cimi-members":
 				"## CIMI Members\n\nGoing from one level of training to the next and reaching each finishing line, our participants enhance their problem-solving skills and learn to be more focused. Each achievement helps them to be their more confident self and gain more power to be successful in their personal and professional life.\n",
+			faqs: {
+				"1": "### What kind of activities does CIMI offer?\n\nWe offer a variety of programs for young women and their mothers—plus events for the whole family to enjoy together. \n\n#### Core CIMI programs\n\n- **Exercise for the whole family**\n\t- 0-5k running and walking (no experience necessary!)\n\t- Saturday morning family walks\n- **Empowering classes for moms and daughters**\n\t- Coding classes for girls\n\t- Computer basics courses for moms\n\t- Robotics lessons\n\t- Tutoring\n- **Community-building events**\n\t- Free shoe giveaways\n\t- Holiday events for local families\n\t- Gas card giveaways\n\t- Adopt-a-Family holiday drive\n",
+				"2": "### I don’t have any experience running. Can I still join CIMI?\n\nAbsolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.\n",
+				"3": "### What is the time commitment if I want to join CIMI?\n\nWe ask that you log a minimum of 20 minutes of walking or running, three times per week. We will help you track your activity, and you will be entered to win prizes for logging your time. The tracking system we use is online, so you can even track activity if you are traveling outside the country!\n",
+				"4": "### How do I learn about upcoming CIMI events?\n\nTo learn about upcoming events, sign up for our [newsletter](#todo), follow us on [social media](#todo), and check our [website](#todo) often.\n",
+				"5": "### I am ready to join! How do I become a member? \n\nClick [here](#todo) to join today. We are so excited to start training with you\n",
+			},
 		},
 		volunteer: {
-			buttons: {
-				"1-button-text": "### How do volunteers make an impact with CIMI?\n",
-				"1-collapsible-content":
-					"Volunteers provide foundational support for CIMI programs and are essential to expanding the number of opportunities offered to local families. \nCIMI volunteers help with events, tutor girls in middle and high school, teach girls how to code, coach running and walking training, and share their expertise by teaching classes. CIMI truly could not operate without the support of dedicated volunteers. \n",
-				"2-button-text":
-					"### I don’t live in the San Jose area. Can I still volunteer with CIMI?\n",
-				"2-collapsible-content":
-					"Yes! While our running and walking programs take place in San Jose, we are always looking for volunteers who can offer virtual tutoring or online coding or computer classes for girls and moms. \n",
-				"3-button-text":
-					"### Is there a minimum time commitment required of CIMI volunteers?\n",
-				"3-collapsible-content":
-					"No—we are happy to match you with volunteer opportunities that meet your schedule and availability. \n",
-				"4-button-text": "### How do I sign up to be a volunteer?\n",
-				"4-collapsible-content":
-					"Please click Sign Up below  to let us know how you would like to contribute as a CIMI volunteer. A team member will reach out to discuss details.\n",
-			},
 			"cimi-volunteers":
 				"## CIMI Volunteers\n\nCIMI volunteers are professionals driven by a strong desire to elevate the organization. They bring technical and business skills to the table, aiming to take CIMI to new heights. These volunteers are not just supporters; they are **active contributors**, working passionately to help CIMI achieve its mission. Their commitment exemplifies the **impact that individuals can make** when inspired by a powerful vision.",
+			faqs: {
+				"1": "### How do volunteers make an impact with CIMI?\n\nVolunteers provide foundational support for CIMI programs and are essential to expanding the number of opportunities offered to local families. \nCIMI volunteers help with events, tutor girls in middle and high school, teach girls how to code, coach running and walking training, and share their expertise by teaching classes. CIMI truly could not operate without the support of dedicated volunteers. \n",
+				"2": "### I don’t live in the San Jose area. Can I still volunteer with CIMI?\n\nYes! While our running and walking programs take place in San Jose, we are always looking for volunteers who can offer virtual tutoring or online coding or computer classes for girls and moms. \n",
+				"3": "### Is there a minimum time commitment required of CIMI volunteers?\n\nNo—we are happy to match you with volunteer opportunities that meet your schedule and availability. \n",
+				"4": "### How do I sign up to be a volunteer?\n\nPlease click Sign Up below to let us know how you would like to contribute as a CIMI volunteer. A team member will reach out to discuss details.\n",
+			},
 		},
 	},
 	layout: {

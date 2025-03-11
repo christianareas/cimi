@@ -10,14 +10,46 @@ import { useState } from "react"
 import * as Collapsible from "@radix-ui/react-collapsible"
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
+// Types.
+interface FaqProps {
+	faqsName: "member" | "volunteer" | "donor"
+	textClassName:
+		| "text-cimi-blue" // cimi-blue
+		| "text-cimi-green" // cimi-green
+	borderClassName:
+		| "border-cimi-blue" // cimi-blue
+		| "border-cimi-green" // cimi-green
+}
+
 // Component.
-export default function DonateFaqs() {
-	// Donor FAQs source.
-	const donorFaqsSrc = [
-		{ donorFaqSrc: "donate.faqs.1" },
-		{ donorFaqSrc: "donate.faqs.2" },
-		{ donorFaqSrc: "donate.faqs.3" },
-	]
+export default function Faqs({
+	faqsName,
+	textClassName,
+	borderClassName,
+}: FaqProps) {
+	// FAQs source.
+	const faqsSrc = {
+		member: [
+			{ faqSrc: "join.member.faqs.1" },
+			{ faqSrc: "join.member.faqs.2" },
+			{ faqSrc: "join.member.faqs.3" },
+			{ faqSrc: "join.member.faqs.4" },
+			{ faqSrc: "join.member.faqs.5" },
+		],
+		volunteer: [
+			{ faqSrc: "join.volunteer.faqs.1" },
+			{ faqSrc: "join.volunteer.faqs.2" },
+			{ faqSrc: "join.volunteer.faqs.3" },
+			{ faqSrc: "join.volunteer.faqs.4" },
+		],
+		donor: [
+			{ faqSrc: "donate.faqs.1" },
+			{ faqSrc: "donate.faqs.2" },
+			{ faqSrc: "donate.faqs.3" },
+		],
+	}
+
+	const faqs = faqsSrc[faqsName] || []
 
 	// Split the content.
 	function splitContent(content: string) {
@@ -35,9 +67,9 @@ export default function DonateFaqs() {
 		return { buttonText: "", content }
 	}
 
-	const splitContents = donorFaqsSrc.map(({ donorFaqSrc }) => {
-		const content = resolveContentSrcPath(markdown, donorFaqSrc) ?? ""
-		return { donorFaqSrc, ...splitContent(content) }
+	const splitContents = faqs.map(({ faqSrc }) => {
+		const content = resolveContentSrcPath(markdown, faqSrc) ?? ""
+		return { faqSrc, ...splitContent(content) }
 	})
 
 	// Set the initial state.
@@ -82,15 +114,17 @@ export default function DonateFaqs() {
 	// Render.
 	return (
 		<section className="mx-auto max-w-3xl px-10 pb-10 sm:px-20 sm:pb-20">
-			<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
-				Donor FAQs
+			<h2
+				className={`pb-5 text-center font-ancho font-bold text-2xl ${textClassName}`}
+			>
+				{faqsName.charAt(0).toUpperCase() + faqsName.slice(1)} FAQs
 			</h2>
 
 			<article className="space-y-5 font-medium">
 				{splitContents.map(
-					({ donorFaqSrc, buttonText, collapsibleContent }, index) => (
+					({ faqSrc, buttonText, collapsibleContent }, index) => (
 						<Collapsible.Root
-							key={donorFaqSrc}
+							key={faqSrc}
 							open={openFaq[index]}
 							onOpenChange={(open) => {
 								setOpenFaq((prev) => {
@@ -104,7 +138,7 @@ export default function DonateFaqs() {
 							<Collapsible.Trigger asChild>
 								<button
 									type="button"
-									className="flex w-full items-center rounded-lg border-2 border-cimi-green px-4 py-2 text-left font-ancho font-bold text-cimi-green text-lg"
+									className={`flex w-full items-center rounded-lg border-2 px-4 py-2 text-left font-ancho font-bold text-lg ${textClassName} ${borderClassName}`}
 								>
 									<section className="flex-1">
 										<ReactMarkdown

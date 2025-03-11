@@ -1,18 +1,14 @@
 // Dependencies.
 import ContentCard from "@/components/Shared/ContentCard"
 import Button from "@/components/Shared/Button"
-import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
+import Faqs from "@/components/Shared/Faqs"
 
 // Component.
 export default function Main() {
 	// Render.
 	return (
 		<main className="fade">
-			{/*
-			***************
-			CIMI VOLUNTEERS
-			***************
-			*/}
+			{/* CIMI Volunteers. */}
 			<ContentCard
 				contentSrc="join.volunteer.cimi-volunteers"
 				articleClassName="lg:w-1/2 mx-auto text-center"
@@ -20,13 +16,9 @@ export default function Main() {
 				fontClassName="font-medium"
 			/>
 
-			{/*
-			************************
-			BECOME A VOLUNTEER TODAY
-			************************
-			*/}
-			<article className="mx-auto w-80 text-center">
-				<h2 className="font-ancho font-bold text-2xl text-cimi-green ">
+			{/* Become a Volunteer Today. */}
+			<article className="pb-10 text-center sm:pb-20">
+				<h2 className="mx-auto w-80 pb-2 font-ancho font-bold text-2xl text-cimi-green sm:pb-5">
 					Become a Volunteer Today
 				</h2>
 				<Button
@@ -38,52 +30,12 @@ export default function Main() {
 				/>
 			</article>
 
-			{/*
-			**************
-			VOLUNTEER FAQS
-			**************
-			*/}
-			<section className="mx-auto p-20 lg:w-full">
-				<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
-					Volunteer FAQs
-				</h2>
-
-				<CollapsibleContentButton
-					dimensions="w-xs lg:w-xl"
-					buttonTextSrc="join.volunteer.buttons.1-button-text"
-					buttonDimensions="w-xs lg:w-2xl"
-					buttonClassName="font-ancho font-bold text-lg"
-					collapsibleContentSrc="join.volunteer.buttons.1-collapsible-content"
-					colorScheme="cimi-green-light"
-				/>
-
-				<CollapsibleContentButton
-					dimensions="w-xs lg:w-xl"
-					buttonTextSrc="join.volunteer.buttons.2-button-text"
-					buttonDimensions="w-xs lg:w-2xl"
-					buttonClassName="font-ancho font-bold text-lg"
-					collapsibleContentSrc="join.volunteer.buttons.2-collapsible-content"
-					colorScheme="cimi-green-light"
-				/>
-
-				<CollapsibleContentButton
-					dimensions="w-xs lg:w-xl"
-					buttonTextSrc="join.volunteer.buttons.3-button-text"
-					buttonDimensions="w-xs lg:w-2xl"
-					buttonClassName="font-ancho font-bold text-lg"
-					collapsibleContentSrc="join.volunteer.buttons.3-collapsible-content"
-					colorScheme="cimi-green-light"
-				/>
-
-				<CollapsibleContentButton
-					dimensions="w-xs lg:w-xl"
-					buttonTextSrc="join.volunteer.buttons.4-button-text"
-					buttonDimensions="w-xs lg:w-2xl"
-					buttonClassName="font-ancho font-bold text-lg"
-					collapsibleContentSrc="join.volunteer.buttons.4-collapsible-content"
-					colorScheme="cimi-green-light"
-				/>
-			</section>
+			{/* Volunteer FAQs. */}
+			<Faqs
+				faqsName="volunteer"
+				textClassName="text-cimi-green"
+				borderClassName="border-cimi-green"
+			/>
 		</main>
 	)
 }

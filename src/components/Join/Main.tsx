@@ -1,6 +1,6 @@
 // Dependencies.
 import ContentCard from "@/components/Shared/ContentCard"
-import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
+// import CollapsibleContentButton from "@/components/Shared/CollapsibleContentButton"
 
 // Buttons.
 const buttons = [
@@ -50,7 +50,7 @@ export default function Main() {
 			/>
 
 			{/* Buttons. */}
-			<section className="mx-auto grid max-w-3xl grid-cols-1 gap-5 px-10 pt-10 pb-20">
+			{/* <section className="mx-auto grid max-w-3xl grid-cols-1 gap-5 px-10 pt-10 pb-20">
 				{buttons.map((button) => (
 					<CollapsibleContentButton
 						key={button.buttonTextSrc}
@@ -60,7 +60,7 @@ export default function Main() {
 						collapsibleContentSrc={button.collapsibleContentSrc}
 					/>
 				))}
-			</section>
+			</section> */}
 		</main>
 	)
 }
