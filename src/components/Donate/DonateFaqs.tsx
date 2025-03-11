@@ -81,7 +81,7 @@ export default function DonateFaqs() {
 
 	// Render.
 	return (
-		<section className="mx-auto p-10 sm:px-20 sm:pt-0 sm:pb-20 lg:w-full">
+		<section className="mx-auto max-w-3xl px-10 pb-10 sm:px-20 sm:pb-20">
 			<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
 				Donor FAQs
 			</h2>

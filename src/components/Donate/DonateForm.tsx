@@ -80,7 +80,7 @@ export default function DonateForm() {
 
 	// Render.
 	return (
-		<section className="mx-auto max-w-3xl p-10 sm:px-20 sm:pt-20 sm:pb-0">
+		<section className="mx-auto max-w-3xl px-10 pt-10 sm:px-20 sm:pt-20">
 			<section className="rounded-lg border border-cimi-green p-5">
 				<Form.Root>
 					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-green">
@@ -90,7 +90,7 @@ export default function DonateForm() {
 					{/* Donation amounts. */}
 					<Form.Field name="donation-amounts">
 						<RadioGroup.Root
-							className="grid grid-cols-2 place-items-center gap-5 sm:grid-cols-4"
+							className="grid grid-cols-2 place-items-center gap-5 sm:grid-cols-3 md:grid-cols-4"
 							value={presetDonationAmount}
 							onValueChange={setPresetDonationAmount}
 						>
@@ -175,10 +175,10 @@ export default function DonateForm() {
 					</Form.Field>
 
 					{/* Submit button. */}
-					<section className="grid grid-cols-2 place-items-center gap-5 sm:grid-cols-4">
+					<section className="grid grid-cols-2 place-items-center gap-5 sm:grid-cols-3 md:grid-cols-4">
 						<section>&nbsp;</section>
 						<section className="hidden sm:inline">&nbsp;</section>
-						<section className="hidden sm:inline">&nbsp;</section>
+						<section className="hidden md:inline">&nbsp;</section>
 						<Form.Submit asChild>
 							<button
 								type="button"

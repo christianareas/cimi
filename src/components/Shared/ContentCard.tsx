@@ -90,9 +90,7 @@ export default function ContentCard({
 				.join(" ")}
 		>
 			<section
-				className={["mx-auto max-w-md", sectionClassName]
-					.filter(Boolean)
-					.join(" ")}
+				className={["mx-auto", sectionClassName].filter(Boolean).join(" ")}
 			>
 				<ReactMarkdown
 					remarkPlugins={[remarkGfm]}
@@ -104,9 +102,7 @@ export default function ContentCard({
 			</section>
 			{buttonText && buttonColorClasses && buttonLink && (
 				<section
-					className={["mx-auto max-w-md", sectionClassName]
-						.filter(Boolean)
-						.join(" ")}
+					className={["mx-auto", sectionClassName].filter(Boolean).join(" ")}
 				>
 					<Button
 						buttonText={buttonText}
