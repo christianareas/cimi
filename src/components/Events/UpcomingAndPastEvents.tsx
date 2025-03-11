@@ -89,7 +89,7 @@ export default function UpcomingAndPastEvents() {
 					>
 						{/* Selector. */}
 						<Select.Trigger
-							className="flex items-center rounded-lg border border-cimi-red-orange bg-cimi-cream pt-1 pr-3 pb-2 pl-4 font-ancho font-bold text-2xl text-cimi-red-orange"
+							className="flex w-xs items-center justify-between rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 pt-1 pb-2 font-ancho font-bold text-cimi-red-orange text-lg sm:w-sm sm:text-2xl"
 							aria-label="Upcoming or Past Events"
 						>
 							<Select.Value>
@@ -98,14 +98,14 @@ export default function UpcomingAndPastEvents() {
 								</h2>
 							</Select.Value>
 							<Select.Icon>
-								<ChevronDownIcon className="ml-2 h-8 w-8 text-cimi-red-orange" />
+								<ChevronDownIcon className="h-6 w-6 text-cimi-red-orange sm:h-8 sm:w-8" />
 							</Select.Icon>
 						</Select.Trigger>
 
 						{/* Options. */}
 						<Select.Portal>
-							<Select.Content className="absolute right-0 left-0 mx-auto">
-								<Select.Viewport className="flex flex-col rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-2xl text-cimi-red-orange">
+							<Select.Content className="-top-5 absolute right-0 left-0 mx-auto">
+								<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-cimi-red-orange text-lg sm:text-2xl">
 									{upcomingAndPastEvents.map((event, index) => (
 										<Select.Item
 											key={event.eventsType}
