@@ -4,7 +4,7 @@ import fs from "node:fs/promises"
 import path from "node:path"
 
 // Types.
-type Campaign = {
+interface Campaign {
 	id: number
 	code: string
 	account_id: string
@@ -28,7 +28,7 @@ type Campaign = {
 	updated_at: string
 }
 
-type Event = {
+interface Event {
 	title: string
 	type: string
 	location_name: string | null

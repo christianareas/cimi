@@ -79,55 +79,47 @@ export default function UpcomingAndPastEvents() {
 
 	// Render.
 	return (
-		<section className="px-20">
-			{/*
-				**************
-				Event Selector
-				**************
-			*/}
-			<section className="mx-auto pb-20">
-				<section className="flex justify-center">
-					<Select.Root
-						value={selectedEvents.toString()}
-						onValueChange={(value) => setSelectedEventType(Number(value))}
+		<section className="px-10 pb-10 sm:px-20 sm:pb-20">
+			{/* Event selector and options. */}
+			<section className="flex justify-center pb-10 sm:pb-20">
+				<Select.Root
+					value={selectedEvents.toString()}
+					onValueChange={(value) => setSelectedEventType(Number(value))}
+				>
+					{/* Selector. */}
+					<Select.Trigger
+						className="flex w-xs items-center justify-between rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 pt-1 pb-2 font-ancho font-bold text-cimi-red-orange text-lg sm:w-sm sm:text-2xl"
+						aria-label="Upcoming or Past Events"
 					>
-						<Select.Trigger
-							className="flex w-96 justify-between rounded-lg border border-cimi-red-orange py-1 pr-3 pl-4 font-ancho font-bold text-2xl text-cimi-red-orange"
-							aria-label="Upcoming or Past Events"
-						>
-							<Select.Value>
-								<h2 className="pt-1">
-									{upcomingAndPastEvents[selectedEventType].eventsHeading}
-								</h2>
-							</Select.Value>
-							<Select.Icon>
-								<ChevronDownIcon className="h-8 w-8 text-cimi-red-orange" />
-							</Select.Icon>
-						</Select.Trigger>
-						<Select.Portal>
-							<Select.Content>
-								<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-2xl text-cimi-red-orange">
-									{upcomingAndPastEvents.map((event, index) => (
-										<Select.Item
-											key={event.eventsType}
-											value={index.toString()}
-										>
-											<h2 className="pt-1">
-												<Select.ItemText>{event.eventsHeading}</Select.ItemText>
-											</h2>
-										</Select.Item>
-									))}
-								</Select.Viewport>
-							</Select.Content>
-						</Select.Portal>
-					</Select.Root>
-				</section>
+						<Select.Value>
+							<h2 className="pt-2">
+								{upcomingAndPastEvents[selectedEventType].eventsHeading}
+							</h2>
+						</Select.Value>
+						<Select.Icon>
+							<ChevronDownIcon className="h-6 w-6 text-cimi-red-orange sm:h-8 sm:w-8" />
+						</Select.Icon>
+					</Select.Trigger>
 
-				{/*
-					******
-					Events
-					******
-				*/}
+					{/* Options. */}
+					<Select.Portal>
+						<Select.Content className="-top-5 absolute right-0 left-0 mx-auto">
+							<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-cimi-red-orange text-lg sm:text-2xl">
+								{upcomingAndPastEvents.map((event, index) => (
+									<Select.Item key={event.eventsType} value={index.toString()}>
+										<Select.ItemText>
+											<h2 className="pt-2">{event.eventsHeading}</h2>
+										</Select.ItemText>
+									</Select.Item>
+								))}
+							</Select.Viewport>
+						</Select.Content>
+					</Select.Portal>
+				</Select.Root>
+			</section>
+
+			{/* Events */}
+			<section className="space-y-10 sm:space-y-20">
 				{selectedEvents.events.length === 0 ? (
 					<p className="flex justify-center p-5 text-gray-500 text-xs italic">
 						No {selectedEvents.eventsType.replace("-", " ")}.
@@ -135,7 +127,7 @@ export default function UpcomingAndPastEvents() {
 				) : (
 					selectedEvents.events.map((campaign) => (
 						<article
-							className="py-10 font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
+							className="fade font-medium lg:mx-auto lg:flex lg:max-w-(--breakpoint-lg)"
 							key={campaign.campaignId}
 						>
 							<section className="pb-10 lg:w-1/2 lg:pr-10">
@@ -175,7 +167,8 @@ export default function UpcomingAndPastEvents() {
 									buttonText="Learn More"
 									buttonLink={campaign.campaignUrl}
 									buttonWidth="w-40"
-									colorScheme="cimi-red-orange-dark"
+									buttonClassNames="border-cimi-cream bg-cimi-red-orange text-cimi-cream shadow-cimi-red-orange"
+									buttonType="button"
 								/>
 							</section>
 						</article>

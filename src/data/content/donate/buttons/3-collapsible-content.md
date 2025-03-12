@@ -1,1 +1,0 @@
-We encourage you to speak to your employer about whether they participate in corporate matching programs. Matched gifts to CIMI may be tax-deductible for your employer and will help us provide even more life-changing programs and events for local families.

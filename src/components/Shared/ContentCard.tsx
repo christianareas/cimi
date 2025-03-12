@@ -4,11 +4,12 @@ import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
-import Link from "next/link"
-import Image from "next/image"
+import Button from "@/components/Shared/Button"
 
 // Types.
-type ContentCardProps = {
+import type { ButtonProps } from "@/components/Shared/Button"
+
+interface ContentCardProps {
 	contentSrc: string
 	articleClassName?: string
 	sectionClassName?: string
@@ -17,10 +18,9 @@ type ContentCardProps = {
 	h3ClassName?: string
 	fontClassName?: string
 	boldClassName?: string
-	buttonLink?: string
-	buttonSrc?: string
-	buttonAlt?: string
-	buttonClassName?: string
+	buttonText?: ButtonProps["buttonText"]
+	buttonColorClasses?: ButtonProps["buttonClassNames"]
+	buttonLink?: ButtonProps["buttonLink"]
 }
 
 // Component.
@@ -33,10 +33,9 @@ export default function ContentCard({
 	h3ClassName,
 	fontClassName,
 	boldClassName,
+	buttonText,
+	buttonColorClasses,
 	buttonLink,
-	buttonSrc,
-	buttonAlt,
-	buttonClassName,
 }: ContentCardProps) {
 	// Get the content.
 	const content = resolveContentSrcPath(markdown, contentSrc)
@@ -45,7 +44,7 @@ export default function ContentCard({
 	const components = {
 		h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
 			<h2
-				className={`pb-3 font-ancho font-bold text-2xl ${h2ClassName}`}
+				className={`pb-5 font-ancho font-bold text-2xl ${h2ClassName}`}
 				{...props}
 			>
 				{children}
@@ -72,7 +71,7 @@ export default function ContentCard({
 			</li>
 		),
 		strong: ({ children, ...props }: React.ComponentProps<"strong">) => (
-			<strong className={boldClassName} {...props}>
+			<strong className={`font-extrabold ${boldClassName}`} {...props}>
 				{children}
 			</strong>
 		),
@@ -82,15 +81,17 @@ export default function ContentCard({
 	return (
 		<article
 			className={[
+				"space-y-5 rounded-lg p-10 font-medium sm:p-20",
 				articleClassName,
 				bgClassName,
 				fontClassName,
-				"rounded-lg p-20",
 			]
 				.filter(Boolean)
 				.join(" ")}
 		>
-			<section className={sectionClassName}>
+			<section
+				className={["mx-auto", sectionClassName].filter(Boolean).join(" ")}
+			>
 				<ReactMarkdown
 					remarkPlugins={[remarkGfm]}
 					rehypePlugins={[rehypeRaw]}
@@ -99,19 +100,17 @@ export default function ContentCard({
 					{content}
 				</ReactMarkdown>
 			</section>
-			{buttonLink && buttonSrc && buttonAlt && (
-				<section className={sectionClassName}>
-					<Link href={buttonLink}>
-						<Image
-							src={buttonSrc}
-							alt={buttonAlt}
-							width={163}
-							height={47}
-							className={[buttonClassName, "w-auto pt-5 pb-2"]
-								.filter(Boolean)
-								.join(" ")}
-						/>
-					</Link>
+			{buttonText && buttonColorClasses && buttonLink && (
+				<section
+					className={["mx-auto", sectionClassName].filter(Boolean).join(" ")}
+				>
+					<Button
+						buttonText={buttonText}
+						buttonWidth="w-40"
+						buttonClassNames={buttonColorClasses}
+						buttonType="button"
+						buttonLink={buttonLink}
+					/>
 				</section>
 			)}
 		</article>

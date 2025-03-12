@@ -1,79 +1,101 @@
 // Dependencies.
-import Milestone from "@/components/About/Milestone"
+import { milestones } from "@/data/content/about/milestones"
+import Image from "next/image"
 
 // Component.
 export default function Timeline() {
 	return (
-		<section className="pb-20">
-			<Milestone
-				colorfulDotColor="cimi-pink"
-				imageSrc="/images/about/milestones/1.jpg"
-				imageAlt="todo"
-				imagePosition="object-[50%_35%]"
-				title="The first CIMI-sponsored race was held in 2013 in Nicaragua."
-				year="2013"
-				content="Over 250 people participated—many of them women who were running for the first time. After completing her first 5k, one woman commented “I never thought I would be able to do something like this.”"
-			/>
+		<section className="pb-10 sm:pb-20">
+			{milestones.map(
+				({
+					milestoneDotFillColor,
+					milestoneImageSrc,
+					milestoneImageAlt,
+					milestoneImagePosition,
+					milestoneTitle,
+					milestoneYear,
+					milestoneContent,
+				}) => (
+					<article
+						key={milestoneImageSrc}
+						className="relative ml-10 pr-10 font-medium sm:ml-20 sm:pr-20 lg:mx-auto lg:flex lg:h-full lg:max-w-(--breakpoint-lg) lg:pr-0"
+					>
+						{/* Image half. */}
+						<section className="lg:w-1/2">
+							{/* Colorful dot. */}
+							<section className="z-50 lg:hidden">
+								<section className="ml-[-0.375rem] h-4 bg-contain bg-left bg-no-repeat">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+									>
+										<title>
+											{`${milestoneDotFillColor.replace(/^fill-/, "")} dot`}
+										</title>
+										<circle
+											cx="8"
+											cy="8"
+											r="8"
+											className={milestoneDotFillColor}
+										/>
+									</svg>
+								</section>
+							</section>
 
-			<Milestone
-				colorfulDotColor="cimi-green"
-				imageSrc="/images/about/milestones/2.jpg"
-				imageAlt="todo"
-				imagePosition="object-bottom"
-				title="CIMI began a community support program called Adopt-a-Family."
-				year="YYYY"
-				content="Donors are matched to a family they support during the holidays."
-			/>
+							{/* Image. */}
+							<section className="mt-[-0.95rem] border-cimi-blue border-l-4 pb-10 pl-10 sm:pb-20 lg:mt-0 lg:border-0 lg:pr-10 lg:pl-0">
+								<section className="relative aspect-video">
+									<Image
+										src={milestoneImageSrc}
+										alt={milestoneImageAlt}
+										fill
+										sizes="(max-width: 1024px) 100vw, 50vw"
+										className={`absolute inset-0 rounded-lg object-cover ${milestoneImagePosition}`}
+									/>
+								</section>
+							</section>
+						</section>
 
-			<Milestone
-				colorfulDotColor="cimi-yellow"
-				imageSrc="/images/about/milestones/3.jpg"
-				imageAlt="todo"
-				imagePosition="object-center"
-				title="In early 2017, the 5th annual CIMI Nicaragua 5k race took place."
-				year="2017"
-				content="The event drew nearly 900 runners and 70% of them were women. Races also expanded in San Jose, in addition to educational opportunities."
-			/>
+						{/* Content half. */}
+						<section className="flex flex-col lg:w-1/2">
+							{/* Colorful dot. */}
+							<section className="z-50 hidden lg:block">
+								<section className="ml-[-0.375rem] h-4 bg-contain bg-left bg-no-repeat">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+									>
+										<title>
+											{`${milestoneDotFillColor.replace(/^fill-/, "")} dot`}
+										</title>
+										<circle
+											cx="8"
+											cy="8"
+											r="8"
+											className={milestoneDotFillColor}
+										/>
+									</svg>
+								</section>
+							</section>
 
-			<Milestone
-				colorfulDotColor="cimi-red-orange"
-				imageSrc="/images/about/milestones/4.jpg"
-				imageAlt="todo"
-				imagePosition="object-center"
-				title="CIMI started an initiative to provide technology to girls in need."
-				year="YYYY"
-				content="In partnership with the Computer History Museum in Mountain View, California, CIMI created the Design_Code_Bootcamp at the Computer History Museum to provide girls in grades 6 through 8 with an opportunity to participate in engaging, hands-on STEAM (science, technology, engineering, arts, math) workshops."
-			/>
-
-			<Milestone
-				colorfulDotColor="cimi-purple"
-				imageSrc="/images/about/milestones/5.jpg"
-				imageAlt="todo"
-				imagePosition="object-[50%_35%]"
-				title="CIMI sponsored 10 girls to participate in a Google Robotics workshop."
-				year="YYYY"
-				content="Coming from underserved communities, these girls were able to participate in the Girl Powered VEX Robotics Workshop at the Google Event Center. They learned about designing, building, and programming robots in a sold-out event with 550 participants."
-			/>
-
-			<Milestone
-				colorfulDotColor="cimi-blue"
-				imageSrc="/images/about/milestones/6.jpg"
-				imageAlt="todo"
-				imagePosition="object-center"
-				title="CIMI pivoted to virtual when COVID-19 hit."
-				year="2020"
-				content="While COVID-19 paused large gatherings like races, CIMI   continued their community-centered programs like gas card giveaways and school supply donations and focus on educational programs."
-			/>
-
-			<Milestone
-				colorfulDotColor="cimi-pink"
-				imageSrc="/images/about/milestones/7.jpg"
-				imageAlt="todo"
-				imagePosition="object-center"
-				title="CIMI’s impact continues to grow."
-				year="YYYY"
-				content="The organization now offers physical activities—like volleyball skills workshops, runs, and trail walks—which helps participants gain confidence, manage stress, and build healthy habits. CIMI also offers education programs like coding bootcamps, computer basics classes, robotics, and public speaking opportunities."
-			/>
+							{/* Content. */}
+							<section className="grow border-cimi-blue border-l-4 pb-10 pl-10 sm:pb-20 lg:mt-[-0.95rem]">
+								<h3 className="font-ancho font-bold text-cimi-blue text-xl">
+									{milestoneTitle}
+								</h3>
+								<h4 className="font-ancho font-medium text-cimi-blue">
+									{milestoneYear}
+								</h4>
+								<p className="pt-4">{milestoneContent}</p>
+							</section>
+						</section>
+					</article>
+				),
+			)}
 		</section>
 	)
 }

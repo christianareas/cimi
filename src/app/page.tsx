@@ -11,7 +11,7 @@ export default function Home() {
 		<Fragment>
 			<Header
 				imageSrc="/images/heroes/home.jpg"
-				imageAlt="todo"
+				imageAlt="Home"
 				imageClassName="object-[50%_80%]"
 			/>
 			<Main />

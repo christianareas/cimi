@@ -8,17 +8,15 @@ import Testimonials from "@/components/Home/Testimonials"
 export default function Main() {
 	// Render.
 	return (
-		<main>
-			{/* CIMI'S MISSION */}
+		<main className="fade">
+			{/* CIMI's Mission. */}
 			<ContentCard
 				contentSrc="home.intro"
-				articleClassName="lg:w-1/2 mx-auto text-center"
+				articleClassName="mx-auto text-center lg:w-1/2"
 				h2ClassName="text-cimi-blue"
-				fontClassName="font-medium"
-				boldClassName="font-extrabold"
 			/>
 
-			{/* ABOUT CIMI */}
+			{/* About CIMI */}
 			<section className="lg:flex">
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -31,30 +29,26 @@ export default function Main() {
 				</article>
 				<ContentCard
 					contentSrc="home.about-cimi"
-					articleClassName="lg:w-1/2 text-center lg:text-left"
-					sectionClassName="lg:w-3/5 mr-auto"
+					articleClassName="text-center lg:w-1/2 lg:text-left"
+					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
 					bgClassName="bg-cimi-blue"
 					fontClassName="text-cimi-cream"
-					boldClassName="font-extrabold"
-					buttonSrc="/images/home/buttons/read-our-story.svg"
-					buttonAlt="CIMI"
-					buttonLink="about"
-					buttonClassName="mx-auto lg:mx-0"
+					buttonText="Read Our Story"
+					buttonLink="/about"
+					buttonColorClasses="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
 				/>
 			</section>
 
-			{/* UPCOMING EVENTS */}
+			{/* Upcoming Events. */}
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.upcoming-events"
-					articleClassName="lg:w-1/2 text-center lg:text-left"
-					sectionClassName="lg:w-3/5 ml-auto"
+					articleClassName="text-center lg:w-1/2 lg:text-left"
+					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
 					bgClassName="bg-cimi-yellow"
-					boldClassName="font-extrabold"
-					buttonSrc="/images/home//buttons/learn-more-black-yellow.svg"
-					buttonAlt="CIMI"
-					buttonLink="#todo"
-					buttonClassName="mx-auto lg:mx-0"
+					buttonText="Learn More"
+					buttonLink="/events"
+					buttonColorClasses="border-cimi-yellow bg-black text-cimi-cream shadow-black"
 				/>
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -67,37 +61,33 @@ export default function Main() {
 				</article>
 			</section>
 
-			{/* BECOME A MEMBER AND DONATE TO CIMI */}
+			{/* Become a Member and Donate to CIMI. */}
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.become-a-member"
-					articleClassName="lg:flex-1 text-center"
-					sectionClassName="lg:w-3/5 ml-auto"
+					articleClassName="text-center lg:w-1/2"
+					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
 					bgClassName="bg-cimi-green"
 					fontClassName="text-cimi-cream"
-					boldClassName="font-extrabold"
-					buttonSrc="/images/home//buttons/join-cimi-cream-green.svg"
-					buttonAlt="CIMI"
-					buttonLink="#todo"
-					buttonClassName="mx-auto"
+					buttonText="Join CIMI"
+					buttonLink="/join"
+					buttonColorClasses="border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream"
 				/>
 				<ContentCard
 					contentSrc="home.donate-to-cimi"
-					articleClassName="lg:flex-1 text-center"
-					sectionClassName="lg:w-3/5 mr-auto"
+					articleClassName="text-center lg:w-1/2"
+					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
 					bgClassName="bg-cimi-pink"
-					boldClassName="font-extrabold"
-					buttonSrc="/images/home//buttons/join-cimi-black-pink.svg"
-					buttonAlt="CIMI"
-					buttonLink="#todo"
-					buttonClassName="mx-auto"
+					buttonText="Give to CIMI"
+					buttonLink="/donate"
+					buttonColorClasses="border-cimi-pink bg-black text-cimi-cream shadow-black"
 				/>
 			</section>
 
-			{/* OUR TEAM */}
+			{/* Our Team. */}
 			<Team />
 
-			{/* TESTIMONIALS OF MEMBERS */}
+			{/* Testimonials of Members. */}
 			<Testimonials />
 		</main>
 	)

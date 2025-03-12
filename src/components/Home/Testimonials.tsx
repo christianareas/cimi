@@ -2,103 +2,110 @@
 
 // Dependencies.
 import { useState, useEffect } from "react"
+import { testimonials } from "@/data/content/home/testimonials"
 import * as Tabs from "@radix-ui/react-tabs"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import TestimonialCard from "@/components/Home/TestimonialCard"
-
-// Tabs.
-const tabs = ["first-tab", "second-tab", "third-tab", "fourth-tab"]
+import Image from "next/image"
 
 // Component.
 export default function Testimonials() {
 	// Set the initial state.
-	const [currentTab, setCurrentTab] = useState("first-tab")
+	const [currentTab, setCurrentTab] = useState(
+		testimonials[0].testimonialTabName,
+	)
 
-	// Switch to the previous tab.
-	function switchToPreviousTab() {
-		const currentIndex = tabs.indexOf(currentTab)
-		const previousIndex =
-			currentIndex === 0 ? tabs.length - 1 : currentIndex - 1
-		setCurrentTab(tabs[previousIndex])
-	}
+	// Switch to the next or previous tab.
+	function switchTab(direction: number) {
+		// Current tab index.
+		const currentTabIndex = testimonials.findIndex(
+			({ testimonialTabName }) => testimonialTabName === currentTab,
+		)
+		// Next or previous tab index.
+		const nextOrPreviousTabIndex =
+			(currentTabIndex + direction + testimonials.length) % testimonials.length
 
-	// Switch to the next tab.
-	function switchToNextTab() {
-		const currentIndex = tabs.indexOf(currentTab)
-		const nextIndex = currentIndex === tabs.length - 1 ? 0 : currentIndex + 1
-		setCurrentTab(tabs[nextIndex])
+		setCurrentTab(testimonials[nextOrPreviousTabIndex].testimonialTabName)
 	}
 
 	// Automatically switch to the next tab.
 	useEffect(() => {
-		const interval = setInterval(() => {
+		const tabSwitchInterval = setInterval(() => {
 			setCurrentTab((previousTab) => {
-				const currentIndex = tabs.indexOf(previousTab)
-				const nextIndex =
-					currentIndex === tabs.length - 1 ? 0 : currentIndex + 1
-				return tabs[nextIndex]
+				// Current tab index.
+				const currentTabIndex = testimonials.findIndex(
+					({ testimonialTabName }) => testimonialTabName === previousTab,
+				)
+				// Next tab index.
+				const nextTabIndex =
+					currentTabIndex === testimonials.length - 1 ? 0 : currentTabIndex + 1
+
+				return testimonials[nextTabIndex].testimonialTabName
 			})
-		}, 3000)
-		return () => clearInterval(interval)
+		}, 5000)
+
+		// Reset.
+		return () => clearInterval(tabSwitchInterval)
 	}, [])
+
+	// Get the current testimonial.
+	const currentTestimonial = testimonials.find(
+		({ testimonialTabName }) => testimonialTabName === currentTab,
+	)
 
 	// Render.
 	return (
-		<section className="bg-cimi-red-orange px-10 py-20 text-center font-normal lg:text-left">
-			<section className="lg:mx-auto lg:max-w-(--breakpoint-lg)">
+		<section className="bg-cimi-red-orange px-5 py-10 text-center font-normal sm:px-10 sm:py-20 lg:text-left">
+			<section className="lg:mx-auto lg:max-w-5xl">
 				<Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
 					<Tabs.List className="hidden">
-						<Tabs.Trigger value="first-tab" />
-						<Tabs.Trigger value="second-tab" />
-						<Tabs.Trigger value="third-tab" />
-						<Tabs.Trigger value="fourth-tab" />
+						{testimonials.map(({ testimonialTabName }) => (
+							<Tabs.Trigger
+								key={testimonialTabName}
+								value={testimonialTabName}
+							/>
+						))}
 					</Tabs.List>
+
+					{/* Heading. */}
 					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream">
 						Testimonials of Members
 					</h2>
 
 					<section className="mx-auto grid grid-cols-[1fr_5fr_1fr] items-center py-2 text-cimi-cream">
-						<button type="button" onClick={switchToPreviousTab}>
+						{/* Previous tab */}
+						<button type="button" onClick={() => switchTab(-1)}>
 							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20" />
 						</button>
 
-						<Tabs.Content value="first-tab">
-							<TestimonialCard
-								imgSrc="/images/home/testimonials/maria-perla.jpg"
-								imgAlt="Maria Perla"
-								contentSrc="In these 3 years of being a member, I am part of a great community that helps girls learn how to code and be a better person."
-								testimonialSrc="High school student"
-							/>
-						</Tabs.Content>
+						{/* Testimonial. */}
+						{currentTestimonial && (
+							<article
+								key={currentTab}
+								className="fade lg:grid lg:grid-cols-2 lg:gap-10"
+							>
+								<section className="relative mb-5 w-full pb-[100%] lg:mb-0">
+									<Image
+										src={currentTestimonial.testimonialImgSrc}
+										alt={currentTestimonial.testimonialImgAlt}
+										fill
+										sizes="(max-width: 1024px) 100vw, 50vw"
+										className="absolute inset-0 mx-auto mb-5 rounded-lg object-cover lg:mb-0"
+									/>
+								</section>
 
-						<Tabs.Content value="second-tab">
-							<TestimonialCard
-								imgSrc="/images/home/testimonials/rosario-fernanda.jpg"
-								imgAlt="Rosario Fernanda"
-								contentSrc="During the pandemic, I was so grateful because CIMI never left us. It supported [my family] 100%. In short, CIMI is a blessing."
-								testimonialSrc="Mom"
-							/>
-						</Tabs.Content>
+								<section>
+									<p className="font-ancho text-3xl">“</p>
+									<p>{currentTestimonial.testimonial}</p>
+									<p className="pt-5 font-ancho text-3xl">”</p>
+									<p className="font-bold text-xs">
+										&ndash;{currentTestimonial.testimonialSrc}
+									</p>
+								</section>
+							</article>
+						)}
 
-						<Tabs.Content value="third-tab">
-							<TestimonialCard
-								imgSrc="/images/home/testimonials/walk-program.jpg"
-								imgAlt="Walk Program"
-								contentSrc="Being a member for more than five years has been an opportunity for me because it has helped me physically, emotionally, and financially and has helped me manage stress. It has helped me learn about myself."
-								testimonialSrc="Mom"
-							/>
-						</Tabs.Content>
-
-						<Tabs.Content value="fourth-tab">
-							<TestimonialCard
-								imgSrc="/images/home/testimonials/tania-tiara.jpg"
-								imgAlt="Tania Tiara"
-								contentSrc="I am grateful for meeting my two best friends. I am grateful for the opportunities that I have been given, like learning how to code."
-								testimonialSrc="High school student"
-							/>
-						</Tabs.Content>
-
-						<button type="button" onClick={switchToNextTab}>
+						{/* Next tab */}
+						<button type="button" onClick={() => switchTab(1)}>
 							<ChevronRightIcon className="mr-auto ml-3 h-8 w-8 cursor-pointer text-cimi-cream md:ml-10 lg:ml-20" />
 						</button>
 					</section>

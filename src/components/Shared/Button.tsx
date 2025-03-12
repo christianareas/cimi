@@ -1,44 +1,50 @@
 // Dependencies.
-import { colorsSchemes } from "@/data/colorSchemes"
 import Link from "next/link"
 
 // Types.
-type ButtonProps = {
+export interface ButtonProps {
 	buttonText: string
-	buttonLink: string
 	buttonWidth: "w-40" | "w-20"
-	colorScheme:
-		| "neutral-light"
-		| "neutral-dark"
-		| "cimi-blue-light"
-		| "cimi-blue-dark"
-		| "cimi-green-light"
-		| "cimi-green-dark"
-		| "cimi-purple-dark"
-		| "cimi-purple-light"
-		| "cimi-red-orange-light"
-		| "cimi-red-orange-dark"
+	buttonClassNames:
+		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream" // cimi-cream-blue
+		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream" // cimi-cream-green
+		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream" // cimi-cream-purple
+		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-blue" // cimi-blue-light
+		| "border-cimi-cream bg-cimi-blue text-cimi-cream shadow-cimi-blue" // cimi-blue-dark
+		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-green" // cimi-green-light
+		| "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green" // cimi-green-dark
+		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-purple" // cimi-purple-light
+		| "border-cimi-cream bg-cimi-purple text-cimi-cream shadow-cimi-purple" // cimi-purple-dark
+		| "border-cimi-red-orange bg-cimi-cream text-cimi-red-orange shadow-cimi-red-orange" // cimi-red-orange-light
+		| "border-cimi-cream bg-cimi-red-orange text-cimi-cream shadow-cimi-red-orange" // cimi-red-orange-dark
+		| "border-cimi-pink bg-black text-cimi-cream shadow-black" // cimi-black-pink
+		| "border-cimi-yellow bg-black text-cimi-cream shadow-black" // cimi-black-yellow
+		| "border-neutral-500 bg-cimi-cream text-neutral-500 shadow-neutral-500" // neutral-light
+		| "border-cimi-cream bg-neutral-500 text-cimi-cream shadow-neutral-500" // neutral-dark
+	buttonType: "button" | "submit"
+	buttonLink?: string
+	buttonOnClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 // Component.
 export default function Button({
 	buttonText,
-	buttonLink,
 	buttonWidth,
-	colorScheme,
+	buttonClassNames,
+	buttonType,
+	buttonLink,
+	buttonOnClick,
 }: ButtonProps) {
-	// Color classes.
-	const colorClasses = colorsSchemes[colorScheme]
-
-	// Render.
-	return (
-		<Link href={buttonLink}>
-			<button
-				type="button"
-				className={`mt-5 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${buttonWidth} ${colorClasses}`}
-			>
-				{buttonText}
-			</button>
-		</Link>
+	// Button.
+	const button = (
+		<button
+			type={buttonType}
+			onClick={buttonOnClick}
+			className={`cursor-pointer rounded-lg border-2 px-2 py-3 text-center font-ancho font-normal text-xs shadow-[4px_4px_0] ${buttonWidth} ${buttonClassNames}`}
+		>
+			{buttonText}
+		</button>
 	)
+	// Render.
+	return buttonLink ? <Link href={buttonLink}>{button}</Link> : button
 }
