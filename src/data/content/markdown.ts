@@ -46,35 +46,15 @@ export const markdown = {
 			"## Upcoming Events\n\nCIMI events are a great way to meet people, learn something new, and have fun. Whether you want to join a walk-and-talk, get tips on how to start running, learn computer basics (or even how to code!), there are many opportunities to connect throughout the year.\n",
 	},
 	join: {
-		buttons: {
-			"1-button-text": "I want to join CIMI as a **member**.\n",
-			"1-collapsible-content":
-				"Find your community with CIMI. Check out more info on the New Member page to join!\n",
-			"2-button-text": "I want to **volunteer** to help with CIMI events.\n",
-			"2-collapsible-content":
-				"Do you want to volunteer your time to help run CIMI events, like robotics competitions, races, and community walks? Check out the [Volunteer page](#todo) for more info.\n",
-			"3-button-text": "I want to **make a donation** to CIMI.\n",
-			"3-collapsible-content":
-				"Find out more info on the [Donor Info](#todo) page to see how your donation today will support CIMI in its mission. \n",
-			"4-button-text":
-				"I want to share my expertise by **teaching** a CIMI class.\n",
-			"4-collapsible-content":
-				"We gladly welcome any individual interested in sharing their expertise and knowledge in topics like computer literacy, coding, engineering, and more! Send us an email at [info@runwithcimi.org](#todo) to get the conversation started. \n",
-			"5-button-text":
-				"I want to **tutor** elementary, middle, or high school students in CIMI.\n",
-			"5-collapsible-content":
-				"CIMI is happy to connect children and young adults with mentors to further their educational journey. Send us an email at [info@runwithcimi.org](#todo) to see how you can help! \n",
-			"6-button-text": "I want to become a **corporate sponsor** of CIMI.\n",
-			"6-collapsible-content":
-				"CIMI deeply values the opportunities that corporate sponsorships can bring to its members and the community. Send us an email at [info@runwithcimi.org](#todo) to see how we can work together! \n",
-			"7-button-text":
-				"I want to **participate in Adopt-a-Family** to provide essentials for families in need.\n",
-			"7-collapsible-content":
-				"Your generosity will make sure families can celebrate the holiday season with comfort and joy. Find out how you can get involved by sending us an email at [info@runwithcimi.org](#todo).\n",
-			"8-button-text":
-				"I want to keep up-to-date on CIMI events by **joining the mailing list**.\n",
-			"8-collapsible-content":
-				"Subscribe [here](#todo) and check out our past newsletters [here](#todo)!\n",
+		faqs: {
+			"1": "## I want to join CIMI as a **member**.\n\nFind your community with CIMI. Check out more info on the New Member page to join!\n",
+			"2": "## I want to **volunteer** to help with CIMI events.\n\nDo you want to volunteer your time to help run CIMI events, like robotics competitions, races, and community walks? Check out the [Volunteer page](/join/volunteer) for more info.\n",
+			"3": "## I want to **make a donation** to CIMI.\n\nFind out more info on the [Donor Info](/donate) page to see how your donation today will support CIMI in its mission.\n",
+			"4": "## I want to share my expertise by **teaching** a CIMI class.\n\nWe gladly welcome any individual interested in sharing their expertise and knowledge in topics like computer literacy, coding, engineering, and more! Send us an email at [info@runwithcimi.org](#todo) to get the conversation started.\n",
+			"5": "## I want to **tutor** elementary, middle, or high school students in CIMI.\n\nCIMI is happy to connect children and young adults with mentors to further their educational journey. Send us an email at [info@runwithcimi.org](#todo) to see how you can help!\n",
+			"6": "## I want to become a **corporate sponsor** of CIMI.\n\nCIMI deeply values the opportunities that corporate sponsorships can bring to its members and the community. Send us an email at [info@runwithcimi.org](#todo) to see how we can work together!\n",
+			"7": "## I want to **participate in Adopt-a-Family** to provide essentials for families in need.\n\nYour generosity will make sure families can celebrate the holiday season with comfort and joy. Find out how you can get involved by sending us an email at [info@runwithcimi.org](#todo).\n",
+			"8": "## I want to keep up-to-date on CIMI events by **joining the mailing list**.\n\nSubscribe [here](#todo) and check out our past newsletters [here](#todo)!\n",
 		},
 		"get-involved":
 			"## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",

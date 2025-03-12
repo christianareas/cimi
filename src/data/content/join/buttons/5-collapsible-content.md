@@ -1,1 +1,0 @@
-CIMI is happy to connect children and young adults with mentors to further their educational journey. Send us an email at [info@runwithcimi.org](#todo) to see how you can help! 

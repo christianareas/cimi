@@ -12,11 +12,12 @@ import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
 // Types.
 interface FaqProps {
-	faqsName: "member" | "volunteer" | "donor"
+	faqsName: "join" | "member" | "volunteer" | "donor"
 	textClassName:
 		| "text-cimi-blue" // cimi-blue
 		| "text-cimi-green" // cimi-green
 	borderClassName:
+		| "border-cimi-blue shadow-[4px_4px_0] shadow-cimi-blue" // cimi-blue
 		| "border-cimi-blue" // cimi-blue
 		| "border-cimi-green" // cimi-green
 }
@@ -29,6 +30,16 @@ export default function Faqs({
 }: FaqProps) {
 	// FAQs source.
 	const faqsSrc = {
+		join: [
+			{ faqSrc: "join.faqs.1" },
+			{ faqSrc: "join.faqs.2" },
+			{ faqSrc: "join.faqs.3" },
+			{ faqSrc: "join.faqs.4" },
+			{ faqSrc: "join.faqs.5" },
+			{ faqSrc: "join.faqs.6" },
+			{ faqSrc: "join.faqs.7" },
+			{ faqSrc: "join.faqs.8" },
+		],
 		member: [
 			{ faqSrc: "join.member.faqs.1" },
 			{ faqSrc: "join.member.faqs.2" },
@@ -53,7 +64,7 @@ export default function Faqs({
 
 	// Split the content.
 	function splitContent(content: string) {
-		const buttonTextRegex = /^(### .+)/m
+		const buttonTextRegex = /^(#{2,3} .+)/m
 		const buttonTextMatch = content.match(buttonTextRegex)
 
 		// If there’s button test, split the content.
@@ -79,8 +90,11 @@ export default function Faqs({
 
 	// Components.
 	const components = {
+		h2: ({ children, ...props }: React.ComponentProps<"h2">) => (
+			<h2 {...props}>{children}</h2>
+		),
 		h3: ({ children, ...props }: React.ComponentProps<"h3">) => (
-			<h3 className="font-bold" {...props}>
+			<h3 className="font-ancho font-bold text-lg" {...props}>
 				{children}
 			</h3>
 		),
@@ -114,11 +128,13 @@ export default function Faqs({
 	// Render.
 	return (
 		<section className="mx-auto max-w-3xl px-10 pb-10 sm:px-20 sm:pb-20">
-			<h2
-				className={`pb-5 text-center font-ancho font-bold text-2xl ${textClassName}`}
-			>
-				{faqsName.charAt(0).toUpperCase() + faqsName.slice(1)} FAQs
-			</h2>
+			{faqsName !== "join" && (
+				<h2
+					className={`pb-5 text-center font-ancho font-bold text-2xl ${textClassName}`}
+				>
+					{faqsName.charAt(0).toUpperCase() + faqsName.slice(1)} FAQs
+				</h2>
+			)}
 
 			<article className="space-y-5 font-medium">
 				{splitContents.map(
@@ -138,7 +154,7 @@ export default function Faqs({
 							<Collapsible.Trigger asChild>
 								<button
 									type="button"
-									className={`flex w-full items-center rounded-lg border-2 px-4 py-2 text-left font-ancho font-bold text-lg ${textClassName} ${borderClassName}`}
+									className={`flex w-full items-center rounded-lg border-2 px-4 py-2 text-left ${textClassName} ${borderClassName}`}
 								>
 									<section className="flex-1">
 										<ReactMarkdown
