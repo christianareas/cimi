@@ -1,4 +1,8 @@
+"use client"
+
 // Dependencies.
+import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 import ContentCard from "@/components/Shared/ContentCard"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import Link from "next/link"
@@ -8,6 +12,23 @@ import Button from "@/components/Shared/Button"
 
 // Component.
 export default function Footer() {
+	// Set the initial state.
+	const [newsletterSubscriptionSuccess, setNewsletterSubscriptionSuccess] =
+		useState()
+
+	// Subscribe to the newsletter.
+	async function subscribeToNewsletter(email: string) {
+		// Fetch the donation URL.
+		const { primaryEmail } = await fetchData({
+			method: "POST",
+			endpoint: "/api/givebutterContacts",
+			body: { email },
+			cache: "no-cache",
+		})
+
+		return primaryEmail
+	}
+
 	// Render.
 	return (
 		<footer className="fade">
@@ -116,13 +137,39 @@ export default function Footer() {
 
 					{/* Newsletter form. */}
 					<article className="w-full max-w-md lg:flex-1">
-						<Form.Root className="space-y-2">
+						<Form.Root
+							onSubmit={async (event) => {
+								event.preventDefault()
+								const form = event.currentTarget
+
+								// Get the email.
+								const formData = new FormData(event.currentTarget)
+								const email = formData.get("email") as string
+
+								try {
+									// Subscribe to the newsletter.
+									const savedEmail = await subscribeToNewsletter(email)
+
+									// Update the success state.
+									setNewsletterSubscriptionSuccess(savedEmail)
+
+									// Reset the form.
+									form.reset()
+								} catch (error) {
+									console.error(error)
+								}
+							}}
+							className="space-y-2"
+						>
 							<Form.Field name="email">
+								{/* Label. */}
 								<Form.Label>
 									<p className="text-left font-ancho font-bold text-2xl lg:text-right">
 										Sign up for the CIMI newsletter
 									</p>
 								</Form.Label>
+
+								{/* Input. */}
 								<Form.Control asChild>
 									<input
 										type="email"
@@ -131,15 +178,26 @@ export default function Footer() {
 										required
 									/>
 								</Form.Control>
+
+								{/* Error messages. */}
 								<Form.Message match="valueMissing">
 									<p className="px-2 pt-2 text-pink-200">Enter an email.</p>
 								</Form.Message>
-								<Form.Message className="FormMessage" match="typeMismatch">
+								<Form.Message match="typeMismatch">
 									<p className="px-2 pt-2 text-pink-200">
 										Enter a valid email.
 									</p>
 								</Form.Message>
+
+								{/* Success message. */}
+								{newsletterSubscriptionSuccess && (
+									<p className="px-2 pt-2 text-green-200">
+										You subscribed {newsletterSubscriptionSuccess}. Thank you!
+									</p>
+								)}
 							</Form.Field>
+
+							{/* Submit. */}
 							<Form.Submit asChild>
 								<section className="flex justify-end">
 									<Button
@@ -147,7 +205,6 @@ export default function Footer() {
 										buttonWidth="w-40"
 										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
 										buttonType="submit"
-										// buttonOnClick=
 									/>
 								</section>
 							</Form.Submit>

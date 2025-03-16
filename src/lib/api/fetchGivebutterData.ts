@@ -15,8 +15,8 @@ export default async function fetchGivebutterData(
 		)
 	}
 
-	// GET fetch options.
-	let fetchOptions: RequestInit = {
+	// GET options.
+	let options: RequestInit = {
 		method,
 		headers: {
 			Authorization: `Bearer ${apiKey}`,
@@ -24,10 +24,10 @@ export default async function fetchGivebutterData(
 		},
 	}
 
-	// POST fetch options.
+	// POST options.
 	if (method === "POST" && body) {
-		fetchOptions = {
-			...fetchOptions,
+		options = {
+			...options,
 			body: JSON.stringify(body),
 		}
 	}
@@ -35,13 +35,15 @@ export default async function fetchGivebutterData(
 	// Fetch and validate.
 	async function fetchAndValidate(url: string) {
 		try {
-			const response = await fetch(url, fetchOptions)
+			// Fetch.
+			const response = await fetch(url, options)
 
 			// If the response is not okay, return an error.
 			if (!response.ok) {
 				throw new Error(`${url} ${response.status} ${response.statusText}`)
 			}
 
+			// Otherwise, return the response.
 			return await response.json()
 		} catch (error) {
 			console.error(error)

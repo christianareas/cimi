@@ -13,8 +13,8 @@ export async function POST(request: Request) {
 
 		// Body.
 		const body = {
-			first_name: "_",
-			last_name: "_",
+			first_name: "-",
+			last_name: "-",
 			emails: [{ type: "personal", value: email }],
 			tags: ["cimiNewsletterSubscriber"],
 		}
