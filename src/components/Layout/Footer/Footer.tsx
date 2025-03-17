@@ -210,10 +210,10 @@ export default function Footer() {
 
 								{/* Success message. */}
 								{sendEmailSuccess && (
-									<section className="space-y-2 px-2 pt-2 text-green-400">
-										<p>Thank you for your message!</p>
-										<p>We’ll reply to you at {sendEmailSuccess}.</p>
-									</section>
+									<p className="space-y-2 px-2 pt-2 text-green-400">
+										Thank you for your message! We’ll reply to you at{" "}
+										{sendEmailSuccess}.
+									</p>
 								)}
 							</section>
 
