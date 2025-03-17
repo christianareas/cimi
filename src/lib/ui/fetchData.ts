@@ -2,7 +2,7 @@
 interface FetchDataTypes {
 	method: "GET" | "POST"
 	endpoint: string
-	body?: { donationAmount: number } | { email: string }
+	body?: { donationAmount: number } | { email: string; tag: string }
 	cache: "cache" | "no-cache"
 }
 

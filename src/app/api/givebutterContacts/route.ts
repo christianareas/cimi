@@ -5,10 +5,13 @@ import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
 // POST request.
 export async function POST(request: Request) {
 	try {
-		// Email.
-		const { email } = await request.json()
+		// Email and tag.
+		const { email, tag } = await request.json()
 		if (!email) {
 			return NextResponse.json({ error: "There’s no email." }, { status: 400 })
+		}
+		if (!tag) {
+			return NextResponse.json({ error: "There’s no tag." }, { status: 400 })
 		}
 
 		// Body.
@@ -16,7 +19,7 @@ export async function POST(request: Request) {
 			first_name: "-",
 			last_name: "-",
 			emails: [{ type: "personal", value: email }],
-			tags: ["cimiNewsletterSubscriber"],
+			tags: [tag],
 		}
 
 		// Fetch.

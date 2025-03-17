@@ -17,12 +17,12 @@ export default function Footer() {
 		useState()
 
 	// Subscribe to the newsletter.
-	async function subscribeToNewsletter(email: string) {
+	async function subscribeToNewsletter(email: string, tag: string) {
 		// Fetch the donation URL.
 		const { primaryEmail } = await fetchData({
 			method: "POST",
 			endpoint: "/api/givebutterContacts",
-			body: { email },
+			body: { email, tag },
 			cache: "no-cache",
 		})
 
@@ -103,24 +103,60 @@ export default function Footer() {
 					{/* Contact form. */}
 					<article className="w-full max-w-md lg:flex-1">
 						<Form.Root className="space-y-2">
-							<Form.Field name="message">
-								<Form.Label>
-									<p className="rounded-t-lg border border-cimi-cream p-2">
-										TO: info@runningwithcimi.org
-									</p>
-								</Form.Label>
-								<Form.Control asChild>
-									<textarea
-										id="contact"
-										placeholder="Write us a message."
-										className="h-16 w-full rounded-b-lg border border-cimi-cream border-t-0 bg-cimi-purple p-2"
-										required
-									/>
-								</Form.Control>
-								<Form.Message match="valueMissing">
-									<p className="px-2 pt-2 text-pink-200">Enter a message.</p>
-								</Form.Message>
-							</Form.Field>
+							<section>
+								<p className="rounded-t-lg border-cimi-cream border-x border-t p-2">
+									TO: info@runningwithcimi.org
+								</p>
+
+								{/* From email. */}
+								<Form.Field name="from">
+									<section>
+										{/* Input. */}
+										<Form.Control asChild>
+											<input
+												type="email"
+												placeholder="Enter your email."
+												className="w-full border border-cimi-cream border-b-0 p-2"
+												required
+											/>
+										</Form.Control>
+
+										{/* Error messages. */}
+										<Form.Message match="valueMissing">
+											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400">
+												Enter your email address.
+											</p>
+										</Form.Message>
+										<Form.Message match="typeMismatch">
+											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400">
+												Enter a valid email.
+											</p>
+										</Form.Message>
+									</section>
+								</Form.Field>
+
+								{/* Email message. */}
+								<Form.Field name="message">
+									{/* Input. */}
+									<Form.Control asChild>
+										<textarea
+											id="contact"
+											placeholder="Write us a message."
+											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2"
+											required
+										/>
+									</Form.Control>
+
+									{/* Error messages. */}
+									<Form.Message match="valueMissing">
+										<p className="px-2 pt-2 text-pink-400">
+											Enter your message.
+										</p>
+									</Form.Message>
+								</Form.Field>
+							</section>
+
+							{/* Submit. */}
 							<Form.Submit asChild>
 								<section className="flex justify-end">
 									<Button
@@ -128,7 +164,6 @@ export default function Footer() {
 										buttonWidth="w-40"
 										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
 										buttonType="submit"
-										// buttonOnClick=
 									/>
 								</section>
 							</Form.Submit>
@@ -148,7 +183,10 @@ export default function Footer() {
 
 								try {
 									// Subscribe to the newsletter.
-									const savedEmail = await subscribeToNewsletter(email)
+									const savedEmail = await subscribeToNewsletter(
+										email,
+										"cimiNewsletterSubscriber",
+									)
 
 									// Update the success state.
 									setNewsletterSubscriptionSuccess(savedEmail)
@@ -162,14 +200,12 @@ export default function Footer() {
 							className="space-y-2"
 						>
 							<Form.Field name="email">
-								{/* Label. */}
+								{/* Label and input. */}
 								<Form.Label>
 									<p className="text-left font-ancho font-bold text-2xl lg:text-right">
 										Sign up for the CIMI newsletter
 									</p>
 								</Form.Label>
-
-								{/* Input. */}
 								<Form.Control asChild>
 									<input
 										type="email"
@@ -181,17 +217,19 @@ export default function Footer() {
 
 								{/* Error messages. */}
 								<Form.Message match="valueMissing">
-									<p className="px-2 pt-2 text-pink-200">Enter an email.</p>
+									<p className="px-2 pt-2 text-pink-400">
+										Enter your email address.
+									</p>
 								</Form.Message>
 								<Form.Message match="typeMismatch">
-									<p className="px-2 pt-2 text-pink-200">
+									<p className="px-2 pt-2 text-pink-400">
 										Enter a valid email.
 									</p>
 								</Form.Message>
 
 								{/* Success message. */}
 								{newsletterSubscriptionSuccess && (
-									<p className="px-2 pt-2 text-green-200">
+									<p className="px-2 pt-2 text-green-400">
 										You subscribed {newsletterSubscriptionSuccess}. Thank you!
 									</p>
 								)}
