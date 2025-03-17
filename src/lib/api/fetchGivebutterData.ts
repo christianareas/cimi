@@ -24,14 +24,6 @@ export default async function fetchGivebutterData(
 		},
 	}
 
-	// POST options.
-	if (method === "POST" && body) {
-		options = {
-			...options,
-			body: JSON.stringify(body),
-		}
-	}
-
 	// Fetch and validate.
 	async function fetchAndValidate(url: string) {
 		try {
@@ -75,7 +67,13 @@ export default async function fetchGivebutterData(
 	}
 
 	// POST.
-	if (method === "POST") {
+	if (method === "POST" && body) {
+		// POST options.
+		options = {
+			...options,
+			body: JSON.stringify(body),
+		}
+
 		return await fetchAndValidate(`${baseUrl}${endpoint}`)
 	}
 }

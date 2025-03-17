@@ -15,10 +15,32 @@ export default function Footer() {
 	// Set the initial state.
 	const [newsletterSubscriptionSuccess, setNewsletterSubscriptionSuccess] =
 		useState()
+	const [sendEmailSuccess, setSendEmailSuccess] = useState()
+
+	// Send an email to CIMI.
+	async function sendEmail(
+		toEmail: string,
+		fromEmail: string,
+		subject: string,
+		message: string,
+	) {
+		const { senderEmail } = await fetchData({
+			method: "POST",
+			endpoint: "/api/sendGrid",
+			body: {
+				toEmail,
+				fromEmail,
+				subject,
+				message,
+			},
+			cache: "no-cache",
+		})
+
+		return senderEmail
+	}
 
 	// Subscribe to the newsletter.
 	async function subscribeToNewsletter(email: string, tag: string) {
-		// Fetch the donation URL.
 		const { primaryEmail } = await fetchData({
 			method: "POST",
 			endpoint: "/api/givebutterContacts",
@@ -102,7 +124,38 @@ export default function Footer() {
 
 					{/* Contact form. */}
 					<article className="w-full max-w-md lg:flex-1">
-						<Form.Root className="space-y-2">
+						<Form.Root
+							onSubmit={async (event) => {
+								event.preventDefault()
+								const form = event.currentTarget
+
+								// Get the email.
+								const formData = new FormData(event.currentTarget)
+								const toEmail = "me@areas.me"
+								const fromEmail = formData.get("from") as string
+								const subject = `CIMI Website Message from ${fromEmail}`
+								const message = formData.get("message") as string
+
+								try {
+									// Send an email to CIMI.
+									const senderEmail = await sendEmail(
+										toEmail,
+										fromEmail,
+										subject,
+										message,
+									)
+
+									// Update the success state.
+									setSendEmailSuccess(senderEmail)
+
+									// Reset the form.
+									form.reset()
+								} catch (error) {
+									console.error(error)
+								}
+							}}
+							className="space-y-2"
+						>
 							<section>
 								<p className="rounded-t-lg border-cimi-cream border-x border-t p-2">
 									TO: info@runningwithcimi.org
@@ -154,6 +207,14 @@ export default function Footer() {
 										</p>
 									</Form.Message>
 								</Form.Field>
+
+								{/* Success message. */}
+								{sendEmailSuccess && (
+									<section className="space-y-2 px-2 pt-2 text-green-400">
+										<p>Thank you for your message!</p>
+										<p>We’ll reply to you at {sendEmailSuccess}.</p>
+									</section>
+								)}
 							</section>
 
 							{/* Submit. */}

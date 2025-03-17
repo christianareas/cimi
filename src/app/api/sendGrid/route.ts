@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 		// Send the email.
 		await sgMail.send(emailMessage)
 
-		return NextResponse.json({ fromEmail }, { status: 200 })
+		return NextResponse.json({ senderEmail: fromEmail }, { status: 200 })
 	} catch (error) {
 		console.error(error)
 		return NextResponse.json(
