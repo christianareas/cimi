@@ -1,6 +1,3 @@
 # CIMI
 
-## Potential Back-End Integrations
-
-- Stripe
-- Eventbrite
+Welcome to CIMI’s GitHub!

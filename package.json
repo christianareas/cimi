@@ -17,9 +17,10 @@
 		"update:markdown": "npm i react-markdown@latest rehype-raw@latest remark-gfm@latest",
 		"update:html": "npm i html-react-parser@latest",
 		"update:stripe": "npm i stripe@latest",
+		"update:sendgrid": "npm i @sendgrid/mail@latest",
 		"update:eslint": "npm i -D eslint@latest eslint-config-next@latest",
 		"update:biome": "npm i -D @biomejs/biome@latest",
-		"update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:radix && npm run update:markdown && npm run update:html && npm run update:stripe && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
+		"update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:radix && npm run update:markdown && npm run update:html && npm run update:stripe && npm run update:sendgrid && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
 	},
 	"dependencies": {
 		"@radix-ui/react-collapsible": "^1.1.3",
@@ -30,8 +31,9 @@
 		"@radix-ui/react-select": "^2.1.6",
 		"@radix-ui/react-tabs": "^1.1.3",
 		"@radix-ui/react-visually-hidden": "^1.1.2",
+		"@sendgrid/mail": "^8.1.4",
 		"html-react-parser": "^5.2.2",
-		"next": "^15.2.2",
+		"next": "^15.2.3",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"react-markdown": "^10.1.0",
@@ -41,14 +43,14 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@tailwindcss/postcss": "^4.0.13",
+		"@tailwindcss/postcss": "^4.0.14",
 		"@types/node": "^22.13.10",
-		"@types/react": "^19.0.10",
+		"@types/react": "^19.0.11",
 		"@types/react-dom": "^19.0.4",
 		"autoprefixer": "^10.4.21",
 		"eslint": "^9.22.0",
-		"eslint-config-next": "^15.2.2",
-		"tailwindcss": "^4.0.13",
+		"eslint-config-next": "^15.2.3",
+		"tailwindcss": "^4.0.14",
 		"typescript": "^5.8.2"
 	}
 }

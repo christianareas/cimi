@@ -1,4 +1,8 @@
+"use client"
+
 // Dependencies.
+import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 import ContentCard from "@/components/Shared/ContentCard"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import Link from "next/link"
@@ -8,6 +12,45 @@ import Button from "@/components/Shared/Button"
 
 // Component.
 export default function Footer() {
+	// Set the initial state.
+	const [newsletterSubscriptionSuccess, setNewsletterSubscriptionSuccess] =
+		useState()
+	const [sendEmailSuccess, setSendEmailSuccess] = useState()
+
+	// Send an email to CIMI.
+	async function sendEmail(
+		toEmail: string,
+		fromEmail: string,
+		subject: string,
+		message: string,
+	) {
+		const { senderEmail } = await fetchData({
+			method: "POST",
+			endpoint: "/api/sendGrid",
+			body: {
+				toEmail,
+				fromEmail,
+				subject,
+				message,
+			},
+			cache: "no-cache",
+		})
+
+		return senderEmail
+	}
+
+	// Subscribe to the newsletter.
+	async function subscribeToNewsletter(email: string, tag: string) {
+		const { primaryEmail } = await fetchData({
+			method: "POST",
+			endpoint: "/api/givebutterContacts",
+			body: { email, tag },
+			cache: "no-cache",
+		})
+
+		return primaryEmail
+	}
+
 	// Render.
 	return (
 		<footer className="fade">
@@ -81,25 +124,100 @@ export default function Footer() {
 
 					{/* Contact form. */}
 					<article className="w-full max-w-md lg:flex-1">
-						<Form.Root className="space-y-2">
-							<Form.Field name="message">
-								<Form.Label>
-									<p className="rounded-t-lg border border-cimi-cream p-2">
-										TO: info@runningwithcimi.org
+						<Form.Root
+							onSubmit={async (event) => {
+								event.preventDefault()
+								const form = event.currentTarget
+
+								// Get the email.
+								const formData = new FormData(event.currentTarget)
+								const toEmail = "me@areas.me"
+								const fromEmail = formData.get("from") as string
+								const subject = `CIMI Website Message from ${fromEmail}`
+								const message = formData.get("message") as string
+
+								try {
+									// Send an email to CIMI.
+									const senderEmail = await sendEmail(
+										toEmail,
+										fromEmail,
+										subject,
+										message,
+									)
+
+									// Update the success state.
+									setSendEmailSuccess(senderEmail)
+
+									// Reset the form.
+									form.reset()
+								} catch (error) {
+									console.error(error)
+								}
+							}}
+							className="space-y-2"
+						>
+							<section>
+								<p className="rounded-t-lg border-cimi-cream border-x border-t p-2">
+									TO: info@runningwithcimi.org
+								</p>
+
+								{/* From email. */}
+								<Form.Field name="from">
+									<section>
+										{/* Input. */}
+										<Form.Control asChild>
+											<input
+												type="email"
+												placeholder="Enter your email."
+												className="w-full border border-cimi-cream border-b-0 p-2"
+												required
+											/>
+										</Form.Control>
+
+										{/* Error messages. */}
+										<Form.Message match="valueMissing">
+											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400">
+												Enter your email address.
+											</p>
+										</Form.Message>
+										<Form.Message match="typeMismatch">
+											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400">
+												Enter a valid email.
+											</p>
+										</Form.Message>
+									</section>
+								</Form.Field>
+
+								{/* Email message. */}
+								<Form.Field name="message">
+									{/* Input. */}
+									<Form.Control asChild>
+										<textarea
+											id="contact"
+											placeholder="Write us a message."
+											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2"
+											required
+										/>
+									</Form.Control>
+
+									{/* Error messages. */}
+									<Form.Message match="valueMissing">
+										<p className="px-2 pt-2 text-pink-400">
+											Enter your message.
+										</p>
+									</Form.Message>
+								</Form.Field>
+
+								{/* Success message. */}
+								{sendEmailSuccess && (
+									<p className="px-2 pt-2 text-green-400">
+										Thank you for your message! We’ll reply to you at{" "}
+										{sendEmailSuccess}.
 									</p>
-								</Form.Label>
-								<Form.Control asChild>
-									<textarea
-										id="contact"
-										placeholder="Write us a message."
-										className="h-16 w-full rounded-b-lg border border-cimi-cream border-t-0 bg-cimi-purple p-2"
-										required
-									/>
-								</Form.Control>
-								<Form.Message match="valueMissing">
-									<p className="px-2 pt-2 text-pink-200">Enter a message.</p>
-								</Form.Message>
-							</Form.Field>
+								)}
+							</section>
+
+							{/* Submit. */}
 							<Form.Submit asChild>
 								<section className="flex justify-end">
 									<Button
@@ -107,7 +225,6 @@ export default function Footer() {
 										buttonWidth="w-40"
 										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
 										buttonType="submit"
-										// buttonOnClick=
 									/>
 								</section>
 							</Form.Submit>
@@ -116,8 +233,35 @@ export default function Footer() {
 
 					{/* Newsletter form. */}
 					<article className="w-full max-w-md lg:flex-1">
-						<Form.Root className="space-y-2">
+						<Form.Root
+							onSubmit={async (event) => {
+								event.preventDefault()
+								const form = event.currentTarget
+
+								// Get the email.
+								const formData = new FormData(event.currentTarget)
+								const email = formData.get("email") as string
+
+								try {
+									// Subscribe to the newsletter.
+									const savedEmail = await subscribeToNewsletter(
+										email,
+										"cimiNewsletterSubscriber",
+									)
+
+									// Update the success state.
+									setNewsletterSubscriptionSuccess(savedEmail)
+
+									// Reset the form.
+									form.reset()
+								} catch (error) {
+									console.error(error)
+								}
+							}}
+							className="space-y-2"
+						>
 							<Form.Field name="email">
+								{/* Label and input. */}
 								<Form.Label>
 									<p className="text-left font-ancho font-bold text-2xl lg:text-right">
 										Sign up for the CIMI newsletter
@@ -131,15 +275,28 @@ export default function Footer() {
 										required
 									/>
 								</Form.Control>
+
+								{/* Error messages. */}
 								<Form.Message match="valueMissing">
-									<p className="px-2 pt-2 text-pink-200">Enter an email.</p>
+									<p className="px-2 pt-2 text-pink-400">
+										Enter your email address.
+									</p>
 								</Form.Message>
-								<Form.Message className="FormMessage" match="typeMismatch">
-									<p className="px-2 pt-2 text-pink-200">
+								<Form.Message match="typeMismatch">
+									<p className="px-2 pt-2 text-pink-400">
 										Enter a valid email.
 									</p>
 								</Form.Message>
+
+								{/* Success message. */}
+								{newsletterSubscriptionSuccess && (
+									<p className="px-2 pt-2 text-green-400">
+										You subscribed {newsletterSubscriptionSuccess}. Thank you!
+									</p>
+								)}
 							</Form.Field>
+
+							{/* Submit. */}
 							<Form.Submit asChild>
 								<section className="flex justify-end">
 									<Button
@@ -147,7 +304,6 @@ export default function Footer() {
 										buttonWidth="w-40"
 										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
 										buttonType="submit"
-										// buttonOnClick=
 									/>
 								</section>
 							</Form.Submit>
