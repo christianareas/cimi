@@ -7,7 +7,7 @@ import filterMapAndSaveCampaigns from "@/lib/api/filterMapAndSaveCampaigns"
 export async function GET() {
 	try {
 		// Fetch.
-		const response = await fetchGivebutterData("/campaigns")
+		const response = await fetchGivebutterData("GET", "/campaigns")
 
 		// Filter and map.
 		const campaigns = await filterMapAndSaveCampaigns(response.data)

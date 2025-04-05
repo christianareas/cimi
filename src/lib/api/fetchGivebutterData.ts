@@ -1,5 +1,9 @@
 // Fetch Givebutter data.
-export default async function fetchGivebutterData(endpoint: string) {
+export default async function fetchGivebutterData(
+	method: "GET" | "POST",
+	endpoint: string,
+	body?: object,
+) {
 	// Base URL.
 	const baseUrl = "https://api.givebutter.com/v1"
 
@@ -11,47 +15,65 @@ export default async function fetchGivebutterData(endpoint: string) {
 		)
 	}
 
-	try {
-		// Set up the loop.
+	// GET options.
+	let options: RequestInit = {
+		method,
+		headers: {
+			Authorization: `Bearer ${apiKey}`,
+			"Content-Type": "application/json",
+		},
+	}
+
+	// Fetch and validate.
+	async function fetchAndValidate(url: string) {
+		try {
+			// Fetch.
+			const response = await fetch(url, options)
+
+			// If the response is not okay, return an error.
+			if (!response.ok) {
+				throw new Error(`${url} ${response.status} ${response.statusText}`)
+			}
+
+			// Otherwise, return the response.
+			return await response.json()
+		} catch (error) {
+			console.error(error)
+			return { data: [] }
+		}
+	}
+
+	// GET (with pagination).
+	if (method === "GET") {
 		let currentPage = 1
 		const data = []
 
 		while (true) {
-			// Fetch the data.
-			const response = await fetch(
+			const response = await fetchAndValidate(
 				`${baseUrl}${endpoint}?page=${currentPage}`,
-				{
-					method: "GET",
-					headers: {
-						Authorization: `Bearer ${apiKey}`,
-						"Content-Type": "application/json",
-					},
-				},
 			)
 
-			// If the response is not okay, return an error.
-			if (!response.ok) {
-				throw new Error(
-					`${baseUrl}${endpoint} ${response.status} ${response.statusText}`,
-				)
-			}
-
-			// Parse the response.
-			const responseBody = await response.json()
-
 			// Push the data.
-			data.push(...responseBody.data)
+			data.push(...response.data)
 
 			// If there are no more pages, exit the loop.
-			if (currentPage >= responseBody.meta.last_page) break
+			if (currentPage >= response.meta.last_page) break
 
 			// Otherwise, loop through the next page.
 			currentPage++
 		}
 
 		return { data }
-	} catch (error) {
-		console.error(error)
-		return { data: [] }
+	}
+
+	// POST.
+	if (method === "POST" && body) {
+		// POST options.
+		options = {
+			...options,
+			body: JSON.stringify(body),
+		}
+
+		return await fetchAndValidate(`${baseUrl}${endpoint}`)
 	}
 }
