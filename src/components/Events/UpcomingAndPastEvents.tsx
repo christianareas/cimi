@@ -159,7 +159,7 @@ export default function UpcomingAndPastEvents() {
 									</h4>
 								) : null}
 
-								<section className="pt-4 pb-10">
+								<section className="mt-4 mb-8 line-clamp-3 space-y-4 lg:line-clamp-5">
 									{campaign.eventDetails}
 								</section>
 
