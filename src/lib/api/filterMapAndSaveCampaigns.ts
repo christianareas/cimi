@@ -67,6 +67,14 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			campaignCoverUrl: campaign.cover?.url || null,
 			campaignCoverEmbedUrl: campaign.cover?.embed_url || null,
 			campaignDescription: campaign.description,
+			campaignDescriptionSimplified: campaign.description
+				? campaign.description
+						.replace(/<[^>]*>/g, "")
+						.replace(/&nbsp;/g, " ")
+						.replace(/\n/g, " ")
+						.replace(/\s\s+/g, " ")
+						.trim()
+				: null,
 			campaignCode: campaign.code,
 			campaignSlug: campaign.slug,
 			campaignUrl: campaign.url,
@@ -88,6 +96,12 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			eventType: campaign.event?.type || null,
 			eventTitle: campaign.event?.title || null,
 			eventDetails: campaign.event?.details || null,
+			eventDetailsSimplified: campaign.event?.details
+				? campaign.event.details
+						.replace(/\n/g, " ")
+						.replace(/\s\s+/g, " ")
+						.trim()
+				: null,
 			eventPrivate: campaign.event?.private || null,
 			eventTicketsRequired: campaign.event?.tickets_required || null,
 			eventAddress: campaign.event?.location_name || null,

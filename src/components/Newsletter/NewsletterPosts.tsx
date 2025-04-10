@@ -81,8 +81,8 @@ export default function NewsletterPosts() {
 									</h4>
 								) : null}
 
-								<section className="pt-4 pb-10">
-									{parse(campaign.campaignDescription)}
+								<section className="mt-4 mb-8 line-clamp-3 space-y-4 lg:line-clamp-5">
+									{parse(campaign.campaignDescriptionSimplified)}
 								</section>
 
 								<Button
