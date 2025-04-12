@@ -72,9 +72,11 @@ export default function NewsletterPosts() {
 							</section>
 
 							<section className="lg:w-1/2 lg:pl-10">
-								<h3 className="font-ancho font-bold text-cimi-purple text-xl">
-									{campaign.campaignTitle}
-								</h3>
+								<Link href={campaign.campaignUrl}>
+									<h3 className="font-ancho font-bold text-cimi-purple text-xl">
+										{campaign.campaignTitle}
+									</h3>
+								</Link>
 
 								{campaign.campaignEndAt ? (
 									<h4 className="font-ancho font-medium text-cimi-purple">
