@@ -1,4 +1,6 @@
-export const initialCampaigns = [
+import type { FilteredAndMappedCampaign } from "@/lib/api/filterMapAndSaveCampaigns"
+
+export const initialCampaigns: FilteredAndMappedCampaign[] = [
 	{
 		campaignId: 394066,
 		campaignAccountId: "S9FZBTWfOHWHZ0Eo",

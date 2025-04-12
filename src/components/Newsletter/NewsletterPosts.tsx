@@ -35,7 +35,8 @@ export default function NewsletterPosts() {
 	// Sort campaigns.
 	const sortedCampaigns = [...campaigns].sort((a, b) => {
 		return (
-			new Date(b.campaignEndAt).getTime() - new Date(a.campaignEndAt).getTime()
+			(b.campaignEndAt ? new Date(b.campaignEndAt).getTime() : 0) -
+			(a.campaignEndAt ? new Date(a.campaignEndAt).getTime() : 0)
 		)
 	})
 
@@ -81,9 +82,11 @@ export default function NewsletterPosts() {
 									</h4>
 								) : null}
 
-								<section className="mt-4 mb-8 line-clamp-3 space-y-4 lg:line-clamp-5">
-									{parse(campaign.campaignDescriptionSimplified)}
-								</section>
+								{campaign.campaignDescriptionSimplified ? (
+									<section className="mt-4 mb-8 line-clamp-3 space-y-4 lg:line-clamp-5">
+										{parse(campaign.campaignDescriptionSimplified)}
+									</section>
+								) : null}
 
 								<Button
 									buttonText="Learn More"
