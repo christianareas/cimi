@@ -45,11 +45,53 @@ interface Event {
 	livestream_end_at: string | null
 }
 
+export interface FilteredAndMappedCampaign {
+	campaignId: number
+	campaignAccountId: string
+	campaignType: string
+	campaignTitle: string
+	campaignSubtitle: string | null
+	campaignCoverType: string | null
+	campaignCoverSource: string | null
+	campaignCoverUrl: string | null
+	campaignCoverEmbedUrl: string | null
+	campaignDescription: string | null
+	campaignDescriptionSimplified: string | null
+	campaignCode: string
+	campaignSlug: string
+	campaignUrl: string
+	campaignCurrency: string
+	campaignGoal: number | null
+	campaignRaised: number
+	campaignDonors: number
+	campaignTimezone: string
+	campaignCreatedAt: string | null
+	campaignUpdatedAt: string | null
+	campaignEndAt: string | null
+	eventId: number | null
+	eventType: string | null
+	eventTitle: string | null
+	eventDetails: string | null
+	eventDetailsSimplified: string | null
+	eventPrivate: boolean | null
+	eventTicketsRequired: boolean | null
+	eventAddress: string | null
+	eventAddressFormatted: string | null
+	eventGooglePlaceId: string | null
+	eventTimezone: string | null
+	eventStartAt: string | null
+	eventEndAt: string | null
+	eventUpcoming: boolean | null
+	eventLivestream: string | null
+	eventLivestreamStartAt: string | null
+	eventLivestreamEndAt: string | null
+}
+
 // Filter, map, and save campaign events.
 export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 	// Filter and map.
 	const now = new Date()
-	const campaigns = data
+	const campaigns: FilteredAndMappedCampaign[] = data
 		.filter(
 			(campaign) =>
 				campaign.status === "active" &&
@@ -67,6 +109,14 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			campaignCoverUrl: campaign.cover?.url || null,
 			campaignCoverEmbedUrl: campaign.cover?.embed_url || null,
 			campaignDescription: campaign.description,
+			campaignDescriptionSimplified: campaign.description
+				? campaign.description
+						.replace(/<[^>]*>/g, "")
+						.replace(/&nbsp;/g, " ")
+						.replace(/\n/g, " ")
+						.replace(/\s\s+/g, " ")
+						.trim()
+				: null,
 			campaignCode: campaign.code,
 			campaignSlug: campaign.slug,
 			campaignUrl: campaign.url,
@@ -88,6 +138,12 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			eventType: campaign.event?.type || null,
 			eventTitle: campaign.event?.title || null,
 			eventDetails: campaign.event?.details || null,
+			eventDetailsSimplified: campaign.event?.details
+				? campaign.event.details
+						.replace(/\n/g, " ")
+						.replace(/\s\s+/g, " ")
+						.trim()
+				: null,
 			eventPrivate: campaign.event?.private || null,
 			eventTicketsRequired: campaign.event?.tickets_required || null,
 			eventAddress: campaign.event?.location_name || null,
@@ -120,7 +176,7 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 					process.cwd(),
 					"/src/data/content/events/initialCampaigns.ts",
 				),
-				`export const initialCampaigns = ${JSON.stringify(campaigns, null, 2)}`,
+				`import type { FilteredAndMappedCampaign } from "@/lib/api/filterMapAndSaveCampaigns"\n\nexport const initialCampaigns: FilteredAndMappedCampaign[] = ${JSON.stringify(campaigns, null, 2)}`,
 				"utf8",
 			)
 		} catch (error) {
