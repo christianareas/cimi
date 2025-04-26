@@ -118,7 +118,7 @@ export default function Footer() {
 							<p>
 								<a href="tel:+14088762767">+1 (408) 876-2767</a>
 							</p>
-							<p>CIMI, PO Box 1743, Los Gatos CA 95031-1743</p>
+							<p>CIMI, PO Box 194, Cupertino CA 95015</p>
 						</section>
 					</article>
 
