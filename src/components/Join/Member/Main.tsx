@@ -14,11 +14,16 @@ export default function Main() {
 	const [signUpSuccess, setSignUpSuccess] = useState()
 
 	// Sign up.
-	async function signUp(email: string, tag: string) {
+	async function signUp(
+		firstName: string,
+		lastName: string,
+		email: string,
+		tag: string,
+	) {
 		const { primaryEmail } = await fetchData({
 			method: "POST",
 			endpoint: "/api/givebutterContacts",
-			body: { email, tag },
+			body: { firstName, lastName, email, tag },
 			cache: "no-cache",
 		})
 
@@ -70,10 +75,17 @@ export default function Main() {
 									// Get the email.
 									const formData = new FormData(event.currentTarget)
 									const email = formData.get("email") as string
+									const firstName = formData.get("firstName") as string
+									const lastName = formData.get("lastName") as string
 
 									try {
 										// Subscribe to the newsletter.
-										const savedEmail = await signUp(email, "cimiMember")
+										const savedEmail = await signUp(
+											firstName,
+											lastName,
+											email,
+											"cimiMember",
+										)
 
 										// Update the success state.
 										setSignUpSuccess(savedEmail)
@@ -148,18 +160,13 @@ export default function Main() {
 											Enter a valid email.
 										</p>
 									</Form.Message>
-								</Form.Field>
 
-								{/* Note. */}
-								<Form.Field name="note">
-									{/* Input. */}
-									<Form.Control asChild>
-										<textarea
-											id="contact"
-											placeholder="(Optional) Write us a note."
-											className="h-28 w-full rounded-lg border border-cimi-blue p-2"
-										/>
-									</Form.Control>
+									{/* Success message. */}
+									{signUpSuccess && (
+										<p className="px-2 pt-2 text-green-400">
+											You signed up {signUpSuccess}. Thank you!
+										</p>
+									)}
 								</Form.Field>
 
 								{/* Submit. */}

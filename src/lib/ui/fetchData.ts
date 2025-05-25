@@ -5,6 +5,7 @@ interface FetchDataTypes {
 	body?:
 		| { donationAmount: number }
 		| { email: string; tag: string }
+		| { firstName: string; lastName: string; email: string; tag: string }
 		| { toEmail: string; fromEmail: string; subject: string; message: string }
 	cache: "cache" | "no-cache"
 }
