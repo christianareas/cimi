@@ -8,7 +8,9 @@ CIMI’s a nonprofit whose mission is to **empower women of all ages** to:
 
 To learn more, see [runwithcimi.org](https://runwithcimi.org).
 
-The CIMI GitHub repository is a modern website that list events, accepts donations, and join as a member or volunteer. Under the hood, it’s a React.js + Next.js + Radix project that’s integrated with the following services:
+---
+
+The CIMI GitHub repository is a modern website that list events, accepts donations, and lets people join as a member or volunteer. Under the hood, it’s a React.js + Next.js + Radix project that’s integrated with the following services:
 
 - [Givebutter](https://givebutter.com)
 - [Stripe](https://stripe.com)
