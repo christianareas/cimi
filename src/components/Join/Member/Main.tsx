@@ -16,8 +16,8 @@ export default function Main() {
 				fontClassName="font-medium"
 			/>
 
-			{/* Become a Volunteer Today. */}
-			<SignUpForm />
+			{/* Become a Member Today. */}
+			<SignUpForm become="member" />
 
 			{/* Volunteer FAQs. */}
 			<Faqs

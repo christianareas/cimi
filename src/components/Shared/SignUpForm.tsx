@@ -6,10 +6,34 @@ import * as Dialog from "@radix-ui/react-dialog"
 import * as Form from "@radix-ui/react-form"
 import { useState } from "react"
 
+// Types.
+interface SignUpFormProps {
+	become: "member" | "volunteer"
+}
+
 // Component.
-export default function SignUpForm() {
+export default function SignUpForm({ become }: SignUpFormProps) {
 	// Set the initial state.
+	const [open, setOpen] = useState(false)
 	const [signUpSuccess, setSignUpSuccess] = useState()
+
+	//
+	const memberVolunteer = {
+		member: {
+			heading: "Become a Member Today",
+			tag: "cimiMember",
+			borderColor: "border-cimi-blue",
+			textColor: "text-cimi-blue",
+			shadowColor: "shadow-cimi-blue",
+		},
+		volunteer: {
+			heading: "Become a Volunteer Today",
+			tag: "cimiVolunteer",
+			borderColor: "border-cimi-green",
+			textColor: "text-cimi-green",
+			shadowColor: "shadow-cimi-green",
+		},
+	}[become]
 
 	// Sign up.
 	async function signUp(
@@ -31,17 +55,25 @@ export default function SignUpForm() {
 	// Render.
 	return (
 		<article className="pb-10 text-center sm:pb-20">
-			<h2 className="mx-auto w-60 pb-2 font-ancho font-bold text-2xl text-cimi-blue sm:pb-5">
-				Become a Member Today
+			<h2
+				className={`mx-auto w-60 pb-2 font-ancho font-bold text-2xl sm:pb-5 ${memberVolunteer.textColor}`}
+			>
+				{memberVolunteer.heading}
 			</h2>
 
 			{/* Sign up button and dialog. */}
-			<Dialog.Root>
+			<Dialog.Root
+				open={open}
+				onOpenChange={(open) => {
+					if (!open) setSignUpSuccess(undefined)
+					setOpen(open)
+				}}
+			>
 				{/* Sign up button. */}
 				<Dialog.Trigger asChild>
 					<button
 						type="button"
-						className="w-40 cursor-pointer rounded-lg border-2 border-cimi-blue bg-cimi-cream px-2 py-3 text-center font-ancho font-normal text-cimi-blue text-xs shadow-[4px_4px_0] shadow-cimi-blue"
+						className={`w-40 cursor-pointer rounded-lg border-2 bg-cimi-cream px-2 py-3 text-center font-ancho font-normal text-xs shadow-[4px_4px_0] ${memberVolunteer.borderColor} ${memberVolunteer.textColor} ${memberVolunteer.shadowColor}`}
 					>
 						Sign Up
 					</button>
@@ -51,8 +83,10 @@ export default function SignUpForm() {
 				<Dialog.Portal>
 					<Dialog.Overlay className="fixed inset-0 flex items-center justify-center bg-black p-5 opacity-50 sm:p-10" />
 					<Dialog.Content className="-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 max-h-[90vh] w-[90vw] max-w-2xl rounded-lg bg-cimi-cream px-5 py-10 shadow-lg sm:px-10 sm:py-20">
-						<Dialog.Title className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-blue">
-							Become a Member Today
+						<Dialog.Title
+							className={`pb-5 text-center font-ancho font-bold text-2xl ${memberVolunteer.textColor}`}
+						>
+							{memberVolunteer.heading}
 						</Dialog.Title>
 						<Form.Root
 							className="space-y-5"
@@ -72,7 +106,7 @@ export default function SignUpForm() {
 										firstName,
 										lastName,
 										email,
-										"cimiMember",
+										memberVolunteer.tag,
 									)
 
 									// Update the success state.
@@ -92,7 +126,7 @@ export default function SignUpForm() {
 									<input
 										type="text"
 										placeholder="Enter your first name."
-										className="w-full rounded-lg border border-cimi-blue p-2"
+										className={`w-full rounded-lg border p-2 ${memberVolunteer.borderColor}`}
 										required
 									/>
 								</Form.Control>
@@ -112,7 +146,7 @@ export default function SignUpForm() {
 									<input
 										type="text"
 										placeholder="Enter your last name."
-										className="w-full rounded-lg border border-cimi-blue p-2"
+										className={`w-full rounded-lg border p-2 ${memberVolunteer.borderColor}`}
 										required
 									/>
 								</Form.Control>
@@ -132,7 +166,7 @@ export default function SignUpForm() {
 									<input
 										type="email"
 										placeholder="Enter your email."
-										className="w-full rounded-lg border border-cimi-blue p-2"
+										className={`w-full rounded-lg border p-2 ${memberVolunteer.borderColor}`}
 										required
 									/>
 								</Form.Control>
@@ -162,7 +196,7 @@ export default function SignUpForm() {
 								<section className="flex justify-end">
 									<button
 										type="submit"
-										className="w-40 cursor-pointer rounded-lg border-2 border-cimi-blue bg-cimi-cream px-2 py-3 text-center font-ancho font-normal text-cimi-blue text-xs shadow-[4px_4px_0] shadow-cimi-blue"
+										className={`w-40 cursor-pointer rounded-lg border-2 bg-cimi-cream px-2 py-3 text-center font-ancho font-normal text-xs shadow-[4px_4px_0] ${memberVolunteer.borderColor} ${memberVolunteer.textColor} ${memberVolunteer.shadowColor}`}
 									>
 										Sign Up
 									</button>

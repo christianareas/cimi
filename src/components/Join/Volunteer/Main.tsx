@@ -1,7 +1,7 @@
 // Dependencies.
 import ContentCard from "@/components/Shared/ContentCard"
-import Button from "@/components/Shared/Button"
 import Faqs from "@/components/Shared/Faqs"
+import SignUpForm from "@/components/Shared/SignUpForm"
 
 // Component.
 export default function Main() {
@@ -17,18 +17,7 @@ export default function Main() {
 			/>
 
 			{/* Become a Volunteer Today. */}
-			<article className="pb-10 text-center sm:pb-20">
-				<h2 className="mx-auto w-80 pb-2 font-ancho font-bold text-2xl text-cimi-green sm:pb-5">
-					Become a Volunteer Today
-				</h2>
-				<Button
-					buttonText="Sign Up"
-					buttonLink=""
-					buttonWidth="w-40"
-					buttonClassNames="border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-green"
-					buttonType="button"
-				/>
-			</article>
+			<SignUpForm become="volunteer" />
 
 			{/* Volunteer FAQs. */}
 			<Faqs
