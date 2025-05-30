@@ -47,7 +47,7 @@ export const milestones: Milestone[] = [
 		milestoneImagePosition: "object-[50%_35%]",
 		milestoneTitle:
 			"CIMI sponsored 10 girls to participate in a Google Robotics workshop.",
-		milestoneYear: "2021",
+		milestoneYear: "2018",
 		milestoneContent:
 			"Coming from underserved communities, these girls were able to participate in the Girl Powered VEX Robotics Workshop at the Google Event Center. They learned about designing, building, and programming robots in a sold-out event with 550 participants.",
 	},
@@ -58,7 +58,7 @@ export const milestones: Milestone[] = [
 		milestoneImagePosition: "object-center",
 		milestoneTitle:
 			"CIMI started an initiative to provide technology to girls in need.",
-		milestoneYear: "YYYY",
+		milestoneYear: "2017",
 		milestoneContent:
 			"In partnership with the Computer History Museum in Mountain View, California, CIMI created the Design_Code_Bootcamp at the Computer History Museum to provide girls in grades 6 through 8 with an opportunity to participate in engaging, hands-on STEAM (science, technology, engineering, arts, math) workshops.",
 	},
