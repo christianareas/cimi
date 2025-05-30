@@ -47,7 +47,7 @@ export const milestones: Milestone[] = [
 		milestoneImagePosition: "object-[50%_35%]",
 		milestoneTitle:
 			"CIMI sponsored 10 girls to participate in a Google Robotics workshop.",
-		milestoneYear: "YYYY",
+		milestoneYear: "2021",
 		milestoneContent:
 			"Coming from underserved communities, these girls were able to participate in the Girl Powered VEX Robotics Workshop at the Google Event Center. They learned about designing, building, and programming robots in a sold-out event with 550 participants.",
 	},
