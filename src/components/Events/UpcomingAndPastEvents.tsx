@@ -147,9 +147,11 @@ export default function UpcomingAndPastEvents() {
 							</section>
 
 							<section className="lg:w-1/2 lg:pl-10">
-								<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
-									{campaign.eventTitle}
-								</h3>
+								<Link href={campaign.campaignUrl}>
+									<h3 className="font-ancho font-bold text-cimi-red-orange text-xl">
+										{campaign.eventTitle}
+									</h3>
+								</Link>
 
 								{campaign.eventStartAt ? (
 									<h4 className="font-ancho font-medium text-cimi-red-orange">
@@ -159,7 +161,7 @@ export default function UpcomingAndPastEvents() {
 									</h4>
 								) : null}
 
-								<section className="pt-4 pb-10">
+								<section className="mt-4 mb-8 line-clamp-3 space-y-4 lg:line-clamp-5">
 									{campaign.eventDetails}
 								</section>
 
