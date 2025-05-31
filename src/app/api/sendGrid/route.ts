@@ -1,6 +1,6 @@
 // Dependencies.
-import { NextResponse } from "next/server"
 import sgMail from "@sendgrid/mail"
+import { NextResponse } from "next/server"
 
 // POST request.
 export async function POST(request: Request) {
