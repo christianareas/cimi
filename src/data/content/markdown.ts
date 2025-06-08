@@ -45,7 +45,7 @@ export const markdown = {
 			"5": "## I want to **tutor** elementary, middle, or high school students in CIMI.\n\nCIMI is happy to connect children and young adults with mentors to further their educational journey. Send us an email at [hello@runwithcimi.org](mailto:hello@runwithcimi.org) to see how you can help!\n",
 			"6": "## I want to become a **corporate sponsor** of CIMI.\n\nCIMI deeply values the opportunities that corporate sponsorships can bring to its members and the community. Send us an email at [hello@runwithcimi.org](mailto:hello@runwithcimi.org) to see how we can work together!\n",
 			"7": "## I want to **participate in Adopt-a-Family** to provide essentials for families in need.\n\nYour generosity will make sure families can celebrate the holiday season with comfort and joy. Find out how you can get involved by sending us an email at [hello@runwithcimi.org](mailto:hello@runwithcimi.org).\n",
-			"8": "## I want to keep up-to-date on CIMI events by **joining the mailing list**.\n\nSubscribe [here](#todo) and check out our past newsletters [here](#todo)!\n",
+			"8": "## I want to keep up-to-date on CIMI events by **joining the mailing list**.\n\nSubscribe [here](#subscribe) and check out our past newsletters [here](/newsletter)!\n",
 		},
 		"get-involved":
 			"## Get Involved!\n\nThere are many ways to get involved with CIMI, such as becoming a member, volunteer, or donor. Let us know how you would like to join our community.\n",
@@ -56,8 +56,8 @@ export const markdown = {
 				"1": "### What kind of activities does CIMI offer?\n\nWe offer a variety of programs for young women and their mothers—plus events for the whole family to enjoy together. \n\n#### Core CIMI programs\n\n- **Exercise for the whole family**\n\t- 0-5k running and walking (no experience necessary!)\n\t- Saturday morning family walks\n- **Empowering classes for moms and daughters**\n\t- Coding classes for girls\n\t- Computer basics courses for moms\n\t- Robotics lessons\n\t- Tutoring\n- **Community-building events**\n\t- Free shoe giveaways\n\t- Holiday events for local families\n\t- Gas card giveaways\n\t- Adopt-a-Family holiday drive\n",
 				"2": "### I don’t have any experience running. Can I still join CIMI?\n\nAbsolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.\n",
 				"3": "### What is the time commitment if I want to join CIMI?\n\nWe ask that you log a minimum of 20 minutes of walking or running, three times per week. We will help you track your activity, and you will be entered to win prizes for logging your time. The tracking system we use is online, so you can even track activity if you are traveling outside the country!\n",
-				"4": "### How do I learn about upcoming CIMI events?\n\nTo learn about upcoming events, sign up for our [newsletter](#todo), follow us on [social media](#todo), and check our [website](#todo) often.\n",
-				"5": "### I am ready to join! How do I become a member? \n\nClick [here](#todo) to join today. We are so excited to start training with you\n",
+				"4": "### How do I learn about upcoming CIMI events?\n\nTo learn about upcoming events, sign up for our [newsletter](/newsletter), follow us on [social media](https://www.facebook.com/RunCIMI/), and check our [website](/) often.\n",
+				"5": "### I am ready to join! How do I become a member? \n\nClick **Sign Up** to join today. We are so excited to start training with you\n",
 			},
 		},
 		volunteer: {
