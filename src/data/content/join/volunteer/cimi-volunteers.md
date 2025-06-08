@@ -1,3 +1,0 @@
-## CIMI Volunteers
-
-CIMI volunteers are professionals driven by a strong desire to elevate the organization. They bring technical and business skills to the table, aiming to take CIMI to new heights. These volunteers are not just supporters; they are **active contributors**, working passionately to help CIMI achieve its mission. Their commitment exemplifies the **impact that individuals can make** when inspired by a powerful vision.

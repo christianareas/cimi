@@ -165,6 +165,7 @@ export default function Footer() {
 										{/* Input. */}
 										<Form.Control asChild>
 											<input
+												id="contact"
 												type="email"
 												placeholder="Enter your email."
 												className="w-full border border-cimi-cream border-b-0 p-2"
@@ -191,7 +192,6 @@ export default function Footer() {
 									{/* Input. */}
 									<Form.Control asChild>
 										<textarea
-											id="contact"
 											placeholder="Write us a message."
 											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2"
 											required
@@ -267,6 +267,7 @@ export default function Footer() {
 								</Form.Label>
 								<Form.Control asChild>
 									<input
+										id="subscribe"
 										type="email"
 										placeholder="Enter your email."
 										className="w-full border-cimi-cream border-b bg-cimi-purple p-2"
