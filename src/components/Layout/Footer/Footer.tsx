@@ -1,14 +1,14 @@
 "use client"
 
 // Dependencies.
-import { useState } from "react"
-import fetchData from "@/lib/ui/fetchData"
-import ContentCard from "@/components/Shared/ContentCard"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
-import Link from "next/link"
-import Image from "next/image"
-import * as Form from "@radix-ui/react-form"
 import Button from "@/components/Shared/Button"
+import ContentCard from "@/components/Shared/ContentCard"
+import fetchData from "@/lib/ui/fetchData"
+import * as Form from "@radix-ui/react-form"
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
 
 // Component.
 export default function Footer() {
@@ -111,9 +111,7 @@ export default function Footer() {
 						<p className="font-ancho font-semibold text-xl">Connect with us!</p>
 						<section className="space-y-1">
 							<p>
-								<a href="mailto:info@runningwithcimi.org">
-									info@runningwithcimi.org
-								</a>
+								<a href="mailto:hello@runwithcimi.org">hello@runwithcimi.org</a>
 							</p>
 							<p>
 								<a href="tel:+14088762767">+1 (408) 876-2767</a>
@@ -131,7 +129,7 @@ export default function Footer() {
 
 								// Get the email.
 								const formData = new FormData(event.currentTarget)
-								const toEmail = "me@areas.me"
+								const toEmail = "hello@runwithcimi.org"
 								const fromEmail = formData.get("from") as string
 								const subject = `CIMI Website Message from ${fromEmail}`
 								const message = formData.get("message") as string
@@ -158,7 +156,7 @@ export default function Footer() {
 						>
 							<section>
 								<p className="rounded-t-lg border-cimi-cream border-x border-t p-2">
-									TO: info@runningwithcimi.org
+									TO: hello@runwithcimi.org
 								</p>
 
 								{/* From email. */}
@@ -167,6 +165,7 @@ export default function Footer() {
 										{/* Input. */}
 										<Form.Control asChild>
 											<input
+												id="contact"
 												type="email"
 												placeholder="Enter your email."
 												className="w-full border border-cimi-cream border-b-0 p-2"
@@ -193,7 +192,6 @@ export default function Footer() {
 									{/* Input. */}
 									<Form.Control asChild>
 										<textarea
-											id="contact"
 											placeholder="Write us a message."
 											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2"
 											required
@@ -269,6 +267,7 @@ export default function Footer() {
 								</Form.Label>
 								<Form.Control asChild>
 									<input
+										id="subscribe"
 										type="email"
 										placeholder="Enter your email."
 										className="w-full border-cimi-cream border-b bg-cimi-purple p-2"
