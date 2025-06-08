@@ -4,15 +4,6 @@ export const markdown = {
 			"## History of CIMI\n\n**CIMI was founded in 2012 by Aracely Areas**, a software professional with a passion for education and exercise. Aracely originally formed CIMI (“Carrera Internacional de la Mujer Iniciativa” or the “international women’s race initiative”) to organize races and give free entry to women from underserved communities in her home country of Nicaragua. As CIMI grew, Aracely sought to find more ways to positively impact the lives of women of all ages. Today, CIMI serves Latina women and their families across the San Jose area by offering a variety of programs to support physical, mental, educational, and community well-being.\n",
 		intro:
 			"## CIMI's Mission\n\nCIMI’s mission is to **empower** women of all ages to become stronger mentally and physically, **equip** them with necessary technology skills to enter a changing workforce, and **inspire** participants through engaging programs that promote self-esteem and education.\n",
-		milestones: {
-			"1": "### The first CIMI-sponsored race was held in 2013 in Nicaragua.\n\nOver 250 people participated—many of them women who were running for the first time. After completing her first 5k, one woman commented “I never thought I would be able to do something like this.”\n",
-			"2": "## CIMI began a community support program called Adopt-a-Family\n\nDonors are matched to a family they support during the holidays. \n",
-			"3": "## In early 2017, the 5th annual CIMI Nicaragua 5k race took place. \n\nThe event drew nearly 900 runners and 70% of them were women. Races also expanded in San Jose, in addition to educational opportunities. \n",
-			"4": "## CIMI started an initiative to provide technology to girls in need.\n\nIn partnership with the Computer History Museum in Mountain View, California, CIMI created the Design_Code_Bootcamp at the Computer History Museum to provide girls in grades 6 through 8 with an opportunity to participate in engaging, hands-on STEAM (science, technology, engineering, arts, math) workshops.\n",
-			"5": "## CIMI sponsored 10 girls to participate in a Google Robotics workshop. \n\nComing from underserved communities, these girls were able to participate in the Girl Powered VEX Robotics Workshop at the Google Event Center. They learned about designing, building, and programming robots in a sold-out event with 550 participants.\n",
-			"6": "## CIMI pivoted to virtual when COVID-19 hit. \n\nWhile COVID-19 paused large gatherings like races, CIMI   continued their community-centered programs like gas card giveaways and school supply donations and focus on educational programs.\n",
-			"7": "## CIMI’s impact continues to grow. \n\nThe organization now offers physical activities—like volleyball skills workshops, runs, and trail walks—which helps participants gain confidence, manage stress, and build healthy habits. CIMI also offers education programs like coding bootcamps, computer basics classes, robotics, and public speaking opportunities.\n",
-		},
 		"who-is-cimi-made-of":
 			"## Who is CIMI Made Of?\n\nThe CIMI board members are passionate advocates for the organization's core values. They are driven by a shared mission to motivate and empower the community they serve toward greater achievement. Their dedication to CIMI's vision makes the organization a beacon of hope and inspiration, fostering success among the underserved Latinx community in San Jose.\n",
 	},
@@ -66,7 +57,7 @@ export const markdown = {
 				"2": "### I don’t have any experience running. Can I still join CIMI?\n\nAbsolutely! CIMI activities are intended for all experience levels. Most of our participants never ran before joining CIMI and many completed their first 5K with us. We believe that exercise builds confidence, no matter when you start.\n",
 				"3": "### What is the time commitment if I want to join CIMI?\n\nWe ask that you log a minimum of 20 minutes of walking or running, three times per week. We will help you track your activity, and you will be entered to win prizes for logging your time. The tracking system we use is online, so you can even track activity if you are traveling outside the country!\n",
 				"4": "### How do I learn about upcoming CIMI events?\n\nTo learn about upcoming events, sign up for our [newsletter](/newsletter), follow us on [social media](https://www.facebook.com/RunCIMI/), and check our [website](/) often.\n",
-				"5": "### I am ready to join! How do I become a member? \n\nClick <b>Sign Up</b> to join today. We are so excited to start training with you\n",
+				"5": "### I am ready to join! How do I become a member? \n\nClick **Sign Up** to join today. We are so excited to start training with you\n",
 			},
 		},
 		volunteer: {
