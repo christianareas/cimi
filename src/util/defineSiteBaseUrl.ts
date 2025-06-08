@@ -9,11 +9,10 @@ export default function defineSiteBaseUrl() {
 		vercelEnvironment === "development"
 	) {
 		siteBaseUrl = `http://localhost:${process.env.PORT || 3000}`
-	} else if (
-		vercelEnvironment === "preview" ||
-		vercelEnvironment === "production"
-	) {
+	} else if (vercelEnvironment === "preview") {
 		siteBaseUrl = `https://${process.env.VERCEL_URL}`
+	} else if (vercelEnvironment === "production") {
+		siteBaseUrl = "https://runwithcimi.com"
 	} else {
 		console.log(`Node environment: ${nodeEnvironment}`)
 		console.log(`Vercel environment: ${vercelEnvironment}`)
