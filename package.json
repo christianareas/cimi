@@ -1,6 +1,6 @@
 {
 	"name": "cimi",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
@@ -32,25 +32,25 @@
 		"@radix-ui/react-tabs": "^1.1.12",
 		"@radix-ui/react-visually-hidden": "^1.2.3",
 		"@sendgrid/mail": "^8.1.5",
-		"html-react-parser": "^5.2.5",
-		"next": "^15.3.3",
+		"html-react-parser": "^5.2.6",
+		"next": "^15.4.2",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-markdown": "^10.1.0",
 		"rehype-raw": "^7.0.0",
 		"remark-gfm": "^4.0.1",
-		"stripe": "^18.2.1"
+		"stripe": "^18.3.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@tailwindcss/postcss": "^4.1.10",
-		"@types/node": "^24.0.1",
+		"@biomejs/biome": "^2.1.2",
+		"@tailwindcss/postcss": "^4.1.11",
+		"@types/node": "^24.0.15",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"autoprefixer": "^10.4.21",
-		"eslint": "^9.28.0",
-		"eslint-config-next": "^15.3.3",
-		"tailwindcss": "^4.1.10",
+		"eslint": "^9.31.0",
+		"eslint-config-next": "^15.4.2",
+		"tailwindcss": "^4.1.11",
 		"typescript": "^5.8.3"
 	}
 }
