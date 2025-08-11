@@ -1,14 +1,15 @@
 "use client"
 
 // Dependencies.
-import { useState, useEffect } from "react"
+import { ChevronDownIcon } from "@radix-ui/react-icons"
+import * as Select from "@radix-ui/react-select"
+import parse from "html-react-parser"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import Button from "@/components/Shared/Button"
 import { initialCampaigns } from "@/data/content/events/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
-import * as Select from "@radix-ui/react-select"
-import { ChevronDownIcon } from "@radix-ui/react-icons"
-import Link from "next/link"
-import Image from "next/image"
-import Button from "@/components/Shared/Button"
 
 // Component.
 export default function UpcomingAndPastEvents() {
@@ -162,7 +163,9 @@ export default function UpcomingAndPastEvents() {
 								) : null}
 
 								<section className="mt-4 mb-8 line-clamp-3 space-y-4 lg:line-clamp-5">
-									{campaign.eventDetails}
+									{campaign.eventDetailsSimplified
+										? parse(campaign.eventDetailsSimplified)
+										: null}
 								</section>
 
 								<Button
