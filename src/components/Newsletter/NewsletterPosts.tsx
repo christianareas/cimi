@@ -1,13 +1,13 @@
 "use client"
 
 // Dependencies.
-import { useState, useEffect } from "react"
+import parse from "html-react-parser"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import Button from "@/components/Shared/Button"
 import { initialCampaigns } from "@/data/content/events/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
-import Link from "next/link"
-import Image from "next/image"
-import parse from "html-react-parser"
-import Button from "@/components/Shared/Button"
 
 // Component.
 export default function NewsletterPosts() {
@@ -33,12 +33,17 @@ export default function NewsletterPosts() {
 	}, [])
 
 	// Sort campaigns.
-	const sortedCampaigns = [...campaigns].sort((a, b) => {
-		return (
-			(b.campaignEndAt ? new Date(b.campaignEndAt).getTime() : 0) -
-			(a.campaignEndAt ? new Date(a.campaignEndAt).getTime() : 0)
-		)
-	})
+	const sortedCampaigns = [...campaigns]
+		// Filter out campaigns in the future.
+		.filter((c) => !c.campaignEndAt || new Date(c.campaignEndAt) <= new Date())
+
+		// Sort.
+		.sort((a, b) => {
+			return (
+				(b.campaignEndAt ? new Date(b.campaignEndAt).getTime() : 0) -
+				(a.campaignEndAt ? new Date(a.campaignEndAt).getTime() : 0)
+			)
+		})
 
 	// Render.
 	return (

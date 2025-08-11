@@ -1,6 +1,6 @@
 {
 	"name": "cimi",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
@@ -9,18 +9,8 @@
 		"lint": "next lint",
 		"biome:format": "biome format",
 		"biome:format-write": "biome format --write",
-		"reinstall": "rm -rf node_modules && rm -rf .next && rm package-lock.json && npm i",
-		"update:ts": "npm i -D typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest",
-		"update:next": "npm i next@latest react@latest react-dom@latest",
-		"update:tailwind": "npm i -D tailwindcss@latest @tailwindcss/postcss@latest autoprefixer@latest",
-		"update:radix": "npm i @radix-ui/react-collapsible@latest @radix-ui/react-dialog@latest @radix-ui/react-form@latest @radix-ui/react-icons@latest @radix-ui/react-radio-group@latest @radix-ui/react-select@latest @radix-ui/react-tabs@latest @radix-ui/react-visually-hidden@latest",
-		"update:markdown": "npm i react-markdown@latest rehype-raw@latest remark-gfm@latest",
-		"update:html": "npm i html-react-parser@latest",
-		"update:stripe": "npm i stripe@latest",
-		"update:sendgrid": "npm i @sendgrid/mail@latest",
-		"update:eslint": "npm i -D eslint@latest eslint-config-next@latest",
-		"update:biome": "npm i -D @biomejs/biome@latest",
-		"update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:radix && npm run update:markdown && npm run update:html && npm run update:stripe && npm run update:sendgrid && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
+		"reinstall": "rm -rf node_modules .next package-lock.json && npm i",
+		"update:latest": "npx -y npm-check-updates -u && npm i && npm dedupe && npm outdated && npm ls"
 	},
 	"dependencies": {
 		"@radix-ui/react-collapsible": "^1.1.11",
@@ -32,25 +22,25 @@
 		"@radix-ui/react-tabs": "^1.1.12",
 		"@radix-ui/react-visually-hidden": "^1.2.3",
 		"@sendgrid/mail": "^8.1.5",
-		"html-react-parser": "^5.2.5",
-		"next": "^15.3.3",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
+		"html-react-parser": "^5.2.6",
+		"next": "^15.4.6",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
 		"react-markdown": "^10.1.0",
 		"rehype-raw": "^7.0.0",
 		"remark-gfm": "^4.0.1",
-		"stripe": "^18.2.1"
+		"stripe": "^18.4.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@tailwindcss/postcss": "^4.1.10",
-		"@types/node": "^24.0.1",
-		"@types/react": "^19.1.8",
-		"@types/react-dom": "^19.1.6",
+		"@biomejs/biome": "^2.1.4",
+		"@tailwindcss/postcss": "^4.1.11",
+		"@types/node": "^24.2.1",
+		"@types/react": "^19.1.9",
+		"@types/react-dom": "^19.1.7",
 		"autoprefixer": "^10.4.21",
-		"eslint": "^9.28.0",
-		"eslint-config-next": "^15.3.3",
-		"tailwindcss": "^4.1.10",
-		"typescript": "^5.8.3"
+		"eslint": "^9.33.0",
+		"eslint-config-next": "^15.4.6",
+		"tailwindcss": "^4.1.11",
+		"typescript": "^5.9.2"
 	}
 }

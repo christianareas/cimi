@@ -1,7 +1,7 @@
 // Dependencies.
-import formatDate from "@/util/formatDate"
 import fs from "node:fs/promises"
 import path from "node:path"
+import formatDate from "@/util/formatDate"
 
 // Types.
 interface Campaign {
@@ -140,6 +140,8 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			eventDetails: campaign.event?.details || null,
 			eventDetailsSimplified: campaign.event?.details
 				? campaign.event.details
+						.replace(/<[^>]*>/g, "")
+						.replace(/&nbsp;/g, " ")
 						.replace(/\n/g, " ")
 						.replace(/\s\s+/g, " ")
 						.trim()
