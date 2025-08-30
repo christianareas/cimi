@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="bg-cimi-cream font-montserrat font-regular text-cimi-black text-sm dark:bg-cimi-cream-dark-mode dark:text-cimi-dark-cream">
+			<body className="bg-cimi-cream font-montserrat font-regular text-cimi-black text-sm dark:bg-cimi-cream-dark-mode dark:text-cimi-cream-dark-mode-light">
 				{children}
 			</body>
 		</html>

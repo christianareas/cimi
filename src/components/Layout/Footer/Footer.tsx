@@ -64,7 +64,7 @@ export default function Footer() {
 					bgClassName="bg-cimi-pink dark:bg-cimi-pink-dark-mode"
 					buttonText="Join CIMI"
 					buttonLink="/join"
-					buttonColorClasses="border-cimi-pink bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-pink-dark-mode"
+					buttonColorClasses="border-cimi-pink bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-pink-dark-mode dark:text-cimi-cream-dark-mode-light"
 				/>
 
 				{/* Donate to the Community. */}
@@ -75,7 +75,7 @@ export default function Footer() {
 					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
-					buttonColorClasses="border-cimi-yellow bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-yellow-dark-mode"
+					buttonColorClasses="border-cimi-yellow bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-yellow-dark-mode dark:text-cimi-cream-dark-mode-light"
 				/>
 			</section>
 
