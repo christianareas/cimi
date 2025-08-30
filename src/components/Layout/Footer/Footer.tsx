@@ -1,14 +1,14 @@
 "use client"
 
+import * as Form from "@radix-ui/react-form"
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
 // Dependencies.
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import Button from "@/components/Shared/Button"
 import ContentCard from "@/components/Shared/ContentCard"
 import fetchData from "@/lib/ui/fetchData"
-import * as Form from "@radix-ui/react-form"
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
 
 // Component.
 export default function Footer() {
@@ -82,7 +82,7 @@ export default function Footer() {
 			<ColorfulBorder />
 
 			{/* Purple section. */}
-			<section className="bg-cimi-purple p-10 text-cimi-cream sm:p-20">
+			<section className="bg-cimi-purple p-10 text-cimi-cream sm:p-20 dark:bg-cimi-purple-dark-mode">
 				<section className="mx-auto flex flex-col items-center space-y-20 font-semibold text-xs lg:max-w-5xl lg:flex-row lg:items-start lg:space-x-20 lg:space-y-0">
 					{/* Contact information. */}
 					<article className="w-full max-w-md lg:flex-1">
@@ -193,7 +193,7 @@ export default function Footer() {
 									<Form.Control asChild>
 										<textarea
 											placeholder="Write us a message."
-											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2"
+											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2 dark:bg-cimi-purple-dark-mode"
 											required
 										/>
 									</Form.Control>
@@ -270,7 +270,7 @@ export default function Footer() {
 										id="subscribe"
 										type="email"
 										placeholder="Enter your email."
-										className="w-full border-cimi-cream border-b bg-cimi-purple p-2"
+										className="w-full border-cimi-cream border-b bg-cimi-purple p-2 dark:bg-cimi-purple-dark-mode"
 										required
 									/>
 								</Form.Control>
