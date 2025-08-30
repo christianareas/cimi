@@ -6,6 +6,12 @@ export interface ButtonProps {
 	buttonText: string
 	buttonWidth: "w-40" | "w-20"
 	buttonClassNames:
+		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:text-cimi-blue-dark-mode" // cimi-cream-blue
+		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream dark:border-cimi-green-dark-mode dark:text-cimi-green-dark-mode" // cimi-cream-green
+		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream dark:border-cimi-purple-dark-mode dark:text-cimi-purple-dark-mode" // cimi-cream-purple
+		| "border-cimi-pink bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-pink-dark-mode" // cimi-black-pink
+		| "border-cimi-yellow bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-yellow-dark-mode" // cimi-black-yellow
+		| ""
 		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream" // cimi-cream-blue
 		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream" // cimi-cream-green
 		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream" // cimi-cream-purple
