@@ -1,8 +1,9 @@
 // Dependencies.
-import ContentCard from "@/components/Shared/ContentCard"
+
 import Image from "next/image"
 import Team from "@/components/Home/Team"
 import Testimonials from "@/components/Home/Testimonials"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function Main() {
@@ -31,7 +32,7 @@ export default function Main() {
 					contentSrc="home.about-cimi"
 					articleClassName="text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
-					bgClassName="bg-cimi-blue"
+					bgClassName="bg-cimi-blue dark:bg-cimi-blue-dark-mode"
 					fontClassName="text-cimi-cream"
 					buttonText="Read Our Story"
 					buttonLink="/about"
@@ -43,9 +44,9 @@ export default function Main() {
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.upcoming-events"
-					articleClassName="text-center lg:w-1/2 lg:text-left"
+					articleClassName="text-cimi-black text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
-					bgClassName="bg-cimi-yellow"
+					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
 					buttonText="Learn More"
 					buttonLink="/events"
 					buttonColorClasses="border-cimi-yellow bg-black text-cimi-cream shadow-black"
@@ -67,7 +68,7 @@ export default function Main() {
 					contentSrc="home.become-a-member"
 					articleClassName="text-center lg:w-1/2"
 					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
-					bgClassName="bg-cimi-green"
+					bgClassName="bg-cimi-green dark:bg-cimi-green-dark-mode"
 					fontClassName="text-cimi-cream"
 					buttonText="Join CIMI"
 					buttonLink="/join"
@@ -75,9 +76,9 @@ export default function Main() {
 				/>
 				<ContentCard
 					contentSrc="home.donate-to-cimi"
-					articleClassName="text-center lg:w-1/2"
+					articleClassName="text-cimi-black text-center lg:w-1/2"
 					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
-					bgClassName="bg-cimi-pink"
+					bgClassName="bg-cimi-pink dark:bg-cimi-pink-dark-mode"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
 					buttonColorClasses="border-cimi-pink bg-black text-cimi-cream shadow-black"

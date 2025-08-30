@@ -59,9 +59,9 @@ export default function Footer() {
 				{/* Join the Community. */}
 				<ContentCard
 					contentSrc="layout.footer.join-the-community"
-					articleClassName="text-center lg:flex-1"
+					articleClassName="text-cimi-black text-center lg:flex-1"
 					sectionClassName="lg:w-3/4 lg:ml-auto lg:mr-0"
-					bgClassName="bg-cimi-pink"
+					bgClassName="bg-cimi-pink dark:bg-cimi-pink-dark-mode"
 					buttonText="Join CIMI"
 					buttonLink="/join"
 					buttonColorClasses="border-cimi-pink bg-black text-cimi-cream shadow-black"
@@ -70,9 +70,9 @@ export default function Footer() {
 				{/* Donate to the Community. */}
 				<ContentCard
 					contentSrc="layout.footer.donate-to-the-community"
-					articleClassName="text-center lg:flex-1"
+					articleClassName="text-cimi-black text-center lg:flex-1"
 					sectionClassName="lg:w-3/4 lg:ml-0 lg:mr-auto"
-					bgClassName="bg-cimi-yellow"
+					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
 					buttonColorClasses="border-cimi-yellow bg-black text-cimi-cream shadow-black"
