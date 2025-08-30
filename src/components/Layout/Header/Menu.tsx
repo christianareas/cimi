@@ -1,13 +1,13 @@
 "use client"
 
 // Dependencies.
-import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
+import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
-import { links, nestedLinks } from "@/data/links"
 import Link from "next/link"
+import { useState } from "react"
 import Button from "@/components/Shared/Button"
+import { links, nestedLinks } from "@/data/links"
 
 // Component.
 export default function Menu() {
@@ -22,7 +22,7 @@ export default function Menu() {
 				<nav>
 					<button
 						type="button"
-						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream" : "fade bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream"}`}
+						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream dark:bg-cimi-cream-dark-mode" : "fade bg-cimi-dark-cream-dark-mode sm:bg-cimi-blue sm:text-cimi-cream"}`}
 						aria-label="Main Menu"
 					>
 						{open ? (
@@ -42,8 +42,8 @@ export default function Menu() {
 						Menu links and calls to action.
 					</Dialog.Description>
 				</VisuallyHidden>
-				<nav className="flex flex-col rounded-b-lg rounded-l-lg bg-cimi-dark-cream font-ancho sm:flex-row">
-					<section className="p-10 sm:w-1/2 md:p-20">
+				<nav className="flex flex-col font-ancho sm:flex-row">
+					<section className="rounded-b-lg rounded-l-lg bg-cimi-dark-cream p-10 sm:w-1/2 sm:rounded-r-lg md:p-20 dark:bg-cimi-dark-cream-dark-mode">
 						{/* Menu links */}
 						<ul className="flex list-none flex-col space-y-5 font-normal">
 							{links.map((link) => (
@@ -70,7 +70,7 @@ export default function Menu() {
 					<section className="rounded-lg bg-cimi-blue p-10 sm:w-1/2 sm:rounded-tr-none md:p-20">
 						<ul className="flex list-none flex-col space-y-10">
 							<li>
-								<h2 className="font-bold text-2xl text-cimi-cream">
+								<h2 className="font-bold text-2xl text-cimi-cream dark:text-cimi-cream">
 									Donate to the Community
 								</h2>
 								<Button
