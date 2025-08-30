@@ -36,7 +36,7 @@ export default function Main() {
 					fontClassName="text-cimi-cream"
 					buttonText="Read Our Story"
 					buttonLink="/about"
-					buttonColorClasses="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
+					buttonColorClasses="border-cimi-blue dark:border-cimi-blue-dark-mode bg-cimi-cream text-cimi-blue dark:text-cimi-blue-dark-mode shadow-cimi-cream"
 				/>
 			</section>
 
@@ -44,12 +44,12 @@ export default function Main() {
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.upcoming-events"
-					articleClassName="text-cimi-black text-center lg:w-1/2 lg:text-left"
+					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
 					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
 					buttonText="Learn More"
 					buttonLink="/events"
-					buttonColorClasses="border-cimi-yellow bg-black text-cimi-cream shadow-black"
+					buttonColorClasses="border-cimi-yellow dark:border-cimi-yellow-dark-mode bg-cimi-black text-cimi-cream shadow-cimi-black"
 				/>
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -72,16 +72,16 @@ export default function Main() {
 					fontClassName="text-cimi-cream"
 					buttonText="Join CIMI"
 					buttonLink="/join"
-					buttonColorClasses="border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream"
+					buttonColorClasses="border-cimi-green dark:border-cimi-green-dark-mode bg-cimi-cream text-cimi-green dark:text-cimi-green-dark-mode shadow-cimi-cream"
 				/>
 				<ContentCard
 					contentSrc="home.donate-to-cimi"
-					articleClassName="text-cimi-black text-center lg:w-1/2"
+					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:w-1/2"
 					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
 					bgClassName="bg-cimi-pink dark:bg-cimi-pink-dark-mode"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
-					buttonColorClasses="border-cimi-pink bg-black text-cimi-cream shadow-black"
+					buttonColorClasses="border-cimi-pink dark:border-cimi-pink-dark-mode bg-cimi-black text-cimi-cream shadow-cimi-black"
 				/>
 			</section>
 
