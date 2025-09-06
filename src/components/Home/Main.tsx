@@ -13,7 +13,7 @@ export default function Main() {
 			<ContentCard
 				contentSrc="home.intro"
 				articleClassName="mx-auto text-center lg:w-1/2"
-				h2ClassName="text-cimi-blue dark:text-cimi-blue-dark-mode-light"
+				h2ClassName="text-cimi-blue"
 			/>
 
 			{/* About CIMI */}
@@ -46,6 +46,7 @@ export default function Main() {
 					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
 					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
+					fontClassName="text-cimi-black dark:text-cimi-black-dark-mode-light"
 					buttonText="Learn More"
 					buttonLink="/events"
 					buttonTheme="cimi-black-yellow"

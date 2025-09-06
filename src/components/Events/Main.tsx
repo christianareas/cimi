@@ -1,6 +1,6 @@
 // Dependencies.
-import ContentCard from "@/components/Shared/ContentCard"
 import UpcomingAndPastEvents from "@/components/Events/UpcomingAndPastEvents"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function Main() {

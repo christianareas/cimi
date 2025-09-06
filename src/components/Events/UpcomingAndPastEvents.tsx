@@ -89,7 +89,7 @@ export default function UpcomingAndPastEvents() {
 				>
 					{/* Selector. */}
 					<Select.Trigger
-						className="flex w-xs items-center justify-between rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 pt-1 pb-2 font-ancho font-bold text-cimi-red-orange text-lg sm:w-sm sm:text-2xl"
+						className="flex w-xs items-center justify-between rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 pt-1 pb-2 font-ancho font-bold text-cimi-red-orange text-lg sm:w-sm sm:text-2xl dark:bg-cimi-cream-dark-mode"
 						aria-label="Upcoming or Past Events"
 					>
 						<Select.Value>
@@ -105,7 +105,7 @@ export default function UpcomingAndPastEvents() {
 					{/* Options. */}
 					<Select.Portal>
 						<Select.Content className="-top-5 absolute right-0 left-0 mx-auto">
-							<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-cimi-red-orange text-lg sm:text-2xl">
+							<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-cimi-red-orange text-lg sm:text-2xl dark:bg-cimi-cream-dark-mode">
 								{upcomingAndPastEvents.map((event, index) => (
 									<Select.Item key={event.eventsType} value={index.toString()}>
 										<Select.ItemText>
@@ -172,7 +172,7 @@ export default function UpcomingAndPastEvents() {
 									buttonText="Learn More"
 									buttonLink={campaign.campaignUrl}
 									buttonWidth="w-40"
-									buttonClassNames="border-cimi-cream bg-cimi-red-orange text-cimi-cream shadow-cimi-red-orange"
+									buttonTheme="cimi-red-orange-dark"
 									buttonType="button"
 								/>
 							</section>

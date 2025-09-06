@@ -22,13 +22,13 @@ export default function Menu() {
 				<nav>
 					<button
 						type="button"
-						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream dark:bg-cimi-cream-dark-mode" : "fade bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream dark:bg-cimi-dark-cream-dark-mode"}`}
+						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream dark:bg-cimi-cream-dark-mode" : "fade bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream dark:bg-cimi-dark-cream-dark-mode dark:sm:bg-cimi-blue-dark-mode"}`}
 						aria-label="Main Menu"
 					>
 						{open ? (
 							<Cross1Icon className="h-8 w-8" />
 						) : (
-							<HamburgerMenuIcon className="h-8 w-8 text-cimi-blue dark:text-cimi-blue-dark-mode-light" />
+							<HamburgerMenuIcon className="h-8 w-8 text-cimi-blue" />
 						)}
 					</button>
 				</nav>
@@ -67,7 +67,7 @@ export default function Menu() {
 					</section>
 
 					{/* Menu calls to action. */}
-					<section className="rounded-lg bg-cimi-blue p-10 sm:w-1/2 sm:rounded-tr-none md:p-20 dark:bg-cimi-blue-dark-mode-light">
+					<section className="rounded-lg bg-cimi-blue p-10 sm:w-1/2 sm:rounded-tr-none md:p-20 dark:bg-cimi-blue-dark-mode">
 						<ul className="flex list-none flex-col space-y-10">
 							<li>
 								<h2 className="font-bold text-2xl text-cimi-cream dark:text-cimi-cream-dark-mode-light">
@@ -77,7 +77,7 @@ export default function Menu() {
 									buttonText="Give to CIMI"
 									buttonLink="/donate"
 									buttonWidth="w-40"
-									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-blue-dark-mode dark:shadow-cimi-cream-dark-mode-light"
+									buttonTheme="cimi-cream-blue"
 									buttonType="button"
 								/>
 							</li>
@@ -89,7 +89,7 @@ export default function Menu() {
 									buttonText="Join CIMI"
 									buttonLink="/join"
 									buttonWidth="w-40"
-									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-blue-dark-mode dark:shadow-cimi-cream-dark-mode-light"
+									buttonTheme="cimi-cream-blue"
 									buttonType="button"
 								/>
 							</li>
