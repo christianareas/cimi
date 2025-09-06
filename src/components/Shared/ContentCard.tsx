@@ -18,7 +18,7 @@ interface ContentCardProps {
 	fontClassName?: string
 	boldClassName?: string
 	buttonText?: ButtonProps["buttonText"]
-	buttonColorClasses?: ButtonProps["buttonClassNames"]
+	buttonTheme?: ButtonProps["buttonTheme"]
 	buttonLink?: ButtonProps["buttonLink"]
 }
 
@@ -33,7 +33,7 @@ export default function ContentCard({
 	fontClassName,
 	boldClassName,
 	buttonText,
-	buttonColorClasses,
+	buttonTheme,
 	buttonLink,
 }: ContentCardProps) {
 	// Get the content.
@@ -99,14 +99,14 @@ export default function ContentCard({
 					{content}
 				</ReactMarkdown>
 			</section>
-			{buttonText && buttonColorClasses && buttonLink && (
+			{buttonText && buttonTheme && buttonLink && (
 				<section
 					className={["mx-auto", sectionClassName].filter(Boolean).join(" ")}
 				>
 					<Button
 						buttonText={buttonText}
 						buttonWidth="w-40"
-						buttonClassNames={buttonColorClasses}
+						buttonTheme={buttonTheme}
 						buttonType="button"
 						buttonLink={buttonLink}
 					/>

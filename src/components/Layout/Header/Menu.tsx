@@ -22,13 +22,13 @@ export default function Menu() {
 				<nav>
 					<button
 						type="button"
-						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream dark:bg-cimi-cream-dark-mode" : "fade bg-cimi-dark-cream-dark-mode sm:bg-cimi-blue sm:text-cimi-cream"}`}
+						className={`ml-auto rounded-t-lg px-5 pt-5 pb-14 ${!open ? "bg-cimi-cream dark:bg-cimi-cream-dark-mode" : "fade bg-cimi-dark-cream sm:bg-cimi-blue sm:text-cimi-cream dark:bg-cimi-dark-cream-dark-mode"}`}
 						aria-label="Main Menu"
 					>
 						{open ? (
 							<Cross1Icon className="h-8 w-8" />
 						) : (
-							<HamburgerMenuIcon className="h-8 w-8 text-cimi-blue" />
+							<HamburgerMenuIcon className="h-8 w-8 text-cimi-blue dark:text-cimi-blue-dark-mode-light" />
 						)}
 					</button>
 				</nav>
@@ -67,29 +67,29 @@ export default function Menu() {
 					</section>
 
 					{/* Menu calls to action. */}
-					<section className="rounded-lg bg-cimi-blue p-10 sm:w-1/2 sm:rounded-tr-none md:p-20">
+					<section className="rounded-lg bg-cimi-blue p-10 sm:w-1/2 sm:rounded-tr-none md:p-20 dark:bg-cimi-blue-dark-mode-light">
 						<ul className="flex list-none flex-col space-y-10">
 							<li>
-								<h2 className="font-bold text-2xl text-cimi-cream dark:text-cimi-cream">
+								<h2 className="font-bold text-2xl text-cimi-cream dark:text-cimi-cream-dark-mode-light">
 									Donate to the Community
 								</h2>
 								<Button
 									buttonText="Give to CIMI"
 									buttonLink="/donate"
 									buttonWidth="w-40"
-									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
+									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-blue-dark-mode dark:shadow-cimi-cream-dark-mode-light"
 									buttonType="button"
 								/>
 							</li>
 							<li>
-								<h2 className="font-bold text-2xl text-cimi-cream">
+								<h2 className="font-bold text-2xl text-cimi-cream dark:text-cimi-cream-dark-mode-light">
 									Join the Community
 								</h2>
 								<Button
 									buttonText="Join CIMI"
 									buttonLink="/join"
 									buttonWidth="w-40"
-									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
+									buttonClassNames="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-blue-dark-mode dark:shadow-cimi-cream-dark-mode-light"
 									buttonType="button"
 								/>
 							</li>

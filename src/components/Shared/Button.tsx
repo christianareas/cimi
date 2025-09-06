@@ -5,13 +5,13 @@ import Link from "next/link"
 export interface ButtonProps {
 	buttonText: string
 	buttonWidth: "w-40" | "w-20"
-	buttonClassNames:
-		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-blue-dark-mode dark:shadow-cimi-cream-dark-mode-light" // cimi-cream-blue
-		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream dark:border-cimi-green-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-green-dark-mode dark:shadow-cimi-cream-dark-mode-light" // cimi-cream-green
-		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream dark:border-cimi-purple-dark-mode dark:text-cimi-purple-dark-mode" // cimi-cream-purple
-		| "border-cimi-pink bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-pink-dark-mode dark:text-cimi-cream-dark-mode-light" // cimi-black-pink
-		| "border-cimi-yellow bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-yellow-dark-mode dark:text-cimi-cream-dark-mode-light" // cimi-black-yellow
-		| ""
+	buttonTheme:
+		| "cimi-cream-blue"
+		| "cimi-cream-green"
+		| "cimi-cream-purple"
+		| "cimi-black-pink"
+		| "cimi-black-yellow"
+	buttonClassNames?:
 		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream" // cimi-cream-blue
 		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream" // cimi-cream-green
 		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream" // cimi-cream-purple
@@ -36,6 +36,7 @@ export interface ButtonProps {
 export default function Button({
 	buttonText,
 	buttonWidth,
+	buttonTheme,
 	buttonClassNames,
 	buttonType,
 	buttonLink,
@@ -46,7 +47,27 @@ export default function Button({
 		<button
 			type={buttonType}
 			onClick={buttonOnClick}
-			className={`cursor-pointer rounded-lg border-2 px-2 py-3 text-center font-ancho font-normal text-xs shadow-[4px_4px_0] ${buttonWidth} ${buttonClassNames}`}
+			className={`cursor-pointer rounded-lg border-2 px-2 py-3 text-center font-ancho font-normal text-xs shadow-[4px_4px_0] ${buttonWidth} ${buttonClassNames} ${
+				buttonTheme === "cimi-cream-blue"
+					? "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream dark:border-cimi-blue-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-blue-dark-mode dark:shadow-cimi-cream-dark-mode-light"
+					: null
+			} ${
+				buttonTheme === "cimi-cream-green"
+					? "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream dark:border-cimi-green-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-green-dark-mode dark:shadow-cimi-cream-dark-mode-light"
+					: null
+			} ${
+				buttonTheme === "cimi-cream-purple"
+					? "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream dark:border-cimi-purple-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-purple-dark-mode dark:shadow-cimi-cream-dark-mode-light"
+					: null
+			} ${
+				buttonTheme === "cimi-black-pink"
+					? "border-cimi-pink bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-pink-dark-mode dark:bg-cimi-black-dark-mode-light dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-black-dark-mode-light"
+					: null
+			} ${
+				buttonTheme === "cimi-black-yellow"
+					? "border-cimi-yellow bg-cimi-black text-cimi-cream shadow-cimi-black dark:border-cimi-yellow-dark-mode dark:bg-cimi-black-dark-mode-light dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-black-dark-mode-light"
+					: null
+			}`}
 		>
 			{buttonText}
 		</button>

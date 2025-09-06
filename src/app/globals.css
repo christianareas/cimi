@@ -7,16 +7,18 @@
 @theme {
 	--color-cimi-black: #151515;
 	--color-cimi-black-dark-mode: #fff0dd;
+	--color-cimi-black-dark-mode-light: #151515;
 
 	--color-cimi-cream: #fff0dd;
 	--color-cimi-cream-dark-mode: #242321;
-	--color-cimi-cream-dark-mode-light: #afa699;
+	--color-cimi-cream-dark-mode-light: #d6cbbb;
 
 	--color-cimi-dark-cream: #ffe6c5;
 	--color-cimi-dark-cream-dark-mode: #1d1b18;
 
 	--color-cimi-blue: #1d48ff;
 	--color-cimi-blue-dark-mode: #212166;
+	--color-cimi-blue-dark-mode-light: #2633af;
 
 	--color-cimi-green: #00632f;
 	--color-cimi-green-dark-mode: #102c18;
