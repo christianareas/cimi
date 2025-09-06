@@ -7,7 +7,7 @@ export default function Team() {
 	// Render.
 	return (
 		<article className="space-y-3 rounded-lg p-10 text-center font-normal sm:p-20">
-			<h2 className="pb-3 font-ancho font-bold text-2xl text-cimi-blue">
+			<h2 className="pb-3 font-ancho font-bold text-2xl text-cimi-blue dark:text-cimi-blue-dark-mode">
 				Our Team
 			</h2>
 

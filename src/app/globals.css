@@ -7,32 +7,32 @@
 @theme {
 	--color-cimi-cream: #fff0dd;
 	--color-cimi-cream-dark-mode: #242321;
-	--color-cimi-cream-dark-mode-light: #fff0dd;
+	--color-cimi-cream-dark-mode-light: #d6cbbb;
 
 	--color-cimi-dark-cream: #ffe6c5;
-	--color-cimi-dark-cream-dark-mode: #1d1b18;
+	--color-cimi-dark-cream-dark-mode: #24221e;
 
 	--color-cimi-blue: #1d48ff;
-	--color-cimi-blue-dark-mode: #212166;
+	--color-cimi-blue-dark-mode: #243cd6;
 
 	--color-cimi-green: #00632f;
-	--color-cimi-green-dark-mode: #102c18;
+	--color-cimi-green-dark-mode: #095528;
 
 	--color-cimi-purple: #7100c9;
-	--color-cimi-purple-dark-mode: #341252;
+	--color-cimi-purple-dark-mode: #620baa;
 
 	--color-cimi-red-orange: #ff4a01;
-	--color-cimi-red-orange-dark-mode: #b1370c;
+	--color-cimi-red-orange-dark-mode: #d74007;
 
 	--color-cimi-pink: #ffaed9;
-	--color-cimi-pink-dark-mode: #af7896;
+	--color-cimi-pink-dark-mode: #d692b7;
 
 	--color-cimi-yellow: #ffdf00;
-	--color-cimi-yellow-dark-mode: #b09817;
+	--color-cimi-yellow-dark-mode: #d7ba11;
 
 	--color-cimi-black: #151515;
 	--color-cimi-black-dark-mode: #fff0dd;
-	--color-cimi-black-dark-mode-light: #151515;
+	--color-cimi-black-dark-mode-light: #121212;
 
 	--font-ancho: Ancho, sans-serif;
 	--font-montserrat: Montserrat, sans-serif;

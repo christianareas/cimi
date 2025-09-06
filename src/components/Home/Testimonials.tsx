@@ -67,14 +67,14 @@ export default function Testimonials() {
 					</Tabs.List>
 
 					{/* Heading. */}
-					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream">
+					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream dark:text-cimi-cream-dark-mode-light">
 						Testimonials of Members
 					</h2>
 
-					<section className="mx-auto grid grid-cols-[1fr_5fr_1fr] items-center py-2 text-cimi-cream">
+					<section className="mx-auto grid grid-cols-[1fr_5fr_1fr] items-center py-2 text-cimi-cream dark:text-cimi-cream-dark-mode-light">
 						{/* Previous tab */}
 						<button type="button" onClick={() => switchTab(-1)}>
-							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20" />
+							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20 dark:text-cimi-cream-dark-mode-light" />
 						</button>
 
 						{/* Testimonial. */}
@@ -106,7 +106,7 @@ export default function Testimonials() {
 
 						{/* Next tab */}
 						<button type="button" onClick={() => switchTab(1)}>
-							<ChevronRightIcon className="mr-auto ml-3 h-8 w-8 cursor-pointer text-cimi-cream md:ml-10 lg:ml-20" />
+							<ChevronRightIcon className="mr-auto ml-3 h-8 w-8 cursor-pointer text-cimi-cream md:ml-10 lg:ml-20 dark:text-cimi-cream-dark-mode-light" />
 						</button>
 					</section>
 				</Tabs.Root>
