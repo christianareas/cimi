@@ -1,10 +1,10 @@
 "use client"
 
 // Dependencies.
-import { useState } from "react"
-import fetchData from "@/lib/ui/fetchData"
 import * as Form from "@radix-ui/react-form"
 import * as RadioGroup from "@radix-ui/react-radio-group"
+import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 
 // Component.
 export default function DonateForm() {
@@ -103,8 +103,8 @@ export default function DonateForm() {
 										value={amount.toString()}
 										className={`w-28 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 											presetDonationAmount === amount.toString()
-												? "border-cimi-cream bg-cimi-blue text-cimi-cream shadow-cimi-blue"
-												: "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green"
+												? "border-cimi-cream bg-cimi-blue text-cimi-cream shadow-cimi-blue dark:border-cimi-cream-dark-mode dark:bg-cimi-blue-dark-mode dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-blue-dark-mode-light"
+												: "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green dark:border-cimi-cream-dark-mode dark:bg-cimi-green-dark-mode dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-green-dark-mode-light"
 										}`}
 									>
 										{formattedDonationAmount}
@@ -186,8 +186,8 @@ export default function DonateForm() {
 								onClick={checkOutDonor}
 								className={`mt-5 w-28 cursor-pointer rounded-lg border-2 px-4 py-3 text-center font-ancho font-medium text-xs shadow-[4px_4px_0] ${
 									disableContinueButton(presetDonationAmount)
-										? "border-neutral-500 bg-cimi-cream text-neutral-500 shadow-neutral-500"
-										: "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green"
+										? "border-cimi-cream bg-neutral-500 text-cimi-cream shadow-neutral-500 dark:border-cimi-cream-dark-mode dark:text-cimi-cream-dark-mode-light"
+										: "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green dark:border-cimi-cream-dark-mode dark:bg-cimi-green-dark-mode dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-green-dark-mode-light"
 								}`}
 							>
 								Continue

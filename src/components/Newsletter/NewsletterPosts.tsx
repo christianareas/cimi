@@ -99,7 +99,7 @@ export default function NewsletterPosts() {
 									buttonText="Learn More"
 									buttonLink={campaign.campaignUrl}
 									buttonWidth="w-40"
-									buttonTheme="cimi-purple-dark"
+									buttonTheme="cimi-purple"
 									buttonType="button"
 								/>
 							</section>

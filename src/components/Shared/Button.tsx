@@ -9,20 +9,12 @@ export interface ButtonProps {
 		| "cimi-cream-blue"
 		| "cimi-cream-green"
 		| "cimi-cream-purple"
-		| "cimi-purple-dark"
-		| "cimi-red-orange-dark"
+		| "cimi-blue"
+		| "cimi-green"
+		| "cimi-purple"
+		| "cimi-red-orange"
 		| "cimi-black-pink"
 		| "cimi-black-yellow"
-	buttonClassNames?:
-		| "border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-blue" // cimi-blue-light
-		| "border-cimi-cream bg-cimi-blue text-cimi-cream shadow-cimi-blue" // cimi-blue-dark
-		| "border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-green" // cimi-green-light
-		| "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green" // cimi-green-dark
-		| "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-purple" // cimi-purple-light
-		| "border-cimi-cream bg-cimi-purple text-cimi-cream shadow-cimi-purple" // cimi-purple-dark
-		| "border-cimi-red-orange bg-cimi-cream text-cimi-red-orange shadow-cimi-red-orange" // cimi-red-orange-light
-		| "border-neutral-500 bg-cimi-cream text-neutral-500 shadow-neutral-500" // neutral-light
-		| "border-cimi-cream bg-neutral-500 text-cimi-cream shadow-neutral-500" // neutral-dark
 	buttonType: "button" | "submit"
 	buttonLink?: string
 	buttonOnClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -56,13 +48,23 @@ export default function Button({
 					? "border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream dark:border-cimi-purple-dark-mode dark:bg-cimi-cream-dark-mode-light dark:text-cimi-purple-dark-mode dark:shadow-cimi-cream-dark-mode-light"
 					: null
 			} ${
+				// CIMI Blue.
+				buttonTheme === "cimi-blue"
+					? "border-cimi-cream bg-cimi-blue text-cimi-cream shadow-cimi-blue dark:border-cimi-cream-dark-mode dark:bg-cimi-blue-dark-mode dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-blue-dark-mode-light"
+					: null
+			} ${
+				// CIMI Green.
+				buttonTheme === "cimi-green"
+					? "border-cimi-cream bg-cimi-green text-cimi-cream shadow-cimi-green dark:border-cimi-cream-dark-mode dark:bg-cimi-green-dark-mode dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-green-dark-mode-light"
+					: null
+			} ${
 				// CIMI Purple.
-				buttonTheme === "cimi-purple-dark"
+				buttonTheme === "cimi-purple"
 					? "border-cimi-cream bg-cimi-purple text-cimi-cream shadow-cimi-purple dark:border-cimi-cream-dark-mode dark:bg-cimi-purple-dark-mode-light dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-purple-dark-mode-light"
 					: null
 			} ${
 				// CIMI Red-Orange.
-				buttonTheme === "cimi-red-orange-dark"
+				buttonTheme === "cimi-red-orange"
 					? "border-cimi-cream bg-cimi-red-orange text-cimi-cream shadow-cimi-red-orange dark:border-cimi-cream-dark-mode dark:bg-cimi-red-orange-dark-mode dark:text-cimi-cream-dark-mode-light dark:shadow-cimi-red-orange-dark-mode"
 					: null
 			}${

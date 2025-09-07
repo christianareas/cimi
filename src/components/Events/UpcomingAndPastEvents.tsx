@@ -172,7 +172,7 @@ export default function UpcomingAndPastEvents() {
 									buttonText="Learn More"
 									buttonLink={campaign.campaignUrl}
 									buttonWidth="w-40"
-									buttonTheme="cimi-red-orange-dark"
+									buttonTheme="cimi-red-orange"
 									buttonType="button"
 								/>
 							</section>
