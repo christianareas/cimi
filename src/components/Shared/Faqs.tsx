@@ -1,25 +1,25 @@
 "use client"
 
 // Dependencies.
-import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
-import { markdown } from "@/data/content/markdown"
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-import rehypeRaw from "rehype-raw"
-import { useState } from "react"
 import * as Collapsible from "@radix-ui/react-collapsible"
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
+import { useState } from "react"
+import ReactMarkdown from "react-markdown"
+import rehypeRaw from "rehype-raw"
+import remarkGfm from "remark-gfm"
+import { markdown } from "@/data/content/markdown"
+import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
 
 // Types.
 interface FaqProps {
 	faqsName: "join" | "member" | "volunteer" | "donor"
 	textClassName:
-		| "text-cimi-blue" // cimi-blue
-		| "text-cimi-green" // cimi-green
+		| "text-cimi-blue dark:text-cimi-blue-dark-mode" // cimi-blue
+		| "text-cimi-green dark:text-cimi-green-dark-mode" // cimi-green
 	borderClassName:
-		| "border-cimi-blue shadow-[4px_4px_0] shadow-cimi-blue" // cimi-blue
-		| "border-cimi-blue" // cimi-blue
-		| "border-cimi-green" // cimi-green
+		| "border-cimi-blue shadow-[4px_4px_0] shadow-cimi-blue dark:border-cimi-blue-dark-mode dark:shadow-cimi-blue-dark-mode" // cimi-blue
+		| "border-cimi-blue dark:border-cimi-blue-dark-mode" // cimi-blue
+		| "border-cimi-green dark:border-cimi-green-dark-mode" // cimi-green
 }
 
 // Component.
