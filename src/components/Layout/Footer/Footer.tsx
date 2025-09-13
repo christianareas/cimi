@@ -1,14 +1,14 @@
 "use client"
 
+import * as Form from "@radix-ui/react-form"
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
 // Dependencies.
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
 import Button from "@/components/Shared/Button"
 import ContentCard from "@/components/Shared/ContentCard"
 import fetchData from "@/lib/ui/fetchData"
-import * as Form from "@radix-ui/react-form"
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
 
 // Component.
 export default function Footer() {
@@ -59,30 +59,30 @@ export default function Footer() {
 				{/* Join the Community. */}
 				<ContentCard
 					contentSrc="layout.footer.join-the-community"
-					articleClassName="text-center lg:flex-1"
+					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:flex-1"
 					sectionClassName="lg:w-3/4 lg:ml-auto lg:mr-0"
-					bgClassName="bg-cimi-pink"
+					bgClassName="bg-cimi-pink dark:bg-cimi-pink-dark-mode"
 					buttonText="Join CIMI"
 					buttonLink="/join"
-					buttonColorClasses="border-cimi-pink bg-black text-cimi-cream shadow-black"
+					buttonTheme="cimi-black-pink"
 				/>
 
 				{/* Donate to the Community. */}
 				<ContentCard
 					contentSrc="layout.footer.donate-to-the-community"
-					articleClassName="text-center lg:flex-1"
+					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:flex-1"
 					sectionClassName="lg:w-3/4 lg:ml-0 lg:mr-auto"
-					bgClassName="bg-cimi-yellow"
+					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
-					buttonColorClasses="border-cimi-yellow bg-black text-cimi-cream shadow-black"
+					buttonTheme="cimi-black-yellow"
 				/>
 			</section>
 
 			<ColorfulBorder />
 
 			{/* Purple section. */}
-			<section className="bg-cimi-purple p-10 text-cimi-cream sm:p-20">
+			<section className="bg-cimi-purple p-10 text-cimi-cream sm:p-20 dark:bg-cimi-purple-dark-mode dark:text-cimi-cream-dark-mode-light">
 				<section className="mx-auto flex flex-col items-center space-y-20 font-semibold text-xs lg:max-w-5xl lg:flex-row lg:items-start lg:space-x-20 lg:space-y-0">
 					{/* Contact information. */}
 					<article className="w-full max-w-md lg:flex-1">
@@ -155,7 +155,7 @@ export default function Footer() {
 							className="space-y-2"
 						>
 							<section>
-								<p className="rounded-t-lg border-cimi-cream border-x border-t p-2">
+								<p className="rounded-t-lg border-cimi-cream border-x border-t p-2 dark:border-cimi-cream-dark-mode-light">
 									TO: hello@runwithcimi.org
 								</p>
 
@@ -168,19 +168,19 @@ export default function Footer() {
 												id="contact"
 												type="email"
 												placeholder="Enter your email."
-												className="w-full border border-cimi-cream border-b-0 p-2"
+												className="w-full border border-cimi-cream border-b-0 p-2 dark:border-cimi-cream-dark-mode-light"
 												required
 											/>
 										</Form.Control>
 
 										{/* Error messages. */}
 										<Form.Message match="valueMissing">
-											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400">
+											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400 dark:border-x-cimi-cream-dark-mode-light">
 												Enter your email address.
 											</p>
 										</Form.Message>
 										<Form.Message match="typeMismatch">
-											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400">
+											<p className="border border-x-cimi-cream border-t-pink-400 border-b-0 p-2 text-pink-400 dark:border-x-cimi-cream-dark-mode-light">
 												Enter a valid email.
 											</p>
 										</Form.Message>
@@ -193,7 +193,7 @@ export default function Footer() {
 									<Form.Control asChild>
 										<textarea
 											placeholder="Write us a message."
-											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2"
+											className="h-16 w-full rounded-b-lg border border-cimi-cream bg-cimi-purple p-2 dark:border-cimi-cream-dark-mode-light dark:bg-cimi-purple-dark-mode"
 											required
 										/>
 									</Form.Control>
@@ -221,7 +221,7 @@ export default function Footer() {
 									<Button
 										buttonText="Let's Chat!"
 										buttonWidth="w-40"
-										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
+										buttonTheme="cimi-cream-purple"
 										buttonType="submit"
 									/>
 								</section>
@@ -270,7 +270,7 @@ export default function Footer() {
 										id="subscribe"
 										type="email"
 										placeholder="Enter your email."
-										className="w-full border-cimi-cream border-b bg-cimi-purple p-2"
+										className="w-full border-cimi-cream border-b bg-cimi-purple p-2 dark:border-cimi-cream-dark-mode-light dark:bg-cimi-purple-dark-mode"
 										required
 									/>
 								</Form.Control>
@@ -301,7 +301,7 @@ export default function Footer() {
 									<Button
 										buttonText="Sign Up"
 										buttonWidth="w-40"
-										buttonClassNames="border-cimi-purple bg-cimi-cream text-cimi-purple shadow-cimi-cream"
+										buttonTheme="cimi-cream-purple"
 										buttonType="submit"
 									/>
 								</section>

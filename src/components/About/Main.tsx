@@ -1,9 +1,10 @@
 // Dependencies.
-import ContentCard from "@/components/Shared/ContentCard"
+
 import Image from "next/image"
-import Values from "@/components/About/Values"
-import Timeline from "@/components/About/Timeline"
 import Team from "@/components/About/Team"
+import Timeline from "@/components/About/Timeline"
+import Values from "@/components/About/Values"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function Main() {
@@ -45,7 +46,7 @@ export default function Main() {
 					contentSrc="about.who-is-cimi-made-of"
 					articleClassName="text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
-					bgClassName="bg-cimi-blue"
+					bgClassName="bg-cimi-blue dark:bg-cimi-blue-dark-mode"
 					fontClassName="text-cimi-cream"
 				/>
 			</article>

@@ -12,7 +12,7 @@ export default function Main() {
 			<ContentCard
 				contentSrc="join.member.cimi-members"
 				articleClassName="lg:w-1/2 mx-auto text-center"
-				h2ClassName="text-cimi-blue"
+				h2ClassName="text-cimi-blue dark:text-cimi-blue-dark-mode"
 				fontClassName="font-medium"
 			/>
 
@@ -22,8 +22,8 @@ export default function Main() {
 			{/* Volunteer FAQs. */}
 			<Faqs
 				faqsName="member"
-				textClassName="text-cimi-blue"
-				borderClassName="border-cimi-blue"
+				textClassName="text-cimi-blue dark:text-cimi-blue-dark-mode"
+				borderClassName="border-cimi-blue dark:border-cimi-blue-dark-mode"
 			/>
 		</main>
 	)

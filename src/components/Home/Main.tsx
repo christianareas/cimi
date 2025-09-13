@@ -1,8 +1,8 @@
 // Dependencies.
-import ContentCard from "@/components/Shared/ContentCard"
 import Image from "next/image"
 import Team from "@/components/Home/Team"
 import Testimonials from "@/components/Home/Testimonials"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function Main() {
@@ -13,7 +13,7 @@ export default function Main() {
 			<ContentCard
 				contentSrc="home.intro"
 				articleClassName="mx-auto text-center lg:w-1/2"
-				h2ClassName="text-cimi-blue"
+				h2ClassName="text-cimi-blue dark:text-cimi-blue-dark-mode"
 			/>
 
 			{/* About CIMI */}
@@ -31,11 +31,11 @@ export default function Main() {
 					contentSrc="home.about-cimi"
 					articleClassName="text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
-					bgClassName="bg-cimi-blue"
-					fontClassName="text-cimi-cream"
+					bgClassName="bg-cimi-blue dark:bg-cimi-blue-dark-mode"
+					fontClassName="text-cimi-cream dark:text-cimi-cream-dark-mode-light"
 					buttonText="Read Our Story"
 					buttonLink="/about"
-					buttonColorClasses="border-cimi-blue bg-cimi-cream text-cimi-blue shadow-cimi-cream"
+					buttonTheme="cimi-cream-blue"
 				/>
 			</section>
 
@@ -43,12 +43,13 @@ export default function Main() {
 			<section className="lg:flex">
 				<ContentCard
 					contentSrc="home.upcoming-events"
-					articleClassName="text-center lg:w-1/2 lg:text-left"
+					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:w-1/2 lg:text-left"
 					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
-					bgClassName="bg-cimi-yellow"
+					bgClassName="bg-cimi-yellow dark:bg-cimi-yellow-dark-mode"
+					fontClassName="text-cimi-black dark:text-cimi-black-dark-mode-light"
 					buttonText="Learn More"
 					buttonLink="/events"
-					buttonColorClasses="border-cimi-yellow bg-black text-cimi-cream shadow-black"
+					buttonTheme="cimi-black-yellow"
 				/>
 				<article className="relative w-full pb-[56.25%] lg:w-1/2 lg:pb-[28.13%]">
 					<Image
@@ -67,20 +68,21 @@ export default function Main() {
 					contentSrc="home.become-a-member"
 					articleClassName="text-center lg:w-1/2"
 					sectionClassName="lg:mr-0 lg:ml-auto lg:w-3/4"
-					bgClassName="bg-cimi-green"
-					fontClassName="text-cimi-cream"
+					bgClassName="bg-cimi-green dark:bg-cimi-green-dark-mode"
+					fontClassName="text-cimi-cream dark:text-cimi-cream-dark-mode-light"
 					buttonText="Join CIMI"
 					buttonLink="/join"
-					buttonColorClasses="border-cimi-green bg-cimi-cream text-cimi-green shadow-cimi-cream"
+					buttonTheme="cimi-cream-green"
 				/>
 				<ContentCard
 					contentSrc="home.donate-to-cimi"
-					articleClassName="text-center lg:w-1/2"
+					articleClassName="text-cimi-black dark:text-cimi-black text-center lg:w-1/2"
 					sectionClassName="lg:mr-auto lg:ml-0 lg:w-3/4"
-					bgClassName="bg-cimi-pink"
+					bgClassName="bg-cimi-pink dark:bg-cimi-pink-dark-mode"
+					fontClassName="text-cimi-black dark:text-cimi-black-dark-mode-light"
 					buttonText="Give to CIMI"
 					buttonLink="/donate"
-					buttonColorClasses="border-cimi-pink bg-black text-cimi-cream shadow-black"
+					buttonTheme="cimi-black-pink"
 				/>
 			</section>
 

@@ -23,8 +23,8 @@ export default function Main() {
 			{/* Donor FAQs. */}
 			<Faqs
 				faqsName="donor"
-				textClassName="text-cimi-green"
-				borderClassName="border-cimi-green"
+				textClassName="text-cimi-green dark:text-cimi-green-dark-mode"
+				borderClassName="border-cimi-green dark:border-cimi-green-dark-mode"
 			/>
 		</main>
 	)

@@ -1,11 +1,11 @@
 "use client"
 
 // Dependencies.
-import { useState, useEffect } from "react"
-import { testimonials } from "@/data/content/home/testimonials"
-import * as Tabs from "@radix-ui/react-tabs"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
+import * as Tabs from "@radix-ui/react-tabs"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+import { testimonials } from "@/data/content/home/testimonials"
 
 // Component.
 export default function Testimonials() {
@@ -54,7 +54,7 @@ export default function Testimonials() {
 
 	// Render.
 	return (
-		<section className="bg-cimi-red-orange px-5 py-10 text-center font-normal sm:px-10 sm:py-20 lg:text-left">
+		<section className="bg-cimi-red-orange px-5 py-10 text-center font-normal sm:px-10 sm:py-20 lg:text-left dark:bg-cimi-red-orange-dark-mode">
 			<section className="lg:mx-auto lg:max-w-5xl">
 				<Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
 					<Tabs.List className="hidden">
@@ -67,14 +67,14 @@ export default function Testimonials() {
 					</Tabs.List>
 
 					{/* Heading. */}
-					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream">
+					<h2 className="pb-5 text-center font-ancho font-bold text-2xl text-cimi-cream dark:text-cimi-cream-dark-mode-light">
 						Testimonials of Members
 					</h2>
 
-					<section className="mx-auto grid grid-cols-[1fr_5fr_1fr] items-center py-2 text-cimi-cream">
+					<section className="mx-auto grid grid-cols-[1fr_5fr_1fr] items-center py-2 text-cimi-cream dark:text-cimi-cream-dark-mode-light">
 						{/* Previous tab */}
 						<button type="button" onClick={() => switchTab(-1)}>
-							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20" />
+							<ChevronLeftIcon className="mr-3 ml-auto h-8 w-8 cursor-pointer text-cimi-cream md:mr-10 lg:mr-20 dark:text-cimi-cream-dark-mode-light" />
 						</button>
 
 						{/* Testimonial. */}
@@ -106,7 +106,7 @@ export default function Testimonials() {
 
 						{/* Next tab */}
 						<button type="button" onClick={() => switchTab(1)}>
-							<ChevronRightIcon className="mr-auto ml-3 h-8 w-8 cursor-pointer text-cimi-cream md:ml-10 lg:ml-20" />
+							<ChevronRightIcon className="mr-auto ml-3 h-8 w-8 cursor-pointer text-cimi-cream md:ml-10 lg:ml-20 dark:text-cimi-cream-dark-mode-light" />
 						</button>
 					</section>
 				</Tabs.Root>
