@@ -1,18 +1,16 @@
 // Fetch Givebutter data.
 export default async function fetchGivebutterData(
-	method: "GET" | "POST",
+	method: "PUT",
 	endpoint: string,
-	body?: object,
+	body: object,
 ) {
 	// Base URL.
-	const baseUrl = "https://api.givebutter.com/v1"
+	const baseUrl = "https://us1.api.mailchimp.com/3.0"
 
 	// API key.
-	const apiKey = process.env.GIVEBUTTER_API_KEY
+	const apiKey = process.env.MAILCHIMP_API_KEY
 	if (!apiKey) {
-		throw new Error(
-			"Error: There’s no GIVEBUTTER_API_KEY environment variable.",
-		)
+		throw new Error("Error: There’s no MAILCHIMP_API_KEY environment variable.")
 	}
 
 	// Options.
@@ -43,32 +41,9 @@ export default async function fetchGivebutterData(
 		}
 	}
 
-	// GET (with pagination).
-	if (method === "GET") {
-		let currentPage = 1
-		const data = []
-
-		while (true) {
-			const response = await fetchAndValidate(
-				`${baseUrl}${endpoint}?page=${currentPage}`,
-			)
-
-			// Push the data.
-			data.push(...response.data)
-
-			// If there are no more pages, exit the loop.
-			if (currentPage >= response.meta.last_page) break
-
-			// Otherwise, loop through the next page.
-			currentPage++
-		}
-
-		return { data }
-	}
-
-	// POST.
-	if (method === "POST" && body) {
-		// POST options.
+	// PUT.
+	if (method === "PUT" && body) {
+		// PUT options.
 		options = {
 			...options,
 			body: JSON.stringify(body),

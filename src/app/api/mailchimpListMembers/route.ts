@@ -1,12 +1,12 @@
 // Dependencies.
 import { NextResponse } from "next/server"
-import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
+import fetchMailChimpData from "@/lib/api/fetchMailChimpData"
 
-// POST request.
-export async function POST(request: Request) {
+// PUT request.
+export async function PUT(request: Request) {
 	try {
-		// First name, last name, email and tag.
-		const { firstName, lastName, email, tag } = await request.json()
+		// Email and tag.
+		const { email, tag } = await request.json()
 		if (!email) {
 			return NextResponse.json({ error: "There’s no email." }, { status: 400 })
 		}
@@ -16,16 +16,15 @@ export async function POST(request: Request) {
 
 		// Body.
 		const body = {
-			first_name: firstName || "-",
-			last_name: lastName || "-",
-			emails: [{ type: "personal", value: email }],
+			email_address: email,
+			status_if_new: "subscribed",
 			tags: [tag],
 		}
 
 		// Fetch.
-		const { primary_email: primaryEmail } = await fetchGivebutterData(
-			"POST",
-			"/contacts",
+		const { email_address: primaryEmail } = await fetchMailChimpData(
+			"PUT",
+			`/lists/${"3a6523440d"}/members/${"e8086ba5f17beae11a5ec6b9a9315b9f"}`,
 			body,
 		)
 
