@@ -1,17 +1,21 @@
-// Fetch Givebutter data.
-export default async function fetchGivebutterData(
+// Fetch Mailchimp data.
+export default async function fetchMailchimpData(
 	method: "PUT",
 	endpoint: string,
 	body: object,
 ) {
-	// Base URL.
-	const baseUrl = "https://us1.api.mailchimp.com/3.0"
-
 	// API key.
 	const apiKey = process.env.MAILCHIMP_API_KEY
 	if (!apiKey) {
 		throw new Error("Error: There’s no MAILCHIMP_API_KEY environment variable.")
 	}
+
+	// Base URL.
+	const dataCenter = apiKey.split("-")[1]
+	if (!dataCenter) {
+		throw new Error("Error: There’s no data center in the MAILCHIMP_API_KEY.")
+	}
+	const baseUrl = `https://${dataCenter}.api.mailchimp.com/3.0`
 
 	// Options.
 	let options: RequestInit = {
@@ -37,7 +41,7 @@ export default async function fetchGivebutterData(
 			return await response.json()
 		} catch (error) {
 			console.error(error)
-			return { data: [] }
+			throw error
 		}
 	}
 
