@@ -1,7 +1,7 @@
 export const markdown = {
 	about: {
 		"history-of-cimi":
-			"## History of CIMI\n\n**CIMI was founded in 2012 by Aracely Areas**, a software professional with a passion for education and exercise. Aracely originally formed CIMI (“Carrera Internacional de la Mujer Iniciativa” or the “international women’s race initiative”) to organize races and give free entry to women from underserved communities in her home country of Nicaragua. As CIMI grew, Aracely sought to find more ways to positively impact the lives of women of all ages. Today, CIMI serves women and their families across the San Jose area by offering a variety of programs to support physical, mental, educational, and community well-being.\n",
+			"## History of CIMI\n\n**CIMI was founded in 2012 by Aracely Siles**, a software professional with a passion for education and exercise. Aracely originally formed CIMI (“Carrera Internacional de la Mujer Iniciativa” or the “international women’s race initiative”) to organize races and give free entry to women from underserved communities in her home country of Nicaragua. As CIMI grew, Aracely sought to find more ways to positively impact the lives of women of all ages. Today, CIMI serves women and their families across the San Jose area by offering a variety of programs to support physical, mental, educational, and community well-being.\n",
 		intro:
 			"## CIMI's Mission\n\nCIMI’s mission is to **empower** women of all ages to become stronger mentally and physically, **equip** them with necessary technology skills to enter a changing workforce, and **inspire** participants through engaging programs that promote self-esteem and education.\n",
 		"who-is-cimi-made-of":
