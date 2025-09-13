@@ -5,8 +5,7 @@ import Link from "next/link"
 export interface ButtonProps {
 	buttonText: string
 	buttonWidth: "w-40" | "w-20"
-	buttonTheme:
-		// CIMI Cream.
+	buttonTheme: // CIMI Cream.
 		| "cimi-cream-blue"
 		| "cimi-cream-green"
 		| "cimi-cream-purple"
