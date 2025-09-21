@@ -1,8 +1,8 @@
 // Dependencies.
-import Link from "next/link"
 import Image from "next/image"
-import Menu from "@/components/Layout/Header/Menu"
+import Link from "next/link"
 import ColorfulBorder from "@/components/Layout/ColorfulBorder"
+import Menu from "@/components/Layout/Header/Menu"
 
 // Types.
 interface HeaderProps {
