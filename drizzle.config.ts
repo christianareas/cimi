@@ -2,9 +2,9 @@
 import { defineConfig } from "drizzle-kit"
 
 // URL.
-const url = process.env.POSTGRES_URL_NON_POOLING
+const url = process.env.DATABASE_URL
 if (!url) {
-	throw new Error("There’s no POSTGRES_URL_NON_POOLING environment variable.")
+	throw new Error("There’s no DATABASE_URL environment variable.")
 }
 
 // Configuration.
