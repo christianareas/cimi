@@ -15,7 +15,7 @@ export default async function fetchGivebutterData(
 		)
 	}
 
-	// GET options.
+	// Options.
 	let options: RequestInit = {
 		method,
 		headers: {

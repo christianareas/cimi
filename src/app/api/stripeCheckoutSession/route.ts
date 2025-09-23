@@ -1,6 +1,6 @@
 // Dependencies.
-import Stripe from "stripe"
 import { NextResponse } from "next/server"
+import Stripe from "stripe"
 import defineSiteBaseUrl from "@/util/defineSiteBaseUrl"
 
 // POST request.

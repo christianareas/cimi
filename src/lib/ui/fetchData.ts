@@ -1,6 +1,6 @@
 // Types.
 interface FetchDataTypes {
-	method: "GET" | "POST"
+	method: "GET" | "POST" | "PUT"
 	endpoint: string
 	body?:
 		| { donationAmount: number }
@@ -26,7 +26,7 @@ export default async function fetchData({
 		},
 	}
 
-	if (method === "POST") {
+	if (method === "POST" || method === "PUT") {
 		options.body = JSON.stringify(body)
 	}
 

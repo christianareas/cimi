@@ -8,7 +8,7 @@ interface TeamMemberType {
 // Team members.
 export const teamMembers: TeamMemberType[] = [
 	{
-		teamMemberName: "Aracely Areas",
+		teamMemberName: "Aracely Siles",
 		teamMemberRole: "President",
 		teamMemberImage: "/images/home/team/aracely-areas.jpg",
 	},

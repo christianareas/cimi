@@ -1,10 +1,10 @@
 "use client"
 
 // Dependencies.
-import fetchData from "@/lib/ui/fetchData"
 import * as Dialog from "@radix-ui/react-dialog"
 import * as Form from "@radix-ui/react-form"
 import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 
 // Types.
 interface SignUpFormProps {

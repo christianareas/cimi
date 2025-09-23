@@ -1,11 +1,11 @@
-import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
 // Dependencies.
 import { NextResponse } from "next/server"
+import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
 
 // POST request.
 export async function POST(request: Request) {
 	try {
-		// Email and tag.
+		// First name, last name, email and tag.
 		const { firstName, lastName, email, tag } = await request.json()
 		if (!email) {
 			return NextResponse.json({ error: "There’s no email." }, { status: 400 })

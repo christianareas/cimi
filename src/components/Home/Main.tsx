@@ -1,8 +1,8 @@
 // Dependencies.
-import ContentCard from "@/components/Shared/ContentCard"
 import Image from "next/image"
 import Team from "@/components/Home/Team"
 import Testimonials from "@/components/Home/Testimonials"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function Main() {

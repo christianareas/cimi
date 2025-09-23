@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import Button from "@/components/Shared/Button"
-import { initialCampaigns } from "@/data/content/events/initialCampaigns"
+import { initialCampaigns } from "@/data/content/campaigns/initialCampaigns"
 import fetchData from "@/lib/ui/fetchData"
 
 // Component.

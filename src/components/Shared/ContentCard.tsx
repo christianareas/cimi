@@ -1,13 +1,11 @@
 // Dependencies.
-import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
-import { markdown } from "@/data/content/markdown"
 import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
-import Button from "@/components/Shared/Button"
-
-// Types.
+import remarkGfm from "remark-gfm"
 import type { ButtonProps } from "@/components/Shared/Button"
+import Button from "@/components/Shared/Button"
+import { markdown } from "@/data/content/markdown"
+import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
 
 interface ContentCardProps {
 	contentSrc: string

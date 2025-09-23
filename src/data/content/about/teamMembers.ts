@@ -17,9 +17,9 @@ interface TeamMemberFullType {
 // Team members bios.
 const teamMemberBios: TeamMemberBiosType[] = [
 	{
-		teamMemberName: "Aracely Areas",
+		teamMemberName: "Aracely Siles",
 		teamMemberBio:
-			"Aracely Areas is the founder and president of CIMI, responsible for strategic direction and leadership. She works as a quality assurance engineer in a Fortune 500 company. Aracely brings personal perspective to CIMI’s mission as a woman who found strength through education and running. Aracely has a black belt in Taekwondo, has run 38 marathons, and is a certified Chi-Running Master Instructor.",
+			"Aracely Siles is the founder and president of CIMI, responsible for strategic direction and leadership. She works as a quality assurance engineer in a Fortune 500 company. Aracely brings personal perspective to CIMI’s mission as a woman who found strength through education and running. Aracely has a black belt in Taekwondo, has run 38 marathons, and is a certified Chi-Running Master Instructor.",
 	},
 	{
 		teamMemberName: "Ivonne Figueroa",

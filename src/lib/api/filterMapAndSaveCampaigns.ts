@@ -1,7 +1,7 @@
 // Dependencies.
-import fs from "node:fs/promises"
-import path from "node:path"
-import formatDate from "@/util/formatDate"
+import { sql } from "drizzle-orm"
+import { db } from "@/db"
+import { campaign } from "@/db/schema"
 
 // Types.
 interface Campaign {
@@ -65,9 +65,9 @@ export interface FilteredAndMappedCampaign {
 	campaignRaised: number
 	campaignDonors: number
 	campaignTimezone: string
-	campaignCreatedAt: string | null
-	campaignUpdatedAt: string | null
-	campaignEndAt: string | null
+	campaignCreatedAt: Date | null
+	campaignUpdatedAt: Date | null
+	campaignEndAt: Date | null
 	eventId: number | null
 	eventType: string | null
 	eventTitle: string | null
@@ -79,8 +79,8 @@ export interface FilteredAndMappedCampaign {
 	eventAddressFormatted: string | null
 	eventGooglePlaceId: string | null
 	eventTimezone: string | null
-	eventStartAt: string | null
-	eventEndAt: string | null
+	eventStartAt: Date | null
+	eventEndAt: Date | null
 	eventUpcoming: boolean | null
 	eventLivestream: string | null
 	eventLivestreamStartAt: string | null
@@ -126,14 +126,12 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			campaignDonors: campaign.donors,
 			campaignTimezone: campaign.timezone,
 			campaignCreatedAt: campaign.created_at
-				? formatDate(campaign.created_at, campaign.timezone)
+				? new Date(campaign.created_at)
 				: null,
 			campaignUpdatedAt: campaign.updated_at
-				? formatDate(campaign.updated_at, campaign.timezone)
+				? new Date(campaign.updated_at)
 				: null,
-			campaignEndAt: campaign.end_at
-				? formatDate(campaign.end_at, campaign.timezone)
-				: null,
+			campaignEndAt: campaign.end_at ? new Date(campaign.end_at) : null,
 			eventId: campaign.event_id,
 			eventType: campaign.event?.type || null,
 			eventTitle: campaign.event?.title || null,
@@ -146,17 +144,17 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 						.replace(/\s\s+/g, " ")
 						.trim()
 				: null,
-			eventPrivate: campaign.event?.private || null,
-			eventTicketsRequired: campaign.event?.tickets_required || null,
+			eventPrivate: campaign.event?.private ?? null,
+			eventTicketsRequired: campaign.event?.tickets_required ?? null,
 			eventAddress: campaign.event?.location_name || null,
 			eventAddressFormatted: campaign.event?.address_formatted || null,
 			eventGooglePlaceId: campaign.event?.google_place_id || null,
 			eventTimezone: campaign.event?.timezone || null,
 			eventStartAt: campaign.event?.start_at
-				? formatDate(campaign.event?.start_at, campaign.event?.timezone)
+				? new Date(campaign.event.start_at)
 				: null,
 			eventEndAt: campaign.event?.end_at
-				? formatDate(campaign.event?.end_at, campaign.event?.timezone)
+				? new Date(campaign.event.end_at)
 				: null,
 			eventUpcoming:
 				campaign.event?.start_at != null
@@ -167,23 +165,57 @@ export default async function filterMapAndSaveCampaigns(data: Campaign[]) {
 			eventLivestreamEndAt: campaign.event?.livestream_end_at || null,
 		}))
 
-	// Save.
-	if (
-		process.env.NODE_ENV === "development" ||
-		process.env.VERCEL_ENV === "development"
-	) {
-		try {
-			await fs.writeFile(
-				path.join(
-					process.cwd(),
-					"/src/data/content/events/initialCampaigns.ts",
-				),
-				`import type { FilteredAndMappedCampaign } from "@/lib/api/filterMapAndSaveCampaigns"\n\nexport const initialCampaigns: FilteredAndMappedCampaign[] = ${JSON.stringify(campaigns, null, 2)}`,
-				"utf8",
+	if (campaigns.length === 0) return campaigns
+
+	try {
+		await db
+			.insert(campaign)
+			.values(
+				campaigns.map((campaign) => ({
+					campaignId: campaign.campaignId,
+					campaignType: campaign.campaignType,
+					campaignTimezone: campaign.campaignTimezone,
+					campaignCreatedAt: campaign.campaignCreatedAt,
+					campaignUpdatedAt: campaign.campaignUpdatedAt,
+					campaignEndAt: campaign.campaignEndAt,
+					campaignTitle: campaign.campaignTitle,
+					campaignSubtitle: campaign.campaignSubtitle,
+					campaignDescription: campaign.campaignDescription,
+
+					eventId: campaign.eventId,
+					eventType: campaign.eventType,
+					eventTitle: campaign.eventTitle,
+					eventDetails: campaign.eventDetails,
+					eventTimezone: campaign.eventTimezone,
+					eventStartAt: campaign.eventStartAt,
+					eventEndAt: campaign.eventEndAt,
+
+					rawJson: campaign,
+				})),
 			)
-		} catch (error) {
-			console.error(error)
-		}
+			.onConflictDoUpdate({
+				target: campaign.campaignId,
+				set: {
+					campaignType: sql`excluded.campaign_type`,
+					campaignTimezone: sql`excluded.campaign_timezone`,
+					campaignCreatedAt: sql`excluded.campaign_created_at`,
+					campaignUpdatedAt: sql`excluded.campaign_updated_at`,
+					campaignEndAt: sql`excluded.campaign_end_at`,
+					campaignTitle: sql`excluded.campaign_title`,
+					campaignSubtitle: sql`excluded.campaign_subtitle`,
+					campaignDescription: sql`excluded.campaign_description`,
+					eventId: sql`excluded.event_id`,
+					eventType: sql`excluded.event_type`,
+					eventTitle: sql`excluded.event_title`,
+					eventDetails: sql`excluded.event_details`,
+					eventTimezone: sql`excluded.event_timezone`,
+					eventStartAt: sql`excluded.event_start_at`,
+					eventEndAt: sql`excluded.event_end_at`,
+					rawJson: sql`excluded.raw_json`,
+				},
+			})
+	} catch (error) {
+		console.error(error)
 	}
 
 	return campaigns

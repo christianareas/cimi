@@ -1,6 +1,6 @@
 // Dependencies.
-import ContentCard from "@/components/Shared/ContentCard"
 import NewsletterPosts from "@/components/Newsletter/NewsletterPosts"
+import ContentCard from "@/components/Shared/ContentCard"
 
 // Component.
 export default function Main() {
