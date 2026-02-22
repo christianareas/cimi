@@ -1,6 +1,6 @@
-import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
 // Dependencies.
 import { NextResponse } from "next/server"
+import fetchGivebutterData from "@/lib/api/fetchGivebutterData"
 
 // POST request.
 export async function POST(request: Request) {

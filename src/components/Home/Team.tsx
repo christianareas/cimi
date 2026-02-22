@@ -1,6 +1,6 @@
 // Dependencies.
-import { teamMembers } from "@/data/content/home/teamMembers"
 import Image from "next/image"
+import { teamMembers } from "@/data/content/home/teamMembers"
 
 // Component.
 export default function Team() {

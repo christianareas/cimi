@@ -1,10 +1,10 @@
 "use client"
 
 // Dependencies.
-import fetchData from "@/lib/ui/fetchData"
 import * as Dialog from "@radix-ui/react-dialog"
 import * as Form from "@radix-ui/react-form"
 import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 
 // Types.
 interface SignUpFormProps {
@@ -82,7 +82,7 @@ export default function SignUpForm({ become }: SignUpFormProps) {
 				{/* Dialog. */}
 				<Dialog.Portal>
 					<Dialog.Overlay className="fixed inset-0 flex items-center justify-center bg-black p-5 opacity-50 sm:p-10" />
-					<Dialog.Content className="-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 max-h-[90vh] w-[90vw] max-w-2xl rounded-lg bg-cimi-cream px-5 py-10 shadow-lg sm:px-10 sm:py-20">
+					<Dialog.Content className="fixed top-1/2 left-1/2 max-h-[90vh] w-[90vw] max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-lg bg-cimi-cream px-5 py-10 shadow-lg sm:px-10 sm:py-20">
 						<Dialog.Title
 							className={`pb-5 text-center font-ancho font-bold text-2xl ${memberVolunteer.textColor}`}
 						>

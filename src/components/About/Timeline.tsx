@@ -1,6 +1,6 @@
 // Dependencies.
-import { milestones } from "@/data/content/about/milestones"
 import Image from "next/image"
+import { milestones } from "@/data/content/about/milestones"
 
 // Component.
 export default function Timeline() {

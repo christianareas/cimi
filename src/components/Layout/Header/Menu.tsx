@@ -1,13 +1,13 @@
 "use client"
 
 // Dependencies.
-import { useState } from "react"
 import * as Dialog from "@radix-ui/react-dialog"
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
+import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
-import { links, nestedLinks } from "@/data/links"
 import Link from "next/link"
+import { useState } from "react"
 import Button from "@/components/Shared/Button"
+import { links, nestedLinks } from "@/data/links"
 
 // Component.
 export default function Menu() {

@@ -1,14 +1,14 @@
 "use client"
 
 // Dependencies.
-import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
-import { markdown } from "@/data/content/markdown"
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-import rehypeRaw from "rehype-raw"
-import { useState } from "react"
 import * as Collapsible from "@radix-ui/react-collapsible"
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
+import { useState } from "react"
+import ReactMarkdown from "react-markdown"
+import rehypeRaw from "rehype-raw"
+import remarkGfm from "remark-gfm"
+import { markdown } from "@/data/content/markdown"
+import resolveContentSrcPath from "@/lib/ui/resolveContentSrcPath"
 
 // Types.
 interface FaqProps {
