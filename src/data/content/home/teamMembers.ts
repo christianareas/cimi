@@ -12,11 +12,11 @@ export const teamMembers: TeamMemberType[] = [
 		teamMemberRole: "President",
 		teamMemberImage: "/images/home/team/aracely-areas.jpg",
 	},
-	{
-		teamMemberName: "Ivonne Figueroa",
-		teamMemberRole: "Vice President",
-		teamMemberImage: "/images/home/team/ivonne-figueroa.jpg",
-	},
+	// {
+	// 	teamMemberName: "Ivonne Figueroa",
+	// 	teamMemberRole: "Vice President",
+	// 	teamMemberImage: "/images/home/team/ivonne-figueroa.jpg",
+	// },
 	{
 		teamMemberName: "Kamille Matias",
 		teamMemberRole: "Secretary",
