@@ -1,14 +1,14 @@
 "use client"
 
 // Dependencies.
-import ColorfulBorder from "@/components/Layout/ColorfulBorder"
-import Button from "@/components/Shared/Button"
-import ContentCard from "@/components/Shared/ContentCard"
-import fetchData from "@/lib/ui/fetchData"
 import * as Form from "@radix-ui/react-form"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import ColorfulBorder from "@/components/Layout/ColorfulBorder"
+import Button from "@/components/Shared/Button"
+import ContentCard from "@/components/Shared/ContentCard"
+import fetchData from "@/lib/ui/fetchData"
 
 // Component.
 export default function Footer() {

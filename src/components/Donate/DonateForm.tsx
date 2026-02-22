@@ -1,10 +1,10 @@
 "use client"
 
 // Dependencies.
-import { useState } from "react"
-import fetchData from "@/lib/ui/fetchData"
 import * as Form from "@radix-ui/react-form"
 import * as RadioGroup from "@radix-ui/react-radio-group"
+import { useState } from "react"
+import fetchData from "@/lib/ui/fetchData"
 
 // Component.
 export default function DonateForm() {

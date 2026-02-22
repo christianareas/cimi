@@ -1,17 +1,16 @@
 // Dependencies.
+import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import getMarkdown from "@/lib/api/getAndSaveMarkdown"
 
-// Types.
-import type { NextRequest } from "next/server"
-
 // GET request.
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
 	try {
 		const markdown = await getMarkdown()
 
 		return NextResponse.json({ markdown }, { status: 200 })
 	} catch (error) {
+		console.error(error)
 		return NextResponse.json(
 			{
 				error:

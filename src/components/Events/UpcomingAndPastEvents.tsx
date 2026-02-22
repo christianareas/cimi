@@ -104,7 +104,7 @@ export default function UpcomingAndPastEvents() {
 
 					{/* Options. */}
 					<Select.Portal>
-						<Select.Content className="-top-5 absolute right-0 left-0 mx-auto">
+						<Select.Content className="absolute -top-5 right-0 left-0 mx-auto">
 							<Select.Viewport className="rounded-lg border border-cimi-red-orange bg-cimi-cream px-4 py-2 font-ancho font-bold text-cimi-red-orange text-lg sm:text-2xl">
 								{upcomingAndPastEvents.map((event, index) => (
 									<Select.Item key={event.eventsType} value={index.toString()}>

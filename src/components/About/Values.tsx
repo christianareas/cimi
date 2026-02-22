@@ -1,6 +1,6 @@
 // Dependencies.
-import { values } from "@/data/content/about/values"
 import Image from "next/image"
+import { values } from "@/data/content/about/values"
 
 // Component.
 export default function Values() {

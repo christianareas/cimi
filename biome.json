@@ -1,25 +1,9 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
-	"files": {
-		"includes": ["**", "!**/.next", "!**/node_modules"]
-	},
-	"assist": { "actions": { "source": { "organizeImports": "on" } } },
-	"formatter": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"nursery": {
-				"useSortedClasses": {
-					"level": "warn",
-					"fix": "safe",
-					"options": {
-						"attributes": ["classList"],
-						"functions": ["clsx", "cn", "cva", "tw"]
-					}
-				}
+	"$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
 			}
 		}
 	},
@@ -27,6 +11,12 @@
 		"parser": {
 			"tailwindDirectives": true
 		}
+	},
+	"files": {
+		"includes": ["**", "!**/.next", "!**/node_modules"]
+	},
+	"formatter": {
+		"enabled": true
 	},
 	"javascript": {
 		"formatter": {
@@ -40,6 +30,22 @@
 		"formatter": {
 			"indentStyle": "tab",
 			"indentWidth": 2
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"nursery": {
+				"useSortedClasses": {
+					"fix": "safe",
+					"level": "warn",
+					"options": {
+						"attributes": ["classList"],
+						"functions": ["clsx", "cn", "cva", "tw"]
+					}
+				}
+			},
+			"recommended": true
 		}
 	}
 }

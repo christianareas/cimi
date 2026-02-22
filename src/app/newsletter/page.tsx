@@ -1,8 +1,8 @@
 // Dependencies.
 import { Fragment } from "react"
+import Footer from "@/components/Layout/Footer/Footer"
 import Header from "@/components/Layout/Header/Header"
 import Main from "@/components/Newsletter/Main"
-import Footer from "@/components/Layout/Footer/Footer"
 
 // Page.
 export default function Newsletter() {
