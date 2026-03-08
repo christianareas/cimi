@@ -13,6 +13,11 @@ export const teamMembers: TeamMemberType[] = [
 		teamMemberImage: "/images/home/team/aracely-areas.jpg",
 	},
 	{
+		teamMemberName: "Andy Macferran",
+		teamMemberRole: "Vice President",
+		teamMemberImage: "/images/home/team/andy-macferran.jpg",
+	},
+	{
 		teamMemberName: "Kamille Matias",
 		teamMemberRole: "Secretary",
 		teamMemberImage: "/images/home/team/kamille-matias.jpg",
@@ -21,11 +26,6 @@ export const teamMembers: TeamMemberType[] = [
 		teamMemberName: "Maya Bergstrom",
 		teamMemberRole: "Treasurer",
 		teamMemberImage: "/images/home/team/maya-bergstrom.jpg",
-	},
-	{
-		teamMemberName: "Andy Macferran",
-		teamMemberRole: "Director",
-		teamMemberImage: "/images/home/team/andy-macferran.jpg",
 	},
 	{
 		teamMemberName: "Sherry Heinz",
