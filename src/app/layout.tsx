@@ -1,10 +1,9 @@
 // Dependencies.
 import "./globals.css"
-import { Roboto } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Roboto } from "next/font/google"
+import { cn } from "@/lib/utils"
 
-const roboto = Roboto({subsets:['latin'],variable:'--font-sans'});
-
+const roboto = Roboto({ subsets: ["latin"], variable: "--font-sans" })
 
 // Metadata.
 export const metadata = {
