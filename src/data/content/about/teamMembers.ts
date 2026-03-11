@@ -47,6 +47,11 @@ const teamMemberBios: TeamMemberBiosType[] = [
 			"Sherry is a Software Engineering Manager who leads teams in building innovative and reliable technology solutions. With a strong background in problem-solving and team development, she brings a strategic and collaborative perspective to the board. She recently joined the organization and is motivated by a deep commitment to investing in the community and strengthening opportunities that make a meaningful difference.",
 	},
 	{
+		teamMemberName: "Mike Hanna",
+		teamMemberBio:
+			"Mike has been in tech for over 25 years in a variety of roles, most recently as a developer and tester.  Outside of work Mike likes to hike, go to the beach, and play drums. Recently joining the CIMI organization, Mike hopes to help the communities we serve thrive and succeed in a challenging environment, by developing skills and wisdom that can be replicated across geographies and generations.",
+	},
+	{
 		teamMemberName: "Christian Areas",
 		teamMemberBio:
 			"Christian is a Technical Writer who writes docs for developers and knows how to code. He believes in building community and giving back. When he's not working, he's running or building mechanical keyboards.",

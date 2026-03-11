@@ -33,6 +33,11 @@ export const teamMembers: TeamMemberType[] = [
 		teamMemberImage: "/images/home/team/sherry-heinz.jpg",
 	},
 	{
+		teamMemberName: "Mike Hanna",
+		teamMemberRole: "Director",
+		teamMemberImage: "/images/home/team/mike-hanna.jpg",
+	},
+	{
 		teamMemberName: "Christian Areas",
 		teamMemberRole: "Director",
 		teamMemberImage: "/images/home/team/christian-areas.jpg",
