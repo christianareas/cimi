@@ -12,11 +12,11 @@ export const teamMembers: TeamMemberType[] = [
 		teamMemberRole: "President",
 		teamMemberImage: "/images/home/team/aracely-areas.jpg",
 	},
-	// {
-	// 	teamMemberName: "Ivonne Figueroa",
-	// 	teamMemberRole: "Vice President",
-	// 	teamMemberImage: "/images/home/team/ivonne-figueroa.jpg",
-	// },
+	{
+		teamMemberName: "Andy Macferran",
+		teamMemberRole: "Vice President",
+		teamMemberImage: "/images/home/team/andy-macferran.jpg",
+	},
 	{
 		teamMemberName: "Kamille Matias",
 		teamMemberRole: "Secretary",
@@ -27,4 +27,24 @@ export const teamMembers: TeamMemberType[] = [
 		teamMemberRole: "Treasurer",
 		teamMemberImage: "/images/home/team/maya-bergstrom.jpg",
 	},
+	{
+		teamMemberName: "Sherry Heinz",
+		teamMemberRole: "Director",
+		teamMemberImage: "/images/home/team/sherry-heinz.jpg",
+	},
+	{
+		teamMemberName: "Mike Hanna",
+		teamMemberRole: "Director",
+		teamMemberImage: "/images/home/team/mike-hanna.jpg",
+	},
+	{
+		teamMemberName: "Christian Areas",
+		teamMemberRole: "Director",
+		teamMemberImage: "/images/home/team/christian-areas.jpg",
+	},
+	// {
+	// 	teamMemberName: "Ivonne Figueroa",
+	// 	teamMemberRole: "Vice President",
+	// 	teamMemberImage: "/images/home/team/ivonne-figueroa.jpg",
+	// },
 ]

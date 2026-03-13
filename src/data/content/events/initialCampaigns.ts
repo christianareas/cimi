@@ -4,7 +4,7 @@ export const initialCampaigns: FilteredAndMappedCampaign[] = [
 	{
 		campaignId: 561745,
 		campaignAccountId: "S9FZBTWfOHWHZ0Eo",
-		campaignType: "event",
+		campaignType: "page",
 		campaignTitle: "Newsletter 4th Quarter 2025",
 		campaignSubtitle: null,
 		campaignCoverType: "image",
@@ -25,7 +25,7 @@ export const initialCampaigns: FilteredAndMappedCampaign[] = [
 		campaignDonors: 0,
 		campaignTimezone: "America/Los_Angeles",
 		campaignCreatedAt: "Jan 9, 2026, 12:42 PM PST",
-		campaignUpdatedAt: "Feb 22, 2026, 12:21 PM PST",
+		campaignUpdatedAt: "Feb 22, 2026, 12:28 PM PST",
 		campaignEndAt: "Jan 18, 2026, 12:30 PM PST",
 		eventId: null,
 		eventType: null,
