@@ -2,6 +2,52 @@ import type { FilteredAndMappedCampaign } from "@/lib/api/filterMapAndSaveCampai
 
 export const initialCampaigns: FilteredAndMappedCampaign[] = [
 	{
+		campaignId: 608835,
+		campaignAccountId: "S9FZBTWfOHWHZ0Eo",
+		campaignType: "event",
+		campaignTitle: "2026 Kickoff",
+		campaignSubtitle: null,
+		campaignCoverType: "image",
+		campaignCoverSource: "upload",
+		campaignCoverUrl:
+			"https://givebutter.s3.amazonaws.com/media/FiAGGn5kRclbc8ftpcn0V227tiRLrVegt1oMeh8f.jpg",
+		campaignCoverEmbedUrl: null,
+		campaignDescription:
+			"<ul><li><p><strong>Date: Sábado 21 de marzo de 2026 </strong></p></li><li><p><strong>Venue: Centro de Jóvenes Washington GYM, 921 S 1st B, San Jose CA 95110.</strong></p></li><li><p><strong>Time:  7:30 a.m. 12:00 p.m.</strong></p></li></ul><ol><li><p>Durante la mañana tendremos:</p></li><li><p>• Bienvenida a CIMI 2026</p></li><li><p>• Clausura del Curso de Codificación</p></li><li><p>• El Reto 2026</p></li><li><p>Les pedimos llenar el formulario para confirmar su asistencia.</p></li><li><p>⚠️ Familias del programa de Codificación: es muy importante que las niñas estén presentes, ya que ese día se entregará el reconocimiento por haber completado el programa SWIFT.</p></li><li><p>Si tienes alguna amiga nueva interesada en CIMI, puede acompañarte y la ayudaremos a registrarse.</p></li></ol><p>____________________________________________________________________________________________________________</p><ol><li><p>The event will take place next Saturday, March 21, 2026, at the Washington Youth Center Gym  (921 S 1st B, San Jose CA 95110) from 7:30 AM to 12:00 PM. During this time, we will hold three activities: the CIMI 2026 Kick-Off, the Coding Course Completion Ceremony, and the 2026 Challenge. More details about these events will be shared during the ceremony.</p></li><li><p>As always, to help us improve our events, we invite you to complete the form to confirm your attendance.</p></li><li><p>For families participating in the Coding Program, it is very important that the girls attend, otherwise they will not receive recognition for completing the SWIFT program.</p></li><li><p>If you have a new friend who would like to participate in CIMI, feel free to invite her—we will be happy to help her register.</p></li><li><p>IMPORTANT: If you do not know your family number, please write 0. Do not use any other number, as it creates confusion in the attendance lists.</p></li></ol><p></p>",
+		campaignDescriptionSimplified:
+			"Date: Sábado 21 de marzo de 2026 Venue: Centro de Jóvenes Washington GYM, 921 S 1st B, San Jose CA 95110.Time: 7:30 a.m. 12:00 p.m.Durante la mañana tendremos:• Bienvenida a CIMI 2026• Clausura del Curso de Codificación• El Reto 2026Les pedimos llenar el formulario para confirmar su asistencia.⚠️ Familias del programa de Codificación: es muy importante que las niñas estén presentes, ya que ese día se entregará el reconocimiento por haber completado el programa SWIFT.Si tienes alguna amiga nueva interesada en CIMI, puede acompañarte y la ayudaremos a registrarse.____________________________________________________________________________________________________________The event will take place next Saturday, March 21, 2026, at the Washington Youth Center Gym (921 S 1st B, San Jose CA 95110) from 7:30 AM to 12:00 PM. During this time, we will hold three activities: the CIMI 2026 Kick-Off, the Coding Course Completion Ceremony, and the 2026 Challenge. More details about these events will be shared during the ceremony.As always, to help us improve our events, we invite you to complete the form to confirm your attendance.For families participating in the Coding Program, it is very important that the girls attend, otherwise they will not receive recognition for completing the SWIFT program.If you have a new friend who would like to participate in CIMI, feel free to invite her—we will be happy to help her register.IMPORTANT: If you do not know your family number, please write 0. Do not use any other number, as it creates confusion in the attendance lists.",
+		campaignCode: "TFBBVE",
+		campaignSlug: "2026-kickoff-tfbbve",
+		campaignUrl: "https://givebutter.com/2026-kickoff-tfbbve",
+		campaignCurrency: "USD",
+		campaignGoal: null,
+		campaignRaised: 0,
+		campaignDonors: 0,
+		campaignTimezone: "America/Los_Angeles",
+		campaignCreatedAt: "Mar 15, 2026, 1:50 PM PDT",
+		campaignUpdatedAt: "Mar 15, 2026, 2:01 PM PDT",
+		campaignEndAt: "Mar 21, 2026, 12:00 PM PDT",
+		eventId: 142093,
+		eventType: "physical",
+		eventTitle: "2026 Kickoff",
+		eventDetails:
+			"<ul><li><p><strong>Date: Sábado 21 de marzo de 2026 </strong></p></li><li><p><strong>Venue: Centro de Jóvenes Washington GYM, 921 S 1st B, San Jose CA 95110.</strong></p></li><li><p><strong>Time:  7:30 a.m. 12:00 p.m.</strong></p></li></ul><ol><li><p>Durante la mañana tendremos:</p></li><li><p>• Bienvenida a CIMI 2026</p></li><li><p>• Clausura del Curso de Codificación</p></li><li><p>• El Reto 2026</p></li><li><p>Les pedimos llenar el formulario para confirmar su asistencia.</p></li><li><p>⚠️ Familias del programa de Codificación: es muy importante que las niñas estén presentes, ya que ese día se entregará el reconocimiento por haber completado el programa SWIFT.</p></li><li><p>Si tienes alguna amiga nueva interesada en CIMI, puede acompañarte y la ayudaremos a registrarse.</p></li></ol><p>____________________________________________________________________________________________________________</p><ol><li><p>The event will take place next Saturday, March 21, 2026, at the Washington Youth Center Gym  (921 S 1st B, San Jose CA 95110) from 7:30 AM to 12:00 PM. During this time, we will hold three activities: the CIMI 2026 Kick-Off, the Coding Course Completion Ceremony, and the 2026 Challenge. More details about these events will be shared during the ceremony.</p></li><li><p>As always, to help us improve our events, we invite you to complete the form to confirm your attendance.</p></li><li><p>For families participating in the Coding Program, it is very important that the girls attend, otherwise they will not receive recognition for completing the SWIFT program.</p></li><li><p>If you have a new friend who would like to participate in CIMI, feel free to invite her—we will be happy to help her register.</p></li><li><p>IMPORTANT: If you do not know your family number, please write 0. Do not use any other number, as it creates confusion in the attendance lists.</p></li></ol><p></p>",
+		eventDetailsSimplified:
+			"Date: Sábado 21 de marzo de 2026 Venue: Centro de Jóvenes Washington GYM, 921 S 1st B, San Jose CA 95110.Time: 7:30 a.m. 12:00 p.m.Durante la mañana tendremos:• Bienvenida a CIMI 2026• Clausura del Curso de Codificación• El Reto 2026Les pedimos llenar el formulario para confirmar su asistencia.⚠️ Familias del programa de Codificación: es muy importante que las niñas estén presentes, ya que ese día se entregará el reconocimiento por haber completado el programa SWIFT.Si tienes alguna amiga nueva interesada en CIMI, puede acompañarte y la ayudaremos a registrarse.____________________________________________________________________________________________________________The event will take place next Saturday, March 21, 2026, at the Washington Youth Center Gym (921 S 1st B, San Jose CA 95110) from 7:30 AM to 12:00 PM. During this time, we will hold three activities: the CIMI 2026 Kick-Off, the Coding Course Completion Ceremony, and the 2026 Challenge. More details about these events will be shared during the ceremony.As always, to help us improve our events, we invite you to complete the form to confirm your attendance.For families participating in the Coding Program, it is very important that the girls attend, otherwise they will not receive recognition for completing the SWIFT program.If you have a new friend who would like to participate in CIMI, feel free to invite her—we will be happy to help her register.IMPORTANT: If you do not know your family number, please write 0. Do not use any other number, as it creates confusion in the attendance lists.",
+		eventPrivate: null,
+		eventTicketsRequired: null,
+		eventAddress: "921 S 1st St",
+		eventAddressFormatted: "921 S 1st St, San Jose, CA 95110, USA",
+		eventGooglePlaceId: "ChIJEeOIt0ozjoARBFFbhYu5Fyg",
+		eventTimezone: "America/Los_Angeles",
+		eventStartAt: "Mar 21, 2026, 7:30 AM PDT",
+		eventEndAt: "Mar 21, 2026, 12:00 PM PDT",
+		eventUpcoming: true,
+		eventLivestream: null,
+		eventLivestreamStartAt: null,
+		eventLivestreamEndAt: null,
+	},
+	{
 		campaignId: 561745,
 		campaignAccountId: "S9FZBTWfOHWHZ0Eo",
 		campaignType: "page",
