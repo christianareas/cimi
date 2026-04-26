@@ -8,10 +8,9 @@ export interface Markdown {
 }
 
 // Get Markdown.
-export default async function getMarkdown(
-	srcPath = "src/data/content",
-): Promise<Markdown> {
-	const absoluteSrcPath = path.join(process.cwd(), srcPath)
+export default async function getMarkdown(subPath = ""): Promise<Markdown> {
+	const contentPath = "src/data/content"
+	const absoluteSrcPath = path.join(process.cwd(), contentPath, subPath)
 	const directoryContents = await fs.readdir(absoluteSrcPath)
 
 	// Create the Markdown.
@@ -22,7 +21,7 @@ export default async function getMarkdown(
 
 		if (directoryItemStats.isDirectory()) {
 			markdown[directoryItem] = await getMarkdown(
-				path.join(srcPath, directoryItem),
+				path.join(subPath, directoryItem),
 			)
 		} else if (directoryItem.endsWith(".md")) {
 			markdown[directoryItem.replace(/\.md$/, "")] = await fs.readFile(
@@ -39,7 +38,7 @@ export default async function getMarkdown(
 	) {
 		try {
 			await fs.writeFile(
-				path.join(process.cwd(), "src/data/content/markdown.ts"),
+				path.join(process.cwd(), contentPath, "markdown.ts"),
 				`export const markdown = ${JSON.stringify(markdown, null, 2)}`,
 				"utf8",
 			)
