@@ -42,7 +42,7 @@ export const initialCampaigns: FilteredAndMappedCampaign[] = [
 		eventTimezone: "America/Los_Angeles",
 		eventStartAt: "Mar 21, 2026, 7:30 AM PDT",
 		eventEndAt: "Mar 21, 2026, 12:00 PM PDT",
-		eventUpcoming: true,
+		eventUpcoming: false,
 		eventLivestream: null,
 		eventLivestreamStartAt: null,
 		eventLivestreamEndAt: null,
